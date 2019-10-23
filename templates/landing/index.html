@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+
+{% block header %}
+  <h1>{% block title %}Landing page{% endblock %}</h1>
+    <a class="action" href="{{ url_for('resource.resources') }}">Go to Resources</a>
+{% endblock %}
+
+{% block content %}
+Nice pictures
+{% endblock %}
