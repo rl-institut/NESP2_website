@@ -1,3 +1,19 @@
+.bkg-img{
+  /* Center and scale the image nicely */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+
+#landing-title-div{
+    background-image: url("img/img-1-landing.png");
+
+  /* Full height */
+  height: 100%;
+
+
+}
 
 #landing-welcome-div{
     background-image: url("background/bg-1-welcome-div.png");

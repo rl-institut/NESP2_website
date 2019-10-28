@@ -1,20 +1,19 @@
 {% extends 'base.html' %}
 
 {% block header %}
-  <h1>{% block title %}Landing page{% endblock %}</h1>
-    <a class="action" href="{{ url_for('resource.resources') }}">Go to Resources</a>
+
 {% endblock header%}
 
 {% block content %}
 <div id="landing-content-div" class="grid-x">
-  <div id="landing-title-div" class="cell">
+  <div id="landing-title-div" class="cell bkg-img">
     <h1>Delivering data-driven electrification insights</h1>
     <h3>Nigeria SE4ALL offers the most accurate data and latest tools that empower better
       electrification planning in Nigeria</h3>
     <a>Learn more</a>
   </div>
-  <div id="landing-welcome-div" class="cell grid-x">
-    <div id="landing-welcome-text" class="cell medium-6">
+  <div id="landing-welcome-div" class="cell grid-x bkg-img">
+    <div id="landing-welcome-text-div" class="cell medium-6">
       <h2>Welcome to Nigeria SE4ALL</h2>
       <p>
         Blablabla Blablabla Blablabla Blablabla Blablabla Blablabla
@@ -28,8 +27,8 @@
         Blablabla Blablabla Blablabla Blablabla Blablabla Blablabla
       </p>
     </div>
-    <div id="landing-welcome-img" class="cell medium-6">
-      <img src="static/img/img-2-welcome.png">
+    <div id="landing-welcome-img-div" class="cell medium-6">
+      <img id="landing-welcome-img" src="static/img/img-2-welcome.png">
     </div>
 
   </div>
@@ -39,18 +38,18 @@
     <div id="landing-feature-pla"><p>features for <b>Planners</b></p></div>
     <div id="landing-feature-cit"><p>features for <b>Citizens</b></p></div>
   </div>
-  <div id="landing-progress-div" class="cell">
+  <div id="landing-progress-div" class="cell bkg-img">
     <h2>
       Our progress in numbers
     </h2>
         <!-- Figure out how to make updatable gauges here-->
 
   </div>
-  <div id="landing-maps-div" class="cell">
+  <div id="landing-maps-div" class="cell bkg-img">
        <h2>Explore the ground-truth</h2>
     <h3>Analyze highly accurate electrification data on our <b>interactive map</b></h3>
   </div>
-  <div id="landing-resources-div" class="cell grid-x">
+  <div id="landing-resources-div" class="cell grid-x bkg-img">
     <div class="cell medium-6">
       <h2>Use our tools</h2>
       <p>Explore our <b>suite of open source tools</b> for data mining and analysis for
