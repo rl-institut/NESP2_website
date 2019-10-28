@@ -1,0 +1,20 @@
+
+#landing-welcome-div{
+    background-image: url("background/bg-1-welcome-div.png");
+}
+
+#landing-progress-div{
+    background-image: url("background/bg-4-progress-div.png");
+}
+
+#landing-maps-div{
+    background-image: url("background/bg-2-maps-div.png");
+}
+
+#landing-resources-div{
+    background-image: url("background/bg-3-resource-div.png");
+}
+
+#footer-stay-in-touch-div{
+    background-image: url("background/bg-5-stay-in-touch-div.png");
+}
