@@ -3,8 +3,71 @@
 {% block header %}
   <h1>{% block title %}Landing page{% endblock %}</h1>
     <a class="action" href="{{ url_for('resource.resources') }}">Go to Resources</a>
-{% endblock %}
+{% endblock header%}
 
 {% block content %}
-Nice pictures
-{% endblock %}
+<div id="landing-content-div" class="grid-x">
+  <div id="landing-title-div" class="cell">
+    <h1>Delivering data-driven electrification insights</h1>
+    <h3>Nigeria SE4ALL offers the most accurate data and latest tools that empower better
+      electrification planning in Nigeria</h3>
+    <a>Learn more</a>
+  </div>
+  <div id="landing-welcome-div" class="cell grid-x">
+    <div id="landing-welcome-text" class="cell medium-6">
+      <h2>Welcome to Nigeria SE4ALL</h2>
+      <p>
+        Blablabla Blablabla Blablabla Blablabla Blablabla Blablabla
+        Blablabla Blablabla Blablabla Blablabla Blablabla Blablabla
+         Blablabla Blablabla Blablabla Blablabla Blablabla Blablabla
+        Blablabla Blablabla Blablabla Blablabla Blablabla Blablabla
+        Blablabla Blablabla Blablabla Blablabla Blablabla Blablabla
+        Blablabla Blablabla Blablabla Blablabla Blablabla Blablabla
+         Blablabla Blablabla Blablabla Blablabla Blablabla Blablabla
+        Blablabla Blablabla Blablabla Blablabla Blablabla Blablabla
+        Blablabla Blablabla Blablabla Blablabla Blablabla Blablabla
+      </p>
+    </div>
+    <div id="landing-welcome-img" class="cell medium-6">
+      <img src="static/img/img-2-welcome.png">
+    </div>
+
+  </div>
+  <div id="landing-feature-div" class="cell">
+    <!-- Figure out how to make the hover/select stuff here-->
+    <div id="landing-feature-dev"><p>features for <b>Developpers</b></p></div>
+    <div id="landing-feature-pla"><p>features for <b>Planners</b></p></div>
+    <div id="landing-feature-cit"><p>features for <b>Citizens</b></p></div>
+  </div>
+  <div id="landing-progress-div" class="cell">
+    <h2>
+      Our progress in numbers
+    </h2>
+        <!-- Figure out how to make updatable gauges here-->
+
+  </div>
+  <div id="landing-maps-div" class="cell">
+       <h2>Explore the ground-truth</h2>
+    <h3>Analyze highly accurate electrification data on our <b>interactive map</b></h3>
+  </div>
+  <div id="landing-resources-div" class="cell grid-x">
+    <div class="cell medium-6">
+      <h2>Use our tools</h2>
+      <p>Explore our <b>suite of open source tools</b> for data mining and analysis for
+        electrification and planning</p>
+      <a>Explore tools</a>
+    </div>
+    <div class="cell medium-6 grid-x">
+      <div class="cell medium-6 resource-choice">
+        <div><img src=""></div>
+        <div>
+          <h3>Cluster identification</h3>
+          <p></p>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+</div>
+{% endblock content%}
