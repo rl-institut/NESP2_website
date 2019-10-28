@@ -6,7 +6,6 @@
 </head>
 <nav>
   <h1>Nigeria Se4All</h1>
-
 </nav>
 <section class="content">
   <header>
@@ -16,4 +15,22 @@
     <div class="flash">{{ message }}</div>
   {% endfor %}
   {% block content %}{% endblock %}
+  <footer>
+    {% block footer %}
+    <div id="footer-content" class="grid-x">
+  <div id="footer-stay-in-touch-div" class="cell grid-x">
+    <div class="cell medium-6">
+      <h2>Stay in touch</h2>
+      <p><b>Follow us on social media</b> to stay up-to date on the latest developments</p>
+    </div>
+        <div id="footer-stay-in-touch-icons" class="cell medium-6">
+
+    </div>
+  </div>
+  <div id="footer-logos" class="cell">Logos</div>
+  <div id="footer-contact" class="cell">Office</div>
+  <div id="footer-license" class="cell">All right</div>
+</div>
+    {% endblock footer %}
+  </footer>
 </section>
