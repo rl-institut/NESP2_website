@@ -19,6 +19,10 @@
     background-image: url("background/bg-1-welcome-div.png");
 }
 
+#landing-welcome-img{
+    padding: 10rem;
+}
+
 #landing-progress-div{
     background-image: url("background/bg-4-progress-div.png");
 }
