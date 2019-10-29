@@ -7,7 +7,7 @@ except ModuleNotFoundError:
     from .blueprints import resources
 
 
-def create_app(test_config=None, *args):
+def create_app(test_config=None):
     # create and configure the app
     app = Flask(
         __name__,
@@ -39,4 +39,3 @@ def create_app(test_config=None, *args):
         return render_template('landing/index.html')
 
     return app
-
