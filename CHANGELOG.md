@@ -24,6 +24,7 @@ Here is a template for new release sections
 
 ### Changed
 - structure of the folders --> flask files in `app` folder (#2)
+- README with new instruction (#2)
 
 ### Removed
 - yet another thing
