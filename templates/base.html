@@ -2,9 +2,9 @@
 
 <head>
   <title>{% block title %}{% endblock %}</title>
-
-<link rel="stylesheet"
-      href="https://raw.githack.com/rl-institut/WAM/dev/static/foundation/css/app.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='font/poppins.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='font/source-sans-pro.css') }}">
+    <link rel="stylesheet" href="https://raw.githack.com/rl-institut/WAM/dev/static/foundation/css/app.css">
   <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
