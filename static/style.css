@@ -1,3 +1,17 @@
+/* General */
+h1{
+    font-size: 32pt;
+    font-weight: bold;
+}
+h2{
+    font-size: 20pt;
+    font-weight: normal;
+}
+
+.brand-color{
+    color: #1DD069;
+}
+
 .bkg-img{
   /* Center and scale the image nicely */
   background-position: center;
