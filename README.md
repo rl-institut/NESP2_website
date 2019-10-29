@@ -13,7 +13,8 @@ python app/index.py
 ```
 
 ## Deploy on docker (instructions for ubuntu)
-
+0. create a `app/instance/config.py` with the line `SECRET_KEY = '<your secret key>'`.
+If needed, you can generate a key with `python -c 'import os; print(os.urandom(16))'`)
 1. install [docker](https://docs.docker.com/v17.09/engine/installation/linux/docker-ce/ubuntu/#install-docker-ce-1) and [docker-compose](https://docs.docker.com/compose/install/)
 2. `sudo docker-compose up -d --build`
 3. your app is available at `0.0.0.0:5000` or `localhost:5000`
