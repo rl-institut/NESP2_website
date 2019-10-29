@@ -37,21 +37,30 @@
   {% endfor %}
   {% block content %}{% endblock %}
   <footer>
-
     <div id="footer-content" class="grid-x">
-  <div id="footer-stay-in-touch-div" class="cell grid-x bkg-img">
-    <div class="cell medium-6">
-      <h2>Stay in touch</h2>
-      <p><b>Follow us on social media</b> to stay up-to date on the latest developments</p>
-    </div>
-        <div id="footer-stay-in-touch-icons" class="cell medium-6">
+      <div id="footer-stay-in-touch-div" class="cell grid-x bkg-img">
+        <div class="cell medium-5 medium-offset-1">
+          <h1>Stay in touch</h1>
+          <p><b>Follow us on social media</b> to stay up-to date on the latest developments</p>
+        </div>
+            <div id="footer-stay-in-touch-icons" class="cell medium-6">
 
+        </div>
+      </div>
+      <div id="footer-contact-div" class="cell">Office</div>
+      <div id="footer-logos-div" class="cell grid-x">
+        <div class="cell medium-3 medium-offset-1">With financial support of:</div>
+        <div id="footer-logos-eu-ger" class="cell medium-4">
+          <img src="static/logos/logo-1-eu.png">
+          <img src="static/logos/logo-4-ger-coop.png">
+        </div>
+        <div id="footer-logos-giz" class="cell medium-2 medium-offset-2">
+          <img src="static/logos/logo-3-giz.png">
+        </div>
+      </div>
+
+      <div id="footer-license-div" class="cell">All right</div>
     </div>
-  </div>
-  <div id="footer-logos" class="cell">Logos</div>
-  <div id="footer-contact" class="cell">Office</div>
-  <div id="footer-license" class="cell">All right</div>
-</div>
     {% block footer %}
     {% endblock footer %}
   </footer>

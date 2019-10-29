@@ -74,6 +74,30 @@ header a{
     background-image: url("background/bg-3-resource-div.png");
 }
 
+/* Footer */
 #footer-stay-in-touch-div{
     background-image: url("background/bg-5-stay-in-touch-div.png");
+    color: #ffffff;
+}
+
+#footer-contact-div{
+    background-color: #eeeff1;
+}
+
+#footer-logos-div{
+    background-color: #ffffff;
+}
+
+#footer-logos-div img{
+    height: 7rem;
+}
+
+#footer-logos-giz img{
+    height: 3rem;
+}
+
+#footer-license-div{
+    background-color: #93939f;
+    color: #ffffff;
+
 }
