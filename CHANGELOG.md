@@ -19,10 +19,11 @@ Here is a template for new release sections
 ## [Unreleased]
 
 ### Added
-- one thing
+- flask structure (#1)
+- docker deployment files (#2)
 
 ### Changed
-- another thing
+- structure of the folders --> flask files in `app` folder (#2)
 
 ### Removed
 - yet another thing
