@@ -1,15 +1,18 @@
 import os
 
 from flask import Flask, render_template
-from blueprints import resources
+try:
+    from blueprints import resources
+except ModuleNotFoundError:
+    from .blueprints import resources
 
 
-def create_app(test_config=None):
+def create_app(test_config=None, *args):
     # create and configure the app
     app = Flask(
         __name__,
         static_folder='static',
-        instance_relative_config=True
+        instance_relative_config=True,
     )
     app.config.from_mapping(
         SECRET_KEY='dev',
@@ -36,3 +39,4 @@ def create_app(test_config=None):
         return render_template('landing/index.html')
 
     return app
+
