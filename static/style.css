@@ -1,25 +1,45 @@
 /* General */
 h1{
+    font-family: Poppins Medium;
     font-size: 32pt;
     font-weight: bold;
 }
+
 h2{
+    font-family: Poppins Regular;
     font-size: 20pt;
     font-weight: normal;
 }
 
-.brand-color{
+p, div{
+    color: #464646;
+}
+
+.brand--color{
     color: #1DD069;
 }
 
+.white--color{
+    color: #ffffff;
+}
+
+
 /* Navigation Bar */
+
+header{
+    background-color: #ffffff;
+}
+
 header h2{
     color: #ffbb00;
+    font-size: 18pt;
+    font-weight: bold;
 }
 
 header a{
     color: #464646;
     font-size: 20pt;
+    font-weight: normal;
 }
 
 /* Main content */
@@ -41,17 +61,18 @@ header a{
 
 #landing-title-div{
     background-image: url("img/img-1-landing.png");
-    height: 100%;
-    color: #ffffff;
+    height: 717px;
 }
 #landing-title-div h1{
     font-size: 50pt;
     font-weight: bold;
+    color: #ffffff;
 }
 
 #landing-title-div h2{
     font-size: 20pt;
     font-weight: normal;
+    color: #ffffff;
 }
 
 #landing-welcome-div{
@@ -62,12 +83,21 @@ header a{
     padding: 10rem;
 }
 
+#landing-feature-div{
+    background-image: url("img/img-3-feature-developper.png");
+}
+#landing-feature-div div{
+    color: #ffffff;
+}
+
 #landing-progress-div{
     background-image: url("background/bg-4-progress-div.png");
 }
 
 #landing-maps-div{
     background-image: url("background/bg-2-maps-div.png");
+    color: #ffffff;
+    text-align: center;
 }
 
 #landing-resources-div{
