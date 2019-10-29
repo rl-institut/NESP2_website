@@ -30,16 +30,36 @@ header{
     background-color: #ffffff;
 }
 
+header div{
+    display: flex;
+    align-items: center;
+}
+
 header h2{
     color: #ffbb00;
     font-size: 18pt;
     font-weight: bold;
 }
 
+#header-blitz-div img{
+    height: 3rem;
+}
+
+header img{
+    margin-right: 1rem;
+    height: 2.5rem;
+}
+
 header a{
     color: #464646;
     font-size: 20pt;
     font-weight: normal;
+}
+
+#header-logo-nigeria{
+    margin-right: 0;
+    padding: 0.5rem 0 0.5rem 0 ;
+    height: 5rem;
 }
 
 /* Main content */
