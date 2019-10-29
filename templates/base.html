@@ -1,0 +1,67 @@
+<!doctype html>
+
+<head>
+  <title>{% block title %}{% endblock %}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='font/poppins.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='font/source-sans-pro.css') }}">
+    <link rel="stylesheet" href="https://raw.githack.com/rl-institut/WAM/dev/static/foundation/css/app.css">
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+
+<body>
+  <header class="grid-x header">
+    <div class="cell medium-4 medium-offset-1">
+      <img src="static/logos/logo-5-blitz.png">
+      <h2>Nigeria Se4All</h2>
+    </div>
+    <div class="cell medium-2">
+      <img src="">
+      <a href="#landing-maps-div">MAP</a>
+    </div>
+    <div class="cell medium-2">
+      <img src="">
+      <a href="#landing-resources-div">TOOLS</a>
+    </div>
+    <div class="cell medium-2">
+      <img src="">
+      <a href="#footer-content">ABOUT</a>
+    </div>
+    <div class="cell medium-1">
+      <img src="static/logos/logo-2-horses.png">
+    </div>
+    {% block header %}{% endblock %}
+  </header>
+  {% for message in get_flashed_messages() %}
+    <div class="flash">{{ message }}</div>
+  {% endfor %}
+  {% block content %}{% endblock %}
+  <footer>
+    <div id="footer-content" class="grid-x">
+      <div id="footer-stay-in-touch-div" class="cell grid-x bkg-img">
+        <div class="cell medium-5 medium-offset-1">
+          <h1>Stay in touch</h1>
+          <p><b>Follow us on social media</b> to stay up-to date on the latest developments</p>
+        </div>
+            <div id="footer-stay-in-touch-icons" class="cell medium-6">
+
+        </div>
+      </div>
+      <div id="footer-contact-div" class="cell">Office</div>
+      <div id="footer-logos-div" class="cell grid-x">
+        <div class="cell medium-3 medium-offset-1">With financial support of:</div>
+        <div id="footer-logos-eu-ger" class="cell medium-4">
+          <img src="static/logos/logo-1-eu.png">
+          <img src="static/logos/logo-4-ger-coop.png">
+        </div>
+        <div id="footer-logos-giz" class="cell medium-2 medium-offset-2">
+          <img src="static/logos/logo-3-giz.png">
+        </div>
+      </div>
+
+      <div id="footer-license-div" class="cell">All right</div>
+    </div>
+    {% block footer %}
+    {% endblock footer %}
+  </footer>
+</body>

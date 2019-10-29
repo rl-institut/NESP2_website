@@ -1,0 +1,133 @@
+/* General */
+h1{
+    font-family: Poppins Medium;
+    font-size: 32pt;
+    font-weight: bold;
+}
+
+h2{
+    font-family: Poppins Regular;
+    font-size: 20pt;
+    font-weight: normal;
+}
+
+p, div{
+    color: #464646;
+}
+
+.brand--color{
+    color: #1DD069;
+}
+
+.white--color{
+    color: #ffffff;
+}
+
+
+/* Navigation Bar */
+
+header{
+    background-color: #ffffff;
+}
+
+header h2{
+    color: #ffbb00;
+    font-size: 18pt;
+    font-weight: bold;
+}
+
+header a{
+    color: #464646;
+    font-size: 20pt;
+    font-weight: normal;
+}
+
+/* Main content */
+.main--link{
+    background-color: #1DD069;
+    color: #ffffff;
+    font-size: 18pt;
+    font-weight: bold;
+    padding: 10px 30px 10px 30px;
+    border-radius: 4px;
+}
+
+.bkg-img{
+    /* Center and scale the image nicely */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+#landing-title-div{
+    background-image: url("img/img-1-landing.png");
+    height: 717px;
+}
+#landing-title-div h1{
+    font-size: 50pt;
+    font-weight: bold;
+    color: #ffffff;
+}
+
+#landing-title-div h2{
+    font-size: 20pt;
+    font-weight: normal;
+    color: #ffffff;
+}
+
+#landing-welcome-div{
+    background-image: url("background/bg-1-welcome-div.png");
+}
+
+#landing-welcome-img{
+    padding: 10rem;
+}
+
+#landing-feature-div{
+    background-image: url("img/img-3-feature-developper.png");
+}
+#landing-feature-div div{
+    color: #ffffff;
+}
+
+#landing-progress-div{
+    background-image: url("background/bg-4-progress-div.png");
+}
+
+#landing-maps-div{
+    background-image: url("background/bg-2-maps-div.png");
+    color: #ffffff;
+    text-align: center;
+}
+
+#landing-resources-div{
+    background-image: url("background/bg-3-resource-div.png");
+}
+
+/* Footer */
+#footer-stay-in-touch-div{
+    background-image: url("background/bg-5-stay-in-touch-div.png");
+    color: #ffffff;
+}
+
+#footer-contact-div{
+    background-color: #eeeff1;
+}
+
+#footer-logos-div{
+    background-color: #ffffff;
+}
+
+#footer-logos-div img{
+    height: 7rem;
+}
+
+#footer-logos-giz img{
+    height: 3rem;
+}
+
+#footer-license-div{
+    background-color: #93939f;
+    color: #ffffff;
+
+}
