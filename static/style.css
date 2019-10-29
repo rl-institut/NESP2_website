@@ -21,21 +21,37 @@ header a{
     color: #464646;
     font-size: 20pt;
 }
-.bkg-img{
-  /* Center and scale the image nicely */
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
+
+/* Main content */
+.main--link{
+    background-color: #1DD069;
+    color: #ffffff;
+    font-size: 18pt;
+    font-weight: bold;
+    padding: 10px 30px 10px 30px;
+    border-radius: 4px;
 }
 
+.bkg-img{
+    /* Center and scale the image nicely */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
 
 #landing-title-div{
     background-image: url("img/img-1-landing.png");
+    height: 100%;
+    color: #ffffff;
+}
+#landing-title-div h1{
+    font-size: 50pt;
+    font-weight: bold;
+}
 
-  /* Full height */
-  height: 100%;
-
-
+#landing-title-div h2{
+    font-size: 20pt;
+    font-weight: normal;
 }
 
 #landing-welcome-div{
