@@ -12,6 +12,15 @@ h2{
     color: #1DD069;
 }
 
+/* Navigation Bar */
+header h2{
+    color: #ffbb00;
+}
+
+header a{
+    color: #464646;
+    font-size: 20pt;
+}
 .bkg-img{
   /* Center and scale the image nicely */
   background-position: center;

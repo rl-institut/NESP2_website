@@ -2,9 +2,10 @@
 
 <head>
   <title>{% block title %}{% endblock %}</title>
-<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
 <link rel="stylesheet"
       href="https://raw.githack.com/rl-institut/WAM/dev/static/foundation/css/app.css">
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 
@@ -28,7 +29,6 @@
     </div>
     <div class="cell medium-1">
       <img src="static/logos/logo-2-horses.png">
-
     </div>
     {% block header %}{% endblock %}
   </header>
