@@ -23,6 +23,35 @@ p, div{
     color: #ffffff;
 }
 
+.ystack{
+    flex-direction: column;
+}
+
+.center--align{
+    align-items: center;
+    display: flex;
+    justify-content: center;
+}
+
+.right--align{
+    display: flex;
+    justify-content: right;
+}
+
+.left--align{
+    display: flex;
+    justify-content: left;
+}
+
+/* evanescent tabs */
+.opt--content{
+    display: none;
+}
+
+.selected--opt--content{
+    display: block;
+}
+
 
 /* Navigation Bar */
 
@@ -103,9 +132,6 @@ header a{
     padding: 10rem;
 }
 
-#landing-feature-div{
-    background-image: url("img/img-3-feature-developper.png");
-}
 #landing-feature-div div{
     color: #ffffff;
 }
