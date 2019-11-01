@@ -53,6 +53,51 @@ p, div{
 }
 
 
+/* Gauge */
+
+.GaugeMeter{
+    Position: Relative;
+    Text-Align: Center;
+    Overflow: Hidden;
+    Cursor: Default;
+}
+
+.GaugeMeter SPAN,
+.GaugeMeter B{
+    Margin:	0 23%;
+    Width: 54%;
+    Position: Absolute;
+    Text-Align: Center;
+    Display: Inline-Block;
+    Color: red;
+    Font-Weight: 100;
+    Font-Family: "Open Sans", Arial;
+    //Overflow: Hidden;
+    //White-Space: NoWrap;
+    //Text-Overflow: Ellipsis;
+    Font-Size: 0.45em;
+}
+.GaugeMeter[data-style="Semi"] B{
+    Margin: 0 10%;
+    Width: 80%;
+}
+
+.GaugeMeter S,
+.GaugeMeter U{
+    Text-Decoration:None;
+    Font-Size: .60em;
+    Font-Weight: 200;
+    Opacity: .6;
+}
+
+.GaugeMeter B{
+    Color: Black;
+    Font-Weight: 200;
+    Font-Size: 1.85em;
+    Opacity: .8;
+}
+
+
 /* Navigation Bar */
 
 header{
