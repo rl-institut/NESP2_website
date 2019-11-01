@@ -43,6 +43,15 @@ p, div{
     justify-content: left;
 }
 
+/* evanescent tabs */
+.opt--content{
+    display: none;
+}
+
+.selected--opt--content{
+    display: block;
+}
+
 
 /* Navigation Bar */
 
@@ -123,9 +132,6 @@ header a{
     padding: 10rem;
 }
 
-#landing-feature-div{
-    background-image: url("img/img-3-feature-developper.png");
-}
 #landing-feature-div div{
     color: #ffffff;
 }
