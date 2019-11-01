@@ -2,14 +2,19 @@ Website hosting the NESP2 webmap
 
 ## Getting started
 
-Create a virtual environment, then
+After cloning this repository, checkout the `dev` branch
 ```
-pip install -r app/requirements.txt
+git checkout dev
+```
+
+Create a virtual environment (with python3), then
+```
+pip3 install -r app/requirements.txt
 ```
 
 Start the app with  
 ```
-python app/index.py
+python3 app/index.py
 ```
 
 ## Deploy on docker (instructions for ubuntu)

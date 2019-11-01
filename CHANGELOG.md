@@ -21,12 +21,13 @@ Here is a template for new release sections
 ### Added
 - flask structure (#1)
 - docker deployment files (#12)
+- structure of the header (#13)
+- structure of the contact div (#14)
+- structure of the feature div (#15)
 
 ### Changed
 - structure of the folders --> flask files in `app` folder (#12)
 - README with new instruction (#12)
 
 ### Removed
-- yet another thing
-
 
