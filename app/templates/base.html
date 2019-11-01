@@ -15,6 +15,12 @@
 <body>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
   <script src="{{ url_for('static', filename='jquery-3.4.1.js') }}"></script>
+  <script src="{{ url_for('static', filename='gauge/GaugeMeter.js') }}"></script>
+  <script>
+      $(document).ready(function(){
+          $(".GaugeMeter").gaugeMeter();
+      });
+  </script>
   <header class="grid-x header">
     <div id="header-blitz-div" class="cell medium-4 medium-offset-1">
       <img src="static/logos/logo-5-blitz.png" >
