@@ -23,6 +23,26 @@ p, div{
     color: #ffffff;
 }
 
+.ystack{
+    flex-direction: column;
+}
+
+.center--align{
+    align-items: center;
+    display: flex;
+    justify-content: center;
+}
+
+.right--align{
+    display: flex;
+    justify-content: right;
+}
+
+.left--align{
+    display: flex;
+    justify-content: left;
+}
+
 
 /* Navigation Bar */
 
