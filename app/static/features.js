@@ -19,7 +19,7 @@ $('.opt-title').on("mouseover", function() {
   // Find the previously selected tab
   var prevSelectedTab = $('.selected--opt--content')[0];
   // Select the new tab and deselect the previously selected
-  if(tabContents.className != 'selected--opt--content' && selectedTab){
+  if(tabContents.className != 'selected--opt--content' && prevSelectedTab){
         prevSelectedTab.className = 'opt--content';
         tabContents.className = 'selected--opt--content';
   }
