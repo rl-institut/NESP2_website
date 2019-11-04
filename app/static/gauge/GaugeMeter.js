@@ -64,7 +64,8 @@
             function createLabel(t, a) {
                 if(t.children("b").length === 0){
                     $("<b></b>").appendTo(t).html(option.label).css({
-                        "line-height": option.size + 5 * a + "px",
+                        //"line-height": option.size + 5 * a + "px",
+                        "top": 0.5 * option.size + "px",
                         color: option.label_color
                     });
                 }
@@ -87,7 +88,7 @@
                     option.text_size = 0.5;
                 }
                 $("<span></span>").appendTo(t).html(r).css({
-                    "line-height": option.size + "px",
+                    "line-height": 0.75 * option.size + "px",
                     "font-size": option.text_size * option.size + "px",
                     color: fgcolor
                 });
