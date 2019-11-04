@@ -68,14 +68,9 @@ p, div{
     Width: 54%;
     Position: Absolute;
     Text-Align: Center;
-    Display: Inline-Block;
-    Color: red;
-    Font-Weight: 100;
-    Font-Family: "Open Sans", Arial;
-    //Overflow: Hidden;
-    //White-Space: NoWrap;
-    //Text-Overflow: Ellipsis;
-    Font-Size: 0.45em;
+    Display: flex;
+    justify-content: center;
+    Color: #464646;
 }
 .GaugeMeter[data-style="Semi"] B{
     Margin: 0 10%;
@@ -91,11 +86,18 @@ p, div{
 }
 
 .GaugeMeter B{
-    Color: Black;
     Font-Weight: 200;
     Font-Size: 1.85em;
     Opacity: .8;
 }
+
+.GaugeMeter SPAN{
+    Color: #464646;
+    font-weight: bold;
+    font-size: 32pt;
+    font-family: Poppins Medium;
+}
+
 
 
 /* Navigation Bar */
