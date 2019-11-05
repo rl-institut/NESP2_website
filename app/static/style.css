@@ -69,7 +69,7 @@ header a{
 }
 
 /* Main content */
-.main--link{
+.cta {
     background-color: #1DD069;
     color: #ffffff;
     font-size: 18pt;
@@ -78,27 +78,34 @@ header a{
     border-radius: 4px;
 }
 
-.bkg-img{
+.landing-hero {
+    background-image: url("img/img-1-landing.png");
+    height: 717px;
     /* Center and scale the image nicely */
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
 }
-
-#landing-title-div{
-    background-image: url("img/img-1-landing.png");
-    height: 717px;
-}
-#landing-title-div h1{
+.landing-hero h1 {
     font-size: 50pt;
     font-weight: bold;
     color: #ffffff;
+    line-height: 68pt;
+    padding-top: 5rem;
+    margin-bottom: 0;
 }
 
-#landing-title-div h2{
+.landing-hero h2 {
     font-size: 20pt;
     font-weight: normal;
     color: #ffffff;
+    margin-top: 1rem;
+    margin-bottom: 8rem;
+}
+
+.landing-hero h1,
+.landing-hero h2 {
+    width: 54rem;
 }
 
 #landing-welcome-div{
