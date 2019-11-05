@@ -7,12 +7,12 @@ body, p, a, li {
 h1, h2, h3, h4, h5, h6 {
     font-family: Poppins, Arial, sans-serif;
 }
-h1{
+h2{
     font-size: 32pt;
     font-weight: bold;
 }
 
-h2{
+h3{
     font-size: 20pt;
     font-weight: normal;
 }
@@ -129,6 +129,14 @@ header a{
     color: #FFF;
 }
 
+.landing-feature h2 {
+    font-weight: 400;
+}
+
+.landing-feature h2 span {
+    font-weight: 700;
+}
+
 .landing-feature__text {
     max-width: 32rem;
 }
@@ -151,6 +159,12 @@ header a{
 .landing-feature__description a {
     font-size: 15pt;
     color: #FFF;
+}
+.landing-feature__item.active .landing-feature__img {
+    background-color: #1DD069;
+}
+.landing-feature__item.active a {
+    font-weight: 700;
 }
 
 #landing-progress-div{
