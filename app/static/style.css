@@ -1,12 +1,16 @@
 /* General */
+body, p, a, li {
+    font-family: 'Source Sans Pro', Arial, sans-serif;
+}
+h1, h2, h3, h4, h5, h6 {
+    font-family: Poppins, Arial, sans-serif;
+}
 h1{
-    font-family: Poppins;
     font-size: 32pt;
     font-weight: bold;
 }
 
 h2{
-    font-family: Poppins;
     font-size: 20pt;
     font-weight: normal;
 }
