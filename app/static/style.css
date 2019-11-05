@@ -120,9 +120,37 @@ header a{
 
 .landing-feature {
     background-image: url("img/img-3-feature-developper.png");
+    padding-top: 3rem;
+    padding-bottom: 5rem;
 }
-.landing-feature div{
-    color: #ffffff;
+
+.landing-feature h2,
+.landing-feature p {
+    color: #FFF;
+}
+
+.landing-feature__text {
+    max-width: 32rem;
+}
+
+.landing-feature__item {
+    padding-top: 7rem;
+}
+
+.landing-feature__img {
+    margin: 0 auto;
+    height: 3rem;
+    width: 3rem;
+    border-radius: 100px;
+    background-color: grey;
+}
+.landing-feature__img img {
+    height: 1.5rem;
+    margin-top: .5rem;
+}
+.landing-feature__description a {
+    font-size: 15pt;
+    color: #FFF;
 }
 
 #landing-progress-div{
