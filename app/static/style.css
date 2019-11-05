@@ -110,7 +110,7 @@ header a{
 
 .landing-welcome {
     background-image: url("background/bg-1-welcome-div.png");
-    padding-top: 2rem;
+    padding-top: 3rem;
     padding-bottom: 5rem;
 }
 
@@ -167,8 +167,10 @@ header a{
     font-weight: 700;
 }
 
-#landing-progress-div{
+.landing-progress {
     background-image: url("background/bg-4-progress-div.png");
+    padding-top: 3rem;
+    padding-bottom: 5rem;
 }
 
 #landing-maps-div{
