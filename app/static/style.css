@@ -108,12 +108,14 @@ header a{
     width: 54rem;
 }
 
-#landing-welcome-div{
+.landing-welcome {
     background-image: url("background/bg-1-welcome-div.png");
+    padding-top: 2rem;
+    padding-bottom: 5rem;
 }
 
-#landing-welcome-img{
-    padding: 10rem;
+.landing-welcome__img img {
+    padding-left: 5rem;
 }
 
 #landing-feature-div{
