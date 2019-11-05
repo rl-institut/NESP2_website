@@ -118,10 +118,10 @@ header a{
     padding-left: 5rem;
 }
 
-#landing-feature-div{
+.landing-feature {
     background-image: url("img/img-3-feature-developper.png");
 }
-#landing-feature-div div{
+.landing-feature div{
     color: #ffffff;
 }
 

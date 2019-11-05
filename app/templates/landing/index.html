@@ -7,7 +7,7 @@
 {% block content %}
 <div id="landing-content" class="grid-container full">
 
-  <section id="landing-title" class="cell grid-x landing-hero">
+  <section id="landing-title" class="grid-x landing-hero">
     <div class="cell small-11 small-offset-1">
       <h1>Delivering data-driven electrification insights</h1>
       <h2>Nigeria SE4ALL offers the most accurate data and latest tools that empower better electrification planning in Nigeria</h2>
@@ -15,7 +15,7 @@
     </div>
   </section>
 
-  <section id="landing-welcome" class="cell grid-x landing-welcome">
+  <section id="landing-welcome" class="grid-x landing-welcome">
     <div class="cell small-11 small-offset-1 landing-welcome__text">
       <div class="grid-x">
         <div class="cell">
@@ -32,12 +32,21 @@
     </div>
   </section>
 
-  <div id="landing-feature-div" class="cell bkg-img">
+  <section id="landing-feature" class="grid-x landing-feature align-center text-center">
+    <div class="cell landing-feature__header">
+      <h2>Features for Planners</h2>
+    </div>
+    <div class="cell landing-page__text">
+      Perform on-the-fly analysis to track electrification progress on the village level nationwide
+    </div>
     <!-- Figure out how to make the hover/select stuff here-->
-    <div id="landing-feature-dev">features for <b>Developpers</b></div>
-    <div id="landing-feature-pla">features for <b>Planners</b></div>
-    <div id="landing-feature-cit">features for <b>Citizens</b></div>
-  </div>
+    <div class="class landing-page__items">
+      <div id="landing-feature-dev" class="landing-feature__item landing-feature__item--dev">features for <b>Developpers</b></div>
+      <div id="landing-feature-pla" class="landing-feature__item landing-feature__item--pla">features for <b>Planners</b></div>
+      <div id="landing-feature-cit" class="landing-feature__item landing-feature__item--cit">features for <b>Citizens</b></div>
+    </div>
+  </section>
+
   <div id="landing-progress-div" class="cell bkg-img">
     <h1>
       Our progress in numbers
