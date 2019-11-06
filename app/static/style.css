@@ -29,6 +29,82 @@ p, div{
     color: #ffffff;
 }
 
+.ystack{
+    flex-direction: column;
+}
+
+.center--align{
+    align-items: center;
+    display: flex;
+    justify-content: center;
+}
+
+.right--align{
+    display: flex;
+    justify-content: right;
+}
+
+.left--align{
+    display: flex;
+    justify-content: left;
+}
+
+/* evanescent tabs */
+.opt--content{
+    display: none;
+}
+
+.selected--opt--content{
+    display: block;
+}
+
+
+/* Gauge */
+
+.GaugeMeter{
+    Position: Relative;
+    Text-Align: Center;
+    Overflow: Hidden;
+    Cursor: Default;
+}
+
+.GaugeMeter SPAN,
+.GaugeMeter B{
+    Margin:	0 23%;
+    Width: 54%;
+    Position: Absolute;
+    Text-Align: Center;
+    Display: flex;
+    justify-content: center;
+    Color: #464646;
+}
+.GaugeMeter[data-style="Semi"] B{
+    Margin: 0 10%;
+    Width: 80%;
+}
+
+.GaugeMeter S,
+.GaugeMeter U{
+    Text-Decoration:None;
+    Font-Size: .60em;
+    Font-Weight: 200;
+    Opacity: .6;
+}
+
+.GaugeMeter B{
+    Font-Weight: 200;
+    Font-Size: 1.85em;
+    Opacity: .8;
+}
+
+.GaugeMeter SPAN{
+    Color: #464646;
+    font-weight: bold;
+    font-size: 32pt;
+    font-family: Poppins Medium;
+}
+
+
 
 /* Navigation Bar */
 
@@ -120,6 +196,9 @@ header a{
 
 .landing-feature {
     background-image: url("img/img-3-feature-developper.png");
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
     padding-top: 3rem;
     padding-bottom: 5rem;
 }
@@ -169,12 +248,18 @@ header a{
 
 .landing-progress {
     background-image: url("background/bg-4-progress-div.png");
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
     padding-top: 3rem;
     padding-bottom: 5rem;
 }
 
 .landing-maps {
     background-image: url("background/bg-2-maps-div.png");
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
     padding-top: 3rem;
     padding-bottom: 3rem;
 }
@@ -316,4 +401,3 @@ header a{
     font-weight: normal;
     font-style: normal;
 }
-
