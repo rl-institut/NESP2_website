@@ -1,5 +1,5 @@
 // Div which contains the features
-var featureDiv = document.getElementById('landing-feature-div');
+var featureDiv = document.getElementById('landing-feature');
 // Path to background images
 var bkgs = {
     'landing-feature-txt-dev': 'img-3-feature-developer.png',

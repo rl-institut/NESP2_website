@@ -5,109 +5,165 @@
 {% endblock header%}
 
 {% block content %}
-<div id="landing-content-div" class="grid-x">
-  <div id="landing-title-div" class="cell grid-x bkg-img">
-    <div class="cell medium-5 medium-offset-1">
-        <h1>Delivering data-driven electrification insights</h1>
-        <h2>Nigeria SE4ALL offers the most accurate data and latest tools that empower better
-          electrification planning in Nigeria</h2>
-        <a class="main--link">Learn more</a>
-    </div>
-  </div>
-  <div id="landing-welcome-div" class="cell grid-x bkg-img">
-    <div id="landing-welcome-text-div" class="cell medium-5 medium-offset-1">
-      <h1 class="brand--color">Welcome to Nigeria SE4ALL</h1>
-      <p>
-        Blablabla Blablabla Blablabla Blablabla Blablabla Blablabla
-        Blablabla Blablabla Blablabla Blablabla Blablabla Blablabla
-         Blablabla Blablabla Blablabla Blablabla Blablabla Blablabla
-        Blablabla Blablabla Blablabla Blablabla Blablabla Blablabla
-        Blablabla Blablabla Blablabla Blablabla Blablabla Blablabla
-        Blablabla Blablabla Blablabla Blablabla Blablabla Blablabla
-         Blablabla Blablabla Blablabla Blablabla Blablabla Blablabla
-        Blablabla Blablabla Blablabla Blablabla Blablabla Blablabla
-        Blablabla Blablabla Blablabla Blablabla Blablabla Blablabla
-      </p>
-    </div>
-    <div id="landing-welcome-img-div" class="cell medium-6">
-      <img id="landing-welcome-img" src="static/img/img-2-welcome.png">
-    </div>
+<div id="landing-content" class="grid-container full">
 
-  </div>
-  <div id="landing-feature-div" class="cell grid-x bkg-img">
-    <!-- Figure out how to make the hover/select stuff here-->
-    <div id="landing-feature-al"  class="medium-1 medium-offset-1 left-align"><img src="static/icon/arrow-left.png"></div>
-    <!-- https://jsfiddle.net/yassarikhan786/aad7qy6n/ -->
+  <section id="landing-title" class="grid-x landing-hero">
+    <div class="cell small-11 small-offset-1">
+      <h1>Delivering data-driven electrification insights</h1>
+      <h2>Nigeria SE4ALL offers the most accurate data and latest tools that empower better electrification planning in Nigeria</h2>
+      <a class="cta">Learn more</a>
+    </div>
+  </section>
 
-    <div id="landing-feature-content-div" class="medium-8 grid-x align-center">
+  <section id="landing-welcome" class="grid-x landing-welcome">
+    <div class="cell small-11 small-offset-1 landing-welcome__text">
+      <div class="grid-x">
+        <div class="cell">
+          <h2 class="brand--color">Welcome to Nigeria SE4ALL</h2>
+        </div>
+        <div class="cell large-6">
+          <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd
+            gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.</p>
+          <p>At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>
+        </div>
+        <div class="cell large-5 landing-welcome__img">
+          <img src="static/img/img-2-welcome.png">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="landing-feature" class="grid-x landing-feature align-center text-center">
+    <!--
+     https://jsfiddle.net/yassarikhan786/aad7qy6n/
+
+    landing-feature__item <-> opt-title
+
+    landing-feature__img not added yet
+   -->
+    <div id="landing-feature-al" class="medium-1 medium-offset-1 left-align"><img src="static/icon/arrow-left.png"></div>
+
+    <div id="landing-feature-content-div" class="medium-8 grid-x align-center text-center">
       <div id="landing-feature-txt-div" class="medium-12">
         <div id="landing-feature-txt-dev" class="selected--opt--content">
-          <h2>Features for <b>Developers</b></h2>
-          Identify <b>investment opportunities</b> in the electrification sector and gain an edge over your competition
+          <div class="landing-feature__header">
+            <h2>Features for <b>Developers</b></h2>
+          </div>
+          <div class="landing-feature__text">
+            Identify <b>investment opportunities</b> in the electrification sector and gain an edge over your competition
+          </div>
         </div>
         <div id="landing-feature-txt-pla" class="opt--content">
-           <h2>Features for <b>Planners</b></h2>
-          Perform <b>on-the-fly analysis</b> to track electrification progress on the village level nationwide
+          <div class="landing-feature__header">
+            <h2>Features for <b>Planners</b></h2>
+          </div>
+          <div class="landing-feature__text">
+            Perform <b>on-the-fly analysis</b> to track electrification progress on the village level nationwide
+          </div>
         </div>
-        <div id="landing-feature-txt-cit" class="opt--content">
-           <h2>Features for <b>Citizen</b></h2>
+      </div>
+      <div id="landing-feature-txt-cit" class="opt--content">
+        <div class="landing-feature__header">
+          <h2>Features for <b>Citizen</b></h2>
+        </div>
+        <div class="landing-feature__text">
           Missing text
         </div>
       </div>
-      <div id="landing-feature-dev-btn" class="medium-4 center--align ystack opt-title">
-        <a href="#landing-feature-txt-dev"><img src="static/icon/green-circle.png"></a></br>
-        <div><b>Developers</b></div>
-      </div>
-      <div id="landing-feature-pla-btn" class="medium-4 center--align ystack  opt-title">
-        <a href="#landing-feature-txt-pla"><img src="static/icon/green-circle.png"></a></br>
-        <div><b>Planners</b></div>
-      </div>
-      <div id="landing-feature-cit-btn" class="medium-4 center--align ystack  opt-title">
-        <a href="#landing-feature-txt-cit"><img src="static/icon/green-circle.png"></a></br>
-        <div><b>Citizens</b></div>
-      </div>
+    </div>
+    <div id="landing-feature-dev-btn" class="medium-4 center--align ystack opt-title">
+      <a href="#landing-feature-txt-dev"><img src="static/icon/i_profile_w.svg" alt="Profile image"></a>
+      <div class="landing-feature__description"><span>Developers</span></div>
+    </div>
+    <div id="landing-feature-pla-btn" class="medium-4 center--align ystack  opt-title">
+      <a href="#landing-feature-txt-pla"><img src="static/icon/i_profile_w.svg" alt="Profile image"></a>
+      <div class="landing-feature__description"><span>Planners</span></div>
+    </div>
+    <div id="landing-feature-cit-btn" class="medium-4 center--align ystack  opt-title">
+      <a href="#landing-feature-txt-cit"><img src="static/icon/i_profile_w.svg" alt="Profile image"></a>
+      <div class="landing-feature__description"><span>Citizens</span></div>
     </div>
     <div id="landing-feature-ar" class="medium-1 right--align"><img src="static/icon/arrow-right.png"></div>
-  </div>
-  <div id="landing-progress-div" class="cell grid-x bkg-img">
-    <div class="cell">
-    <h1>
-      Our progress in numbers
-    </h1>
+
+</section>
+
+<section id="landing-progress" class="grid-x landing-progress">
+  <div class="cell small-11 small-offset-1">
+    <div class="grid-x">
+      <div class="cell landing-progress__header">
+        <h2>Our progress in numbers</h2>
+        <!-- Figure out how to make updatable gauges here-->
       </div>
-    <div class="medium-4">
-      <div class="GaugeMeter" data-color="#1DD069" data-back="#E0E2E9" data-min="0" data-total="1800" data-used="1245" data-label="km electricity </br> grid tracked" data-showvalue="true" data-size="400" data-text_size="0.15"></div>
-    </div>
-    <div class="medium-4">
-      <div class="GaugeMeter" data-color="#1DD069" data-back="#E0E2E9" data-min="0" data-total="2000" data-used="734" data-label="village remotly </br> mapped" data-showvalue="true" data-size="400" data-width="5" data-text_size="0.15"></div>
-    </div>
-    <div class="medium-4">
-      <div class="GaugeMeter" data-color="#1DD069" data-back="#E0E2E9" data-min="0" data-total="45000" data-used="10234" data-label="buildings </br> mapped" data-showvalue="true" data-size="400" data-width="5" data-text_size="0.15"></div>
+      <div class="medium-4">
+        <div class="GaugeMeter" data-color="#1DD069" data-back="#E0E2E9" data-min="0" data-total="1800" data-used="1245" data-label="km electricity </br> grid tracked" data-showvalue="true" data-size="400" data-text_size="0.12"></div>
+      </div>
+      <div class="medium-4">
+        <div class="GaugeMeter" data-color="#1DD069" data-back="#E0E2E9" data-min="0" data-total="2000" data-used="734" data-label="village remotly </br> mapped" data-showvalue="true" data-size="400" data-width="5" data-text_size="0.12"></div>
+      </div>
+      <div class="medium-4">
+        <div class="GaugeMeter" data-color="#1DD069" data-back="#E0E2E9" data-min="0" data-total="45000" data-used="10234" data-label="buildings </br> mapped" data-showvalue="true" data-size="400" data-width="5" data-text_size="0.12"></div>
+      </div>
     </div>
   </div>
-  <div id="landing-maps-div" class="cell bkg-img">
-       <h1>Explore the ground-truth</h1>
-    <h2>Analyze highly accurate electrification data on our <b>interactive map</b></h2>
-    <a class="main--link">Explore map</a>
+</section>
+
+<section id="landing-maps" class="grid-x landing-maps align-center text-center">
+  <div class="cell landing-maps__header">
+    <h2>Explore the ground-truth</h2>
+    <h3>Analyze highly accurate electrification data on our <span>interactive map</span></h3>
   </div>
-  <div id="landing-resources-div" class="cell grid-x bkg-img">
-    <div class="cell medium-5 medium-offset-1">
-      <h1>Use our tools</h1>
-      <p>Explore our <b>suite of open source tools</b> for data mining and analysis for
-        electrification and planning</p>
-      <a class="main--link" href="{{ url_for('resource.resources') }}">Explore tools</a>
-    </div>
-    <div class="cell medium-6 grid-x">
-      <div class="cell medium-6 resource-choice">
-        <div><img src=""></div>
-        <div>
-          <h3>Cluster identification</h3>
-          <p></p>
+  <div class="cell landing-maps__carousel">
+    <a class="cta">Explore map</a>
+  </div>
+</section>
+
+<section id="landing-resources" class="grid-x landing-resources">
+  <div class="cell large-4 large-offset-1 landing-resources__text">
+    <h2>Use our tools</h2>
+    <p>Explore our <span>suite of open source tools</span> for data mining and analysis for electrification and planning</p>
+    <a class="cta" href="{{ url_for('resource.resources') }}">Explore tools</a>
+  </div>
+  <div class="cell large-5 large-offset-1 landing-resources__cards">
+    <div class="grid-x" data-equalize-on="medium" id="landing-resources-cards">
+      <div class="cell medium-5 resource-choice">
+        <div class="card" data-equalizer-watch>
+          <img src="static/img/img-5-resource-cluster.png">
+          <div class="card-section">
+            <p class="card-section--header">Cluster Identification</p>
+            <p class="card-section--text">How can I identify locations of settlements?</p>
+          </div>
         </div>
       </div>
-
+      <div class="cell medium-5 medium-offset-2 resource-choice">
+        <div class="card" data-equalizer-watch>
+          <img src="static/img/img-6-resources-osm.png">
+          <div class="card-section">
+            <p class="card-section--header">Mapping with OSM</p>
+            <p class="card-section--text">How can I map a settlement in detail remotely?</p>
+          </div>
+        </div>
+      </div>
+      <div class="cell medium-5 resource-choice">
+        <div class="card" data-equalizer-watch>
+          <img src="static/img/img-7-resources-survey.png">
+          <div class="card-section">
+            <p class="card-section--header">Survey Tools</p>
+            <p class="card-section--text">How can I visit a settlement and collect relevant data?</p>
+          </div>
+        </div>
+      </div>
+      <div class="cell medium-5 medium-offset-2 resource-choice">
+        <div class="card" data-equalizer-watch>
+          <img src="static/img/img-8-resources-og-mapping.png">
+          <div class="card-section">
+            <p class="card-section--header">On Grid Mapping</p>
+            <p class="card-section--text">How can I track the grid?</p>
+          </div>
+        </div>
+      </div>
     </div>
-
   </div>
+</section>
+
 </div>
 {% endblock content%}

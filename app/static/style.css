@@ -1,12 +1,18 @@
 /* General */
-h1{
-    font-family: Poppins Medium;
+body, p, a, li {
+    font-family: 'Source Sans Pro', Arial, sans-serif;
+    font-size: 18pt;
+    font-weight: 400;
+}
+h1, h2, h3, h4, h5, h6 {
+    font-family: Poppins, Arial, sans-serif;
+}
+h2{
     font-size: 32pt;
     font-weight: bold;
 }
 
-h2{
-    font-family: Poppins Regular;
+h3{
     font-size: 20pt;
     font-weight: normal;
 }
@@ -87,7 +93,7 @@ p, div{
 
 .GaugeMeter B{
     Font-Weight: 200;
-    Font-Size: 1.85em;
+    Font-Size: 1.4em;
     Opacity: .8;
 }
 
@@ -139,7 +145,7 @@ header a{
 }
 
 /* Main content */
-.main--link{
+.cta {
     background-color: #1DD069;
     color: #ffffff;
     font-size: 18pt;
@@ -148,53 +154,159 @@ header a{
     border-radius: 4px;
 }
 
-.bkg-img{
+.landing-hero {
+    background-image: url("img/img-1-landing.png");
+    height: 717px;
     /* Center and scale the image nicely */
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
 }
-
-#landing-title-div{
-    background-image: url("img/img-1-landing.png");
-    height: 717px;
-}
-#landing-title-div h1{
+.landing-hero h1 {
     font-size: 50pt;
     font-weight: bold;
     color: #ffffff;
+    line-height: 68pt;
+    padding-top: 5rem;
+    margin-bottom: 0;
 }
 
-#landing-title-div h2{
+.landing-hero h2 {
     font-size: 20pt;
     font-weight: normal;
     color: #ffffff;
+    margin-top: 1rem;
+    margin-bottom: 8rem;
 }
 
-#landing-welcome-div{
+.landing-hero h1,
+.landing-hero h2 {
+    width: 54rem;
+}
+
+.landing-welcome {
     background-image: url("background/bg-1-welcome-div.png");
+    padding-top: 3rem;
+    padding-bottom: 5rem;
 }
 
-#landing-welcome-img{
-    padding: 10rem;
+.landing-welcome__img img {
+    padding-left: 5rem;
 }
 
-#landing-feature-div div{
-    color: #ffffff;
+.landing-feature {
+    background-image: url("img/img-3-feature-developper.png");
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding-top: 3rem;
+    padding-bottom: 5rem;
 }
 
-#landing-progress-div{
+.landing-feature h2,
+.landing-feature p {
+    color: #FFF;
+}
+
+.landing-feature h2 {
+    font-weight: 400;
+}
+
+.landing-feature h2 span {
+    font-weight: 700;
+}
+
+.landing-feature__text {
+    max-width: 32rem;
+}
+
+.landing-feature__item {
+    padding-top: 7rem;
+}
+
+.landing-feature__img {
+    margin: 0 auto;
+    height: 3rem;
+    width: 3rem;
+    border-radius: 100px;
+    background-color: grey;
+}
+.landing-feature__img img {
+    height: 1.5rem;
+    margin-top: .5rem;
+}
+.landing-feature__description a {
+    font-size: 15pt;
+    color: #FFF;
+}
+.landing-feature__item.active .landing-feature__img {
+    background-color: #1DD069;
+}
+.landing-feature__item.active a {
+    font-weight: 700;
+}
+
+.landing-progress {
     background-image: url("background/bg-4-progress-div.png");
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding-top: 3rem;
+    padding-bottom: 5rem;
 }
 
-#landing-maps-div{
+.landing-maps {
     background-image: url("background/bg-2-maps-div.png");
-    color: #ffffff;
-    text-align: center;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding-top: 3rem;
+    padding-bottom: 3rem;
 }
 
-#landing-resources-div{
-    background-image: url("background/bg-3-resource-div.png");
+.landing-maps__header {
+    color: #ffffff;
+}
+
+.landing-maps__header h3 span {
+    font-weight: 700;
+}
+
+.landing-resources {
+    background-image: url("background/bg-3-resources-div.png");
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding-top: 3rem;
+    padding-bottom: 5rem;
+}
+
+.landing-resources__text p {
+    padding-bottom: 5rem;
+}
+
+.landing-resources__text p span {
+    font-weight: 700;
+}
+
+.landing-resources__cards {
+    padding-top: 3rem;
+}
+
+.landing-resources__cards .card {
+    border-radius: .75rem;
+    border: 0;
+    box-shadow: 0px 20px 19px 0px rgba(135,135,135,0.3);
+    margin-bottom: 2rem;
+}
+
+.landing-resources__cards .card-section p {
+    font-size: 15pt;
+    margin-bottom: 0;
+}
+
+.landing-resources__cards .card-section--header {
+    font-weight: 700;
 }
 
 /* Footer */
@@ -223,4 +335,69 @@ header a{
     background-color: #93939f;
     color: #ffffff;
 
+}
+
+/* Fonts */
+@font-face {
+    font-family: 'Poppins';
+    src: url('fonts/Poppins-Regular.woff2') format('woff2'),
+        url('fonts/Poppins-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Poppins';
+    src: url('fonts/Poppins-Italic.woff2') format('woff2'),
+        url('fonts/Poppins-Italic.woff') format('woff');
+    font-weight: normal;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Source Sans Pro';
+    src: url('fonts/SourceSansPro-Italic.woff2') format('woff2'),
+        url('fonts/SourceSansPro-Italic.woff') format('woff');
+    font-weight: normal;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Source Sans Pro';
+    src: url('fonts/SourceSansPro-Bold.woff2') format('woff2'),
+        url('fonts/SourceSansPro-Bold.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Poppins';
+    src: url('fonts/Poppins-Bold.woff2') format('woff2'),
+        url('fonts/Poppins-Bold.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Poppins';
+    src: url('fonts/Poppins-Light.woff2') format('woff2'),
+        url('fonts/Poppins-Light.woff') format('woff');
+    font-weight: 300;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Source Sans Pro';
+    src: url('fonts/SourceSansPro-Light.woff2') format('woff2'),
+        url('fonts/SourceSansPro-Light.woff') format('woff');
+    font-weight: 300;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Source Sans Pro';
+    src: url('fonts/SourceSansPro-Regular.woff2') format('woff2'),
+        url('fonts/SourceSansPro-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
 }

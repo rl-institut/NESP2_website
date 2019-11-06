@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   id="svg2412"
+   version="1.1"
+   viewBox="0 0 6.3499999 5.8283691"
+   height="5.8283691mm"
+   width="6.3499999mm">
+  <defs
+     id="defs2406" />
+  <metadata
+     id="metadata2409">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     transform="translate(138.68065,-47.396041)"
+     id="layer1">
+    <polygon
+       points="330,960 322,956 315,960 315,976 322,972 330,976 337,972 337,956 "
+       id="polygon675"
+       style="fill:none;stroke:#464646;stroke-width:2;stroke-linecap:round;stroke-linejoin:round"
+       transform="matrix(0.26458333,0,0,0.26458333,-221.75982,-205.27728)" />
+    <path
+       id="path677"
+       d="m -136.43169,47.664393 v 4.233333"
+       style="stroke:#464646;stroke-width:0.52916664;stroke-linecap:round;stroke-linejoin:round" />
+    <path
+       id="path679"
+       d="m -134.31502,48.722726 v 4.233333"
+       style="stroke:#464646;stroke-width:0.52916664;stroke-linecap:round;stroke-linejoin:round" />
+  </g>
+</svg>
