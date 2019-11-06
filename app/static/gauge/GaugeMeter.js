@@ -89,8 +89,7 @@
                 }
                 $("<span></span>").appendTo(t).html(r).css({
                     "line-height": 0.75 * option.size + "px",
-                    "font-size": option.text_size * option.size + "px",
-                    color: fgcolor
+                    "font-size": option.text_size * option.size + "px"
                 });
             }
             /* Get data attributes as options from div tag. Fall back to defaults when not exists. */
