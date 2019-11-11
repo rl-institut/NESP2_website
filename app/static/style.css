@@ -355,6 +355,19 @@ header a{
 }
 
 
+.about-card{
+    padding: 10px;
+}
+
+.about-card-content{
+    background-color: #1DD069;
+}
+
+.about-card-link{
+    background-color: #085064;
+}
+
+
 
 /* Fonts */
 @font-face {
