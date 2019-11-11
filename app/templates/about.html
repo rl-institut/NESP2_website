@@ -113,16 +113,12 @@
     <div class="cell small-offset-1">
         <h1>Stakeholder</h1>
     </div>
+      {% import "about/stakeholder.html" as stakeholder %}
     <div id="about-stakeholder-content" class="cell small-offset-2 grid-x">
+      {{stakeholder.input('1', 'Name', '')}}
+      {{stakeholder.input('2', 'Name', '')}}
+      {{stakeholder.input('3', 'Name', '')}}
 
-        <div id="about-stakeholder1-agenda" class="cell medium-6">
-            <h2>Stakeholder 1</h2>
-        Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus. Phasellus viverra nulla ut metus varius laoreet. Quisque rutrum. Aenean imperdiet. Etiam ultricies nisi vel augue. Curabitur ullamcorper ultricies nisi. Nam eget dui.
-        <a>Link --></a>
-        </div>
-        <div id="about-stakeholder1-img" class="cell medium-6">
-            <img src="static/img/img-placeholder.png">
-        </div>
     </div>
   </section>
 
