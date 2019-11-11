@@ -26,6 +26,7 @@ Here is a template for new release sections
 - structure of the feature div (#15)
 - structure of the about page (#23)
 - macros to avoid duplicating code (#23)
+- text for about-nesp (#24)
 
 ### Changed
 - structure of the folders --> flask files in `app` folder (#12)
