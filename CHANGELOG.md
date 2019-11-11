@@ -25,7 +25,7 @@ Here is a template for new release sections
 - structure of the contact div (#14)
 - structure of the feature div (#15)
 - structure of the about page (#23)
-- macros to avoid duplicating code (#23)
+- macros to avoid duplicating code (#23, #25)
 - text for about-nesp (#24)
 
 ### Changed
