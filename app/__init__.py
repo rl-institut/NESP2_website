@@ -2,9 +2,9 @@ import os
 
 from flask import Flask, render_template
 try:
-    from blueprints import resources
+    from blueprints import resources, about
 except ModuleNotFoundError:
-    from .blueprints import resources
+    from .blueprints import resources, about
 
 
 def create_app(test_config=None):
@@ -33,6 +33,7 @@ def create_app(test_config=None):
 
     # register blueprints (like views in django)
     app.register_blueprint(resources.bp)
+    app.register_blueprint(about.bp)
 
     @app.route('/')
     def landing():

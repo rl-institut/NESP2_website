@@ -23,8 +23,10 @@
   </script>
   <header class="grid-x header">
     <div id="header-blitz-div" class="cell medium-4 medium-offset-1">
-      <img src="static/logos/logo-5-blitz.png" >
-      <h2>Nigeria Se4All</h2>
+      <a href="{{ url_for('landing')}}">
+        <img src="static/logos/logo-5-blitz.png">
+        <h2>Nigeria Se4All</h2>
+      </a>
     </div>
     <div class="cell medium-2">
       <a href="#landing-maps"><img src="static/img/icons/i_map.svg">MAP</a>
@@ -33,7 +35,7 @@
       <a href="#landing-resources"><img src="static/img/icons/i_layers.svg">TOOLS</a>
     </div>
     <div class="cell medium-2">
-      <a href="#footer-content"><img src="static/img/icons/i_info.svg">ABOUT</a>
+      <a href="{{ url_for('about.about') }}"><img src="static/img/icons/i_info.svg">ABOUT</a>
     </div>
     <div class="cell medium-1">
       <img id="header-logo-nigeria" src="static/logos/logo-2-horses.png">

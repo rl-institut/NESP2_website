@@ -1,0 +1,126 @@
+{% extends 'base.html' %}
+
+{% block header %}
+
+{% endblock header%}
+
+{% block content %}
+<div id="about-content" class="grid-container full">
+
+  <section id="about-intro" class="grid-x light-grey">
+    <h1 class="cell small-11 small-offset-1" >About this platform</h1>
+    <div class="cell small-10 small-offset-2">
+        <div id="about-intro-content" class="grid-x">
+            <div id="about-intro-text" class="cell">
+            Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus. Phasellus viverra nulla ut metus varius laoreet. Quisque rutrum. Aenean imperdiet. Etiam ultricies nisi vel augue. Curabitur ullamcorper ultricies nisi. Nam eget dui.
+            </div>
+            {% import "about/card.html" as card %}
+            <div id="about-intro-card-se4all" class="cell medium-6 grid-x about-card">
+                {{card.input('Nigeria SE4All & 30:30:30', 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa.', '#about-se4all')}}
+            </div>
+            <div id="about-intro-card-fmp"class="cell medium-6 grid-x about-card">
+                {{card.input('FMP', 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa.', '#about-fmp')}}
+            </div>
+            <div id="about-intro-card-nesp"class="cell medium-6 grid-x about-card">
+                {{card.input('NESP', 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa.', '#about-nesp')}}
+            </div>
+            <div id="about-intro-card-stakeholder"class="cell medium-6 grid-x about-card">
+                {{card.input('Stakeholders', 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa.', '#about-stakeholder')}}
+            </div>
+        </div>
+    </div>
+  </section>
+
+  <section id="about-se4all" class="grid-x semi-grey">
+    <div class="cell small-offset-1">
+        <h1>Nigeria SE4All</h1>
+    </div>
+    <div id="about-se4all-content" class="cell small-offset-2 grid-x">
+
+        <div id="about-se4all-agenda" class="cell medium-6">
+            <h2>The SE4All Agenda</h2>
+        Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus. Phasellus viverra nulla ut metus varius laoreet. Quisque rutrum. Aenean imperdiet. Etiam ultricies nisi vel augue. Curabitur ullamcorper ultricies nisi. Nam eget dui.
+        </div>
+        <div id="about-se4all-agenda-img" class="cell medium-6">
+            <img src="static/img/img-placeholder.png">
+        </div>
+        <div id="about-se4all-30-30-30" class="cell medium-6">
+             <h2>About 30:30:30</h2>
+            Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus. Phasellus viverra nulla ut metus varius laoreet. Quisque rutrum. Aenean imperdiet. Etiam ultricies nisi vel augue. Curabitur ullamcorper ultricies nisi. Nam eget dui.
+        </div>
+        <div id="about-se4all-30-30-30-img" class="cell medium-6">
+            <img src="static/img/img-placeholder.png">
+        </div>
+    </div>
+  </section>
+
+  <section id="about-fmp" class="grid-x light-grey">
+    <div class="cell small-offset-1">
+        <h1>FMP</h1>
+    </div>
+    <div id="about-fmp-content" class="cell small-offset-2 grid-x">
+
+        <div id="about-fmp-mandate" class="cell medium-6">
+            <h2>Our Mandate</h2>
+        Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus. Phasellus viverra nulla ut metus varius laoreet. Quisque rutrum. Aenean imperdiet. Etiam ultricies nisi vel augue. Curabitur ullamcorper ultricies nisi. Nam eget dui.
+        </div>
+        <div id="about-fmp-mandate-img" class="cell medium-6">
+            <img src="static/img/img-placeholder.png">
+        </div>
+        <div id="about-fmp-mission" class="cell medium-6">
+             <h2>Our Mission</h2>
+            Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus. Phasellus viverra nulla ut metus varius laoreet. Quisque rutrum. Aenean imperdiet. Etiam ultricies nisi vel augue. Curabitur ullamcorper ultricies nisi. Nam eget dui.
+        </div>
+        <div id="about-fmp-mission-img" class="cell medium-6">
+            <img src="static/img/img-placeholder.png">
+        </div>
+        <div id="about-fmp-vision" class="cell medium-6">
+             <h2>Our Vision</h2>
+            Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus. Phasellus viverra nulla ut metus varius laoreet. Quisque rutrum. Aenean imperdiet. Etiam ultricies nisi vel augue. Curabitur ullamcorper ultricies nisi. Nam eget dui.
+        </div>
+        <div id="about-fmp-vision-img" class="cell medium-6">
+            <img src="static/img/img-placeholder.png">
+        </div>
+    </div>
+  </section>
+
+
+  <section id="about-nesp" class="grid-x semi-grey">
+    <div class="cell small-offset-1">
+        <h1>NESP</h1>
+    </div>
+    <div id="about-nesp-content" class="cell small-offset-2 grid-x">
+
+        <div id="about-nesp-work" class="cell medium-6">
+            <h2>Our Work</h2>
+        Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus. Phasellus viverra nulla ut metus varius laoreet. Quisque rutrum. Aenean imperdiet. Etiam ultricies nisi vel augue. Curabitur ullamcorper ultricies nisi. Nam eget dui.
+        </div>
+        <div id="about-nesp-work-img" class="cell medium-6">
+            <img src="static/img/img-placeholder.png">
+        </div>
+        <div id="about-nesp-team" class="cell medium-6">
+             <h2>Our Team</h2>
+            Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus. Phasellus viverra nulla ut metus varius laoreet. Quisque rutrum. Aenean imperdiet. Etiam ultricies nisi vel augue. Curabitur ullamcorper ultricies nisi. Nam eget dui.
+        </div>
+        <div id="about-nesp-team-img" class="cell medium-6">
+            <img src="static/img/img-placeholder.png">
+        </div>
+    </div>
+  </section>
+
+
+  <section id="about-stakeholder" class="grid-x light-grey">
+    <div class="cell small-offset-1">
+        <h1>Stakeholder</h1>
+    </div>
+      {% import "about/stakeholder.html" as stakeholder %}
+    <div id="about-stakeholder-content" class="cell small-offset-2 grid-x">
+      {{stakeholder.input('1', 'Name', '')}}
+      {{stakeholder.input('2', 'Name', '')}}
+      {{stakeholder.input('3', 'Name', '')}}
+
+    </div>
+  </section>
+
+</div>
+{% endblock content%}

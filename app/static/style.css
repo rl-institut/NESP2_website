@@ -127,6 +127,11 @@ header h2{
     height: 3rem;
 }
 
+#header-blitz-div a{
+    display: flex;
+    align-items: center;
+}
+
 header img{
     margin-right: 1rem;
     height: 2.5rem;
@@ -336,6 +341,33 @@ header a{
     color: #ffffff;
 
 }
+
+
+/* About Page*/
+
+
+.light-grey{
+    background-color: #EEEFF1;
+}
+
+.semi-grey{
+    background-color: #E0E2E9;
+}
+
+
+.about-card{
+    padding: 10px;
+}
+
+.about-card-content{
+    background-color: #1DD069;
+}
+
+.about-card-link{
+    background-color: #085064;
+}
+
+
 
 /* Fonts */
 @font-face {
