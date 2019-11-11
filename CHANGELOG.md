@@ -24,6 +24,8 @@ Here is a template for new release sections
 - structure of the header (#13)
 - structure of the contact div (#14)
 - structure of the feature div (#15)
+- structure of the about page (#23)
+- macros to avoid duplicating code (#23)
 
 ### Changed
 - structure of the folders --> flask files in `app` folder (#12)
