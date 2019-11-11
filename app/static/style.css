@@ -127,6 +127,11 @@ header h2{
     height: 3rem;
 }
 
+#header-blitz-div a{
+    display: flex;
+    align-items: center;
+}
+
 header img{
     margin-right: 1rem;
     height: 2.5rem;
