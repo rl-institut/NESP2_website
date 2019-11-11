@@ -123,43 +123,20 @@
     <p>Explore our <span>suite of open source tools</span> for data mining and analysis for electrification and planning</p>
     <a class="cta" href="{{ url_for('resource.resources') }}">Explore tools</a>
   </div>
+  {% import "resources/card.html" as resource_card %}
   <div class="cell large-5 large-offset-1 landing-resources__cards">
     <div class="grid-x" data-equalize-on="medium" id="landing-resources-cards">
       <div class="cell medium-5 resource-choice">
-        <div class="card" data-equalizer-watch>
-          <img src="static/img/img-5-resource-cluster.png">
-          <div class="card-section">
-            <p class="card-section--header">Cluster Identification</p>
-            <p class="card-section--text">How can I identify locations of settlements?</p>
-          </div>
-        </div>
+        {{resource_card.input("Cluster Identification", "static/img/img-5-resource-cluster.png", "How can I identify locations of settlements?")}}
       </div>
       <div class="cell medium-5 medium-offset-2 resource-choice">
-        <div class="card" data-equalizer-watch>
-          <img src="static/img/img-6-resources-osm.png">
-          <div class="card-section">
-            <p class="card-section--header">Mapping with OSM</p>
-            <p class="card-section--text">How can I map a settlement in detail remotely?</p>
-          </div>
-        </div>
+        {{resource_card.input("Mapping with OSM", "static/img/img-6-resources-osm.png", "How can I map a settlement in detail remotely?")}}
       </div>
       <div class="cell medium-5 resource-choice">
-        <div class="card" data-equalizer-watch>
-          <img src="static/img/img-7-resources-survey.png">
-          <div class="card-section">
-            <p class="card-section--header">Survey Tools</p>
-            <p class="card-section--text">How can I visit a settlement and collect relevant data?</p>
-          </div>
-        </div>
+        {{resource_card.input("Survey Tools", "static/img/img-7-resources-survey.png", "How can I visit a settlement and collect relevant data?")}}
       </div>
       <div class="cell medium-5 medium-offset-2 resource-choice">
-        <div class="card" data-equalizer-watch>
-          <img src="static/img/img-8-resources-og-mapping.png">
-          <div class="card-section">
-            <p class="card-section--header">On Grid Mapping</p>
-            <p class="card-section--text">How can I track the grid?</p>
-          </div>
-        </div>
+        {{resource_card.input("On Grid Mapping", "static/img/img-8-resources-og-mapping.png", "How can I track the grid?")}}
       </div>
     </div>
   </div>
