@@ -337,6 +337,20 @@ header a{
 
 }
 
+
+/* About Page*/
+
+
+.light-grey{
+    background-color: #EEEFF1;
+}
+
+.semi-grey{
+    background-color: #E0E2E9;
+}
+
+
+
 /* Fonts */
 @font-face {
     font-family: 'Poppins';
