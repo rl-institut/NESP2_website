@@ -350,8 +350,14 @@ header a{
     padding-bottom: 8rem;
 }
 
+#about-content h2 {
+    padding-bottom: 4rem;
+}
+
 #about-content h3 {
+    font-size: 20pt;
     font-weight: 700;
+    margin-top: 0;
 }
 
 .light-grey{
@@ -397,7 +403,21 @@ header a{
     color: #fff;
 }
 
+#about-fmp-content .about-fmp__item:not(:last-child)  {
+    padding-bottom: 4rem;
+}
+#about-stakeholder img {
+    height: 15rem;
+}
 
+.about-stakeholder__item {
+    padding-bottom: 3rem;
+}
+
+.about-stakeholder__item a {
+    color: #1DD069;
+    font-weight: 700;
+}
 
 /* Fonts */
 @font-face {
