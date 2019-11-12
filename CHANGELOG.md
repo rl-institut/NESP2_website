@@ -20,7 +20,7 @@ Here is a template for new release sections
 
 ### Added
 - flask structure (#1)
-- docker deployment files (#12)
+- docker deployment files (#12, #26)
 - structure of the header (#13)
 - structure of the contact div (#14)
 - structure of the feature div (#15)

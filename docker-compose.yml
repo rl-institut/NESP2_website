@@ -1,10 +1,17 @@
 version: '2'
 services:
-  flask:
+  nesp2_website:
     restart: unless-stopped
     build:
       context: .
     image: nesp2_website
     container_name: nesp2_website
-    ports:
-    - "5000:5000"
+    expose:
+    - "5000"
+    networks:
+    - caddy_network
+
+networks:
+  caddy_network:
+    external:
+      name: docker_caddy_network
