@@ -1,0 +1,38 @@
+<!doctype html>
+
+<head>
+  <title>{% block title %}{% endblock %}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='font/poppins.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='font/source-sans-pro.css') }}">
+    <!-- temporary to get foundation while development can be commented if one has app.css in static-->
+    <link rel="stylesheet" href="https://raw.githack.com/rl-institut/WAM/dev/static/foundation/css/app.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='app.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+
+<body>
+  <header class="grid-x header">
+    <div id="header-blitz-div" class="cell medium-4 medium-offset-1">
+      <a href="{{ url_for('landing')}}">
+        <img src="static/logos/logo-5-blitz.png">
+        <h2>Nigeria Se4All</h2>
+      </a>
+    </div>
+    <div class="cell medium-1">
+      <img id="header-logo-nigeria" src="static/logos/logo-2-horses.png">
+    </div>
+    {% block header %}{% endblock %}
+  </header>
+
+<div>
+<form method="post">
+    <label for="username">Username</label>
+    <input name="username" id="username" required>
+    <label for="password">Password</label>
+    <input type="password" name="password" id="password" required>
+    <input type="submit" value="Log In">
+  </form>
+</div>
+</body>

@@ -1,6 +1,8 @@
 import os
 import datetime
 from flask import Flask, render_template, request
+from flask_sqlalchemy import SQLAlchemy
+from flask_login import LoginManager, login_required
 from flask_wtf.csrf import CSRFProtect
 
 from .blueprints import resources, about, maps, objectives
@@ -22,6 +24,10 @@ else:
 templates_dir = os.path.join(os.path.abspath(os.curdir), "app", "templates")
 
 
+db = SQLAlchemy()
+
+basedir = os.path.abspath(os.path.dirname(__file__))
+
 def create_app(test_config=None):
     # create and configure the app
     app = Flask(
@@ -31,7 +37,22 @@ def create_app(test_config=None):
     )
     app.config.from_mapping(
         SECRET_KEY='dev',
+        SQLALCHEMY_DATABASE_URI='sqlite:///' + os.path.join(basedir, 'app.db'),
+        SQLALCHEMY_TRACK_MODIFICATIONS=False
     )
+
+    db.init_app(app)
+
+    login_manager = LoginManager()
+    login_manager.login_view = 'auth.login'
+    login_manager.init_app(app)
+
+    from models import User
+
+    @login_manager.user_loader
+    def load_user(user_id):
+        # since the user_id is just the primary key of our user table, use it in the query for the user
+        return User.query.get(int(user_id))
 
     if test_config is None:
         # load the instance config, if it exists, when not testing
@@ -54,8 +75,11 @@ def create_app(test_config=None):
     app.register_blueprint(objectives.bp)
     app.register_blueprint(maps.bp)
     app.register_blueprint(about.bp)
+    import auth
+    app.register_blueprint(auth.bp)
 
     @app.route('/')
+    @login_required
     def landing():
 
         kwargs = {}
