@@ -1,4 +1,5 @@
 from flask import Blueprint, render_template, abort, Markup, redirect, url_for
+from flask_login import login_required
 
 bp = Blueprint('resources', __name__)
 
@@ -92,11 +93,13 @@ RESOURCES_ATTRIBUTES = {
 
 @bp.route('/resources/')
 @bp.route('/resources')
+@login_required
 def index():
     return redirect(url_for('landing', _anchor='landing-resources'))
 
 
 @bp.route('/resources/<resc_name>')
+@login_required
 def selection(resc_name=None):
     if resc_name in RESOURCES_ATTRIBUTES.keys():
         return render_template('resources/selection.html', **RESOURCES_ATTRIBUTES[resc_name])
