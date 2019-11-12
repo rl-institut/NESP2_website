@@ -1,6 +1,7 @@
 flask
 flask_wtf
 flask-sqlalchemy
+flask-login
 psycopg2
 geoalchemy2
 pandas
