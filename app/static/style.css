@@ -345,6 +345,14 @@ header a{
 
 /* About Page*/
 
+#about-content section {
+    padding-top: 2rem;
+    padding-bottom: 8rem;
+}
+
+#about-content h3 {
+    font-weight: 700;
+}
 
 .light-grey{
     background-color: #EEEFF1;
@@ -354,17 +362,39 @@ header a{
     background-color: #E0E2E9;
 }
 
-
-.about-card{
-    padding: 10px;
+.about-card {
+    margin-top: 5rem;
 }
 
-.about-card-content{
+.about-card__content {
     background-color: #1DD069;
 }
 
-.about-card-link{
+.about-card__link {
+    display: inline-block;
     background-color: #085064;
+    padding: .25rem 1.5rem;
+}
+
+.about-card__link a {
+    color: #fff;
+}
+
+.about-intro__cards .about-card:nth-child(odd) {
+    padding-right: 3rem;
+}
+
+.about-intro__cards .about-card:nth-child(even) {
+    padding-left: 3rem;
+}
+
+.about-intro__cards .about-card__content {
+    padding: 2rem;
+}
+
+.about-intro__cards p,
+.about-intro__cards h3 {
+    color: #fff;
 }
 
 
