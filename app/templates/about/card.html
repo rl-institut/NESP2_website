@@ -1,9 +1,11 @@
 {% macro input(title, text='', link='') -%}
-<div class="cell about-card-content">
-    <h2>{{title}}</h2>
+<div class="cell medium-6 about-card" data-equalizer-watch>
+  <div class="about-card__content">
+    <h3>{{title}}</h3>
     <p>{{text}}</p>
-</div>
-<div class="cell small-6 about-card-link">
-    <a href="{{link}}">Read more</a>
+  </div>
+  <div class="about-card__link">
+    <a href="{{link}}">Read more <img src="static/img/icons/i_arrow_next_w.svg" alt="Arrow right"></a>
+  </div>
 </div>
 {%- endmacro %}

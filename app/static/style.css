@@ -345,6 +345,20 @@ header a{
 
 /* About Page*/
 
+#about-content section {
+    padding-top: 2rem;
+    padding-bottom: 8rem;
+}
+
+#about-content h2 {
+    padding-bottom: 4rem;
+}
+
+#about-content h3 {
+    font-size: 20pt;
+    font-weight: 700;
+    margin-top: 0;
+}
 
 .light-grey{
     background-color: #EEEFF1;
@@ -354,20 +368,72 @@ header a{
     background-color: #E0E2E9;
 }
 
-
-.about-card{
-    padding: 10px;
+.about-card {
+    margin-top: 5rem;
 }
 
-.about-card-content{
+.about-card__content {
     background-color: #1DD069;
 }
 
-.about-card-link{
+.about-card__link {
+    display: inline-block;
     background-color: #085064;
+    padding: .25rem 1.5rem .35rem;
 }
 
+.about-card__link a {
+    color: #fff;
+}
 
+.about-card__link a img {
+    height: 1.5rem;
+}
+
+.about-intro__cards .about-card:nth-child(odd) {
+    padding-right: 3rem;
+}
+
+.about-intro__cards .about-card:nth-child(even) {
+    padding-left: 3rem;
+}
+
+.about-intro__cards .about-card__content {
+    padding: 2rem;
+}
+
+.about-intro__cards p,
+.about-intro__cards h3 {
+    color: #fff;
+}
+
+#about-fmp-content .about-fmp__item:not(:last-child)  {
+    padding-bottom: 4rem;
+}
+#about-stakeholder img {
+    height: 15rem;
+}
+
+.about-stakeholder__item {
+    padding-bottom: 3rem;
+}
+
+.about-stakeholder__item a {
+    color: #1DD069;
+    font-weight: 700;
+}
+
+.section-about .section-about__text {
+    margin-bottom: 5rem;
+}
+
+.section-about .section-about__text--nomargin {
+    margin-bottom: 0;
+}
+
+.section-about .section-about__img {
+    text-align: right;
+}
 
 /* Fonts */
 @font-face {
