@@ -1,11 +1,11 @@
 {% macro input(idx=1, title='', link='', image="static/img/img-placeholder.png") -%}
 <div class="grid-x">
-  <div id="about-stakeholder{{idx}}-info" class="cell medium-6 about-stakeholder__item">
+  <div id="about-stakeholder{{idx}}-info" class="cell medium-5 about-stakeholder__item">
     <h3>{{title}} {{idx}}</h3>
       <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem.</p>
     <a href="{{link}}">Link --></a>
   </div>
-  <div id="about-stakeholder{{idx}}-img" class="cell medium-6">
+  <div id="about-stakeholder{{idx}}-img" class="cell medium-offset-2 medium-5">
     <img src="static/img/Image_gray.svg" alt="Image Placeholder">
   </div>
 </div>
