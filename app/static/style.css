@@ -419,6 +419,10 @@ header a{
     font-weight: 700;
 }
 
+.section-about .section-about__img {
+    text-align: right;
+}
+
 /* Fonts */
 @font-face {
     font-family: 'Poppins';
