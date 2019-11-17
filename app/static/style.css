@@ -34,19 +34,21 @@ p, div{
 }
 
 .center--align{
-    align-items: center;
     display: flex;
     justify-content: center;
+    align-items: center;
 }
 
 .right--align{
     display: flex;
     justify-content: right;
+    align-items: center;
 }
 
 .left--align{
     display: flex;
     justify-content: left;
+    align-items: center;
 }
 
 /* evanescent tabs */
@@ -339,9 +341,21 @@ header a{
 #footer-license-div{
     background-color: #93939f;
     color: #ffffff;
-
+    padding-top: 20px;
+    padding-bottom: 20px;
 }
 
+#footer-license-div a{
+    color: #ffffff;
+}
+
+#footer-license-div div{
+    color: #ffffff;
+}
+
+#footer-license-div img{
+    height: 40px;
+}
 
 /* About Page*/
 
