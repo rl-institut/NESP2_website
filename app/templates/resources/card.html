@@ -1,9 +1,9 @@
-{% macro input(title, image='', text='') -%}
-<div class="card" data-equalizer-watch>
-  <img src="{{image}}">
+{% macro input(title, image='', text='', link='osm') -%}
+<a class="card data-equalizer-watch" href="{{ url_for('resources.selection', resc_name=link) }}">
+  <img src="{{ url_for('static', filename=image) }}">
   <div class="card-section">
     <p class="card-section--header">{{title}}</p>
     <p class="card-section--text">{{text}}</p>
   </div>
-</div>
+</a>
 {%- endmacro %}

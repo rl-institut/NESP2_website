@@ -24,21 +24,21 @@
   <header class="grid-x header">
     <div id="header-blitz-div" class="cell medium-4 medium-offset-1">
       <a href="{{ url_for('landing')}}">
-        <img src="static/logos/logo-5-blitz.png">
+        <img src="{{ url_for('static', filename='logos/logo-5-blitz.png') }}">
         <h2>Nigeria Se4All</h2>
       </a>
     </div>
     <div class="cell medium-2">
-      <a href="#landing-maps"><img src="static/img/icons/i_map.svg">MAP</a>
+      <a href="#landing-maps"><img src="{{ url_for('static', filename='img/icons/i_map.svg') }}">MAP</a>
     </div>
     <div class="cell medium-2">
-      <a href="#landing-resources"><img src="static/img/icons/i_layers.svg">TOOLS</a>
+      <a href="#landing-resources"><img src="{{ url_for('static', filename='img/icons/i_layers.svg') }}">TOOLS</a>
     </div>
     <div class="cell medium-2">
-      <a href="{{ url_for('about.about') }}"><img src="static/img/icons/i_info.svg">ABOUT</a>
+      <a href="{{ url_for('about.about') }}"><img src="{{ url_for('static', filename='img/icons/i_info.svg') }}">ABOUT</a>
     </div>
     <div class="cell medium-1">
-      <img id="header-logo-nigeria" src="static/logos/logo-2-horses.png">
+      <img id="header-logo-nigeria" src="{{ url_for('static', filename='logos/logo-2-horses.png') }}">
     </div>
     {% block header %}{% endblock %}
   </header>
@@ -63,7 +63,7 @@
       <div id="footer-contact-div" class="cell grid-x">
         <div class="cell medium-4 medium-offset-1 grid-x">
           <div class="cell medium-1">
-            <img src="static/img/icons/i_info.svg">
+            <img src="{{ url_for('static', filename='img/icons/i_info.svg') }}">
           </div>
           <div class="cell auto">
             <h2> OFFICE</h2>
@@ -75,7 +75,7 @@
         </div>
         <div class="cell medium-3 grid-x">
           <div class="cell medium-1">
-            <img src="static/img/icons/i_mail.svg">
+            <img src="{{ url_for('static', filename='img/icons/i_mail.svg') }}">
           </div>
           <div class="cell auto">
             <h2> EMAIL</h2>
@@ -84,7 +84,7 @@
         </div>
         <div class="cell medium-3 grid-x">
            <div class="cell medium-1">
-            <img src="static/img/icons/i_phone.svg">
+            <img src="{{ url_for('static', filename='img/icons/i_phone.svg') }}">
           </div>
           <div class="cell auto">
             <h2>PHONE</h2>
@@ -99,11 +99,11 @@
       <div id="footer-logos-div" class="cell grid-x">
         <div class="cell medium-3 medium-offset-1">With financial support of:</div>
         <div id="footer-logos-eu-ger" class="cell medium-4">
-          <img src="static/logos/logo-1-eu.png">
-          <img src="static/logos/logo-4-ger-coop.png">
+          <img src="{{ url_for('static', filename='logos/logo-1-eu.png') }}">
+          <img src="{{ url_for('static', filename='logos/logo-4-ger-coop.png') }}">
         </div>
-        <div id="footer-logos-giz" class="cell medium-2 medium-offset-2">
-          <img src="static/logos/logo-3-giz.png">
+        <div id="footer-logos-giz" class="cell medium-2 medium-offset-2') }}">
+          <img src="{{ url_for('static', filename='logos/logo-3-giz.png') }}">
         </div>
       </div>
 

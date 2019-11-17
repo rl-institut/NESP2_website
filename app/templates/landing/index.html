@@ -117,26 +117,27 @@
   </div>
 </section>
 
+
 <section id="landing-resources" class="grid-x landing-resources">
   <div class="cell large-4 large-offset-1 landing-resources__text">
     <h2>Use our tools</h2>
     <p>Explore our <span>suite of open source tools</span> for data mining and analysis for electrification and planning</p>
-    <a class="cta" href="{{ url_for('resource.resources') }}">Explore tools</a>
+    <a class="cta" href="{{ url_for('resources.index') }}">Explore tools</a>
   </div>
   {% import "resources/card.html" as resource_card %}
   <div class="cell large-5 large-offset-1 landing-resources__cards">
     <div class="grid-x" data-equalize-on="medium" id="landing-resources-cards">
       <div class="cell medium-5 resource-choice">
-        {{resource_card.input("Cluster Identification", "static/img/img-5-resource-cluster.png", "How can I identify locations of settlements?")}}
+        {{ resource_card.input("Cluster Identification", "img/img-5-resource-cluster.png", "How can I identify locations of settlements?", "clusteridentification") }}
       </div>
       <div class="cell medium-5 medium-offset-2 resource-choice">
-        {{resource_card.input("Mapping with OSM", "static/img/img-6-resources-osm.png", "How can I map a settlement in detail remotely?")}}
+        {{ resource_card.input("Mapping with OSM", "img/img-6-resources-osm.png", "How can I map a settlement in detail remotely?", "osm") }}
       </div>
       <div class="cell medium-5 resource-choice">
-        {{resource_card.input("Survey Tools", "static/img/img-7-resources-survey.png", "How can I visit a settlement and collect relevant data?")}}
+        {{ resource_card.input("Survey Tools", "img/img-7-resources-survey.png", "How can I visit a settlement and collect relevant data?", "surveytools") }}
       </div>
       <div class="cell medium-5 medium-offset-2 resource-choice">
-        {{resource_card.input("On Grid Mapping", "static/img/img-8-resources-og-mapping.png", "How can I track the grid?")}}
+        {{ resource_card.input("On Grid Mapping", "img/img-8-resources-og-mapping.png", "How can I track the grid?", "ongridmapping") }}
       </div>
     </div>
   </div>
