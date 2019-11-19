@@ -186,10 +186,13 @@ header a{
     margin-bottom: 8rem;
 }
 
-.landing-hero h1,
-.landing-hero h2 {
-    width: 54rem;
+@media only screen and (min-width: 1000px) {
+    .landing-hero h1,
+    .landing-hero h2 {
+        width: 54rem;
+    }
 }
+
 
 .landing-welcome {
     background-image: url("background/bg-1-welcome-div.png");
