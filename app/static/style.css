@@ -202,6 +202,14 @@ header a{
     margin-bottom: 5rem;
 }
 
+/* smaller screens */
+@media only screen and (max-width: 640px) {
+    section {
+        padding-left: .5rem;
+        padding-right: .5rem;
+    }
+}
+
 /* medium and larger screens */
 @media only screen and (min-width: 640px) {
     .landing-hero {
