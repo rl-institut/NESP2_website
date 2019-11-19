@@ -51,78 +51,93 @@
 
   <footer>
     <div id="footer-content" class="grid-x">
-      <div id="footer-stay-in-touch-div" class="cell grid-x bkg-img">
-        <div class="cell medium-5 medium-offset-1">
-          <h1>Stay in touch</h1>
-          <p><b>Follow us on social media</b> to stay up-to date on the latest developments</p>
-        </div>
-            <div id="footer-stay-in-touch-icons" class="cell medium-6">
-
+      <div id="footer-stay-in-touch-div" class="cell bkg-img">
+        <div class="grid-x">
+          <div class="cell medium-5 large-offset-1">
+            <h1>Stay in touch</h1>
+            <p><b>Follow us on social media</b> to stay up-to date on the latest developments</p>
+          </div>
+          <div id="footer-stay-in-touch-icons" class="cell medium-6">
+          </div>
         </div>
       </div>
-      <div id="footer-contact-div" class="cell grid-x">
-        <div class="cell medium-4 medium-offset-1 grid-x">
+
+      <div id="footer-contact-div" class="cell">
+        <div class="grid-x">
+          <div class="cell medium-4 large-3 large-offset-1">
+            <div class="grid-x">
+              <div class="cell">
+                <img src="{{ url_for('static', filename='img/icons/i_info.svg') }}">
+                <span>office</span>
+              </div>
+              <div class="cell">
+                <p>
+                  Federal Ministry of Power, Works and Housing</br>
+                  Headquarters</br>
+                  Mabushi, Abuja</br>
+                  Nigeria
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="cell medium-3">
+            <div class="grid-x">
+              <div class="cell">
+                <img src="{{ url_for('static', filename='img/icons/i_mail.svg') }}">
+                <span>email</span>
+              </div>
+              <div class="cell">
+                <p>info@pwh.gov.ng</p>
+              </div>
+            </div>
+          </div>
+          <div class="cell medium-3">
+            <div class="grid-x">
+              <div class="cell">
+                <img src="{{ url_for('static', filename='img/icons/i_phone.svg') }}">
+                <span>phone</span>
+              </div>
+              <div class="cell">
+                <p>Nigeria: 234-(0)-X XXX XXXX X</p>
+              </div>
+            </div>
+          </div>
           <div class="cell medium-1">
-            <img src="{{ url_for('static', filename='img/icons/i_info.svg') }}">
+            <div>
+              ICON
+            </div>
           </div>
-          <div class="cell auto">
-            <h2> OFFICE</h2>
-            <p>Federal Ministry of Power, Works and Housing</br>
-            Headquarters</br>
-            Mabushi, Abuja</br>
-            Nigeria</p>
-          </div>
-        </div>
-        <div class="cell medium-3 grid-x">
-          <div class="cell medium-1">
-            <img src="{{ url_for('static', filename='img/icons/i_mail.svg') }}">
-          </div>
-          <div class="cell auto">
-            <h2> EMAIL</h2>
-            <p>info@pwh.gov.ng</p>
-          </div>
-        </div>
-        <div class="cell medium-3 grid-x">
-           <div class="cell medium-1">
-            <img src="{{ url_for('static', filename='img/icons/i_phone.svg') }}">
-          </div>
-          <div class="cell auto">
-            <h2>PHONE</h2>
-            <p>Nigeria: 234-(0)-X XXX XXXX X</p>
-          </div>
-
-        </div>
-        <div class="cell medium-1">
-          LOGO
-        </div>
-      </div>
-      <div id="footer-logos-div" class="cell grid-x">
-        <div class="cell medium-3 medium-offset-1">With financial support of:</div>
-        <div id="footer-logos-eu-ger" class="cell medium-4">
-          <img src="{{ url_for('static', filename='logos/logo-1-eu.png') }}">
-          <img src="{{ url_for('static', filename='logos/logo-4-ger-coop.png') }}">
-        </div>
-        <div id="footer-logos-giz" class="cell medium-2 medium-offset-2') }}">
-          <img src="{{ url_for('static', filename='logos/logo-3-giz.png') }}">
         </div>
       </div>
 
-      <div id="footer-license-div" class="cell grid-x">
+      <div id="footer-logos-div" class="cell">
+        <div class="grid-x">
+          <div class="cell medium-3 large-2 large-offset-1">
+            <p>With financial support of:</p>
+          </div>
+          <div id="footer-logos-eu-ger" class="cell medium-6">
+            <img src="{{ url_for('static', filename='logos/logo-1-eu.png') }}">
+            <img src="{{ url_for('static', filename='logos/logo-4-ger-coop.png') }}">
+          </div>
+          <div id="footer-logos-giz" class="cell medium-3">
+            <img src="{{ url_for('static', filename='logos/logo-3-giz.png') }}">
+          </div>
+        </div>
+      </div>
 
-        <div class="cell large-1 large-offset-1 left--align">
-          <a href="">Terms of Service</a>
+      <div id="footer-license-div" class="cell">
+        <div class="grid-x">
+          <div class="cell medium-4 large-3 large-offset-1 left--align">
+            <a href="">Terms of Service</a>
+            <a href="">Privacy Policy</a>
+          </div>
+          <div class="cell medium-4 center--align">
+            <p>&copy; 2019 All Rights Reserved by <b> nigeriase4all.gov.ng</b></p>
+          </div>
+          <div class="cell medium-3">
+            <img src="{{ url_for('static', filename='logos/logo-5-blitz.png') }}">
+          </div>
         </div>
-        <div class="cell large-1 right--align">
-          <a href="">Privacy Policy</a>
-        </div>
-        <div class="cell large-6 center--align">
-          &copy; 2019 All Rights Reserved by  <b> nigeriase4all.gov.ng</b>
-        </div>
-
-        <div class="cell large-1 medium-offset-2 left--align">
-          <img src="{{ url_for('static', filename='logos/logo-5-blitz.png') }}">
-        </div>
-
       </div>
 
 

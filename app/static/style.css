@@ -1,24 +1,40 @@
 /* General */
 body, p, a, li {
     font-family: 'Source Sans Pro', Arial, sans-serif;
-    font-size: 18pt;
+    font-size: 14pt;
     font-weight: 400;
 }
 h1, h2, h3, h4, h5, h6 {
     font-family: Poppins, Arial, sans-serif;
 }
 h2{
-    font-size: 32pt;
+    font-size: 24pt;
     font-weight: bold;
 }
 
 h3{
-    font-size: 20pt;
+    font-size: 18pt;
     font-weight: normal;
 }
 
 p, div{
     color: #464646;
+}
+
+/* medium and larger screens */
+@media only screen and (min-width: 640px) {
+    body, p, a, li {
+        font-size: 18pt;
+    }
+    h2{
+        font-size: 32pt;
+        font-weight: bold;
+    }
+    
+    h3{
+        font-size: 20pt;
+        font-weight: normal;
+    }
 }
 
 .brand--color{
@@ -163,32 +179,68 @@ header a{
 
 .landing-hero {
     background-image: url("img/img-1-landing.png");
-    height: 717px;
+    height: 100vh;
     /* Center and scale the image nicely */
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
 }
 .landing-hero h1 {
-    font-size: 50pt;
+    font-size: 30pt;
     font-weight: bold;
     color: #ffffff;
-    line-height: 68pt;
-    padding-top: 5rem;
+    line-height: 40pt;
+    padding-top: 3rem;
     margin-bottom: 0;
 }
 
 .landing-hero h2 {
-    font-size: 20pt;
+    font-size: 16pt;
     font-weight: normal;
     color: #ffffff;
     margin-top: 1rem;
-    margin-bottom: 8rem;
+    margin-bottom: 5rem;
 }
 
-.landing-hero h1,
-.landing-hero h2 {
-    width: 54rem;
+/* smaller screens */
+@media only screen and (max-width: 640px) {
+    section {
+        padding-left: .5rem;
+        padding-right: .5rem;
+    }
+}
+
+/* medium and larger screens */
+@media only screen and (min-width: 640px) {
+    .landing-hero {
+        height: 75vh;
+    }
+    .landing-hero h1 {
+        font-size: 40pt;
+        line-height: 52pt;
+        padding-top: 4rem;
+    }
+    .landing-hero h2 {
+        font-size: 18pt;
+        margin-bottom: 6rem;
+    }
+}
+
+/* larger screens */
+@media only screen and (min-width: 1000px) {
+    .landing-hero h1,
+    .landing-hero h2 {
+        width: 54rem;
+    }
+    .landing-hero h1 {
+        font-size: 50pt;
+        line-height: 68pt;
+        padding-top: 5rem;
+    }
+    .landing-hero h2 {
+        font-size: 20pt;
+        margin-bottom: 8rem;
+    }
 }
 
 .landing-welcome {
