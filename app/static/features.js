@@ -27,3 +27,56 @@ $('.opt-title').on("mouseover", function() {
        tabContents.className = 'selected--opt--content';
   }
 });
+
+$('.feature-next').on("click", function() {
+  // Find the currently selected tab
+  var selectedTab = $('.selected--opt--content')[0];
+  var selectedId = selectedTab.id.slice(-3);
+  // Infer the next tab form the current id
+  var nextId = '';
+  if (selectedId == 'dev'){
+    nextId = 'pla';
+  }
+  else if (selectedId == 'pla'){
+    nextId = 'cit';
+  }
+  else if (selectedId == 'cit'){
+    nextId = 'dev';
+  }
+  nextId = selectedTab.id.replace(selectedId, nextId)
+  var nextTab = document.getElementById(nextId);
+
+  // Change the background image
+  featureDiv.style.backgroundImage = "url('static/img/" + bkgs[nextId] + "')";
+
+  // Select the new tab and deselect the previously selected
+  selectedTab.className = 'opt--content';
+  nextTab.className = 'selected--opt--content';
+});
+
+
+$('.feature-previous').on("click", function() {
+  // Find the currently selected tab
+  var selectedTab = $('.selected--opt--content')[0];
+  var selectedId = selectedTab.id.slice(-3);
+  // Infer the previous tab form the current id
+  var prevId = '';
+  if (selectedId == 'dev'){
+    prevId = 'cit';
+  }
+  else if (selectedId == 'pla'){
+    prevId = 'dev';
+  }
+  else if (selectedId == 'cit'){
+    prevId = 'pla';
+  }
+  prevId = selectedTab.id.replace(selectedId, prevId)
+  var prevTab = document.getElementById(prevId);
+
+  // Change the background image
+  featureDiv.style.backgroundImage = "url('static/img/" + bkgs[prevId] + "')";
+
+  // Select the new tab and deselect the previously selected
+  selectedTab.className = 'opt--content';
+  prevTab.className = 'selected--opt--content';
+});

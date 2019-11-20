@@ -57,14 +57,16 @@ p, div{
 
 .right--align{
     display: flex;
-    justify-content: right;
     align-items: center;
+    justify-content: right;
+
 }
 
 .left--align{
     display: flex;
-    justify-content: left;
     align-items: center;
+    justify-content: left;
+
 }
 
 /* evanescent tabs */
@@ -73,9 +75,12 @@ p, div{
 }
 
 .selected--opt--content{
-    display: block;
-}
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-item: center;
 
+}
 
 /* Gauge */
 
@@ -276,7 +281,6 @@ header a{
 }
 
 .landing-feature__text {
-    max-width: 32rem;
 }
 
 .landing-feature__item {

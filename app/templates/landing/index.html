@@ -41,106 +41,114 @@
 
     landing-feature__img not added yet
    -->
-    <div id="landing-feature-al" class="medium-1 medium-offset-1 left-align"><img src="static/img/icons/arrow-left.png"></div>
+    <div id="landing-feature-al" class="cell small-1 left--align">
+      <img class="feature-previous" src="static/img/icons/arrow-left.png">
+    </div>
+    <div class="small-10">
+      <div class="grid-x">
+        <div id="landing-feature-content-div" class="cell align-center text-center">
 
-    <div id="landing-feature-content-div" class="medium-8 grid-x align-center text-center">
-      <div id="landing-feature-txt-div" class="medium-12">
-        <div id="landing-feature-txt-dev" class="selected--opt--content">
-          <div class="landing-feature__header">
-            <h2>Features for <b>Developers</b></h2>
+          <div id="landing-feature-txt-dev" class="selected--opt--content">
+            <div class="landing-feature__header">
+              <h2>Features for <b>Developers</b></h2>
+            </div>
+            <div class="landing-feature__text">
+              <p>Identify <b>investment opportunities</b> in the electrification sector and gain an edge over your competition</p>
+            </div>
           </div>
-          <div class="landing-feature__text">
-            Identify <b>investment opportunities</b> in the electrification sector and gain an edge over your competition
+          <div id="landing-feature-txt-pla" class="opt--content">
+            <div class="landing-feature__header">
+              <h2>Features for <b>Planners</b></h2>
+            </div>
+            <div class="landing-feature__text">
+              <p>Perform <b>on-the-fly analysis</b> to track electrification progress on the village level nationwide</p>
+            </div>
           </div>
-        </div>
-        <div id="landing-feature-txt-pla" class="opt--content">
-          <div class="landing-feature__header">
-            <h2>Features for <b>Planners</b></h2>
+          <div id="landing-feature-txt-cit" class="opt--content">
+            <div class="landing-feature__header">
+              <h2>Features for <b>Citizen</b></h2>
+            </div>
+            <div class="landing-feature__text">
+              <p>Missing text</p>
+            </div>
           </div>
-          <div class="landing-feature__text">
-            Perform <b>on-the-fly analysis</b> to track electrification progress on the village level nationwide
-          </div>
+
+        </div>
+        <div id="landing-feature-dev-btn" class="cell medium-4 center--align ystack opt-title">
+          <a href="#landing-feature-txt-dev"><img src="static/img/icons/i_profile_w.svg" alt="Profile image"></a>
+          <div class="landing-feature__description"><span>Developers</span></div>
+        </div>
+        <div id="landing-feature-pla-btn" class="cell medium-4 center--align ystack  opt-title">
+          <a href="#landing-feature-txt-pla"><img src="static/img/icons/i_profile_w.svg" alt="Profile image"></a>
+          <div class="landing-feature__description"><span>Planners</span></div>
+        </div>
+        <div id="landing-feature-cit-btn" class="cell medium-4 center--align ystack  opt-title">
+          <a href="#landing-feature-txt-cit"><img src="static/img/icons/i_profile_w.svg" alt="Profile image"></a>
+          <div class="landing-feature__description"><span>Citizens</span></div>
         </div>
       </div>
-      <div id="landing-feature-txt-cit" class="opt--content">
-        <div class="landing-feature__header">
-          <h2>Features for <b>Citizen</b></h2>
+    </div>
+    <div id="landing-feature-ar" class="cell small-1 right--align">
+      <img class="feature-next" src="static/img/icons/arrow-right.png">
+    </div>
+
+
+  </section>
+
+  <section id="landing-progress" class="grid-x landing-progress">
+    <div class="cell medium-11 medium-offset-1 landing-progress__header left-align">
+      <h2>Our progress in numbers</h2>
+
+    </div>
+    <!-- Figure out how to make updatable gauges here-->
+    <div class="medium-12 large-4 center--align">
+      <div class="GaugeMeter" data-color="#1DD069" data-back="#E0E2E9" data-min="0" data-total="1800" data-used="1245" data-label="km electricity </br> grid tracked" data-showvalue="true" data-size="340" data-text_size="0.12"></div>
+    </div>
+    <div class="medium-12 large-4 center--align">
+      <div class="GaugeMeter" data-color="#1DD069" data-back="#E0E2E9" data-min="0" data-total="2000" data-used="734" data-label="village remotly </br> mapped" data-showvalue="true" data-size="340" data-width="5" data-text_size="0.12"></div>
+    </div>
+    <div class="medium-12 large-4 center--align">
+      <div class="GaugeMeter" data-color="#1DD069" data-back="#E0E2E9" data-min="0" data-total="45000" data-used="10234" data-label="buildings </br> mapped" data-showvalue="true" data-size="340" data-width="5" data-text_size="0.12"></div>
+    </div>
+
+
+  </section>
+
+  <section id="landing-maps" class="grid-x landing-maps align-center text-center">
+    <div class="cell landing-maps__header">
+      <h2>Explore the ground-truth</h2>
+      <h3>Analyze highly accurate electrification data on our <span>interactive map</span></h3>
+    </div>
+    <div class="cell landing-maps__carousel">
+      <a class="cta" href="https://wam.rl-institut.de/accounts/login/?next=/app_mapping/NESP2/index.html" target="_blank">Explore map</a>
+    </div>
+  </section>
+
+
+  <section id="landing-resources" class="grid-x landing-resources">
+    <div class="cell large-4 large-offset-1 landing-resources__text">
+      <h2>Use our tools</h2>
+      <p>Explore our <span>suite of open source tools</span> for data mining and analysis for electrification and planning</p>
+      <a class="cta" href="{{ url_for('resources.index') }}">Explore tools</a>
+    </div>
+    {% import "resources/card.html" as resource_card %}
+    <div class="cell large-5 large-offset-1 landing-resources__cards">
+      <div class="grid-x" data-equalize-on="medium" id="landing-resources-cards">
+        <div class="cell medium-5 resource-choice">
+          {{ resource_card.input("Cluster Identification", "img/img-5-resource-cluster.png", "How can I identify locations of settlements?", "clusteridentification") }}
         </div>
-        <div class="landing-feature__text">
-          Missing text
+        <div class="cell medium-5 medium-offset-2 resource-choice">
+          {{ resource_card.input("Mapping with OSM", "img/img-6-resources-osm.png", "How can I map a settlement in detail remotely?", "osm") }}
+        </div>
+        <div class="cell medium-5 resource-choice">
+          {{ resource_card.input("Survey Tools", "img/img-7-resources-survey.png", "How can I visit a settlement and collect relevant data?", "surveytools") }}
+        </div>
+        <div class="cell medium-5 medium-offset-2 resource-choice">
+          {{ resource_card.input("On Grid Mapping", "img/img-8-resources-og-mapping.png", "How can I track the grid?", "ongridmapping") }}
         </div>
       </div>
     </div>
-    <div id="landing-feature-dev-btn" class="medium-4 center--align ystack opt-title">
-      <a href="#landing-feature-txt-dev"><img src="static/img/icons/i_profile_w.svg" alt="Profile image"></a>
-      <div class="landing-feature__description"><span>Developers</span></div>
-    </div>
-    <div id="landing-feature-pla-btn" class="medium-4 center--align ystack  opt-title">
-      <a href="#landing-feature-txt-pla"><img src="static/img/icons/i_profile_w.svg" alt="Profile image"></a>
-      <div class="landing-feature__description"><span>Planners</span></div>
-    </div>
-    <div id="landing-feature-cit-btn" class="medium-4 center--align ystack  opt-title">
-      <a href="#landing-feature-txt-cit"><img src="static/img/icons/i_profile_w.svg" alt="Profile image"></a>
-      <div class="landing-feature__description"><span>Citizens</span></div>
-    </div>
-    <div id="landing-feature-ar" class="medium-1 right--align"><img src="static/img/icons/arrow-right.png"></div>
-
-</section>
-
-<section id="landing-progress" class="grid-x landing-progress">
-  <div class="cell medium-11 medium-offset-1 landing-progress__header left-align">
-    <h2>Our progress in numbers</h2>
-
- </div>
-        <!-- Figure out how to make updatable gauges here-->
-      <div class="medium-12 large-4 center--align">
-        <div class="GaugeMeter" data-color="#1DD069" data-back="#E0E2E9" data-min="0" data-total="1800" data-used="1245" data-label="km electricity </br> grid tracked" data-showvalue="true" data-size="340" data-text_size="0.12"></div>
-      </div>
-      <div class="medium-12 large-4 center--align">
-        <div class="GaugeMeter" data-color="#1DD069" data-back="#E0E2E9" data-min="0" data-total="2000" data-used="734" data-label="village remotly </br> mapped" data-showvalue="true" data-size="340" data-width="5" data-text_size="0.12"></div>
-      </div>
-      <div class="medium-12 large-4 center--align">
-        <div class="GaugeMeter" data-color="#1DD069" data-back="#E0E2E9" data-min="0" data-total="45000" data-used="10234" data-label="buildings </br> mapped" data-showvalue="true" data-size="340" data-width="5" data-text_size="0.12"></div>
-      </div>
-
-
-</section>
-
-<section id="landing-maps" class="grid-x landing-maps align-center text-center">
-  <div class="cell landing-maps__header">
-    <h2>Explore the ground-truth</h2>
-    <h3>Analyze highly accurate electrification data on our <span>interactive map</span></h3>
-  </div>
-  <div class="cell landing-maps__carousel">
-    <a class="cta" href="https://wam.rl-institut.de/accounts/login/?next=/app_mapping/NESP2/index.html" target="_blank">Explore map</a>
-  </div>
-</section>
-
-
-<section id="landing-resources" class="grid-x landing-resources">
-  <div class="cell large-4 large-offset-1 landing-resources__text">
-    <h2>Use our tools</h2>
-    <p>Explore our <span>suite of open source tools</span> for data mining and analysis for electrification and planning</p>
-    <a class="cta" href="{{ url_for('resources.index') }}">Explore tools</a>
-  </div>
-  {% import "resources/card.html" as resource_card %}
-  <div class="cell large-5 large-offset-1 landing-resources__cards">
-    <div class="grid-x" data-equalize-on="medium" id="landing-resources-cards">
-      <div class="cell medium-5 resource-choice">
-        {{ resource_card.input("Cluster Identification", "img/img-5-resource-cluster.png", "How can I identify locations of settlements?", "clusteridentification") }}
-      </div>
-      <div class="cell medium-5 medium-offset-2 resource-choice">
-        {{ resource_card.input("Mapping with OSM", "img/img-6-resources-osm.png", "How can I map a settlement in detail remotely?", "osm") }}
-      </div>
-      <div class="cell medium-5 resource-choice">
-        {{ resource_card.input("Survey Tools", "img/img-7-resources-survey.png", "How can I visit a settlement and collect relevant data?", "surveytools") }}
-      </div>
-      <div class="cell medium-5 medium-offset-2 resource-choice">
-        {{ resource_card.input("On Grid Mapping", "img/img-8-resources-og-mapping.png", "How can I track the grid?", "ongridmapping") }}
-      </div>
-    </div>
-  </div>
-</section>
+  </section>
 
 </div>
 {% endblock content%}

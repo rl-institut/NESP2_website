@@ -23,10 +23,11 @@ Here is a template for new release sections
 - docker deployment files (#12, #26)
 - structure of the header (#13)
 - structure of the contact div (#14)
-- structure of the feature div (#15)
+- structure of the feature div (#15, #38)
 - structure of the about page (#23)
 - macros to avoid duplicating code (#23, #25)
 - text for about-nesp (#24)
+- mobile responsiveness of footer (#37)
 
 ### Changed
 - structure of the folders --> flask files in `app` folder (#12)
