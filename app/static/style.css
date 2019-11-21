@@ -417,6 +417,8 @@ header a{
     height: 4rem;
     border-radius: 100px;
     text-align: center;
+    float: right;
+    clear: both;
 }
 
 .footer-contact__arrow img {
