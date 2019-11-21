@@ -30,6 +30,11 @@ Here is a template for new release sections
 - macros to avoid duplicating code (#23, #25)
 - text for about-nesp (#24)
 - mobile responsiveness of footer (#37)
+- structure of the footer license (#48)
+- structure of the footer logos (#47)
+- structure of the footer contacts (#41)
+- hover effects (#51, #52) 
+- link with nesp repo (#39)
 
 ### Changed
 - structure of the folders --> flask files in `app` folder (#12)
