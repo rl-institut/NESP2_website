@@ -487,12 +487,23 @@ header a{
 #footer-license-div{
     background-color: #93939f;
     color: #ffffff;
-    padding-top: 20px;
-    padding-bottom: 20px;
+    font-size: 14pt;
+    line-height: 18pt;
+    padding-top: 2rem;
+    padding-bottom: 1.5rem;
 }
 
-#footer-license-div a{
+#footer-license-div a,
+#footer-license-div p {
     color: #ffffff;
+    font-size: 14pt;
+    line-height: 18pt;
+    padding-right: 1rem;
+    margin-bottom: 0;
+}
+
+#footer-license-div p {
+    padding-right: 0;
 }
 
 #footer-license-div div{
@@ -500,7 +511,16 @@ header a{
 }
 
 #footer-license-div img{
-    height: 40px;
+    height: 2rem;
+}
+
+.footer-license__img {
+    text-align: right;
+}
+
+/* overwrite existing css rule (wam_fotter.scss?) */
+footer:not(.footer-hp) {
+    padding-bottom: 0;
 }
 
 /* About Page*/
