@@ -389,6 +389,8 @@ header a{
 #footer-stay-in-touch-div{
     background-image: url("background/bg-5-stay-in-touch-div.png");
     color: #ffffff;
+    padding-top: 3.5rem;
+    padding-bottom: 7rem;
 }
 
 #footer-stay-in-touch-div p,
