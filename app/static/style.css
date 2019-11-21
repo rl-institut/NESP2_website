@@ -281,6 +281,7 @@ header a{
 }
 
 .landing-feature__text {
+    margin: 0 auto;
 }
 
 .landing-feature__item {
@@ -308,6 +309,15 @@ header a{
 .landing-feature__item.active a {
     font-weight: 700;
 }
+
+
+.landing-feature__arrow div {
+    margin: 0 auto;
+}
+.landing-feature__arrow img {
+    width: 2rem;
+}
+
 
 .landing-progress {
     background-image: url("background/bg-4-progress-div.png");
