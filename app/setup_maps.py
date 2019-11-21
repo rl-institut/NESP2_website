@@ -46,10 +46,5 @@ copyfile(
     os.path.join(new_static_path, 'maps.css')
 )
 
-
-@app.route('/')
-def index():
-    return render_template('index.html')
-
 # erase the NESP2 repository
 rmtree('NESP2')
