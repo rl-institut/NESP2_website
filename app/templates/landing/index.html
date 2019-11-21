@@ -137,17 +137,17 @@
     </div>
     {% import "resources/card.html" as resource_card %}
     <div class="cell large-5 large-offset-1 landing-resources__cards">
-      <div class="grid-x" data-equalize-on="medium" id="landing-resources-cards">
-        <div class="cell medium-5 resource-choice">
+      <div class="grid-x" data-equalize-on="medium" id="landing-resources-cards" data-equalizer="foo">
+        <div class="cell medium-5 resource-choice" data-equalizer-watch="foo">
           {{ resource_card.input("Cluster Identification", "img/img-5-resource-cluster.png", "How can I identify locations of settlements?", "clusteridentification") }}
         </div>
-        <div class="cell medium-5 medium-offset-2 resource-choice">
+        <div class="cell medium-5 medium-offset-2 resource-choice" data-equalizer-watch="foo">
           {{ resource_card.input("Mapping with OSM", "img/img-6-resources-osm.png", "How can I map a settlement in detail remotely?", "osm") }}
         </div>
-        <div class="cell medium-5 resource-choice">
+        <div class="cell medium-5 resource-choice" data-equalizer-watch="foo">
           {{ resource_card.input("Survey Tools", "img/img-7-resources-survey.png", "How can I visit a settlement and collect relevant data?", "surveytools") }}
         </div>
-        <div class="cell medium-5 medium-offset-2 resource-choice">
+        <div class="cell medium-5 medium-offset-2 resource-choice" data-equalizer-watch="foo">
           {{ resource_card.input("On Grid Mapping", "img/img-8-resources-og-mapping.png", "How can I track the grid?", "ongridmapping") }}
         </div>
       </div>

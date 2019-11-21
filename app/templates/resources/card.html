@@ -1,5 +1,5 @@
 {% macro input(title, image='', text='', link='osm') -%}
-<a class="card data-equalizer-watch" href="{{ url_for('resources.selection', resc_name=link) }}">
+<a class="card" href="{{ url_for('resources.selection', resc_name=link) }}">
   <img src="{{ url_for('static', filename=image) }}">
   <div class="card-section">
     <p class="card-section--header">{{title}}</p>
