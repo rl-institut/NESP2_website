@@ -421,6 +421,18 @@ header a{
     clear: both;
 }
 
+.footer-contact__arrow div:link,
+.footer-contact__arrow div:visited {
+    -webkit-transition: transform .2s ease-in;
+    transition: transform .2s ease-in;
+}
+
+.footer-contact__arrow div:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 10px rgba(0, 0, 0, .2);
+    cursor: pointer;
+}
+
 .footer-contact__arrow img {
     width: 1.875rem;
     display: inline-block;
