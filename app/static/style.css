@@ -445,6 +445,35 @@ header a{
 
 #footer-logos-div{
     background-color: #ffffff;
+    font-size: 14pt;
+    line-height: 18pt;
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+}
+
+#footer-logos-div p {
+    font-size: 14pt;
+    line-height: 18pt;
+}
+
+.footer-logos__img {
+    text-align: center;
+}
+
+.footer-logos__img--giz {
+    text-align: left;
+}
+
+@media only screen and (min-width: 640px) {
+    .footer-logos__img--giz {
+        position: relative;
+    }
+    
+    .footer-logos__img--giz div {
+        position: absolute;
+        bottom: 0;
+        right: 0;
+    }
 }
 
 #footer-logos-div img{
