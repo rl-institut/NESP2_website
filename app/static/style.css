@@ -182,6 +182,7 @@ header a{
 .cta:active {
     display: block;
     width: fit-content;
+    width: -moz-fit-content;
     background-color: #1DD069;
     color: #ffffff;
     font-size: 18pt;
