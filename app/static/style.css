@@ -393,6 +393,10 @@ header a{
     font-size: 14pt;
 }
 
+.footer-contact__text {
+    padding-left: .5rem;
+}
+
 .footer-contact__header {
     font-weight: 700;
     text-transform: uppercase;
@@ -400,6 +404,9 @@ header a{
 
 #footer-contact-div p {
     font-size: 14pt;
+    line-height: 18pt;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
 }
 
 #footer-logos-div{
