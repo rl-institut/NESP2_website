@@ -380,6 +380,16 @@ header a{
 
 #footer-contact-div{
     background-color: #eeeff1;
+    font-size: 14pt;
+}
+
+.footer-contact__header {
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+#footer-contact-div p {
+    font-size: 14pt;
 }
 
 #footer-logos-div{
