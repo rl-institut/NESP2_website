@@ -499,6 +499,11 @@ header a{
     font-size: 14pt;
     line-height: 18pt;
     padding-right: 1rem;
+    margin-bottom: 0;
+}
+
+#footer-license-div p {
+    padding-right: 0;
 }
 
 #footer-license-div div{
@@ -507,6 +512,10 @@ header a{
 
 #footer-license-div img{
     height: 40px;
+}
+
+.footer-license__img {
+    text-align: right;
 }
 
 /* About Page*/
