@@ -518,6 +518,11 @@ header a{
     text-align: right;
 }
 
+/* overwrite existing css rule (wam_fotter.scss?) */
+footer:not(.footer-hp) {
+    padding-bottom: 0;
+}
+
 /* About Page*/
 
 #about-content section {
