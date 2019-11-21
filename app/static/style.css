@@ -4,6 +4,9 @@ body, p, a, li {
     font-size: 14pt;
     font-weight: 400;
 }
+html {
+    scroll-behavior: smooth;
+  }
 h1, h2, h3, h4, h5, h6 {
     font-family: Poppins, Arial, sans-serif;
 }
@@ -389,8 +392,14 @@ header a{
 }
 
 #footer-contact-div{
+    padding-top: 7rem;
+    padding-bottom: 7rem;
     background-color: #eeeff1;
     font-size: 14pt;
+}
+
+.footer-contact__text {
+    padding-left: .5rem;
 }
 
 .footer-contact__header {
@@ -400,6 +409,38 @@ header a{
 
 #footer-contact-div p {
     font-size: 14pt;
+    line-height: 18pt;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+}
+
+.footer-contact__arrow div {
+    background-color: #1DD069;
+    width: 4rem;
+    height: 4rem;
+    border-radius: 100px;
+    text-align: center;
+    float: right;
+    clear: both;
+}
+
+.footer-contact__arrow div:link,
+.footer-contact__arrow div:visited {
+    -webkit-transition: transform .2s ease-in;
+    transition: transform .2s ease-in;
+}
+
+.footer-contact__arrow div:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 10px rgba(0, 0, 0, .2);
+    cursor: pointer;
+}
+
+.footer-contact__arrow img {
+    width: 1.875rem;
+    display: inline-block;
+    height: 100%;
+    vertical-align: middle;
 }
 
 #footer-logos-div{
