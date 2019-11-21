@@ -391,6 +391,11 @@ header a{
     color: #ffffff;
 }
 
+#footer-stay-in-touch-div p,
+#footer-stay-in-touch-div h1 {
+    color: #ffffff;
+}
+
 #footer-contact-div{
     padding-top: 7rem;
     padding-bottom: 7rem;
