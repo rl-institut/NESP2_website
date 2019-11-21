@@ -411,6 +411,21 @@ header a{
     padding-bottom: 1rem;
 }
 
+.footer-contact__arrow div {
+    background-color: #1DD069;
+    width: 4rem;
+    height: 4rem;
+    border-radius: 100px;
+    text-align: center;
+}
+
+.footer-contact__arrow img {
+    width: 1.875rem;
+    display: inline-block;
+    height: 100%;
+    vertical-align: middle;
+}
+
 #footer-logos-div{
     background-color: #ffffff;
 }
