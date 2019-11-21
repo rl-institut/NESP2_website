@@ -176,13 +176,32 @@ header a{
 }
 
 /* Main content */
-.cta {
+.cta,
+.cta:hover,
+.cta:focus,
+.cta:active {
+    display: block;
+    width: fit-content;
+    width: -moz-fit-content;
     background-color: #1DD069;
     color: #ffffff;
     font-size: 18pt;
     font-weight: bold;
     padding: 10px 30px 10px 30px;
     border-radius: 4px;
+}
+
+.cta {
+    -webkit-transition: all .2s ease-in;
+    transition: all .2s ease-in;
+}
+
+.cta:hover,
+.cta:focus,
+.cta:active {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 10px rgba(0, 0, 0, .2);
+    cursor: pointer;
 }
 
 .landing-hero {
@@ -346,6 +365,10 @@ header a{
 
 .landing-maps__header h3 span {
     font-weight: 700;
+}
+
+.landing-maps__carousel .cta {
+    margin: 0 auto;
 }
 
 .landing-resources {
