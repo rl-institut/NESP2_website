@@ -487,12 +487,18 @@ header a{
 #footer-license-div{
     background-color: #93939f;
     color: #ffffff;
-    padding-top: 20px;
-    padding-bottom: 20px;
+    font-size: 14pt;
+    line-height: 18pt;
+    padding-top: 2rem;
+    padding-bottom: 1.5rem;
 }
 
-#footer-license-div a{
+#footer-license-div a,
+#footer-license-div p {
     color: #ffffff;
+    font-size: 14pt;
+    line-height: 18pt;
+    padding-right: 1rem;
 }
 
 #footer-license-div div{
