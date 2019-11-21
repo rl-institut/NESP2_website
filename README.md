@@ -12,6 +12,11 @@ Create a virtual environment (with python3), then
 pip3 install -r app/requirements.txt
 ```
 
+Pull the latest changes from the [maps repository](https://github.com/rl-institut/NESP2)
+```
+python3 app/setup_maps.py
+```
+
 Start the app with  
 ```
 python3 app/index.py
