@@ -389,6 +389,8 @@ header a{
 }
 
 #footer-contact-div{
+    padding-top: 7rem;
+    padding-bottom: 7rem;
     background-color: #eeeff1;
     font-size: 14pt;
 }
