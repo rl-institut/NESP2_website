@@ -169,10 +169,8 @@ header a{
     font-weight: normal;
 }
 
-#header-logo-nigeria{
-    margin-right: 0;
-    padding: 0.5rem 0 0.5rem 0 ;
-    height: 5rem;
+#header-logo-nigeria img {
+    height: 3.5rem;
 }
 
 /* Main content */
@@ -281,7 +279,7 @@ header a{
 }
 
 .landing-feature {
-    background-image: url("img/img-3-feature-developper.png");
+    background-image: url("img/img-3-feature-developer.png");
     background-position: center center;
     background-repeat: no-repeat;
     background-size: cover;

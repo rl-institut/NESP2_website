@@ -31,8 +31,10 @@
     <div class="cell medium-2">
       <a href="{{ url_for('about.about') }}"><img src="{{ url_for('static', filename='img/icons/i_info.svg') }}">ABOUT</a>
     </div>
-    <div class="cell medium-1">
-      <img id="header-logo-nigeria" src="{{ url_for('static', filename='logos/logo-2-horses.png') }}">
+    <div class="cell medium-1 nav__logo-nigeria" id="header-logo-nigeria">
+      <div>
+        <img src="{{ url_for('static', filename='logos/logo-2-crest.png') }}">
+      </div>
     </div>
     {% block header %}{% endblock %}
   </header>
