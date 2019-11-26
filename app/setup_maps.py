@@ -23,8 +23,8 @@ static_path = os.path.join('NESP2', 'app', 'static')
 
 new_static_path = os.path.join('static')
 
-static_types = ['data', 'images']
-new_static_types = {'data': 'data', 'images': os.path.join('img', 'maps')}
+static_types = ['data', 'images', 'css']
+new_static_types = {'data': 'data', 'images': os.path.join('img', 'maps'), 'css': 'css'}
 
 for static_type in static_types:
     new_static_type = new_static_types[static_type]
@@ -40,11 +40,6 @@ for static_type in static_types:
             os.path.join(new_static_path, new_static_type, fname)
         )
 
-# copy css
-copyfile(
-    os.path.join(static_path, 'css', 'styles.css'),
-    os.path.join(new_static_path, 'maps.css')
-)
 
 # erase the NESP2 repository
 rmtree('NESP2')
