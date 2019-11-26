@@ -3,7 +3,7 @@ from shutil import copyfile, rmtree
 
 # clone the NESP2 repository locally
 branch = 'dev'
-if os.path.exists('NESP2') == False:
+if os.path.exists('NESP2') is False:
     os.system(
         f"git clone --single-branch --branch {branch} https://github.com/rl-institut/NESP2.git")
 
@@ -12,7 +12,7 @@ template_path = os.path.join('NESP2', 'app', 'templates')
 
 new_template_path = os.path.join('templates', 'maps')
 
-if os.path.exists(new_template_path) == False:
+if os.path.exists(new_template_path) is False:
     os.mkdir(new_template_path)
 
 for fname in os.listdir(template_path):
@@ -30,7 +30,7 @@ for static_type in static_types:
     new_static_type = new_static_types[static_type]
 
     # create the folder if it does not exists
-    if os.path.exists(os.path.join(new_static_path, new_static_type)) == False:
+    if os.path.exists(os.path.join(new_static_path, new_static_type)) is False:
         os.mkdir(os.path.join(new_static_path, new_static_type))
 
     # copy the files from NESP2 repo the folder of NESP2 template
