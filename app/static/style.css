@@ -130,12 +130,13 @@ p, div{
     font-family: Poppins Medium;
 }
 
-
-
 /* Navigation Bar */
 
 header{
     background-color: #ffffff;
+    position: fixed;
+    width: 100%;
+    z-index: 999;
 }
 
 header div{
@@ -200,6 +201,12 @@ header a{
     transform: translateY(-3px);
     box-shadow: 0 5px 10px rgba(0, 0, 0, .2);
     cursor: pointer;
+}
+
+/* empty div behind top nav */
+/* should have =< height of nav */
+.below-header {
+    height: 5rem;
 }
 
 .landing-hero {
