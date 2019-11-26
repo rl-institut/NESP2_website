@@ -5,7 +5,10 @@ from shutil import copyfile, rmtree
 branch = 'dev'
 if os.path.exists('NESP2') is False:
     os.system(
-        f"git clone --single-branch --branch {branch} https://github.com/rl-institut/NESP2.git")
+        "git clone --single-branch --branch {} https://github.com/rl-institut/NESP2.git".format(
+            branch
+        )
+    )
 
 # copy templates
 template_path = os.path.join('NESP2', 'app', 'templates')
@@ -39,7 +42,6 @@ for static_type in static_types:
             os.path.join(static_path, static_type, fname),
             os.path.join(new_static_path, new_static_type, fname)
         )
-
 
 # erase the NESP2 repository
 rmtree('NESP2')
