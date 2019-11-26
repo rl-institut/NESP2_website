@@ -5,15 +5,15 @@
    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
    xmlns:svg="http://www.w3.org/2000/svg"
    xmlns="http://www.w3.org/2000/svg"
-   id="svg2996"
+   id="svg4181"
    version="1.1"
-   viewBox="0 0 4.7700434 3.7095113"
-   height="3.7095113mm"
-   width="4.7700434mm">
+   viewBox="0 0 5.294343 5.2943392"
+   height="5.2943392mm"
+   width="5.294343mm">
   <defs
-     id="defs2990" />
+     id="defs4175" />
   <metadata
-     id="metadata2993">
+     id="metadata4178">
     <rdf:RDF>
       <cc:Work
          rdf:about="">
@@ -25,16 +25,20 @@
     </rdf:RDF>
   </metadata>
   <g
-     transform="translate(115.3999,-121.08721)"
+     transform="translate(-97.327533,-229.15193)"
      id="layer1">
     <path
        style="fill:none;fill-rule:evenodd;stroke:#ffffff;stroke-width:0.52916664;stroke-linecap:round;stroke-linejoin:round;stroke-opacity:1"
-       id="path124"
-       d="m -115.13155,123.07425 h 4.23334" />
+       id="path441"
+       d="m 101.56087,232.06503 v 1.5875 c 0,0.29225 -0.23692,0.52916 -0.52917,0.52916 h -2.910417 c -0.292251,0 -0.529167,-0.23691 -0.529167,-0.52916 v -2.91042 c 0,-0.29225 0.236916,-0.52917 0.529167,-0.52917 h 1.5875" />
     <polyline
        style="fill:none;fill-rule:evenodd;stroke:#ffffff;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;stroke-opacity:1"
-       points="472 432 478 438 472 444"
-       id="polyline126"
-       transform="matrix(0.26458333,0,0,0.26458333,-237.36905,7.0544656)" />
+       points="329 765 335 765 335 771"
+       id="polyline443"
+       transform="matrix(0.26458333,0,0,0.26458333,13.7192,27.012948)" />
+    <path
+       style="fill:none;fill-rule:evenodd;stroke:#ffffff;stroke-width:0.52916664;stroke-linecap:round;stroke-linejoin:round;stroke-opacity:1"
+       id="path445"
+       d="m 99.4442,232.32961 2.91042,-2.91042" />
   </g>
 </svg>
