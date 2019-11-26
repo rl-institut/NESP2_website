@@ -23,10 +23,10 @@
       </a>
     </div>
     <div class="cell medium-2">
-      <a href="#landing-maps"><img src="{{ url_for('static', filename='img/icons/i_map.svg') }}">MAP</a>
+      <a href="{{ url_for('landing')}}#landing-maps"><img src="{{ url_for('static', filename='img/icons/i_map.svg') }}">MAP</a>
     </div>
     <div class="cell medium-2">
-      <a href="#landing-resources"><img src="{{ url_for('static', filename='img/icons/i_layers.svg') }}">TOOLS</a>
+      <a href="{{ url_for('landing')}}#landing-resources"><img src="{{ url_for('static', filename='img/icons/i_layers.svg') }}">TOOLS</a>
     </div>
     <div class="cell medium-2">
       <a href="{{ url_for('about.about') }}"><img src="{{ url_for('static', filename='img/icons/i_info.svg') }}">ABOUT</a>
@@ -58,9 +58,11 @@
                 <p><b>Follow us on social media</b> to stay up-to date on the latest developments</p>
               </div>
               <div id="footer-stay-in-touch-icons" class="cell medium-6 large-5 footer-stay-in-touch__img">
-                <a href="#"><img src="{{ url_for('static', filename='img/icons/i_info.svg') }}"></a>
-                <a href="#"><img src="{{ url_for('static', filename='img/icons/i_info.svg') }}"></a>
-                <a href="#"><img src="{{ url_for('static', filename='img/icons/i_info.svg') }}"></a>
+                <a href="#"><img src="{{ url_for('static', filename='img/icons/i_youtube_w.svg') }}"></a>
+                <a href="#"><img src="{{ url_for('static', filename='img/icons/i_facebook_w.svg') }}"></a>
+                <a href="https://twitter.com/nesp_nigeria" target="_blank"><img src="{{ url_for('static', filename='img/icons/i_twitter_w.svg') }}"></a>
+
+
               </div>
             </div>
           </div>
