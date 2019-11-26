@@ -169,10 +169,8 @@ header a{
     font-weight: normal;
 }
 
-#header-logo-nigeria{
-    margin-right: 0;
-    padding: 0.5rem 0 0.5rem 0 ;
-    height: 5rem;
+#header-logo-nigeria img {
+    height: 3.5rem;
 }
 
 /* Main content */
