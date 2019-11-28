@@ -23,18 +23,20 @@
         <h2>Nigeria Se4All</h2>
       </a>
     </div>
-    <div class="cell medium-2">
-      <a href="{{ url_for('landing')}}#landing-maps"><img src="{{ url_for('static', filename='img/icons/i_map.svg') }}">MAP</a>
-    </div>
-    <div class="cell medium-2">
-      <a href="{{ url_for('landing')}}#landing-resources"><img src="{{ url_for('static', filename='img/icons/i_layers.svg') }}">TOOLS</a>
-    </div>
-    <div class="cell medium-2">
-      <a href="{{ url_for('about.about') }}"><img src="{{ url_for('static', filename='img/icons/i_info.svg') }}">ABOUT</a>
-    </div>
-    <div class="cell medium-1 nav__logo-nigeria" id="header-logo-nigeria">
-      <div>
-        <img src="{{ url_for('static', filename='logos/logo-2-crest.png') }}">
+    <div class="cell medium-7 header-right">
+      <div class="header-right__item">
+        <a href="{{ url_for('landing')}}#landing-maps"><img src="{{ url_for('static', filename='img/icons/i_map.svg') }}">MAP</a>
+      </div>
+      <div class="header-right__item">
+        <a href="{{ url_for('landing')}}#landing-resources"><img src="{{ url_for('static', filename='img/icons/i_layers.svg') }}">TOOLS</a>
+      </div>
+      <div class="header-right__item">
+        <a href="{{ url_for('about.about') }}"><img src="{{ url_for('static', filename='img/icons/i_info.svg') }}">ABOUT</a>
+      </div>
+      <div class="header-right__item nav__logo-nigeria" id="header-logo-nigeria">
+        <div>
+          <img src="{{ url_for('static', filename='logos/logo-2-crest.png') }}">
+        </div>
       </div>
     </div>
     {% block header %}{% endblock %}
@@ -64,8 +66,6 @@
                 <a href="#"><img src="{{ url_for('static', filename='img/icons/i_youtube_w.svg') }}"></a>
                 <a href="#"><img src="{{ url_for('static', filename='img/icons/i_facebook_w.svg') }}"></a>
                 <a href="https://twitter.com/nesp_nigeria" target="_blank"><img src="{{ url_for('static', filename='img/icons/i_twitter_w.svg') }}"></a>
-
-
               </div>
             </div>
           </div>

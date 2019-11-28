@@ -166,6 +166,11 @@ header img{
     height: 2.5rem;
 }
 
+.header-right__item {
+    margin-left: auto; 
+    margin-right: 0;
+}
+
 header a{
     color: #464646;
     font-size: 20pt;
