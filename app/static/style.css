@@ -163,7 +163,15 @@ header h2{
 
 header img{
     margin-right: 1rem;
-    height: 2.5rem;
+    height: 1.5rem;
+    transform: translateY(-3px);
+}
+
+
+@media only screen and (min-width: 1000px) {
+    .header-right {
+        margin-right: 5rem;
+    }   
 }
 
 .header-right__item {
@@ -173,8 +181,14 @@ header img{
 
 header a{
     color: #464646;
-    font-size: 20pt;
+    font-size: 16pt;
     font-weight: normal;
+}
+
+header a:hover,
+header a:active,
+header a:focus{
+    color: #464646;
 }
 
 #header-logo-nigeria img {
