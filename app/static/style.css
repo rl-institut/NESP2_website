@@ -148,12 +148,15 @@ header div{
 
 header h2{
     color: #ffbb00;
-    font-size: 18pt;
+    font-size: 16pt;
     font-weight: bold;
+    text-transform: uppercase;
+    padding-top: .4rem;
 }
 
 #header-blitz-div img{
     height: 3rem;
+    transform: translateY(0px);
 }
 
 #header-blitz-div a{
@@ -168,9 +171,9 @@ header img{
 }
 
 
-@media only screen and (min-width: 1000px) {
+@media only screen and (min-width: 1040px) {
     .header-right {
-        margin-right: 5rem;
+        margin-right: 3rem;
     }   
 }
 
