@@ -330,6 +330,7 @@ header a{
     margin-bottom: 1rem;
     border-radius: 100px;
     background-color: #c5c4cf;
+    cursor: pointer;
 }
 .landing-feature__img.selected {
     background-color: #1DD069;
