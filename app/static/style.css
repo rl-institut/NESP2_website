@@ -300,6 +300,10 @@ header a{
     color: #FFF;
 }
 
+.landing-feature__header {
+    padding-bottom: 1.5rem;
+}
+
 .landing-feature h2 {
     font-weight: 400;
 }
@@ -310,6 +314,8 @@ header a{
 
 .landing-feature__text {
     margin: 0 auto;
+    max-width: 36rem;
+    padding-bottom: 8rem;
 }
 
 .landing-feature__item {
@@ -320,6 +326,7 @@ header a{
     margin: 0 auto;
     height: 4rem;
     width: 4rem;
+    margin-bottom: 1rem;
     border-radius: 100px;
     background-color: #c5c4cf;
 }
@@ -330,9 +337,12 @@ header a{
     height: 2.5rem;
     margin-top: .5rem;
 }
-.landing-feature__description a {
+.landing-feature__description span {
     font-size: 15pt;
     color: #FFF;
+}
+.landing-feature__description.selected {
+    font-weight: 700;
 }
 .landing-feature__item.active .landing-feature__img {
     background-color: #1DD069;
