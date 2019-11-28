@@ -292,7 +292,7 @@ header a{
     background-repeat: no-repeat;
     background-size: cover;
     padding-top: 10rem;
-    padding-bottom: 5rem;
+    padding-bottom: 6rem;
 }
 
 .landing-feature h2,
@@ -315,7 +315,8 @@ header a{
 .landing-feature__text {
     margin: 0 auto;
     max-width: 36rem;
-    padding-bottom: 8rem;
+    padding-bottom: 4rem;
+    height: 14rem;
 }
 
 .landing-feature__item {
