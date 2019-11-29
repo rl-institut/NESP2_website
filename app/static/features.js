@@ -10,23 +10,50 @@ var bkgs = {
 // Set the preselected background
 featureDiv.style.backgroundImage = "url('static/img/img-3-feature-developer.png')";
 
-$('.opt-title').on("mouseover", function() {
+function apply_select(feature_type){
+    console.log(feature_type);
+    //change class to selected
+    var ftId = 'landing-feature-' + feature_type + '-btn';
+    var ft = document.getElementById(ftId).getElementsByClassName('landing-feature__img')[0];
+    ft.className = 'landing-feature__img ' + 'selected';
+    ft = document.getElementById(ftId).getElementsByClassName('landing-feature__description')[0];
+    ft.className = 'landing-feature__description ' + 'selected';
+}
+
+function apply_deselect(feature_type){
+    //change class to deselected by removing selected class
+    var ftId = 'landing-feature-' + feature_type + '-btn';
+    var ft = document.getElementById(ftId).getElementsByClassName('landing-feature__img')[0];
+    ft.className = 'landing-feature__img';
+    ft = document.getElementById(ftId).getElementsByClassName('landing-feature__description')[0];
+    ft.className = 'landing-feature__description';
+}
+
+function hover_features() {
   // Find the associated feature id
   var ftId = $(this).find("a").attr("href").substring(1);
-  var tabContents = document.getElementById(ftId);
+  var ftType = ftId.split('-').pop();
+  var selectedTab = document.getElementById(ftId);
+
   // Change the background image
   featureDiv.style.backgroundImage = "url('static/img/" + bkgs[ftId] + "')";
+
   // Find the previously selected tab
   var prevSelectedTab = $('.selected--opt--content')[0];
+  var prevFtId = prevSelectedTab.id
+  var prevftType = prevFtId.split('-').pop();
+
   // Select the new tab and deselect the previously selected
-  if(tabContents.className != 'selected--opt--content' && prevSelectedTab){
+  if(selectedTab.className != 'selected--opt--content' && prevSelectedTab){
         prevSelectedTab.className = 'opt--content';
-        tabContents.className = 'selected--opt--content';
+        apply_deselect(prevftType);
+        selectedTab.className = 'selected--opt--content';
+        apply_select(ftType);
   }
-  else{
-       tabContents.className = 'selected--opt--content';
-  }
-});
+}
+
+$('.landing-feature__img').on("mouseover", hover_features);
+$('.landing-feature__description').on("mouseover", hover_features);
 
 $('.feature-next').on("click", function() {
   // Find the currently selected tab
@@ -43,6 +70,10 @@ $('.feature-next').on("click", function() {
   else if (selectedId == 'cit'){
     nextId = 'dev';
   }
+  // update "selected" class
+  apply_deselect(selectedId);
+  apply_select(nextId);
+
   nextId = selectedTab.id.replace(selectedId, nextId)
   var nextTab = document.getElementById(nextId);
 
@@ -52,6 +83,7 @@ $('.feature-next').on("click", function() {
   // Select the new tab and deselect the previously selected
   selectedTab.className = 'opt--content';
   nextTab.className = 'selected--opt--content';
+
 });
 
 
@@ -70,6 +102,10 @@ $('.feature-previous').on("click", function() {
   else if (selectedId == 'cit'){
     prevId = 'pla';
   }
+  // update "selected" class
+  apply_deselect(selectedId);
+  apply_select(prevId);
+
   prevId = selectedTab.id.replace(selectedId, prevId)
   var prevTab = document.getElementById(prevId);
 

@@ -82,7 +82,6 @@ p, div{
     flex-direction: column;
     justify-content: center;
     align-item: center;
-
 }
 
 /* Gauge */
@@ -314,13 +313,17 @@ header a:focus{
     background-position: center center;
     background-repeat: no-repeat;
     background-size: cover;
-    padding-top: 3rem;
-    padding-bottom: 5rem;
+    padding-top: 10rem;
+    padding-bottom: 6rem;
 }
 
 .landing-feature h2,
 .landing-feature p {
     color: #FFF;
+}
+
+.landing-feature__header {
+    padding-bottom: 1.5rem;
 }
 
 .landing-feature h2 {
@@ -333,6 +336,9 @@ header a:focus{
 
 .landing-feature__text {
     margin: 0 auto;
+    max-width: 36rem;
+    padding-bottom: 4rem;
+    height: 14rem;
 }
 
 .landing-feature__item {
@@ -341,18 +347,26 @@ header a:focus{
 
 .landing-feature__img {
     margin: 0 auto;
-    height: 3rem;
-    width: 3rem;
+    height: 4rem;
+    width: 4rem;
+    margin-bottom: 1rem;
     border-radius: 100px;
-    background-color: grey;
+    background-color: #c5c4cf;
+    cursor: pointer;
+}
+.landing-feature__img.selected {
+    background-color: #1DD069;
 }
 .landing-feature__img img {
-    height: 1.5rem;
+    height: 2.5rem;
     margin-top: .5rem;
 }
-.landing-feature__description a {
+.landing-feature__description span {
     font-size: 15pt;
     color: #FFF;
+}
+.landing-feature__description.selected {
+    font-weight: 700;
 }
 .landing-feature__item.active .landing-feature__img {
     background-color: #1DD069;
