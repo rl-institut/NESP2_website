@@ -10,6 +10,25 @@ var bkgs = {
 // Set the preselected background
 featureDiv.style.backgroundImage = "url('static/img/img-3-feature-developer.png')";
 
+function apply_select(feature_type){
+    console.log(feature_type);
+    //change class to selected
+    var ftId = 'landing-feature-' + feature_type + '-btn';
+    var ft = document.getElementById(ftId).getElementsByClassName('landing-feature__img')[0];
+    ft.className = 'landing-feature__img ' + 'selected';
+    ft = document.getElementById(ftId).getElementsByClassName('landing-feature__description')[0];
+    ft.className = 'landing-feature__description ' + 'selected';
+}
+
+function apply_deselect(feature_type){
+    //change class to deselected by removing selected class
+    var ftId = 'landing-feature-' + feature_type + '-btn';
+    var ft = document.getElementById(ftId).getElementsByClassName('landing-feature__img')[0];
+    ft.className = 'landing-feature__img';
+    ft = document.getElementById(ftId).getElementsByClassName('landing-feature__description')[0];
+    ft.className = 'landing-feature__description';
+}
+
 function hover_features() {
   // Find the associated feature id
   var ftId = $(this).find("a").attr("href").substring(1);
