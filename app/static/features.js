@@ -70,6 +70,10 @@ $('.feature-next').on("click", function() {
   else if (selectedId == 'cit'){
     nextId = 'dev';
   }
+  // update "selected" class
+  apply_deselect(selectedId);
+  apply_select(nextId);
+
   nextId = selectedTab.id.replace(selectedId, nextId)
   var nextTab = document.getElementById(nextId);
 
@@ -79,6 +83,7 @@ $('.feature-next').on("click", function() {
   // Select the new tab and deselect the previously selected
   selectedTab.className = 'opt--content';
   nextTab.className = 'selected--opt--content';
+
 });
 
 
@@ -97,6 +102,10 @@ $('.feature-previous').on("click", function() {
   else if (selectedId == 'cit'){
     prevId = 'pla';
   }
+  // update "selected" class
+  apply_deselect(selectedId);
+  apply_select(prevId);
+
   prevId = selectedTab.id.replace(selectedId, prevId)
   var prevTab = document.getElementById(prevId);
 
