@@ -23,7 +23,7 @@ Here is a template for new release sections
 - docker deployment files (#12, #26)
 - structure of the header (#13)
 - structure of the contact section(#14)
-- structure of the feature section(#15, #38)
+- structure of the feature section(#15, #38, #65)
 - structure of the about page (#23)
 - structure of the maps section (#39)
 - script to copy files from NESP2 repository (#39)
@@ -35,6 +35,7 @@ Here is a template for new release sections
 - structure of the footer contacts (#41)
 - hover effects (#51, #52) 
 - link with nesp repo (#39)
+- page for privacy policy and terms of service (#67)
 
 ### Changed
 - structure of the folders --> flask files in `app` folder (#12)
