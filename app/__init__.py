@@ -40,4 +40,12 @@ def create_app(test_config=None):
     def landing():
         return render_template('landing/index.html')
 
+    @app.route('/termsofservice')
+    def termsofservice():
+        return render_template('termsofservice.html')
+
+    @app.route('/privacypolicy')
+    def privacypolicy():
+        return render_template('privacypolicy.html')
+
     return app
