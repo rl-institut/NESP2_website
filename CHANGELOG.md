@@ -36,6 +36,7 @@ Here is a template for new release sections
 - hover effects (#51, #52) 
 - link with nesp repo (#39)
 - page for privacy policy and terms of service (#67)
+- cross-linking protection for all external links (#69)
 
 ### Changed
 - structure of the folders --> flask files in `app` folder (#12)

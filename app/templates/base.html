@@ -31,7 +31,7 @@
         <a href="{{ url_for('landing')}}#landing-resources"><img src="{{ url_for('static', filename='img/icons/i_layers.svg') }}">TOOLS</a>
       </div>
       <div class="header-right__item">
-        <a href="{{ url_for('about.about') }}"><img src="{{ url_for('static', filename='img/icons/i_info.svg') }}">ABOUT</a>
+        <a href="{{ url_for('about.about') }}" target="_blank"><img src="{{ url_for('static', filename='img/icons/i_info.svg') }}">ABOUT</a>
       </div>
       <div class="header-right__item nav__logo-nigeria" id="header-logo-nigeria">
         <div>
@@ -63,9 +63,9 @@
                 <p><b>Follow us on social media</b> to stay up-to date on the latest developments</p>
               </div>
               <div id="footer-stay-in-touch-icons" class="cell medium-6 large-5 footer-stay-in-touch__img">
-                <a href="#"><img src="{{ url_for('static', filename='img/icons/i_youtube_w.svg') }}"></a>
-                <a href="#"><img src="{{ url_for('static', filename='img/icons/i_facebook_w.svg') }}"></a>
-                <a href="https://twitter.com/nesp_nigeria" target="_blank"><img src="{{ url_for('static', filename='img/icons/i_twitter_w.svg') }}"></a>
+                <a href="#" rel="noreferrer" target="_blank"><img src="{{ url_for('static', filename='img/icons/i_youtube_w.svg') }}"></a>
+                <a href="#" rel="noreferrer" target="_blank"><img src="{{ url_for('static', filename='img/icons/i_facebook_w.svg') }}"></a>
+                <a href="https://twitter.com/nesp_nigeria" rel="noreferrer" target="_blank"><img src="{{ url_for('static', filename='img/icons/i_twitter_w.svg') }}"></a>
               </div>
             </div>
           </div>
@@ -142,8 +142,8 @@
       <div id="footer-license-div" class="cell">
         <div class="grid-x">
           <div class="cell medium-4 large-3 large-offset-1 left--align">
-            <a href="{{ url_for('termsofservice')}}">Terms of Service</a>
-            <a href="{{ url_for('privacypolicy')}}">Privacy Policy</a>
+            <a href="{{ url_for('termsofservice')}}" target="_blank">Terms of Service</a>
+            <a href="{{ url_for('privacypolicy')}}" target="_blank">Privacy Policy</a>
           </div>
           <div class="cell medium-4 center--align">
             <p>&copy; 2019 All Rights Reserved by <b> nigeriase4all.gov.ng</b></p>
