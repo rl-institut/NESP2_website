@@ -4,7 +4,7 @@ var featureDiv = document.getElementById('landing-feature');
 var bkgs = {
     'landing-feature-txt-dev': 'img-3-feature-developer.png',
     'landing-feature-txt-pla': 'img-4-feature-planner.png',
-    'landing-feature-txt-cit': 'img-10-feature-citizen.png'
+    'landing-feature-txt-cit': 'Image_gray.svg'
 };
 
 // Set the preselected background
