@@ -5,8 +5,8 @@
       <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem.</p>
     <a href="{{link}}">Link --></a>
   </div>
-  <div id="about-stakeholder{{idx}}-img" class="cell medium-offset-2 medium-5">
-    <img src="static/img/Image_gray.svg" alt="Image Placeholder">
+  <div id="about-stakeholder{{idx}}-img" class="cell medium-offset-2 medium-5 about-stakeholder__img">
+    <img src="{{ url_for('static', filename=image) }}" alt="Logo">
   </div>
 </div>
 {%- endmacro %}
