@@ -19,6 +19,16 @@ Here is a template for new release sections
 ## [Unreleased]
 
 ### Added
+
+### Changed
+
+### Removed
+
+## [0.1.0] - 2019-12-05
+
+First version of the NESP website
+
+### Added
 - flask structure (#1)
 - docker deployment files (#12, #26)
 - structure of the header (#13)
@@ -42,7 +52,4 @@ Here is a template for new release sections
 ### Changed
 - structure of the folders --> flask files in `app` folder (#12)
 - README with new instruction (#12)
-
-
-### Removed
 
