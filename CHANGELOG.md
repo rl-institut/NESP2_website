@@ -37,10 +37,12 @@ Here is a template for new release sections
 - link with nesp repo (#39)
 - page for privacy policy and terms of service (#67)
 - cross-linking protection for all external links (#69)
+- js folder for javascript code (#71)
 
 ### Changed
 - structure of the folders --> flask files in `app` folder (#12)
 - README with new instruction (#12)
+
 
 ### Removed
 
