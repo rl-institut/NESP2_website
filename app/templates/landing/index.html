@@ -1,7 +1,6 @@
 {% extends 'base.html' %}
 
 {% block header %}
-
 {% endblock header%}
 
 {% block content %}
@@ -34,13 +33,7 @@
   </section>
 
   <section id="landing-feature" class="grid-x landing-feature align-center text-center">
-    <!--
-     https://jsfiddle.net/yassarikhan786/aad7qy6n/
-
-    landing-feature__item <-> opt-title
-
-    landing-feature__img not added yet
-   -->
+    <!-- inspired from https://jsfiddle.net/yassarikhan786/aad7qy6n/ -->
     <div id="landing-feature-al" class="cell small-1 left--align landing-feature__arrow">
       <div>
         <img class="feature-previous" src="static/img/icons/i_arrow_left_w.svg">
@@ -184,3 +177,6 @@
 
 </div>
 {% endblock content%}
+
+
+<script src="{{ url_for('static', filename='js/features.js') }}"></script>
