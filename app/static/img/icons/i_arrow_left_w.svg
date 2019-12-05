@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   id="svg3584"
+   version="1.1"
+   viewBox="0 0 4.7700334 3.7095113"
+   height="3.7095113mm"
+   width="4.7700334mm">
+  <defs
+     id="defs3578" />
+  <metadata
+     id="metadata3581">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     transform="translate(152.64252,-9.4544929)"
+     id="layer1">
+    <path
+       style="fill:none;fill-rule:evenodd;stroke:#ffffff;stroke-width:0.52916664;stroke-linecap:round;stroke-linejoin:round;fill-opacity:1;stroke-opacity:1"
+       id="path120"
+       d="m -148.14084,11.341717 h -4.23333" />
+    <polyline
+       style="fill:none;fill-rule:evenodd;stroke:#ffffff;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;fill-opacity:1;stroke-opacity:1"
+       points="420 444 414 438 420 432"
+       id="polyline122"
+       transform="matrix(0.26458333,0,0,0.26458333,-261.91193,-104.57825)" />
+  </g>
+</svg>

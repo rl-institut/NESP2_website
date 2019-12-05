@@ -1,0 +1,17 @@
+version: '2'
+services:
+  nesp2_website:
+    restart: unless-stopped
+    build:
+      context: .
+    image: nesp2_website
+    container_name: nesp2_website
+    expose:
+    - "5000"
+    networks:
+    - caddy_network
+
+networks:
+  caddy_network:
+    external:
+      name: docker_caddy_network

@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   id="svg8"
+   version="1.1"
+   y="0px"
+   x="0px"
+   viewBox="0 0 100 100"
+   data-name="Layer 1"
+   fill="#000000"
+   width="100px"
+   height="100px">
+  <metadata
+     id="metadata14">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title>15</dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <defs
+     id="defs12" />
+  <title
+     id="title2">15</title>
+  <g
+     style="fill:#fefefe;fill-opacity:1"
+     id="g6"
+     data-name="Group">
+    <polygon
+       style="fill:#fefefe;fill-opacity:1"
+       id="polygon4"
+       points="30.1 24.4 55.7 50 30.1 75.6 37.2 82.6 69.9 50 37.2 17.4 30.1 24.4"
+       data-name="Path" />
+  </g>
+</svg>
