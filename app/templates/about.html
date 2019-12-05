@@ -17,7 +17,7 @@
         </div>
         {% import "about/card.html" as card %}
         <div class="cell about-intro__cards">
-          <div class="grid-x" data-equalizer>
+          <div class="grid-x" data-equalizer="about" data-equalize-on-stack="true">
             {{card.input('Nigeria SE4All & 30:30:30', 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa.', '#about-se4all')}}
             {{card.input('Federal Ministry of Power (FMP)', 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa.', '#about-fmp')}}
             {{card.input('Nigerian Energy Support Programme (NESP)', 'NESP is a technical cooperation programme co-funded by the European Union and the German Government.', '#about-nesp')}}
@@ -26,6 +26,7 @@
         </div>
       </div>
     </div>
+
   </section>
 
   <section id="about-se4all" class="grid-x align-right semi-grey section-about">
