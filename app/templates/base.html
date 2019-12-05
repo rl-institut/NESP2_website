@@ -9,8 +9,8 @@
 </head>
 
 <body>
-  <script src="{{ url_for('static', filename='jquery-3.4.1.min.js') }}"></script>
-  <script src="{{ url_for('static', filename='gauge/GaugeMeter.js') }}"></script>
+  <script src="{{ url_for('static', filename='js/jquery-3.4.1.min.js') }}"></script>
+  <script src="{{ url_for('static', filename='js/gauge/GaugeMeter.js') }}"></script>
   <script>
       $(document).ready(function(){
           $(".GaugeMeter").gaugeMeter();
@@ -48,7 +48,6 @@
   {% endfor %}
   {% block content %}{% endblock %}
 
-  <script src="{{ url_for('static', filename='features.js') }}"></script>
 
   <footer>
     <div id="footer-content" class="grid-x">
@@ -158,4 +157,7 @@
     {% block footer %}
     {% endblock footer %}
   </footer>
+
+    <script src="{{ url_for('static', filename='js/foundation/foundation.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/foundation/app.js') }}"></script>
 </body>
