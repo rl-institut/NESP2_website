@@ -8,14 +8,13 @@
 {% block content %}
 
 <section id="resources-selected" class="grid-x landing-resources">
-  <div class="cell large-2 large-offset-1 landing-resources__text">
+  <div class="cell large-4 large-offset-1 landing-resources__text">
     <h2>{{title}}</h2>
     <p>{{subtitle}}</p>
     <p>{{description}}</p>
     <a class="cta" href="">Go to resource</a>
   </div>
-  {% import "resources/card.html" as resource_card %}
-  <div class="cell large-8 large-offset-1">
+  <div class="cell large-6 large-offset-1">
     <img src="{{ url_for('static', filename=image) }}">
   </div>
 </section>
