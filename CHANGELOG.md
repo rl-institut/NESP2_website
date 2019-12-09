@@ -19,7 +19,7 @@ Here is a template for new release sections
 ## [Unreleased]
 
 ### Added
-
+- social media links (#74)
 ### Changed
 
 ### Removed
