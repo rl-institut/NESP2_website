@@ -13,7 +13,16 @@ RESOURCES_ATTRIBUTES = {
     CLUSTER_ID: {
         'title': 'Cluster Identification',
         'subtitle': 'How can I identify locations of settlements?',
-        'description': 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus.',
+        'description': 'When looking at energy access and rural electrification it is crucial to '
+                       'understand where exactly the non- or undersupplied people are living and '
+                       'in which settlement structure, e.g. in dispersed settlements or more '
+                       'centralized village structures. This is also required for the development '
+                       'of the most techno-economic feasible supply option, e.g. by mini-grids. '
+                       'In order to understand those spatial population structures we used '
+                       'datasets created from satellite imagery which detect buildings in a high '
+                       'spatial resolution. We used those in order to create so-called population '
+                       'clusters which we populate with additional information through remote '
+                       'mapping of building footprints and surveys.',
         'image': 'img/img-5-resource-cluster.png'
     },
     OSM_ID: {
