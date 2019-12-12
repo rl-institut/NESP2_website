@@ -41,7 +41,7 @@ for static_type in static_types:
 
     # copy the files from NESP2 repo the folder of NESP2 template
     for fname in os.listdir(os.path.join(static_path, static_type)):
-        if fname not in ('local.css'):
+        if fname not in ('local.css', 'jquery-3.4.1.min.js'):
             copyfile(
                 os.path.join(static_path, static_type, fname),
                 os.path.join(new_static_path, new_static_type, fname)
