@@ -21,7 +21,8 @@ if os.path.exists(new_template_path) is False:
     os.mkdir(new_template_path)
 
 for fname in os.listdir(template_path):
-    copyfile(os.path.join(template_path, fname), os.path.join(new_template_path, fname))
+    if fname not in ('base.html'):
+        copyfile(os.path.join(template_path, fname), os.path.join(new_template_path, fname))
 
 # copy static files
 static_path = os.path.join('NESP2', 'app', 'static')
