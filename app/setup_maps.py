@@ -21,7 +21,8 @@ if os.path.exists(new_template_path) is False:
     os.mkdir(new_template_path)
 
 for fname in os.listdir(template_path):
-    copyfile(os.path.join(template_path, fname), os.path.join(new_template_path, fname))
+    if fname not in ('base.html'):
+        copyfile(os.path.join(template_path, fname), os.path.join(new_template_path, fname))
 
 # copy static files
 static_path = os.path.join('NESP2', 'app', 'static')
@@ -40,10 +41,11 @@ for static_type in static_types:
 
     # copy the files from NESP2 repo the folder of NESP2 template
     for fname in os.listdir(os.path.join(static_path, static_type)):
-        copyfile(
-            os.path.join(static_path, static_type, fname),
-            os.path.join(new_static_path, new_static_type, fname)
-        )
+        if fname not in ('local.css', 'jquery-3.4.1.min.js'):
+            copyfile(
+                os.path.join(static_path, static_type, fname),
+                os.path.join(new_static_path, new_static_type, fname)
+            )
 
 # erase the NESP2 repository
 rmtree('NESP2')
