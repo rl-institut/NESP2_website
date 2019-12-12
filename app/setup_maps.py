@@ -41,10 +41,11 @@ for static_type in static_types:
 
     # copy the files from NESP2 repo the folder of NESP2 template
     for fname in os.listdir(os.path.join(static_path, static_type)):
-        copyfile(
-            os.path.join(static_path, static_type, fname),
-            os.path.join(new_static_path, new_static_type, fname)
-        )
+        if fname not in ('local.css'):
+            copyfile(
+                os.path.join(static_path, static_type, fname),
+                os.path.join(new_static_path, new_static_type, fname)
+            )
 
 # erase the NESP2 repository
 rmtree('NESP2')
