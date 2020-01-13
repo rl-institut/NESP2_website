@@ -34,10 +34,11 @@ RESOURCES_ATTRIBUTES = {
         geospatial datasets, generated either from on-site knowledge or from high resolution
         satellite imagery. If an Off-grid area is not currently on the OSM database, it can be
         easily added.
-        </br> </br>
+        </br></br>
         Do you have an area of interest for an electrification project that you want to do
         further assessment on? Or do you want to contribute to data to assist electrification
         efforts in Nigeria? Check out the OSM tools below to help you get started:
+        </br></br>
         <ul>
         <li>Create an OSM account on <a href="openstreetmap.org" rel="noreferrer"
         target="_blank">openstreetmap.org</a>.</li>
@@ -60,11 +61,12 @@ RESOURCES_ATTRIBUTES = {
         surveyed. Here more detailed information is collected to enable a more accurate demand
         assessment for the purposes of electrification. At Nigeria SE4ALL we have developed survey
         templates and tools to conduct the surveys.
-        </br> </br>
+        </br></br>
         Do you want to survey a potential location for electrification purposes? Or do you live in
         a settlement that you think could benefit from an electrification project, and want to
         share more information on this location to facilitate a project to happen?
         Check out the survey tools below to get started:
+        </br></br>
         <ul>
         <li>To gather geospatial data about business locations, have a look at using
         <a href="http://fieldpapers.org/" rel="noreferrer" target="_blank">Field Papers</a> in
