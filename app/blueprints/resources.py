@@ -55,7 +55,26 @@ RESOURCES_ATTRIBUTES = {
     SURVEY_ID: {
         'title': 'Survey Tools',
         'subtitle': 'How can I visit a settlement and collect relevant data?',
-        'description': 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus.',
+        'description': Markup('''Once a remote assessment of the satellite imagery has taken place,
+        it is normally required that a potential location for electrification is visited and
+        surveyed. Here more detailed information is collected to enable a more accurate demand
+        assessment for the purposes of electrification. At Nigeria SE4ALL we have developed survey
+        templates and tools to conduct the surveys.
+        </br> </br>
+        Do you want to survey a potential location for electrification purposes? Or do you live in
+        a settlement that you think could benefit from an electrification project, and want to
+        share more information on this location to facilitate a project to happen?
+        Check out the survey tools below to get started:
+        <ul>
+        <li>To gather geospatial data about business locations, have a look at using
+        <a href="http://fieldpapers.org/" rel="noreferrer" target="_blank">Field Papers</a> in
+        conjunction with OSM data.</li>
+        <li>A
+        <a href="https://www.kobotoolbox.org/" rel="noreferrer" target="_blank">KoBoToolbox</a>
+        questionnaire is also available. Get in touch with us and describe in a few sentences why
+        you would like to collect the data, as well as sharing your KoBoToolbox username.
+        You can then receive access to the questionnaires.</li>
+        '''),
         'image': 'img/img-7-resources-survey.png'
     },
     GRID_MAPPING_ID: {
