@@ -14,14 +14,15 @@ python:
 install:
   - pip install -r app/requirements.txt
   - pip install -r tests/test_requirements.txt
+  - python app/setup_maps.py
 
 # commands to run tests
 jobs:
   include:
     - stage: "Tests"                # naming the Tests stage
-      name: "Linting Tests"            # names the first Tests stage job
-      script: flake8
-      script: pylint */*.py
+      name: "Access tests"            # names the first Tests stage job
+#      script: flake8
+#      script: pylint */*
 # for later stages
       script: pytest
 
