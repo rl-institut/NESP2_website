@@ -20,7 +20,12 @@ Here is a template for new release sections
 
 ### Added
 - social media links (#74)
+- resource content (#75)
+- meta tags in header (#78)
+- tests of page access (#79)
+
 ### Changed
+- allow use of variable via URL (#76)
 
 ### Removed
 
