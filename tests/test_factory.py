@@ -19,3 +19,13 @@ def test_about(client):
 def test_resources(client):
     response = client.get('/resources')
     assert response.status_code == 200
+
+
+def test_termsofserviceces(client):
+    response = client.get('/termsofservice')
+    assert response.status_code == 200
+
+
+def test_privacypolicy(client):
+    response = client.get('/privacypolicy')
+    assert response.status_code == 200
