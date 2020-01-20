@@ -1,5 +1,7 @@
 Website hosting the NESP2 webmap
 
+[![Build Status](https://travis-ci.com/rl-institut/NESP2_website.svg?branch=dev)](https://travis-ci.com/rl-institut/NESP2_website)
+
 ## Getting started
 
 After cloning this repository, checkout the `dev` branch
