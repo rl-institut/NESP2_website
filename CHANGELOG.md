@@ -23,6 +23,7 @@ Here is a template for new release sections
 - resource content (#75)
 - meta tags in header (#78)
 - tests of page access (#79)
+- build badge to readme (#82)
 
 ### Changed
 - allow use of variable via URL (#76)
