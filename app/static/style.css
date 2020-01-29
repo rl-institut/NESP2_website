@@ -626,6 +626,10 @@ footer:not(.footer-hp) {
 
 /* About Page*/
 
+.table-head {
+    text-align: center;
+}
+
 #about-content section {
     padding-top: 2rem;
     padding-bottom: 8rem;
