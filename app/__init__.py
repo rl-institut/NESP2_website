@@ -1,10 +1,11 @@
 import os
-
 from flask import Flask, render_template
 try:
     from blueprints import resources, about, maps
 except ModuleNotFoundError:
     from .blueprints import resources, about, maps
+
+from app.database import db_session
 
 
 def create_app(test_config=None):
@@ -47,5 +48,9 @@ def create_app(test_config=None):
     @app.route('/privacypolicy')
     def privacypolicy():
         return render_template('privacypolicy.html')
+
+    @app.teardown_appcontext
+    def shutdown_session(exception=None):
+        db_session.remove()
 
     return app
