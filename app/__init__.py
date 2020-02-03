@@ -5,7 +5,7 @@ try:
 except ModuleNotFoundError:
     from .blueprints import resources, about, maps
 
-from app.database import db_session
+from app.database import db_session, query_se4all_numbers
 
 
 def create_app(test_config=None):
@@ -39,7 +39,7 @@ def create_app(test_config=None):
 
     @app.route('/')
     def landing():
-        return render_template('landing/index.html')
+        return render_template('landing/index.html', km_electricity=query_se4all_numbers())
 
     @app.route('/termsofservice')
     def termsofservice():

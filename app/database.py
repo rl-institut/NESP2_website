@@ -35,3 +35,11 @@ db_session = scoped_session(sessionmaker(autocommit=False,
 
 Base = declarative_base(metadata=MetaData(schema='se4all', bind=engine))
 
+
+class DlinesSe4all(Base):
+    __table__ = Table('distribution_line_se4all', Base.metadata, autoload=True, autoload_with=engine)
+
+
+def query_se4all_numbers():
+    res = db_session.query(func.sum(DlinesSe4all.length_km).label("sum")).first()
+    return int(res.sum)
