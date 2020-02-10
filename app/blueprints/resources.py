@@ -82,7 +82,7 @@ RESOURCES_ATTRIBUTES = {
     GRID_MAPPING_ID: {
         'title': 'On Grid Mapping',
         'subtitle': 'How can I track the grid?',
-        'description': 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus.',
+        'description': 'The Medium Voltage (MV) grid data used by Nigeria SE4ALL is either primary data which is gathered first hand by the SE4ALL field team, or secondary data whose quality has been validated by the SE4ALL field team. Our aim is to maintain the most comprehensive grid data-set for Nigeria. To achieve this, we encourage anyone who may have more up-to date grid data, or additions to the grid data-set generated to get in touch and share their updates.',
         'image': 'img/img-8-resources-og-mapping.png'
     },
 }
