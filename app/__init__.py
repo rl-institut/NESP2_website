@@ -2,10 +2,23 @@ import os
 from flask import Flask, render_template
 try:
     from blueprints import resources, about, maps
+    if os.environ.get("POSTGRES_URL", None) is not None:
+        from database import db_session, query_se4all_numbers
+    else:
+        db_session = None
+
+        def query_se4all_numbers():
+            return 1
+
 except ModuleNotFoundError:
     from .blueprints import resources, about, maps
+    if os.environ.get("POSTGRES_URL", None) is not None:
+        from .database import db_session, query_se4all_numbers
+    else:
+        db_session = None
 
-from app.database import db_session, query_se4all_numbers
+        def query_se4all_numbers():
+            return 1
 
 
 def create_app(test_config=None):
@@ -51,6 +64,7 @@ def create_app(test_config=None):
 
     @app.teardown_appcontext
     def shutdown_session(exception=None):
-        db_session.remove()
+        if db_session is not None:
+            db_session.remove()
 
     return app
