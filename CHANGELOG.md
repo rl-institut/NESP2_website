@@ -31,6 +31,9 @@ Here is a template for new release sections
 
 ### Removed
 
+### Fixed
+- chrome display bug #64 for small screens (#86)
+
 ## [0.1.0] - 2019-12-05
 
 First version of the NESP website
