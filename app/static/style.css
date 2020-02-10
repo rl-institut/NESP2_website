@@ -234,11 +234,13 @@ header a:focus{
 
 .landing-hero {
     background-image: url("img/img-1-landing.png");
-    height: 100vh;
+    height: 70vh;
     /* Center and scale the image nicely */
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
+    padding-left: 1rem;
+    padding-right: 1rem;
 }
 .landing-hero h1 {
     font-size: 30pt;
@@ -247,6 +249,7 @@ header a:focus{
     line-height: 40pt;
     padding-top: 3rem;
     margin-bottom: 0;
+    margin-top: 10vh;
 }
 
 .landing-hero h2 {
@@ -275,6 +278,7 @@ header a:focus{
         font-size: 40pt;
         line-height: 52pt;
         padding-top: 4rem;
+        margin-top: 0;
     }
     .landing-hero h2 {
         font-size: 18pt;
