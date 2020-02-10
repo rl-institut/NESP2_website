@@ -269,6 +269,7 @@ header a:focus{
 @media only screen and (min-width: 640px) {
     .landing-hero {
         height: 75vh;
+        min-height: 40rem;
     }
     .landing-hero h1 {
         font-size: 40pt;
