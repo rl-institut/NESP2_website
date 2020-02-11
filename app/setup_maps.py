@@ -1,16 +1,30 @@
 import os
+import argparse
 from shutil import copyfile, rmtree
 
 cur_dir = os.path.dirname(os.path.abspath(__file__))
 
-# clone the NESP2 repository locally
-branch = 'dev'
-if os.path.exists('NESP2') is False:
-    os.system(
-        "git clone --single-branch --branch {} https://github.com/rl-institut/NESP2.git".format(
-            branch
+parser = argparse.ArgumentParser(prog="setup_maps", description="Merge the NESP2 maps repository")
+parser.add_argument(
+    "-docker",
+    dest="docker",
+    help="specify if the file is run from docker",
+    nargs="?",
+    const=True,
+    default=False,
+    type=bool,
+)
+args = parser.parse_args()
+
+if args.docker is False:
+    # clone the NESP2 repository locally
+    branch = 'dev'
+    if os.path.exists('NESP2') is False:
+        os.system(
+            "git clone --single-branch --branch {} https://github.com/rl-institut/NESP2.git".format(
+                branch
+            )
         )
-    )
 
 # copy templates
 template_path = os.path.join('NESP2', 'app', 'templates')
@@ -48,4 +62,7 @@ for static_type in static_types:
             )
 
 # erase the NESP2 repository
-rmtree('NESP2')
+rmtree(os.path.join('NESP2'))
+
+if args.docker is True:
+    print("Succesfully setup the NESP2 maps")
