@@ -11,6 +11,10 @@ ENV POSTGRES_URL=$POSTGRES_URL
 ENV POSTGRES_USER=$POSTGRES_USER
 ENV POSTGRES_PW=$POSTGRES_PW
 ENV POSTGRES_DB=$POSTGRES_DB
+
+COPY docker_postgres_login_help.py /
+
+
 # options for gunicorn
 ENV GUNICORN_CMD_ARGS=--bind=0.0.0.0:5000 --workers=2
 
@@ -32,6 +36,8 @@ RUN python /app/setup_maps.py -docker
 WORKDIR /app
 
 EXPOSE 5000
+
+RUN python /docker_postgres_login_help.py
 
 # Start gunicorn
 CMD ["gunicorn", "index:app"]
