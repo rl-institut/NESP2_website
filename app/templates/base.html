@@ -45,7 +45,7 @@
     {% block header %}{% endblock %}
   </header>
   <!-- empty div behind top nav -->
-  <div class="below-header"></div>
+  <div id="page-top" class="below-header"></div>
   {% for message in get_flashed_messages() %}
     <div class="flash">{{ message }}</div>
   {% endfor %}
@@ -115,7 +115,7 @@
             </div>
           </div>
           <div class="cell medium-2 large-1 footer-contact__arrow">
-            <a href="#header-blitz-div">
+            <a href="#page-top">
               <div>
                 <img src="{{ url_for('static', filename='img/icons/i_arrow_up_w.svg') }}">
               </div>

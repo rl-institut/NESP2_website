@@ -35,6 +35,7 @@ Here is a template for new release sections
 
 ### Fixed
 - chrome display bug #64 for small screens (#86)
+- return button was not working (#93)
 
 ## [0.1.0] - 2019-12-05
 
