@@ -30,6 +30,7 @@ Here is a template for new release sections
 - allow use of variable via URL (#76)
 - make table in about responsive and centered (#88)
 - dockerfile setup to use postgres (#91)
+- OG grid mapping image (#95)
 
 ### Removed
 
