@@ -25,12 +25,14 @@ Here is a template for new release sections
 - tests of page access (#79)
 - build badge to readme (#82)
 - connection to postgres database (#85)
+- gauge max value is queried from the database (#96)
 
 ### Changed
 - allow use of variable via URL (#76)
 - make table in about responsive and centered (#88)
 - dockerfile setup to use postgres (#91)
 - OG grid mapping image (#95)
+- gauge line is thicker (#96)
 
 ### Removed
 
