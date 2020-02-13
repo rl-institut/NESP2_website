@@ -40,18 +40,39 @@ db_session = scoped_session(sessionmaker(autocommit=False,
 
 
 Base = declarative_base(metadata=MetaData(schema='se4all', bind=engine))
-BaseGauge = declarative_base(metadata=MetaData(schema='web', bind=engine))
+BaseWeb = declarative_base(metadata=MetaData(schema='web', bind=engine))
+
 
 class DlinesSe4all(Base):
     __table__ = Table('distribution_line_se4all', Base.metadata, autoload=True, autoload_with=engine)
 
 
-class GaugeMaximum(BaseGauge):
-    __table__ = Table('ourprogress_maximums', BaseGauge.metadata, autoload=True, autoload_with=engine)
+class GaugeMaximum(BaseWeb):
+    __table__ = Table('ourprogress_maximums', BaseWeb.metadata, autoload=True, autoload_with=engine)
 
 
-def query_se4all_numbers():
+class MappedVillages(BaseWeb):
+    __table__ = Table('ourprogress_villagesremotelymapped', BaseWeb.metadata, autoload=True,
+                      autoload_with=engine)
+
+
+class MappedBuildings(BaseWeb):
+    __table__ = Table('ourprogress_buildingsmapped', BaseWeb.metadata, autoload=True,
+                      autoload_with=engine)
+
+
+def query_electrified_km():
     res = db_session.query(func.sum(DlinesSe4all.length_km).label("sum")).first()
+    return int(res.sum)
+
+
+def query_mapped_villages():
+    res = db_session.query(func.sum(MappedVillages.ourprogress_villagesremotelymapped_id).label("sum")).first()
+    return int(res.sum)
+
+
+def query_mapped_buildings():
+    res = db_session.query(func.sum(MappedBuildings.ourprogress_buildingsmapped_id).label("sum")).first()
     return int(res.sum)
 
 

@@ -5,7 +5,9 @@ try:
     if os.environ.get("POSTGRES_URL", None) is not None:
         from database import (
             db_session,
-            query_se4all_numbers,
+            query_electrified_km,
+            query_mapped_villages,
+            query_mapped_buildings,
             PROGRESS_NUMBER_MAX,
             query_gauge_maximum
         )
@@ -20,7 +22,9 @@ except ModuleNotFoundError:
     if os.environ.get("POSTGRES_URL", None) is not None:
         from .database import (
             db_session,
-            query_se4all_numbers,
+            query_electrified_km,
+            query_mapped_villages,
+            query_mapped_buildings,
             PROGRESS_NUMBER_MAX,
             query_gauge_maximum
         )
@@ -67,8 +71,11 @@ def create_app(test_config=None):
         for k, desc in PROGRESS_NUMBER_MAX.items():
             kwargs[k] = query_gauge_maximum(desc)
 
-        kwargs['km_electricity'] = query_se4all_numbers()
-        print(kwargs)
+        kwargs['km_electricity'] = query_electrified_km()
+        # TODO: clarify source of DB
+        kwargs['mapped_buildings'] = query_mapped_villages()
+        kwargs['mapped_villages'] = query_mapped_buildings()
+
         return render_template('landing/index.html', **kwargs)
 
     @app.route('/termsofservice')
