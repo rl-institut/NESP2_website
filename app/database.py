@@ -34,12 +34,27 @@ db_session = scoped_session(sessionmaker(autocommit=False,
 
 
 Base = declarative_base(metadata=MetaData(schema='se4all', bind=engine))
-
+BaseGauge = declarative_base(metadata=MetaData(schema='web', bind=engine))
 
 class DlinesSe4all(Base):
     __table__ = Table('distribution_line_se4all', Base.metadata, autoload=True, autoload_with=engine)
 
 
+class GaugeMaximum(BaseGauge):
+    __table__ = Table('ourprogress_maximums', BaseGauge.metadata, autoload=True, autoload_with=engine)
+
+
 def query_se4all_numbers():
     res = db_session.query(func.sum(DlinesSe4all.length_km).label("sum")).first()
     return int(res.sum)
+
+
+def query_gauge_maximum(desc):
+    """Query the maximum value for a given progress gauge
+
+    :param desc: the name of the variable under "Our progress in numbers" on the website
+    :return: the maximum value as string
+    """
+    res = db_session.query(GaugeMaximum.maximum.label("max"))\
+        .filter(GaugeMaximum.description.ilike("%{}%".format(desc))).first()
+    return str(int(res.max))
