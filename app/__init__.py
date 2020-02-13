@@ -3,7 +3,12 @@ from flask import Flask, render_template
 try:
     from blueprints import resources, about, maps
     if os.environ.get("POSTGRES_URL", None) is not None:
-        from database import db_session, query_se4all_numbers
+        from database import (
+            db_session,
+            query_se4all_numbers,
+            PROGRESS_NUMBER_MAX,
+            query_gauge_maximum
+        )
     else:
         db_session = None
 
@@ -13,7 +18,12 @@ try:
 except ModuleNotFoundError:
     from .blueprints import resources, about, maps
     if os.environ.get("POSTGRES_URL", None) is not None:
-        from .database import db_session, query_se4all_numbers
+        from .database import (
+            db_session,
+            query_se4all_numbers,
+            PROGRESS_NUMBER_MAX,
+            query_gauge_maximum
+        )
     else:
         db_session = None
 
@@ -52,7 +62,14 @@ def create_app(test_config=None):
 
     @app.route('/')
     def landing():
-        return render_template('landing/index.html', km_electricity=query_se4all_numbers())
+
+        kwargs = {}
+        for k, desc in PROGRESS_NUMBER_MAX.items():
+            kwargs[k] = query_gauge_maximum(desc)
+
+        kwargs['km_electricity'] = query_se4all_numbers()
+        print(kwargs)
+        return render_template('landing/index.html', **kwargs)
 
     @app.route('/termsofservice')
     def termsofservice():
