@@ -27,6 +27,12 @@ DB_URL = 'postgresql+psycopg2://{user}:{pw}@{url}/{db}'.format(
     db=POSTGRES_DB
 )
 
+
+PROGRESS_NUMBER_MAX = {
+    'max_km_electricity': 'km electricity grid tracked',
+    'max_villages': 'villages remotely mapped',
+    'max_buildings': 'buildings mapped'
+}
 engine = create_engine(DB_URL)
 db_session = scoped_session(sessionmaker(autocommit=False,
                                          autoflush=False,
