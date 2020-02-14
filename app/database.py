@@ -2,6 +2,7 @@ import os
 from sqlalchemy import create_engine
 from sqlalchemy.orm import scoped_session, sessionmaker
 from sqlalchemy.sql import func
+import geoalchemy2
 from sqlalchemy import Table, MetaData
 from sqlalchemy.ext.declarative import declarative_base
 
@@ -61,19 +62,32 @@ class MappedBuildings(BaseWeb):
                       autoload_with=engine)
 
 
+def select_materialized_view(engine, view_name, schema=None, limit=None):
+    if schema is not None:
+        view_name = "{}.{}".format(schema, view_name)
+    if limit is None:
+        limit = ""
+    else:
+        limit = " LIMIT {}".format(limit)
+    with engine.connect() as con:
+        rs = con.execute('SELECT * FROM {}{};'.format(view_name, limit))
+        data = rs.fetchall()
+    return data
+
+
 def query_electrified_km():
-    res = db_session.query(func.sum(DlinesSe4all.length_km).label("sum")).first()
-    return int(res.sum)
+    res = select_materialized_view(engine, "ourprogress_kmelectricitygridtracked_value_v", schema="web")[0][0]
+    return int(res)
 
 
 def query_mapped_villages():
-    res = db_session.query(func.sum(MappedVillages.ourprogress_villagesremotelymapped_id).label("sum")).first()
-    return int(res.sum)
+    res = select_materialized_view(engine, "ourprogress_villagesremotelymapped_value_v", schema="web")[0][0]
+    return int(res)
 
 
 def query_mapped_buildings():
-    res = db_session.query(func.sum(MappedBuildings.ourprogress_buildingsmapped_id).label("sum")).first()
-    return int(res.sum)
+    res = select_materialized_view(engine, "ourprogress_buildingsmapped_value_v", schema="web")[0][0]
+    return int(res)
 
 
 def query_gauge_maximum(desc):

@@ -72,10 +72,8 @@ def create_app(test_config=None):
             kwargs[k] = query_gauge_maximum(desc)
 
         kwargs['km_electricity'] = query_electrified_km()
-        # TODO: clarify source of DB
-        kwargs['mapped_buildings'] = query_mapped_villages()
-        kwargs['mapped_villages'] = query_mapped_buildings()
-
+        kwargs['mapped_villages'] = query_mapped_villages()
+        kwargs['mapped_buildings'] = query_mapped_buildings()
         return render_template('landing/index.html', **kwargs)
 
     @app.route('/termsofservice')
