@@ -26,6 +26,7 @@ Here is a template for new release sections
 - build badge to readme (#82)
 - connection to postgres database (#85)
 - gauge max value is queried from the database (#96)
+- all gauges values are queried from the database (#98)
 
 ### Changed
 - allow use of variable via URL (#76)
@@ -39,6 +40,7 @@ Here is a template for new release sections
 ### Fixed
 - chrome display bug #64 for small screens (#86)
 - return button was not working (#93)
+- mismatching font for gauges numbers #97 (#98)
 
 ## [0.1.0] - 2019-12-05
 

@@ -2,6 +2,7 @@ import os
 from sqlalchemy import create_engine
 from sqlalchemy.orm import scoped_session, sessionmaker
 from sqlalchemy.sql import func
+import geoalchemy2
 from sqlalchemy import Table, MetaData
 from sqlalchemy.ext.declarative import declarative_base
 
@@ -40,19 +41,53 @@ db_session = scoped_session(sessionmaker(autocommit=False,
 
 
 Base = declarative_base(metadata=MetaData(schema='se4all', bind=engine))
-BaseGauge = declarative_base(metadata=MetaData(schema='web', bind=engine))
+BaseWeb = declarative_base(metadata=MetaData(schema='web', bind=engine))
+
 
 class DlinesSe4all(Base):
     __table__ = Table('distribution_line_se4all', Base.metadata, autoload=True, autoload_with=engine)
 
 
-class GaugeMaximum(BaseGauge):
-    __table__ = Table('ourprogress_maximums', BaseGauge.metadata, autoload=True, autoload_with=engine)
+class GaugeMaximum(BaseWeb):
+    __table__ = Table('ourprogress_maximums', BaseWeb.metadata, autoload=True, autoload_with=engine)
 
 
-def query_se4all_numbers():
-    res = db_session.query(func.sum(DlinesSe4all.length_km).label("sum")).first()
-    return int(res.sum)
+class MappedVillages(BaseWeb):
+    __table__ = Table('ourprogress_villagesremotelymapped', BaseWeb.metadata, autoload=True,
+                      autoload_with=engine)
+
+
+class MappedBuildings(BaseWeb):
+    __table__ = Table('ourprogress_buildingsmapped', BaseWeb.metadata, autoload=True,
+                      autoload_with=engine)
+
+
+def select_materialized_view(engine, view_name, schema=None, limit=None):
+    if schema is not None:
+        view_name = "{}.{}".format(schema, view_name)
+    if limit is None:
+        limit = ""
+    else:
+        limit = " LIMIT {}".format(limit)
+    with engine.connect() as con:
+        rs = con.execute('SELECT * FROM {}{};'.format(view_name, limit))
+        data = rs.fetchall()
+    return data
+
+
+def query_electrified_km():
+    res = select_materialized_view(engine, "ourprogress_kmelectricitygridtracked_value_v", schema="web")[0][0]
+    return int(res)
+
+
+def query_mapped_villages():
+    res = select_materialized_view(engine, "ourprogress_villagesremotelymapped_value_v", schema="web")[0][0]
+    return int(res)
+
+
+def query_mapped_buildings():
+    res = select_materialized_view(engine, "ourprogress_buildingsmapped_value_v", schema="web")[0][0]
+    return int(res)
 
 
 def query_gauge_maximum(desc):

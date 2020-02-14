@@ -95,8 +95,8 @@ p, div{
 
 .GaugeMeter SPAN,
 .GaugeMeter B{
-    Margin:	0 23%;
-    Width: 54%;
+    Margin:	0 20%;
+    Width: 60%;
     Position: Absolute;
     Text-Align: Center;
     Display: flex;
@@ -126,7 +126,7 @@ p, div{
     Color: #464646;
     font-weight: bold;
     font-size: 32pt;
-    font-family: Poppins Medium;
+    font-family: Poppins;
 }
 
 /* Navigation Bar */
