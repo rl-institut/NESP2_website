@@ -24,6 +24,16 @@ p, div{
     color: #464646;
 }
 
+
+iframe {
+    border: 0px solid black;
+    width: 100%;
+}
+
+
+
+
+
 /* medium and larger screens */
 @media only screen and (min-width: 640px) {
     body, p, a, li {
