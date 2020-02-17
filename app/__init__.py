@@ -2,6 +2,7 @@ import os
 from flask import Flask, render_template
 try:
     from blueprints import resources, about, maps
+    from dashboard import add_dash
     if os.environ.get("POSTGRES_URL", None) is not None:
         from database import (
             db_session,
@@ -17,8 +18,10 @@ try:
         def query_se4all_numbers():
             return 1
 
+
 except ModuleNotFoundError:
     from .blueprints import resources, about, maps
+    from .dashboard import add_dash
     if os.environ.get("POSTGRES_URL", None) is not None:
         from .database import (
             db_session,
@@ -88,5 +91,7 @@ def create_app(test_config=None):
     def shutdown_session(exception=None):
         if db_session is not None:
             db_session.remove()
+
+    app = add_dash(app)
 
     return app
