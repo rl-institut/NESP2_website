@@ -1,6 +1,2 @@
-flask
-flask-login
-flask-sqlalchemy
-psycopg2
-geoalchemy2
+-r app/requirements.txt
 gunicorn
