@@ -1,0 +1,7 @@
+<div>Dash app</div>
+<div class="chart" id="bargraph">
+    <script>
+        var graphs = {{dash_data | safe}};
+        Plotly.plot('bargraph',graphs,{});
+    </script>
+</div>
