@@ -1,6 +1,8 @@
 {% extends 'base.html' %}
 
 {% block header %}
+<script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+
 {% endblock header%}
 
 {% block content %}
@@ -136,6 +138,11 @@
       <div class="GaugeMeter" data-color="#1DD069" data-back="#E0E2E9" data-min="0" data-total="{{ max_buildings }}" data-used="{{ mapped_buildings }}" data-label="buildings </br> mapped" data-showvalue="true" data-size="350" data-width="8" data-text_size="0.12"></div>
     </div>
 
+
+  </section>
+
+    <section id="landing-dashboard" class="grid-x align-center text-center">
+    {% include 'landing/dashboard.html' %}
 
   </section>
 
