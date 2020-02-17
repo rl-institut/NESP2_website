@@ -1,7 +1,9 @@
 import os
 from flask import Flask, render_template
+
 try:
     from blueprints import resources, about, maps
+    from dashboard import create_plot
     if os.environ.get("POSTGRES_URL", None) is not None:
         from database import (
             db_session,
@@ -19,6 +21,7 @@ try:
 
 except ModuleNotFoundError:
     from .blueprints import resources, about, maps
+    from .dashboard import create_plot
     if os.environ.get("POSTGRES_URL", None) is not None:
         from .database import (
             db_session,
@@ -74,7 +77,12 @@ def create_app(test_config=None):
         kwargs['km_electricity'] = query_electrified_km()
         kwargs['mapped_villages'] = query_mapped_villages()
         kwargs['mapped_buildings'] = query_mapped_buildings()
+
+        # TODO link with API call
+        kwargs["dash_data"] = create_plot()
+
         return render_template('landing/index.html', **kwargs)
+
 
     @app.route('/termsofservice')
     def termsofservice():
