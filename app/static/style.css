@@ -398,6 +398,25 @@ header a:focus{
     padding-bottom: 5rem;
 }
 
+
+.landing-dashboard{
+    background-color: #e0e2e9;
+}
+
+.dashboard-panel{
+    background-color: #e0e2e9;
+}
+
+dashboard-panel, h3{
+
+}
+
+.dashboard-panel-item{
+    background-color: #ffffff;
+    margin-top: .5rem;
+    margin-bottom: 2rem;
+}
+
 .landing-maps {
     background-image: url("background/bg-2-maps-div.png");
     background-position: center center;
