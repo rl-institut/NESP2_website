@@ -1,7 +1,10 @@
-<div>Dash app</div>
-<div class="chart" id="bargraph">
-    <script>
-        var graphs = {{dash_data | safe}};
-        Plotly.plot('bargraph',graphs,{});
-    </script>
-</div>
+{% import "landing/graph.html" as graph %}
+
+{% for category, graph_types in dash_categories.items() %}
+    <div class="medium-4 grid-x dashboard-panel">
+        <h3 class="small-11 small-offset-1 left--align">IMAGE HERE {{ category }}</h3>
+        {% for graph_type in graph_types %}
+            {{ graph.input(dash_data[graph_type]["info"], dash_data[graph_type]["graph"]) }}
+        {% endfor %}
+    </div>
+{% endfor %}

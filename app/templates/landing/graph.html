@@ -1,0 +1,24 @@
+{% macro input(info, data) -%}
+<div class="small-10 small-offset-1 dashboard-panel-item">
+    <div id="{{ info['title'] }}-header" class="grid-x">
+
+        <h4 class="cell">{{ info["trendValue"] }} <span>{{ info["unitOfMeasure"] }}</span></h4>
+        <h5 class="cell">{{ info["title"] }}</h5>
+
+    </div>
+    <div id="{{ info['title'] }}-graph"></div>
+</div>
+<script>
+    var config = {responsive: true, displayModeBar: true, displaylogo: false}
+    var layout ={
+        paper_bgcolor: "white",
+        plot_bgcolor: "white",
+        height: 200,
+        font: {size: 20, family: "Poppins"},
+        titlefont: {size: 20},
+        yaxis: {hoverformat: ".2f"},
+    };
+    var graphs = {{ data | safe}};
+    Plotly.plot("{{ info["title"] }}-graph",graphs,layout, config);
+</script>
+{%- endmacro %}
