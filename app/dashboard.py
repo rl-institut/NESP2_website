@@ -24,6 +24,11 @@ CATEGORIES = {
 }
 
 
+def title_convert(name):
+    name = re.sub('(.)([A-Z][a-z]+)', r'\1_\2', name)
+    name = re.sub('([a-z0-9])([A-Z])', r'\1_\2', name).lower()
+    return " ".join([w.title() for w in name.split('_')])
+
 VALUES = [{"key": 2017, "value": 1}, {"key": 2018, "value": 2}, {"key": 2019, "value": 3}, {"key": 2020, "value": 4}]
 DUMMY_RETURN = {
     "peopleConnected": {
