@@ -60,10 +60,15 @@ def create_app(test_config=None):
         kwargs['mapped_buildings'] = query_mapped_buildings()
 
         # TODO link with API call
-        kwargs["dash_data"] = create_plot()
+
+        kwargs["dash_data"] = {}
+        kwargs["dash_categories"] = CATEGORIES
+        for graph_type, graph_info in DUMMY_RETURN.items():
+            graph_info = graph_info.copy()
+            graph_info["title"] = title_convert(graph_type)
+            kwargs["dash_data"][graph_type] = {"graph": create_plot(graph_info), "info": graph_info}
 
         return render_template('landing/index.html', **kwargs)
-
 
     @app.route('/termsofservice')
     def termsofservice():
