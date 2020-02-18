@@ -1,20 +1,17 @@
-import numpy as np
 import json
+import re
 import plotly
 import plotly.graph_objs as go
 
 
-def create_plot():
-
-    N = 1000
-    random_x = np.random.randn(N)
-    random_y = np.random.randn(N)
-
+def create_plot(api_return):
+    api_return = api_return.copy()
     # Create a trace
-    data = [go.Scatter(
-        x=random_x,
-        y=random_y,
-        mode='markers'
-    )]
+    x = []
+    y = []
+    for i in api_return["points"]:
+        x.append(i["key"])
+        y.append(i["value"])
+    data = [go.Scatter(x=x, y=y, mode="lines")]
 
     return json.dumps(data, cls=plotly.utils.PlotlyJSONEncoder)
