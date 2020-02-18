@@ -15,3 +15,11 @@ def create_plot(api_return):
     data = [go.Scatter(x=x, y=y, mode="lines")]
 
     return json.dumps(data, cls=plotly.utils.PlotlyJSONEncoder)
+
+
+CATEGORIES = {
+    "Social": ["peopleConnected", "communitiesConnected"],
+    "Technical": ["installedRenewableEnergyCapacity", "electricityConsumed"],
+    "Financial": ["totalInvestment", "averagetarif"],
+}
+
