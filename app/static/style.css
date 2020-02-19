@@ -430,6 +430,7 @@ header a:focus{
 
 .landing-resources__text p {
     padding-bottom: 5rem;
+    font-size: 1.75rem;
 }
 
 .landing-resources__text p span {
