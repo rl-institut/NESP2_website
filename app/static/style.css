@@ -154,7 +154,7 @@ header h2{
 }
 
 #header-blitz-div img{
-    height: 3.5rem;
+    height: 3.25rem;
     transform: translateY(0px);
 }
 
@@ -191,7 +191,7 @@ header img{
 
 header a{
     color: #464646;
-    font-size: 16pt;
+    font-size: 15pt;
     font-weight: normal;
 }
 
