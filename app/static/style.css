@@ -171,9 +171,17 @@ header img{
 
 
 @media only screen and (min-width: 1040px) {
-    .header-right {
-        margin-right: 3rem;
-    }   
+    .cell.header-right {
+        padding-right: 3rem;
+        width: 46%;
+    }
+}
+
+@media only screen and (min-width: 1300px) {
+    .cell.header-right {
+        padding-right: 6rem;
+        width: 35%;
+    }
 }
 
 .header-right__item {
