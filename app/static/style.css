@@ -434,6 +434,8 @@ header a:focus{
     background-size: cover;
     padding-top: 3rem;
     padding-bottom: 5rem;
+    padding-left: .75rem;
+    padding-right: .75rem;
 }
 
 .landing-resources__text p {
@@ -489,6 +491,8 @@ header a:focus{
     color: #ffffff;
     padding-top: 3.5rem;
     padding-bottom: 7rem;
+    padding-left: .75rem;
+    padding-right: .75rem;
 }
 
 #footer-stay-in-touch-div p,
@@ -508,6 +512,8 @@ header a:focus{
 #footer-contact-div{
     padding-top: 7rem;
     padding-bottom: 7rem;
+    padding-left: .75rem;
+    padding-right: .75rem;
     background-color: #eeeff1;
     font-size: 14pt;
 }
@@ -563,6 +569,8 @@ header a:focus{
     line-height: 18pt;
     padding-top: 4rem;
     padding-bottom: 4rem;
+    padding-left: .75rem;
+    padding-right: .75rem;
 }
 
 #footer-logos-div p {
@@ -606,6 +614,8 @@ header a:focus{
     line-height: 18pt;
     padding-top: 2rem;
     padding-bottom: 1.5rem;
+    padding-left: .75rem;
+    padding-right: .75rem;
 }
 
 #footer-license-div a,
