@@ -834,4 +834,7 @@ footer:not(.footer-hp) {
     .cell.l-width-60 {
         width: 60%;
     }
+    .l-img-max-width img {
+        max-width: 40rem;
+    }
 }
