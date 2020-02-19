@@ -686,8 +686,13 @@ footer:not(.footer-hp) {
     margin-top: 5rem;
 }
 
-.about-card__content {
+.about-intro__cards div.about-card__content {
     background-color: #1DD069;
+    padding-bottom: 1rem;
+}
+
+.about-card__content p {
+    padding-right: 4rem;
 }
 
 .about-card__link {
