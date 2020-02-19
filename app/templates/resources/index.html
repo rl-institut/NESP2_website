@@ -8,15 +8,17 @@
 {% block content %}
 
 <section id="resources-index" class="grid-x landing-resources">
-  <div class="cell large-2 large-offset-1 landing-resources__text">
+  <div class="cell large-4 large-offset-1 landing-resources__text">
     <h2>Open source tools</h2>
     <p>Use our <span>Open source tools</span> for electrification data mining and analysis</p>
+    <!--
     <a href="" rel="noreferrer" target="_blank">About our Resources</a>
     <a href="" rel="noreferrer" target="_blank">Methodology</a>
     <a href="" rel="noreferrer" target="_blank">Get Involved</a>
+    -->
   </div>
   {% import "resources/card.html" as resource_card %}
-  <div class="cell large-8 large-offset-1 landing-resources__cards">
+  <div class="cell large-5 large-offset-1 landing-resources__cards">
     <div class="grid-x" data-equalize-on="medium" id="landing-resources-cards">
       <div class="cell medium-5 resource-choice">
         {{ resource_card.input("Cluster Identification", "img/img-5-resource-cluster.png", "How can I identify locations of settlements?", "clusteridentification") }}
