@@ -668,6 +668,7 @@ footer:not(.footer-hp) {
     font-size: 20pt;
     font-weight: 700;
     margin-top: 0;
+    padding-bottom: 1rem;
 }
 
 #about-content p {
@@ -828,6 +829,7 @@ footer:not(.footer-hp) {
 @media only screen and (min-width: 1040px) { 
     .cell.l-width-80 {
         width: 80%;
+        margin-left: 20%;
     }
     .cell.l-width-60 {
         width: 60%;
