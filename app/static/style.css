@@ -661,12 +661,17 @@ footer:not(.footer-hp) {
 
 #about-content h2 {
     padding-bottom: 4rem;
+    padding-top: 3rem;
 }
 
 #about-content h3 {
     font-size: 20pt;
     font-weight: 700;
     margin-top: 0;
+}
+
+#about-content p {
+    text-align: left;
 }
 
 .light-grey{
@@ -697,6 +702,10 @@ footer:not(.footer-hp) {
 
 .about-card__link a img {
     height: 1.5rem;
+}
+
+#about-intro-text p {
+    padding-right: 0;
 }
 
 .about-intro__cards .about-card:nth-child(odd) {
@@ -809,4 +818,13 @@ footer:not(.footer-hp) {
         url('fonts/SourceSansPro-Regular.woff') format('woff');
     font-weight: normal;
     font-style: normal;
+}
+
+@media only screen and (min-width: 1040px) { 
+    .cell.l-width-80 {
+        width: 80%;
+    }
+    .cell.l-width-60 {
+        width: 60%;
+    }
 }
