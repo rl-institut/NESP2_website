@@ -448,7 +448,7 @@ header a:focus{
 }
 
 .landing-resources__cards {
-    padding-top: 3rem;
+    padding-top: 0;
 }
 
 .landing-resources__cards .card {
