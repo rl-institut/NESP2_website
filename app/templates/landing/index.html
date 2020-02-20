@@ -155,6 +155,7 @@
     <!-- anchor, hidden -->
   </section>
 
+  <!-- former card section
   <section id="landing-resources" class="grid-x landing-resources">
     <div class="cell large-4 large-offset-1 landing-resources__text">
       <h2>Use our tools</h2>
@@ -175,6 +176,60 @@
         </div>
         <div class="cell medium-5 medium-offset-2 resource-choice" data-equalizer-watch="foo">
           {{ resource_card.input("On Grid Mapping", "img/img-8-resources-og-mapping.png", "How can I track the grid?", "ongridmapping") }}
+        </div>
+      </div>
+    </div>
+  </section>
+-->
+
+  <section id="landing-resources" class="grid-x landing-resources landing-resources-grid-y">
+    <div class="cell large-4 large-offset-1 landing-resources__text">
+      <h2>Use our tools</h2>
+      <p>Explore our <span>suite of open source tools</span> for data mining and analysis for electrification and planning</p>
+      <a class="cta" href="{{ url_for('resources.index') }}">Explore tools</a>
+    </div>
+    {% import "resources/card.html" as resource_card %}
+    <div class="cell large-5 large-offset-1 landing-resources__cards">
+      <div class="grid-x">
+        <div class="cell medium-5 resource-choice card">
+          <div class="grid-y">
+            <div class="cell small-6 card-img card-img1">
+            </div>
+            <div class="cell small-6 card-text">
+              <p class="card-text-header">Cluster Identification</p>
+              <p>How can I identify locations of settlements?</p>
+            </div>
+          </div>
+        </div>
+        <div class="cell medium-5 resource-choice card card-offset">
+          <div class="grid-y">
+            <div class="cell small-6 card-img card-img2">
+            </div>
+            <div class="cell small-6 card-text">
+              <p class="card-text-header">Mapping with OSM</p>
+              <p>How can I map a settlement in detail remotely?</p>
+            </div>
+          </div>
+        </div>
+        <div class="cell medium-5 resource-choice card">
+          <div class="grid-y">
+            <div class="cell small-6 card-img card-img3">
+            </div>
+            <div class="cell small-6 card-text">
+              <p class="card-text-header">Survey Tools</p>
+              <p>How can I visit a settlement and collect relevant data?</p>
+            </div>
+          </div>
+        </div>
+        <div class="cell medium-5 resource-choice card card-offset">
+          <div class="grid-y">
+            <div class="cell small-6 card-img card-img4">
+            </div>
+            <div class="cell small-6 card-text">
+              <p class="card-text-header">On Grid Mapping</p>
+              <p>How can I track the grid?</p>
+            </div>
+          </div>
         </div>
       </div>
     </div>

@@ -458,7 +458,7 @@ header a:focus{
 }
 
 .landing-resources__cards .card-section p {
-    font-size: 15pt;
+    font-size: 18pt;
     margin-bottom: 0;
 }
 
@@ -717,6 +717,81 @@ h4.heading-green {
 .about-intro__cards div.about-card__content {
     background-color: #1DD069;
     padding-bottom: 1rem;
+}
+
+.landing-resources-grid-y .card .grid-y {
+    height: 22rem;
+}
+
+.landing-resources-grid-y .card-img1 {
+    background-image: url(../../static/img/img-5-resource-cluster.png);
+}
+
+.landing-resources-grid-y .card-img2 {
+    background-image: url(../../static/img/img-6-resources-osm.png);
+}
+
+.landing-resources-grid-y .card-img3 {
+    background-image: url(../../static/img/img-7-resources-survey.png);
+}
+
+.landing-resources-grid-y .card-img4 {
+    background-image: url(../../static/img/img-8-resources-og-mapping.png);
+}
+
+.landing-resources-grid-y .card-img {
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.landing-resources-grid-y .card {
+    box-shadow: 0px 20px 19px 0px rgba(135,135,135,0.3);
+    width: 47.5%;
+    margin-bottom: 5rem!important;
+}
+
+.landing-resources-grid-y .card-offset {
+    margin-left: 5%
+}
+
+@media only screen and (max-width: 1040px) {
+    .landing-resources-grid-y .card-text p {
+        font-size: 15pt;
+    }
+}
+
+@media only screen and (min-width: 1040px) {
+    .landing-resources-grid-y .card-text p {
+        font-size: 16pt;
+    }
+}
+
+@media only screen and (min-width: 1300px) {
+    .landing-resources-grid-y .card {
+        width: 45%;
+    }
+    .landing-resources-grid-y .card-offset {
+        margin-left: 10%
+    }
+}
+
+@media only screen and (min-width: 1500px) {
+    .landing-resources-grid-y .card {
+        width: 40%;
+    }
+    .landing-resources-grid-y .card-offset {
+        margin-left: 20%
+    }
+}
+
+.landing-resources-grid-y .card-text {
+    background-color: #fff;
+    padding: .5rem 1rem 0;
+}
+
+.landing-resources-grid-y .card-text-header {
+    font-weight: 700;
+    margin-bottom: 0;
 }
 
 .about-card__content p {
