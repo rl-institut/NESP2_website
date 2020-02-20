@@ -654,9 +654,13 @@ footer:not(.footer-hp) {
     text-align: center;
 }
 
-.list-item-green,
+.list-item-green {
+    color: #1DD069;
+}
+
 h4.heading-green {
     color: #1DD069;
+    font-weight: 700;
 }
 
 #about-se4all-table ul {
@@ -787,6 +791,11 @@ h4.heading-green {
     margin-bottom: 0;
 }
 
+#about-content .section-about__text h3.heading-center {
+    padding-bottom: 0;
+    text-align: center;
+}
+
 .section-about .section-about__img {
     text-align: right;
 }
@@ -863,6 +872,11 @@ h4.heading-green {
     }
     .cell.l-width-60 {
         width: 60%;
+    }
+    .cell.l-width-40 {
+        width: 40%;
+        margin-left: 20%;
+        margin-right: 40%;
     }
     .l-img-max-width img {
         max-width: 40rem;
