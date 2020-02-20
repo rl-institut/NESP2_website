@@ -838,3 +838,13 @@ footer:not(.footer-hp) {
         max-width: 40rem;
     }
 }
+
+/* for some reason, the anchor is nor working as it should, i.e. scroll down to the top of the map section
+Added this trick to fix it */
+#anchor-landing-maps,
+#anchor-landing-resources {
+    display:block;
+   height:4.5rem; /* this is the height of your header */
+   margin-top:-4.5rem; /* this is again negative value of the height of your header */
+   visibility:hidden;
+}
