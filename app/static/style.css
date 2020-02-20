@@ -698,7 +698,7 @@ h4.heading-green {
 }
 
 #about-se4all a {
-    color: rgb(59, 68, 63);
+    color: #1DD069;
     text-decoration: underline;
 }
 
@@ -796,6 +796,7 @@ h4.heading-green {
     text-align: center;
 }
 
+
 .section-about .section-about__img {
     text-align: right;
 }
@@ -881,6 +882,10 @@ h4.heading-green {
     .l-img-max-width img {
         max-width: 40rem;
     }
+}
+
+.l-padding-left {
+    padding-left: 1rem;
 }
 
 /* for some reason, the anchor is nor working as it should, i.e. scroll down to the top of the map section
