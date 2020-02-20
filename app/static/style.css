@@ -654,6 +654,24 @@ footer:not(.footer-hp) {
     text-align: center;
 }
 
+.list-item-green,
+h4.heading-green {
+    color: #1DD069;
+}
+
+#about-se4all-table ul {
+    list-style: none;
+}
+  
+#about-se4all-table ul li::before {
+    content: "\2022";
+    color: #1DD069;
+    font-weight: bold;
+    display: inline-block; 
+    width: 1em;
+    margin-left: -1em;
+}
+
 #about-content section {
     padding-top: 2rem;
     padding-bottom: 8rem;
@@ -676,7 +694,7 @@ footer:not(.footer-hp) {
 }
 
 #about-se4all a {
-    color: #1DD069;
+    color: rgb(59, 68, 63);
     text-decoration: underline;
 }
 
