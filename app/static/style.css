@@ -660,7 +660,7 @@ footer:not(.footer-hp) {
 }
 
 #about-content h2 {
-    padding-bottom: 4rem;
+    padding-bottom: 6rem;
     padding-top: 3rem;
 }
 
@@ -668,11 +668,16 @@ footer:not(.footer-hp) {
     font-size: 20pt;
     font-weight: 700;
     margin-top: 0;
-    padding-bottom: 1rem;
+    padding-bottom: 5rem;
 }
 
 #about-content p {
     text-align: left;
+}
+
+#about-se4all a {
+    color: #1DD069;
+    text-decoration: underline;
 }
 
 .light-grey{
@@ -711,6 +716,13 @@ footer:not(.footer-hp) {
 }
 
 #about-intro-text p {
+    padding-right: 0;
+}
+
+#about-se4all p,
+#about-fmp p,
+#about-nesp p,
+#about-stakeholder p {
     padding-right: 0;
 }
 
