@@ -25,6 +25,10 @@ if args.docker is False:
                 branch
             )
         )
+    else:
+        print("\n\n*** warning ***\n")
+        print("There is already a NESP2 folder in your path, please delete it")
+        print("\n***************\n\n")
 
 # copy templates
 template_path = os.path.join('NESP2', 'app', 'templates')
@@ -54,8 +58,14 @@ static_path = os.path.join('NESP2', 'app', 'static')
 
 new_static_path = os.path.join('app', 'static')
 
-static_types = ['data', 'images', 'css', 'js']
-new_static_types = {'data': 'data', 'images': os.path.join('img', 'maps'), 'css': 'css', 'js': 'js'}
+static_types = ['data', 'images', 'css', 'js',  os.path.join('img', 'icons')]
+new_static_types = {
+    'data': 'data',
+    'images': os.path.join('img', 'maps'),
+    'css': 'css',
+    'js': 'js',
+     os.path.join('img', 'icons'): os.path.join('img', 'icons')
+}
 
 for static_type in static_types:
     new_static_type = new_static_types[static_type]
@@ -75,7 +85,12 @@ for static_type in static_types:
 
 
 # erase the NESP2 repository
-rmtree(os.path.join('NESP2'))
+if os.name == 'posix':
+    rmtree(os.path.join('NESP2'))
+else:
+    print("\n\n*** warning ***\n")
+    print("You have to delete the folder NESP2 manually")
+    print("\n***************\n\n")
 
 if args.docker is True:
     print("Succesfully setup the NESP2 maps")
