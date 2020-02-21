@@ -17,6 +17,8 @@ else:
     def query_se4all_numbers():
         return 1
 
+templates_dir = os.path.join(os.path.abspath(os.curdir), "app", "templates")
+
 
 def create_app(test_config=None):
     # create and configure the app
@@ -58,6 +60,18 @@ def create_app(test_config=None):
             kwargs['km_electricity'] = query_electrified_km()
             kwargs['mapped_villages'] = query_mapped_villages()
             kwargs['mapped_buildings'] = query_mapped_buildings()
+
+        if os.path.exists(os.path.join(templates_dir, "maps", "sidebar_checkbox.html")):
+            kwargs['website_app'] = True
+        else:
+            kwargs['website_app'] = False
+            print("\n\n*** warning ***\n")
+            print(
+                "The webmap will not be able to work correctly because it is missing a file, "
+                "please run 'python app/setup_maps.py'"
+            )
+            print("\n***************\n\n")
+
         return render_template('landing/index.html', **kwargs)
 
     @app.route('/termsofservice')
@@ -72,6 +86,9 @@ def create_app(test_config=None):
     def shutdown_session(exception=None):
         if db_session is not None:
             db_session.remove()
+
+    # set a global variable to indicate it is the website
+    app.jinja_env.globals.update(nesp2_website=True)
 
     try:
         from .maps_utils import define_function_jinja
@@ -91,4 +108,5 @@ def create_app(test_config=None):
             "app/setup_maps.py'"
         )
         print("\n***************\n\n")
+
     return app
