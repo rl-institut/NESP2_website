@@ -1,5 +1,5 @@
 // Div which contains the features
-var featureDiv = document.getElementById('landing-feature');
+var featureDiv = $("#landing-feature");
 // Path to background images
 var bkgs = {
     'landing-feature-txt-dev': 'img-3-feature-developer.png',
@@ -8,10 +8,13 @@ var bkgs = {
 };
 
 // Set the preselected background
-featureDiv.style.backgroundImage = "url('static/img/img-3-feature-developer.png')";
+featureDiv.css('background-image', "url('static/img/img-3-feature-developer.png')");
+
+var fade1 = 0.3;
+var fade2 = 1;
+
 
 function apply_select(feature_type){
-    console.log(feature_type);
     //change class to selected
     var ftId = 'landing-feature-' + feature_type + '-btn';
     var ft = document.getElementById(ftId).getElementsByClassName('landing-feature__img')[0];
@@ -36,7 +39,9 @@ function hover_features() {
   var selectedTab = document.getElementById(ftId);
 
   // Change the background image
-  featureDiv.style.backgroundImage = "url('static/img/" + bkgs[ftId] + "')";
+  featureDiv.fadeTo('slow', fade1, function(){
+    $(this).css('background-image', "url('static/img/" + bkgs[ftId] + "')");
+  }).fadeTo('slow', fade2);
 
   // Find the previously selected tab
   var prevSelectedTab = $('.selected--opt--content')[0];
@@ -80,7 +85,9 @@ $('.feature-next').on("click", function() {
   var nextTab = document.getElementById(nextId);
 
   // Change the background image
-  featureDiv.style.backgroundImage = "url('static/img/" + bkgs[nextId] + "')";
+  featureDiv.fadeTo('slow', fade1, function(){
+    $(this).css('background-image', "url('static/img/" + bkgs[nextId] + "')");
+  }).fadeTo('slow', fade2);
 
   // Select the new tab and deselect the previously selected
   selectedTab.className = 'opt--content';
@@ -112,8 +119,9 @@ $('.feature-previous').on("click", function() {
   var prevTab = document.getElementById(prevId);
 
   // Change the background image
-  featureDiv.style.backgroundImage = "url('static/img/" + bkgs[prevId] + "')";
-
+  featureDiv.fadeTo('slow', fade1, function(){
+    $(this).css('background-image', "url('static/img/" + bkgs[prevId] + "')");
+  }).fadeTo('slow', fade2);
   // Select the new tab and deselect the previously selected
   selectedTab.className = 'opt--content';
   prevTab.className = 'selected--opt--content';
