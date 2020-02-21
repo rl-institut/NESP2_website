@@ -21,7 +21,7 @@ python3 app/setup_maps.py
 
 Start the app with  
 ```
-python3 app/index.py
+python3 index.py
 ```
 
 ## Deploy on docker (instructions for ubuntu)

@@ -27,15 +27,18 @@ Here is a template for new release sections
 - connection to postgres database (#85)
 - gauge max value is queried from the database (#96)
 - all gauges values are queried from the database (#98)
-
+- index.py file (#101)
 ### Changed
 - allow use of variable via URL (#76)
 - make table in about responsive and centered (#88)
 - dockerfile setup to use postgres (#91)
 - OG grid mapping image (#95)
 - gauge line is thicker (#96)
+- adapt setup_maps.py for windows users (#101)
+- the webmap uses its own base template (without header and footer) (#101)
 
 ### Removed
+- app/index.py file (#101)
 
 ### Fixed
 - chrome display bug #64 for small screens (#86)
