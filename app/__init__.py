@@ -1,38 +1,21 @@
 import os
 from flask import Flask, render_template
-try:
-    from blueprints import resources, about, maps
-    if os.environ.get("POSTGRES_URL", None) is not None:
-        from database import (
-            db_session,
-            query_electrified_km,
-            query_mapped_villages,
-            query_mapped_buildings,
-            PROGRESS_NUMBER_MAX,
-            query_gauge_maximum
-        )
-    else:
-        db_session = None
 
-        def query_se4all_numbers():
-            return 1
+from .blueprints import resources, about, maps
+if os.environ.get("POSTGRES_URL", None) is not None:
+    from .database import (
+        db_session,
+        query_electrified_km,
+        query_mapped_villages,
+        query_mapped_buildings,
+        PROGRESS_NUMBER_MAX,
+        query_gauge_maximum
+    )
+else:
+    db_session = None
 
-except ModuleNotFoundError:
-    from .blueprints import resources, about, maps
-    if os.environ.get("POSTGRES_URL", None) is not None:
-        from .database import (
-            db_session,
-            query_electrified_km,
-            query_mapped_villages,
-            query_mapped_buildings,
-            PROGRESS_NUMBER_MAX,
-            query_gauge_maximum
-        )
-    else:
-        db_session = None
-
-        def query_se4all_numbers():
-            return 1
+    def query_se4all_numbers():
+        return 1
 
 
 def create_app(test_config=None):
