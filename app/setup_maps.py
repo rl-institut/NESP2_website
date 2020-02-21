@@ -37,6 +37,8 @@ if os.path.exists(new_template_path) is False:
 for fname in os.listdir(template_path):
     if fname not in ('base.html'):
         copyfile(os.path.join(template_path, fname), os.path.join(new_template_path, fname))
+    if fname == 'base.html':
+        copyfile(os.path.join(template_path, fname), os.path.join(new_template_path, 'maps_{}'.format(fname)))
 
 # copy python files
 app_path = os.path.join('NESP2', 'app')
