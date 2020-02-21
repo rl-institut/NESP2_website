@@ -52,8 +52,10 @@ function hover_features() {
   }
 }
 
+/*
 $('.landing-feature__img').on("mouseover", hover_features);
 $('.landing-feature__description').on("mouseover", hover_features);
+*/
 
 $('.feature-next').on("click", function() {
   // Find the currently selected tab
