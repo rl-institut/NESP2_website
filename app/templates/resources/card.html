@@ -1,9 +1,20 @@
-{% macro input(title, image='', text='', link='osm') -%}
-<a class="card" href="{{ url_for('resources.selection', resc_name=link) }}">
-  <img src="{{ url_for('static', filename=image) }}">
-  <div class="card-section">
-    <p class="card-section--header">{{title}}</p>
-    <p class="card-section--text">{{text}}</p>
+{% macro input(title, image='', text='', link='osm', card_offset=False) -%}
+{% if card_offset %}
+  <div class="cell medium-5 resource-choice card card-offset">
+{% else %}
+  <div class="cell medium-5 resource-choice card">
+{% endif %}
+    <a class="cell" href="{{ url_for('resources.selection', resc_name=link) }}">
+        <div class="grid-y">
+
+          <div class="cell small-6 card-img card-img{{ image }}">
+          </div>
+
+          <div class="cell small-6 card-text">
+            <p class="card-text-header">{{ title }}</p>
+            <p>{{ text }}</p>
+          </div>
+        </div>
+    </a>
   </div>
-</a>
 {%- endmacro %}

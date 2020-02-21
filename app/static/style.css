@@ -154,7 +154,7 @@ header h2{
 }
 
 #header-blitz-div img{
-    height: 3rem;
+    height: 3.25rem;
     transform: translateY(0px);
 }
 
@@ -171,9 +171,17 @@ header img{
 
 
 @media only screen and (min-width: 1040px) {
-    .header-right {
-        margin-right: 3rem;
-    }   
+    .cell.header-right {
+        padding-right: 3rem;
+        width: 46%;
+    }
+}
+
+@media only screen and (min-width: 1500px) {
+    .cell.header-right {
+        padding-right: 6rem;
+        width: 35%;
+    }
 }
 
 .header-right__item {
@@ -183,7 +191,7 @@ header img{
 
 header a{
     color: #464646;
-    font-size: 16pt;
+    font-size: 15pt;
     font-weight: normal;
 }
 
@@ -194,7 +202,7 @@ header a:focus{
 }
 
 #header-logo-nigeria img {
-    height: 3.5rem;
+    height: 3.25rem;
 }
 
 /* Main content */
@@ -426,10 +434,13 @@ header a:focus{
     background-size: cover;
     padding-top: 3rem;
     padding-bottom: 5rem;
+    padding-left: .75rem;
+    padding-right: .75rem;
 }
 
 .landing-resources__text p {
     padding-bottom: 5rem;
+    font-size: 1.75rem;
 }
 
 .landing-resources__text p span {
@@ -437,7 +448,7 @@ header a:focus{
 }
 
 .landing-resources__cards {
-    padding-top: 3rem;
+    padding-top: 0;
 }
 
 .landing-resources__cards .card {
@@ -447,7 +458,7 @@ header a:focus{
 }
 
 .landing-resources__cards .card-section p {
-    font-size: 15pt;
+    font-size: 18pt;
     margin-bottom: 0;
 }
 
@@ -480,6 +491,8 @@ header a:focus{
     color: #ffffff;
     padding-top: 3.5rem;
     padding-bottom: 7rem;
+    padding-left: .75rem;
+    padding-right: .75rem;
 }
 
 #footer-stay-in-touch-div p,
@@ -499,6 +512,8 @@ header a:focus{
 #footer-contact-div{
     padding-top: 7rem;
     padding-bottom: 7rem;
+    padding-left: .75rem;
+    padding-right: .75rem;
     background-color: #eeeff1;
     font-size: 14pt;
 }
@@ -554,6 +569,8 @@ header a:focus{
     line-height: 18pt;
     padding-top: 4rem;
     padding-bottom: 4rem;
+    padding-left: .75rem;
+    padding-right: .75rem;
 }
 
 #footer-logos-div p {
@@ -597,6 +614,8 @@ header a:focus{
     line-height: 18pt;
     padding-top: 2rem;
     padding-bottom: 1.5rem;
+    padding-left: .75rem;
+    padding-right: .75rem;
 }
 
 #footer-license-div a,
@@ -635,19 +654,52 @@ footer:not(.footer-hp) {
     text-align: center;
 }
 
+.list-item-green {
+    color: #1DD069;
+}
+
+h4.heading-green {
+    color: #1DD069;
+    font-weight: 700;
+}
+
+#about-se4all-table ul {
+    list-style: none;
+}
+  
+#about-se4all-table ul li::before {
+    content: "\2022";
+    color: #1DD069;
+    font-weight: bold;
+    display: inline-block; 
+    width: 1em;
+    margin-left: -1em;
+}
+
 #about-content section {
     padding-top: 2rem;
     padding-bottom: 8rem;
 }
 
 #about-content h2 {
-    padding-bottom: 4rem;
+    padding-bottom: 6rem;
+    padding-top: 3rem;
 }
 
 #about-content h3 {
     font-size: 20pt;
     font-weight: 700;
     margin-top: 0;
+    padding-bottom: 5rem;
+}
+
+#about-content p {
+    text-align: left;
+}
+
+#about-se4all a {
+    color: #1DD069;
+    text-decoration: underline;
 }
 
 .light-grey{
@@ -662,8 +714,88 @@ footer:not(.footer-hp) {
     margin-top: 5rem;
 }
 
-.about-card__content {
+.about-intro__cards div.about-card__content {
     background-color: #1DD069;
+    padding-bottom: 1rem;
+}
+
+.landing-resources-grid-y .card .grid-y {
+    height: 22rem;
+}
+
+.landing-resources-grid-y .card-img1 {
+    background-image: url(img/img-5-resource-cluster.png);
+}
+
+.landing-resources-grid-y .card-img2 {
+    background-image: url(img/img-6-resources-osm.png);
+}
+
+.landing-resources-grid-y .card-img3 {
+    background-image: url(img/img-7-resources-survey.png);
+}
+
+.landing-resources-grid-y .card-img4 {
+    background-image: url(img/img-8-resources-og-mapping.png);
+}
+
+.landing-resources-grid-y .card-img {
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.landing-resources-grid-y .card {
+    box-shadow: 0px 20px 19px 0px rgba(135,135,135,0.3);
+    width: 47.5%;
+    margin-bottom: 5rem!important;
+}
+
+.landing-resources-grid-y .card-offset {
+    margin-left: 5%
+}
+
+@media only screen and (max-width: 1040px) {
+    .landing-resources-grid-y .card-text p {
+        font-size: 15pt;
+    }
+}
+
+@media only screen and (min-width: 1040px) {
+    .landing-resources-grid-y .card-text p {
+        font-size: 16pt;
+    }
+}
+
+@media only screen and (min-width: 1300px) {
+    .landing-resources-grid-y .card {
+        width: 45%;
+    }
+    .landing-resources-grid-y .card-offset {
+        margin-left: 10%
+    }
+}
+
+@media only screen and (min-width: 1500px) {
+    .landing-resources-grid-y .card {
+        width: 40%;
+    }
+    .landing-resources-grid-y .card-offset {
+        margin-left: 20%
+    }
+}
+
+.landing-resources-grid-y .card-text {
+    background-color: #fff;
+    padding: .5rem 1rem 0;
+}
+
+.landing-resources-grid-y .card-text-header {
+    font-weight: 700;
+    margin-bottom: 0;
+}
+
+.about-card__content p {
+    padding-right: 2rem;
 }
 
 .about-card__link {
@@ -678,6 +810,17 @@ footer:not(.footer-hp) {
 
 .about-card__link a img {
     height: 1.5rem;
+}
+
+#about-intro-text p {
+    padding-right: 0;
+}
+
+#about-se4all p,
+#about-fmp p,
+#about-nesp p,
+#about-stakeholder p {
+    padding-right: 0;
 }
 
 .about-intro__cards .about-card:nth-child(odd) {
@@ -722,6 +865,12 @@ footer:not(.footer-hp) {
 .section-about .section-about__text--nomargin {
     margin-bottom: 0;
 }
+
+#about-content .section-about__text h3.heading-center {
+    padding-bottom: 0;
+    text-align: center;
+}
+
 
 .section-about .section-about__img {
     text-align: right;
@@ -790,4 +939,36 @@ footer:not(.footer-hp) {
         url('fonts/SourceSansPro-Regular.woff') format('woff');
     font-weight: normal;
     font-style: normal;
+}
+
+@media only screen and (min-width: 1040px) { 
+    .cell.l-width-80 {
+        width: 80%;
+        margin-left: 20%;
+    }
+    .cell.l-width-60 {
+        width: 60%;
+    }
+    .cell.l-width-40 {
+        width: 40%;
+        margin-left: 20%;
+        margin-right: 40%;
+    }
+    .l-img-max-width img {
+        max-width: 40rem;
+    }
+}
+
+.l-padding-left {
+    padding-left: 1rem;
+}
+
+/* for some reason, the anchor is nor working as it should, i.e. scroll down to the top of the map section
+Added this trick to fix it */
+#landing-maps,
+#landing-resources {
+    display:block;
+   height:4.5rem; /* this is the height of your header */
+   margin-top:-4.5rem; /* this is again negative value of the height of your header */
+   visibility:hidden;
 }

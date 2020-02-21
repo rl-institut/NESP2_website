@@ -125,7 +125,6 @@
       <h2>Our progress in numbers</h2>
 
     </div>
-    <!-- Figure out how to make updatable gauges here-->
     <div class="medium-12 large-4 center--align">
       <div class="GaugeMeter" data-color="#1DD069" data-back="#E0E2E9" data-min="0" data-total="{{ max_km_electricity }}" data-used="{{ km_electricity }}" data-label="km electricity </br> grid tracked" data-showvalue="true" data-size="350" data-width="8" data-text_size="0.12"></div>
     </div>
@@ -135,11 +134,13 @@
     <div class="medium-12 large-4 center--align">
       <div class="GaugeMeter" data-color="#1DD069" data-back="#E0E2E9" data-min="0" data-total="{{ max_buildings }}" data-used="{{ mapped_buildings }}" data-label="buildings </br> mapped" data-showvalue="true" data-size="350" data-width="8" data-text_size="0.12"></div>
     </div>
-
-
   </section>
 
-  <section id="landing-maps" class="grid-x landing-maps align-center text-center">
+  <section id="landing-maps">
+    <!-- anchor, hidden -->
+  </section>
+
+  <section id="landing-maps-sec" class="grid-x landing-maps align-center text-center">
     <div class="cell landing-maps__header">
       <h2>Explore the ground-truth</h2>
       <h3>Analyze highly accurate electrification data on our <span>interactive map</span></h3>
@@ -149,8 +150,12 @@
     </div>
   </section>
 
+  <section id="landing-resources">
+    <!-- anchor, hidden -->
+  </section>
 
-  <section id="landing-resources" class="grid-x landing-resources">
+
+  <section id="landing-resources-sec" class="grid-x landing-resources landing-resources-grid-y">
     <div class="cell large-4 large-offset-1 landing-resources__text">
       <h2>Use our tools</h2>
       <p>Explore our <span>suite of open source tools</span> for data mining and analysis for electrification and planning</p>
@@ -158,19 +163,14 @@
     </div>
     {% import "resources/card.html" as resource_card %}
     <div class="cell large-5 large-offset-1 landing-resources__cards">
-      <div class="grid-x" data-equalize-on="medium" id="landing-resources-cards" data-equalizer="foo">
-        <div class="cell medium-5 resource-choice" data-equalizer-watch="foo">
-          {{ resource_card.input("Cluster Identification", "img/img-5-resource-cluster.png", "How can I identify locations of settlements?", "clusteridentification") }}
-        </div>
-        <div class="cell medium-5 medium-offset-2 resource-choice" data-equalizer-watch="foo">
-          {{ resource_card.input("Mapping with OSM", "img/img-6-resources-osm.png", "How can I map a settlement in detail remotely?", "osm") }}
-        </div>
-        <div class="cell medium-5 resource-choice" data-equalizer-watch="foo">
-          {{ resource_card.input("Survey Tools", "img/img-7-resources-survey.png", "How can I visit a settlement and collect relevant data?", "surveytools") }}
-        </div>
-        <div class="cell medium-5 medium-offset-2 resource-choice" data-equalizer-watch="foo">
-          {{ resource_card.input("On Grid Mapping", "img/img-8-resources-og-mapping.png", "How can I track the grid?", "ongridmapping") }}
-        </div>
+      <div class="grid-x">
+        {{ resource_card.input("Cluster Identification", "1", "How can I identify locations of settlements?", "clusteridentification", card_offset=False) }}
+
+          {{ resource_card.input("Mapping with OSM", "2", "How can I map a settlement in detail remotely?", "osm", card_offset=True) }}
+
+          {{ resource_card.input("Survey Tools", "3", "How can I visit a settlement and collect relevant data?", "surveytools", card_offset=False) }}
+
+          {{ resource_card.input("On Grid Mapping", "4", "How can I track the grid?", "ongridmapping", card_offset=True) }}
       </div>
     </div>
   </section>
