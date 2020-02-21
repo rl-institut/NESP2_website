@@ -68,12 +68,13 @@ def create_app(test_config=None):
     def landing():
 
         kwargs = {}
-        for k, desc in PROGRESS_NUMBER_MAX.items():
-            kwargs[k] = query_gauge_maximum(desc)
+        if os.environ.get("POSTGRES_URL", None) is not None:
+            for k, desc in PROGRESS_NUMBER_MAX.items():
+                kwargs[k] = query_gauge_maximum(desc)
 
-        kwargs['km_electricity'] = query_electrified_km()
-        kwargs['mapped_villages'] = query_mapped_villages()
-        kwargs['mapped_buildings'] = query_mapped_buildings()
+            kwargs['km_electricity'] = query_electrified_km()
+            kwargs['mapped_villages'] = query_mapped_villages()
+            kwargs['mapped_buildings'] = query_mapped_buildings()
         return render_template('landing/index.html', **kwargs)
 
     @app.route('/termsofservice')
