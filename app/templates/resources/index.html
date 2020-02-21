@@ -7,7 +7,7 @@
 
 {% block content %}
 
-<section id="resources-index" class="grid-x landing-resources">
+<section id="resources-index" class="grid-x landing-resources landing-resources-grid-y">
   <div class="cell large-4 large-offset-1 landing-resources__text">
     <h2>Open source tools</h2>
     <p>Use our <span>Open source tools</span> for electrification data mining and analysis</p>
@@ -17,20 +17,17 @@
     <a href="" rel="noreferrer" target="_blank">Get Involved</a>
     -->
   </div>
+
   {% import "resources/card.html" as resource_card %}
-  <div class="cell large-5 large-offset-1 landing-resources__cards">
-    <div class="grid-x" data-equalize-on="medium" id="landing-resources-cards">
-      <div class="cell medium-5 resource-choice">
-        {{ resource_card.input("Cluster Identification", "img/img-5-resource-cluster.png", "How can I identify locations of settlements?", "clusteridentification") }}
-      </div>
-      <div class="cell medium-5 medium-offset-2 resource-choice">
-        {{ resource_card.input("Mapping with OSM", "img/img-6-resources-osm.png", "How can I map a settlement in detail remotely?", "osm") }}
-      </div>
-      <div class="cell medium-5 resource-choice">
-        {{ resource_card.input("Survey Tools", "img/img-7-resources-survey.png", "How can I visit a settlement and collect relevant data?", "surveytools") }}
-      </div>
-      <div class="cell medium-5 medium-offset-2 resource-choice">
-        {{ resource_card.input("On Grid Mapping", "img/img-8-resources-og-mapping.png", "How can I track the grid?", "ongridmapping") }}
+    <div class="cell large-5 large-offset-1 landing-resources__cards">
+      <div class="grid-x">
+        {{ resource_card.input("Cluster Identification", "1", "How can I identify locations of settlements?", "clusteridentification", card_offset=False) }}
+
+          {{ resource_card.input("Mapping with OSM", "2", "How can I map a settlement in detail remotely?", "osm", card_offset=True) }}
+
+          {{ resource_card.input("Survey Tools", "3", "How can I visit a settlement and collect relevant data?", "surveytools", card_offset=False) }}
+
+          {{ resource_card.input("On Grid Mapping", "4", "How can I track the grid?", "ongridmapping", card_offset=True) }}
       </div>
     </div>
   </div>
