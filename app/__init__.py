@@ -73,4 +73,22 @@ def create_app(test_config=None):
         if db_session is not None:
             db_session.remove()
 
+    try:
+        from .maps_utils import define_function_jinja
+        define_function_jinja(app)
+    except ModuleNotFoundError:
+        print("\n\n*** warning ***\n")
+        print(
+            "The webmap will not be able to work correctly, please run 'python "
+            "app/setup_maps.py'"
+        )
+        print("\n***************\n\n")
+    except ImportError:
+        print("\n\n*** warning ***\n")
+        print(
+            "The webmap will not be able to work correctly, you are missing the function "
+            "'define_function_jinja' into the app/maps_utils.py file, please run 'python "
+            "app/setup_maps.py'"
+        )
+        print("\n***************\n\n")
     return app

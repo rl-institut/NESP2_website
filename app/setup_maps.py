@@ -38,6 +38,15 @@ for fname in os.listdir(template_path):
     if fname not in ('base.html'):
         copyfile(os.path.join(template_path, fname), os.path.join(new_template_path, fname))
 
+# copy python files
+app_path = os.path.join('NESP2', 'app')
+
+new_app_path = os.path.join('app')
+
+for fname in os.listdir(app_path):
+    if fname in ('utils.py'):
+        copyfile(os.path.join(app_path, fname), os.path.join(new_app_path, 'maps_{}'.format(fname)))
+
 # copy static files
 static_path = os.path.join('NESP2', 'app', 'static')
 
@@ -60,6 +69,8 @@ for static_type in static_types:
                 os.path.join(static_path, static_type, fname),
                 os.path.join(new_static_path, new_static_type, fname)
             )
+
+
 
 # erase the NESP2 repository
 rmtree(os.path.join('NESP2'))
