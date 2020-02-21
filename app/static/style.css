@@ -296,6 +296,11 @@ header a:focus{
 
 /* larger screens */
 @media only screen and (min-width: 1000px) {
+    .landing-hero {
+        height: 75vh;
+        max-height:50rem;
+    }
+
     .landing-hero h1,
     .landing-hero h2 {
         width: 54rem;
@@ -310,6 +315,8 @@ header a:focus{
         margin-bottom: 8rem;
     }
 }
+
+
 
 .landing-welcome {
     background-image: url("background/bg-1-welcome-div.png");
@@ -965,10 +972,17 @@ h4.heading-green {
 
 /* for some reason, the anchor is nor working as it should, i.e. scroll down to the top of the map section
 Added this trick to fix it */
+#landing-welcome,
 #landing-maps,
 #landing-resources {
     display:block;
    height:4.5rem; /* this is the height of your header */
    margin-top:-4.5rem; /* this is again negative value of the height of your header */
    visibility:hidden;
+}
+
+#landing-welcome,
+ {
+   margin-top:-5.5rem; /* this is again negative value of the height of your header */
+
 }
