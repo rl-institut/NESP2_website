@@ -724,19 +724,19 @@ h4.heading-green {
 }
 
 .landing-resources-grid-y .card-img1 {
-    background-image: url(../../static/img/img-5-resource-cluster.png);
+    background-image: url(img/img-5-resource-cluster.png);
 }
 
 .landing-resources-grid-y .card-img2 {
-    background-image: url(../../static/img/img-6-resources-osm.png);
+    background-image: url(img/img-6-resources-osm.png);
 }
 
 .landing-resources-grid-y .card-img3 {
-    background-image: url(../../static/img/img-7-resources-survey.png);
+    background-image: url(img/img-7-resources-survey.png);
 }
 
 .landing-resources-grid-y .card-img4 {
-    background-image: url(../../static/img/img-8-resources-og-mapping.png);
+    background-image: url(img/img-8-resources-og-mapping.png);
 }
 
 .landing-resources-grid-y .card-img {
