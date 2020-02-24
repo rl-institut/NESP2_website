@@ -13,6 +13,11 @@
  *
  */
 !function ($) {
+
+    function formatNumber(num) {
+      return num.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1,')
+    }
+
     $.fn.gaugeMeter = function (t) {
         var defaults = $.extend({
             id: "",
@@ -87,7 +92,7 @@
                 if(option.text_size > 0.5){
                     option.text_size = 0.5;
                 }
-                $("<span></span>").appendTo(t).html(r).css({
+                $("<span></span>").appendTo(t).html(formatNumber(r)).css({
                     "line-height": 0.75 * option.size + "px",
                     "font-size": option.text_size * option.size + "px"
                 });
