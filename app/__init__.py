@@ -1,5 +1,6 @@
 import os
-from flask import Flask, render_template
+from flask import Flask, render_template, request
+from flask_wtf.csrf import CSRFProtect
 
 from .blueprints import resources, about, maps
 if os.environ.get("POSTGRES_URL", None) is not None:
@@ -43,6 +44,9 @@ def create_app(test_config=None):
         os.makedirs(app.instance_path)
     except OSError:
         pass
+
+    # add CSRF token
+    csrf = CSRFProtect(app)
 
     # register blueprints (like views in django)
     app.register_blueprint(resources.bp)

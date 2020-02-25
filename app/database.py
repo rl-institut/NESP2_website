@@ -1,4 +1,5 @@
 import os
+import random
 from sqlalchemy import create_engine
 from sqlalchemy.orm import scoped_session, sessionmaker
 from sqlalchemy.sql import func
@@ -47,6 +48,8 @@ BaseWeb = declarative_base(metadata=MetaData(schema='web', bind=engine))
 class DlinesSe4all(Base):
     __table__ = Table('distribution_line_se4all', Base.metadata, autoload=True, autoload_with=engine)
 
+class BoundaryAdmin(Base):
+    __table__ = Table('boundary_adm1', Base.metadata, autoload=True, autoload_with=engine)
 
 class GaugeMaximum(BaseWeb):
     __table__ = Table('ourprogress_maximums', BaseWeb.metadata, autoload=True, autoload_with=engine)
@@ -99,3 +102,39 @@ def query_gauge_maximum(desc):
     res = db_session.query(GaugeMaximum.maximum.label("max"))\
         .filter(GaugeMaximum.description.ilike("%{}%".format(desc))).first()
     return str(int(res.max))
+
+
+def get_state_codes():
+    res = db_session.query(
+        BoundaryAdmin.adm1_pcode.label("code"),
+        BoundaryAdmin.adm1_en.label("name")
+    )
+    return {r.name:r.code.lower() for r in res}
+
+
+OG_CLUSTERS_COLUMNS = ('adm1_pcode', 'cluster_offgrid_id', 'area_km2',
+    'building_count', 'percentage_building_area', 'grid_dist_km', 'geom')
+
+
+def get_random_og_cluster(engine, view_code, schema="web", limit=20):
+    """Select a random cluster from a given view
+
+    :param engine: database engine
+    :param view_name: the state code of the view formatted as "ngXYZ"
+    :param schema: the name of the database schema
+    :param limit: the number of villages to choose from
+    :return: the information of one cluster : 'adm1_pcode', 'cluster_offgrid_id', 'area_km2',
+    'building_count', 'percentage_building_area', 'grid_dist_km', 'geom'
+    """
+
+    if schema is not None:
+        view_name = "{}.cluster_offgrid_{}_mv".format(schema, view_code)
+    with engine.connect() as con:
+        rs = con.execute('SELECT * FROM {} ORDER BY area_km2 LIMIT {};'.format(view_name, limit))
+        data = rs.fetchall()
+    single_cluster = data[random.randint(0, int(limit)-1)]
+    return {key: single_cluster[key] for key in OG_CLUSTERS_COLUMNS}
+
+
+def query_random_og_cluster(state_name, state_codes_dict):
+    return get_random_og_cluster(engine=engine, view_code=state_codes_dict[state_name])

@@ -14,11 +14,21 @@ parser.add_argument(
     default=False,
     type=bool,
 )
+parser.add_argument(
+    "-b",
+    dest="branch",
+    help="Specify the branch of the NESP2 repository",
+    nargs="?",
+    const=False,
+    default="dev",
+    type=str,
+)
 args = parser.parse_args()
 
 if args.docker is False:
     # clone the NESP2 repository locally
-    branch = 'dev'
+    branch = args.branch
+    print("\nPull branch: {} of NESP2 repository\n".format(branch))
     if os.path.exists('NESP2') is False:
         os.system(
             "git clone --single-branch --branch {} https://github.com/rl-institut/NESP2.git".format(
