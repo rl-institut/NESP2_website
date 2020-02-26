@@ -1,4 +1,5 @@
 import os
+import datetime
 from flask import Flask, render_template, request
 from flask_wtf.csrf import CSRFProtect
 
@@ -93,6 +94,7 @@ def create_app(test_config=None):
 
     # set a global variable to indicate it is the website
     app.jinja_env.globals.update(nesp2_website=True)
+    app.jinja_env.globals.update(current_year=datetime.datetime.today().year)
 
     try:
         from .maps_utils import define_function_jinja
