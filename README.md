@@ -30,11 +30,13 @@ If needed, you can generate a key with `python -c 'import os; print(os.urandom(1
 1. install [docker](https://docs.docker.com/v17.09/engine/installation/linux/docker-ce/ubuntu/#install-docker-ce-1) and [docker-compose](https://docs.docker.com/compose/install/)
 
 ### With simple Dockerfile
-1. `sudo docker build -t nesp2_website .`
-2. `sudo docker run -rm -p 5000:5000 nesp2_website` you can use the `--build-arg` command to provide the postgresql login infos
+1. `sudo docker build -t nesp2_website .` you can use the `--build-arg` command to provide the postgresql login infos, or store 
+   it in a file and run `sudo docker build -t nesp2_website $(<docker-inputs.txt) .`
+2. `sudo docker run -rm -p 5000:5000 nesp2_website`
 3. Access the website at localhost:5000
 4. to stop the service simply `ctrl + c` in the terminal from point 2.
 ### With docker-compose
+0. Define the database env variable either in your terminal or in `.env` file (docker-compose will look into it)
 1. `sudo docker-compose up -d --build`
 2. your app is available at `0.0.0.0:5000` or `localhost:5000`
 3. Access the website at localhost:5000
