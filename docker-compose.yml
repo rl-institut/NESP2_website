@@ -3,6 +3,11 @@ services:
   nesp2_website:
     restart: unless-stopped
     build:
+      args:
+        POSTGRES_url: ${POSTGRES_URL}
+        POSTGRES_user: ${POSTGRES_USER}
+        POSTGRES_pw: ${POSTGRES_PW}
+        POSTGRES_db: ${POSTGRES_DB}
       context: .
     image: nesp2_website
     container_name: nesp2_website
