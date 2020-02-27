@@ -2,15 +2,15 @@ FROM python:3.6.10-alpine3.10
 MAINTAINER Pierre-Francois Duc <pierre-francois.duc@rl-institut.de>
 
 ARG branch=dev
-ARG POSTGRES_URL
-ARG POSTGRES_USER
-ARG POSTGRES_PW
-ARG POSTGRES_DB
+ARG POSTGRES_url
+ARG POSTGRES_user
+ARG POSTGRES_pw
+ARG POSTGRES_db
 
-ENV POSTGRES_URL=$POSTGRES_URL
-ENV POSTGRES_USER=$POSTGRES_USER
-ENV POSTGRES_PW=$POSTGRES_PW
-ENV POSTGRES_DB=$POSTGRES_DB
+ENV POSTGRES_URL=$POSTGRES_url
+ENV POSTGRES_USER=$POSTGRES_user
+ENV POSTGRES_PW=$POSTGRES_pw
+ENV POSTGRES_DB=$POSTGRES_db
 
 COPY docker_postgres_login_help.py /
 COPY app /app
@@ -42,4 +42,3 @@ RUN python /docker_postgres_login_help.py
 
 # Start gunicorn
 CMD ["gunicorn", "index:app"]
-
