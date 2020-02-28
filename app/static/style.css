@@ -342,6 +342,11 @@ header a:focus{
     color: #FFF;
 }
 
+// disable the dotted line around the links once they are clicked
+.landing-feature a {
+    outline: 0;
+}
+
 .landing-feature__header {
     padding-bottom: 1.5rem;
 }
