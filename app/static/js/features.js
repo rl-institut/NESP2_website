@@ -34,7 +34,7 @@ function apply_deselect(feature_type){
 
 function hover_features() {
   // Find the associated feature id
-  var ftId = $(this).find("a").attr("href").substring(1).replace("link-", "");
+  var ftId = $(this).find("a").attr("name").replace("link-", "");
   var ftType = ftId.split('-').pop();
   var selectedTab = document.getElementById(ftId);
 
