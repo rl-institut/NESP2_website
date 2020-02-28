@@ -34,7 +34,7 @@ function apply_deselect(feature_type){
 
 function hover_features() {
   // Find the associated feature id
-  var ftId = $(this).find("a").attr("href").substring(1);
+  var ftId = $(this).find("a").attr("href").substring(1).replace("link-", "");
   var ftType = ftId.split('-').pop();
   var selectedTab = document.getElementById(ftId);
 
@@ -57,10 +57,8 @@ function hover_features() {
   }
 }
 
-/*
-$('.landing-feature__img').on("mouseover", hover_features);
-$('.landing-feature__description').on("mouseover", hover_features);
-*/
+$('.landing-feature__img').on("click", hover_features);
+$('.landing-feature__description').on("click", hover_features);
 
 $('.feature-next').on("click", function() {
   // Find the currently selected tab
