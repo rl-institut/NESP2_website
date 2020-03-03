@@ -162,10 +162,17 @@
 
 
   <section id="landing-resources-sec" class="grid-x landing-resources landing-resources-grid-y">
-    <div class="cell large-4 large-offset-1 landing-resources__text">
-      <h2>Use our tools</h2>
-      <p>Explore our <span>suite of open source tools</span> for data mining and analysis for electrification and planning</p>
-      <a class="cta" href="{{ url_for('resources.index') }}">Explore tools</a>
+    <div class="cell large-4 large-offset-1 grid-x">
+      <div class="cell landing-resources__text">
+        <h2>Understand our objectives</h2>
+        <p>Read through the idea and key questions we would like to solve with our data gathering activities</p>
+        <a class="cta" href="{{ url_for('objectives.index') }}">Explore Objectives</a>
+      </div>
+      <div class="cell landing-resources__text">
+        <h2>Use our tools</h2>
+        <p>Explore our <span>suite of open source tools</span> for data mining and analysis for electrification and planning</p>
+        <a class="cta" style="display:none" href="{{ url_for('resources.index') }}">Explore tools</a>
+      </div>
     </div>
     {% import "resources/card.html" as resource_card %}
     <div class="cell large-5 large-offset-1 landing-resources__cards">
