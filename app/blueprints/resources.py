@@ -1,4 +1,4 @@
-from flask import Blueprint, render_template, abort, Markup
+from flask import Blueprint, render_template, abort, Markup, redirect, url_for
 
 bp = Blueprint('resources', __name__)
 
@@ -91,7 +91,7 @@ RESOURCES_ATTRIBUTES = {
 @bp.route('/resources/')
 @bp.route('/resources')
 def index():
-    return render_template('resources/index.html')
+    return redirect(url_for('landing', _anchor='landing-resources'))
 
 
 @bp.route('/resources/<resc_name>')
