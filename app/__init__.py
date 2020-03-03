@@ -3,7 +3,7 @@ import datetime
 from flask import Flask, render_template, request
 from flask_wtf.csrf import CSRFProtect
 
-from .blueprints import resources, about, maps
+from .blueprints import resources, about, maps, objectives
 if os.environ.get("POSTGRES_URL", None) is not None:
     from .database import (
         db_session,
@@ -51,6 +51,7 @@ def create_app(test_config=None):
 
     # register blueprints (like views in django)
     app.register_blueprint(resources.bp)
+    app.register_blueprint(objectives.bp)
     app.register_blueprint(maps.bp)
     app.register_blueprint(about.bp)
 

@@ -15,10 +15,13 @@ def test_about(client):
     response = client.get('/about')
     assert response.status_code == 200
 
+def test_objectives(client):
+    response = client.get('/objectives')
+    assert response.status_code == 200
 
 def test_resources(client):
     response = client.get('/resources')
-    assert response.status_code == 200
+    assert response.status_code == 302
 
 
 def test_termsofserviceces(client):
