@@ -1,8 +1,8 @@
-{% macro input(idx=1, title='', link='', image="static/img/img-placeholder.png") -%}
+{% macro input(idx=1, title='', link='', image="static/img/img-placeholder.png", text=6*"Lorem ipsum dolor sit amet, ") -%}
 <div class="grid-x">
   <div id="about-stakeholder{{idx}}-info" class="cell medium-5 about-stakeholder__item">
     <h3>{{title}}</h3>
-      <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem.</p>
+      <p>{{ text }}</p>
     <a href="{{link}}" rel="noreferrer" target="_blank">Link <img src="static/img/icons/i_arrow_right_green.svg" alt="Arrow right"></a>
   </div>
   <div id="about-stakeholder{{idx}}-img" class="cell medium-offset-2 medium-5 about-stakeholder__img">
