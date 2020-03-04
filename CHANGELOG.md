@@ -29,6 +29,7 @@ Here is a template for new release sections
 - all gauges values are queried from the database (#98)
 - index.py file (#101)
 - objectives route and blueprint (#128)
+- links from logo (#129)
 
 ### Changed
 - allow use of variable via URL (#76)
@@ -38,9 +39,11 @@ Here is a template for new release sections
 - gauge line is thicker (#96)
 - adapt setup_maps.py for windows users (#101)
 - the webmap uses its own base template (without header and footer) (#101)
+- ratio of giz logos (#129)
 
 ### Removed
 - app/index.py file (#101)
+- outline around the clicked links (#129)
 
 ### Fixed
 - chrome display bug #64 for small screens (#86)
