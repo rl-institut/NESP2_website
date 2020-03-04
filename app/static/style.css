@@ -584,6 +584,10 @@ header a:focus{
     padding-right: .75rem;
 }
 
+#footer-logos-div a {
+    outline: 0;
+}
+
 #footer-logos-div p {
     font-size: 14pt;
     line-height: 18pt;
@@ -611,11 +615,11 @@ header a:focus{
 
 
 #footer-logos-div img{
-    height: 7rem;
+    height: 10rem;
 }
 
 #footer-logos-giz img{
-    height: 5.3rem;
+    height: 5.83rem;
 }
 
 #footer-license-div{
