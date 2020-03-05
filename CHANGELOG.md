@@ -74,6 +74,7 @@ First version of the NESP website
 - page for privacy policy and terms of service (#67)
 - cross-linking protection for all external links (#69)
 - js folder for javascript code (#71)
+- objective page (#132)
 
 ### Changed
 - structure of the folders --> flask files in `app` folder (#12)
