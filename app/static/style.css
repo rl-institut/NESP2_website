@@ -809,6 +809,18 @@ h4.heading-green {
     margin-bottom: 0;
 }
 
+.objective-card__content {
+    display: none;
+}
+
+.selected--objective-card__content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-item: center;
+}
+
+
 .about-card__content p {
     padding-right: 2rem;
 }
