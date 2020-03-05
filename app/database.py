@@ -116,7 +116,7 @@ OG_CLUSTERS_COLUMNS = ('adm1_pcode', 'cluster_offgrid_id', 'area_km2',
     'building_count', 'percentage_building_area', 'grid_dist_km', 'geom')
 
 
-def get_random_og_cluster(engine, view_code, schema="web", limit=20):
+def get_random_og_cluster(engine, view_code, schema="web", limit=5):
     """Select a random cluster from a given view
 
     :param engine: database engine
@@ -129,12 +129,153 @@ def get_random_og_cluster(engine, view_code, schema="web", limit=20):
 
     if schema is not None:
         view_name = "{}.cluster_offgrid_{}_mv".format(schema, view_code)
+    cols = ", ".join(OG_CLUSTERS_COLUMNS[:-1])
+    cols = cols + ", ST_Centroid(ST_TRANSFORM(geom, 4326)) as geom"
     with engine.connect() as con:
-        rs = con.execute('SELECT * FROM {} ORDER BY area_km2 LIMIT {};'.format(view_name, limit))
+        rs = con.execute('SELECT {} FROM {} ORDER BY area_km2 DESC LIMIT {};'.format(cols,
+                                                                                     view_name, limit))
         data = rs.fetchall()
-    single_cluster = data[random.randint(0, int(limit)-1)]
-    return {key: single_cluster[key] for key in OG_CLUSTERS_COLUMNS}
+    single_cluster = data[random.randint(0, min([int(limit), len(data)])-1)]
+    return {key: str(single_cluster[key]) for key in OG_CLUSTERS_COLUMNS}
 
 
 def query_random_og_cluster(state_name, state_codes_dict):
     return get_random_og_cluster(engine=engine, view_code=state_codes_dict[state_name])
+
+
+def filter_materialized_view(
+        engine,
+        view_name,
+        schema=None,
+        area=None,
+        distance_grid=None,
+        building=None,
+        buildingfp=None,
+        limit=None,
+        keys=None
+):
+    if schema is not None:
+        view_name = "{}.{}".format(schema, view_name)
+    if limit is None:
+        limit = ""
+    else:
+        limit = " LIMIT {}".format(limit)
+
+    filter_cond = ""
+
+    if area is not None:
+        key = "area_km2"
+        filter_cond = f" WHERE {view_name}.{key} > {area[0]} AND {view_name}.{key} < {area[1]}"
+
+    if distance_grid is not None:
+        key = "grid_dist_km"
+        if "WHERE" in filter_cond:
+            filter_cond = filter_cond + f" AND {view_name}.{key} > {distance_grid[0]} AND" \
+                                        f" {view_name}.{key} < {distance_grid[1]}"
+        else:
+            filter_cond = f" WHERE {view_name}.{key} > {distance_grid[0]} AND" \
+                          f" {view_name}.{key} < {distance_grid[1]}"
+
+    if building is not None:
+        key = "building_count"
+        if "WHERE" in filter_cond:
+            filter_cond = filter_cond + f" AND {view_name}.{key} > {building[0]} AND" \
+                                        f" {view_name}.{key} < {building[1]}"
+        else:
+            filter_cond = f" WHERE {view_name}.{key} > {building[0]} AND"\
+                          f" {view_name}.{key} < {building[1]}"
+
+    if buildingfp is not None:
+        key = "percentage_building_area"
+        if "WHERE" in filter_cond:
+            filter_cond = filter_cond + f" AND {view_name}.{key} > {buildingfp[0]} AND" \
+                                        f" {view_name}.{key} < {buildingfp[1]}"
+        else:
+            filter_cond = f" WHERE {view_name}.{key} > {buildingfp[0]} AND" \
+                          f" {view_name}.{key} < {buildingfp[1]}"
+
+    if keys is None:
+        columns = "*"
+    else:
+        columns = ", ".join(keys)
+    with engine.connect() as con:
+        query = 'SELECT {} FROM {}{}{};'.format(columns, view_name, filter_cond, limit)
+        rs = con.execute(query)
+        data = rs.fetchall()
+    return data
+
+
+def query_filtered_clusters(
+        state_name,
+        state_codes_dict,
+        area=None,
+        distance_grid=None,
+        limit=None,
+        keys=None
+):
+    """
+
+    :param state_name:
+    :param state_codes_dict:
+    :param area:
+    :param distance_grid:
+    :param limit:
+    :param keys:
+    :return:
+    """
+    if state_name in state_codes_dict:
+        view_name = "cluster_all_{}_mv".format(state_codes_dict[state_name])
+        answer = filter_materialized_view(
+            engine,
+            view_name,
+            schema="web",
+            area=area,
+            distance_grid=distance_grid,
+            limit=limit,
+            keys=keys
+        )
+    else:
+        print("Non existent state name: {}".format(state_name))
+        answer = []
+    return answer
+
+
+def query_filtered_og_clusters(
+        state_name,
+        state_codes_dict,
+        area=None,
+        distance_grid=None,
+        building=None,
+        buildingfp=None,
+        limit=None,
+        keys=None
+):
+    """
+
+    :param state_name:
+    :param state_codes_dict:
+    :param area:
+    :param distance_grid:
+    :param building:
+    :param buildingfp:
+    :param limit:
+    :param keys:
+    :return:
+    """
+    if state_name in state_codes_dict:
+        view_name = "cluster_offgrid_{}_mv".format(state_codes_dict[state_name])
+        answer = filter_materialized_view(
+            engine,
+            view_name,
+            schema="web",
+            area=area,
+            distance_grid=distance_grid,
+            building=building,
+            buildingfp=buildingfp,
+            limit=limit,
+            keys=keys
+        )
+    else:
+        print("Non existent state name: {}".format(state_name))
+        answer = []
+    return answer
