@@ -68,9 +68,8 @@ static_path = os.path.join('NESP2', 'app', 'static')
 
 new_static_path = os.path.join('app', 'static')
 
-static_types = ['data', 'images', 'css', 'js',  os.path.join('img', 'icons')]
+static_types = ['images', 'css', 'js',  os.path.join('img', 'icons')]
 new_static_types = {
-    'data': 'data',
     'images': os.path.join('img', 'maps'),
     'css': 'css',
     'js': 'js',
