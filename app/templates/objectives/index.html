@@ -1,8 +1,27 @@
 {% extends 'base.html' %}
 
 {% block header %}
+
 {% endblock header%}
 
 {% block content %}
-Understand our objectives webpage (under construction)
+<section id="objectives-sec" class="grid-x  landing-resources-grid-y">
+    <div class="cell large-offset-1 grid-x">
+      <div class="cell landing-resources__text">
+        <h2>Understand our objectives</h2>
+        <p>Read the questions we would like to solve with our data gathering activities</p>
+      </div>
+    </div>
+    {% import "objectives/card.html" as objective_card %}
+    <div class="cell objectives__cards ">
+      <div class="grid-x">
+        {{ objective_card.input("Where people live?", "1", ["Locations of settlements", "Mapping of settlements extents"]) }}
+        {{ objective_card.input("Where is the grid?", "2", ["Existing grid infrastructure", "Grid expansion data", "Grid operational data"]) }}
+        {{ objective_card.input("How people live?", "3", ["Demography", "Unserved & Underserved", "Livelihoods", "Amenities", "Productive use"]) }}
+
+      </div>
+    </div>
+  </section>
+
+<script src="{{ url_for('static', filename='js/objectives.js') }}"></script>
 {% endblock content%}
