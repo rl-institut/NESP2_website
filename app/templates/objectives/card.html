@@ -1,0 +1,19 @@
+{% macro input(title, image_num='', bullet_points=[]) -%}
+  <div class="cell medium-3 objective-choice resource-choice card">
+    <a name="objective-{{ image_num }}-content">
+        <div class="grid-y">
+          <div class="cell small-6 card-img card-img{{ image_num }}"></div>
+          <div class="cell small-6 card-text">
+            <p class="card-text-header">{{ title }}</p>
+            <div id="objective-{{ image_num }}-content" class="objective-card__content">
+              <ul>
+                  {% for item in bullet_points %}
+                    <li>{{ item }}</li>
+                  {% endfor %}
+              </ul>
+            </div>
+          </div>
+        </div>
+    </a>
+  </div>
+{%- endmacro %}
