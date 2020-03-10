@@ -3,5 +3,3 @@ flask_wtf
 flask-sqlalchemy
 psycopg2
 geoalchemy2
-geojson
-shapely
