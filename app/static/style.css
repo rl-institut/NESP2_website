@@ -734,10 +734,6 @@ h4.heading-green {
     padding-bottom: 1rem;
 }
 
-.landing-resources-grid-y .card .grid-y {
-    height: 22rem;
-}
-
 .landing-resources-grid-y .card-img1 {
     background-image: url(img/img-5-resource-cluster.png);
 }
@@ -766,12 +762,38 @@ h4.heading-green {
 }
 
 .landing-resources-grid-y .objective-choice.card {
-    max-width: 25%;
+    max-width: 20%;
+}
+
+.landing-resources-grid-y .card .grid-y {
+    height: 18rem;
 }
 
 @media only screen and (min-width: 1300px) {
     .landing-resources-grid-y .objective-choice.card {
         max-width: 20%;
+    }
+
+    .landing-resources-grid-y .objective-choice.card .card-text p {
+        font-size: 18pt;
+    }
+
+    .landing-resources-grid-y .objective-choice.card .grid-y {
+        height: 20rem;
+    }
+}
+
+@media only screen and (min-width: 1500px) {
+    .landing-resources-grid-y .objective-choice.card {
+        max-width: 22%;
+    }
+
+    .landing-resources-grid-y .objective-choice.card .card-text p {
+        font-size: 18pt;
+    }
+
+    .landing-resources-grid-y .objective-choice.card .grid-y {
+        height: 22rem;
     }
 }
 
