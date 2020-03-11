@@ -765,6 +765,21 @@ h4.heading-green {
     margin-bottom: 5rem!important;
 }
 
+.landing-resources-grid-y .objective-choice.card {
+    max-width: 25%;
+}
+
+@media only screen and (min-width: 1300px) {
+    .landing-resources-grid-y .objective-choice.card {
+        max-width: 20%;
+    }
+}
+
+.objectives__cards > div {
+    display: flex;
+    justify-content: space-evenly;
+}
+
 .landing-resources-grid-y .card-offset {
     margin-left: 5%
 }
