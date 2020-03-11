@@ -449,7 +449,14 @@ header a:focus{
     padding-right: .75rem;
 }
 
+.landing-resources__text h1 {
+    padding-top: 3rem;
+    font-size: 32pt;
+    font-weight: 700;
+}
+
 .landing-resources__text p {
+    padding-top: 1rem;
     padding-bottom: 5rem;
     font-size: 1.75rem;
 }
