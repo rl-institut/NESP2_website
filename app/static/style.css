@@ -449,7 +449,7 @@ header a:focus{
     padding-right: .75rem;
 }
 
-.landing-resources__text h1 {
+#objectives-sec .landing-resources__text h1 {
     padding-top: 3rem;
     font-size: 32pt;
     font-weight: 700;
@@ -807,6 +807,11 @@ h4.heading-green {
 .objectives__cards > div {
     display: flex;
     justify-content: space-evenly;
+}
+
+#objectives-sec {
+    background-color: #EEEFF1;
+    padding-bottom: 3rem;
 }
 
 .landing-resources-grid-y .card-offset {
