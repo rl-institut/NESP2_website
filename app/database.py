@@ -51,6 +51,10 @@ class DlinesSe4all(Base):
 class BoundaryAdmin(Base):
     __table__ = Table('boundary_adm1', Base.metadata, autoload=True, autoload_with=engine)
 
+class AdmStatus(Base):
+    __table__ = Table('boundary_adm1_status', Base.metadata, autoload=True, autoload_with=engine)
+
+
 class GaugeMaximum(BaseWeb):
     __table__ = Table('ourprogress_maximums', BaseWeb.metadata, autoload=True, autoload_with=engine)
 
@@ -112,6 +116,14 @@ def get_state_codes():
     return {r.name:r.code.lower() for r in res}
 
 
+def query_available_og_clusters():
+    """Look for state which have true set for both clusters and og_clusters"""
+    res = db_session.query(
+        AdmStatus.adm1_pcode
+    ).filter(AdmStatus.cluster_all & AdmStatus.cluster_offgrid).all()
+    return [r.adm1_pcode for r in res]
+
+
 OG_CLUSTERS_COLUMNS = ('adm1_pcode', 'cluster_offgrid_id', 'area_km2',
     'building_count', 'percentage_building_area', 'grid_dist_km', 'geom')
 
@@ -130,7 +142,7 @@ def get_random_og_cluster(engine, view_code, schema="web", limit=5):
     if schema is not None:
         view_name = "{}.cluster_offgrid_{}_mv".format(schema, view_code)
     cols = ", ".join(OG_CLUSTERS_COLUMNS[:-1])
-    cols = cols + ", ST_Centroid(ST_TRANSFORM(geom, 4326)) as geom"
+    cols = cols + ", ST_AsGeoJSON(ST_Centroid(ST_TRANSFORM(geom, 4326))) as geom"
     with engine.connect() as con:
         rs = con.execute('SELECT {} FROM {} ORDER BY area_km2 DESC LIMIT {};'.format(cols,
                                                                                      view_name, limit))
@@ -143,6 +155,7 @@ def query_random_og_cluster(state_name, state_codes_dict):
     return get_random_og_cluster(engine=engine, view_code=state_codes_dict[state_name])
 
 
+
 def filter_materialized_view(
         engine,
         view_name,
@@ -152,7 +165,7 @@ def filter_materialized_view(
         building=None,
         buildingfp=None,
         limit=None,
-        keys=None
+        keys=None,
 ):
     if schema is not None:
         view_name = "{}.{}".format(schema, view_name)
@@ -197,7 +210,10 @@ def filter_materialized_view(
     if keys is None:
         columns = "*"
     else:
-        columns = ", ".join(keys)
+        if not isinstance(keys, str):
+            columns = ", ".join(keys)
+        else:
+            columns = "COUNT({})".format(keys)
     with engine.connect() as con:
         query = 'SELECT {} FROM {}{}{};'.format(columns, view_name, filter_cond, limit)
         rs = con.execute(query)
