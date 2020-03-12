@@ -1,6 +1,6 @@
 import os
 import json
-from flask import Blueprint, render_template, abort, request, Response, jsonify
+from flask import Blueprint, render_template, abort, request, Response, jsonify, safe_join
 from jinja2 import TemplateNotFound
 
 if os.environ.get("POSTGRES_URL", None) is not None:
@@ -90,6 +90,7 @@ def download_csv():
         headers={"Content-disposition": "attachment; filename={}.csv".format(fname)}
     )
 
+
 @bp.route('/states-with-og-clusters', methods=["POST"])
 def available_clusters():
 
@@ -97,6 +98,26 @@ def available_clusters():
     resp = query_available_og_clusters()
     resp = jsonify({"states_with_og_clusters": [CODES_STATE_DICT[r.lower()] for r in resp]})
     resp.status_code = 200
+    return resp
+
+
+@bp.route('/centroids', methods=["get"])
+def fetch_centroids():
+
+    state = request.args.get("state")
+    cluster_type = request.args.get("cluster_type")
+    if "og" in cluster_type:
+        fname = "nesp2_state_offgrid_clusters_centroids_{}.geojson".format(state)
+    else:
+        fname = "nesp2_state_all_clusters_centroids_{}.geojson".format(state)
+    try:
+        with open(safe_join("app/static/data/centroids/", fname), "r") as ifs:
+            resp = json.load(ifs)
+        resp = jsonify(resp)
+        resp.status_code = 200
+    except FileNotFoundError:
+        resp = jsonify("")
+        resp.status_code = 404
     return resp
 
 
