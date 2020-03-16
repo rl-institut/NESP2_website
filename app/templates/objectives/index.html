@@ -16,7 +16,7 @@
     </div>
     {% import "objectives/card.html" as objective_card %}
     <div class="cell objectives__cards">
-      <div>
+      <div class="grid-x">
         {{ objective_card.input("Where people live?", "1", ["Locations of settlements", "Mapping of settlements extents"]) }}
         {{ objective_card.input("Where is the grid?", "2", ["Existing grid infrastructure", "Grid expansion data", "Grid operational data"]) }}
         {{ objective_card.input("How people live?", "3", ["Demography", "Unserved & Underserved", "Livelihoods", "Amenities", "Productive use"]) }}
