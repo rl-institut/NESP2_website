@@ -793,6 +793,12 @@ h4.heading-green {
     height: 18rem;
 }
 
+@media only screen and (min-width: 1024px) and (max-width: 1300px) {
+    .landing-resources-grid-y .card .grid-y {
+        height: 23rem;
+    }
+}
+
 .objectives__cards > div {
     display: flex;
     justify-content: space-evenly;
@@ -868,6 +874,12 @@ h4.heading-green {
 .landing-resources-grid-y .card-text {
     background-color: #fff;
     padding: .5rem 1rem;
+}
+
+@media only screen and (min-width: 1024px) {
+    .landing-resources-grid-y .card-text {
+        padding: .5rem .5rem;
+    }
 }
 
 .landing-resources-grid-y .card-text-header {
