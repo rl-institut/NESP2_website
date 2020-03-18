@@ -151,8 +151,12 @@
       <h2>Explore the ground-truth</h2>
       <h3>Analyze highly accurate electrification data on our <span>interactive map</span></h3>
     </div>
-    <div class="cell landing-maps__carousel">
-      <a class="cta" href="{{ url_for('maps.index') }}" rel="noreferrer" target="_blank">Explore map</a>
+    <div class="cell landing-maps__image">
+      <a href="{{ url_for('maps.index') }}" rel="noreferrer" target="_blank">
+        <div class="landing-maps__image-div">
+          <button class="cta">Explore map</button>
+        </div>
+      </a>
     </div>
   </section>
 
