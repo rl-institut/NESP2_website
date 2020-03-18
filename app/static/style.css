@@ -762,6 +762,23 @@ h4.heading-green {
     background-repeat: no-repeat;
 }
 
+.card-img-question-mark {
+    width: 100%;
+    height: 100%;
+    text-align: center;
+}
+
+.card-img-helper {
+    display: inline-block;
+    vertical-align: middle;
+    height: 100%;
+}
+
+.card-img-question-mark img {
+    height: 8rem;
+    width: 8rem;
+}
+
 .landing-resources-grid-y .card {
     box-shadow: 0px 20px 19px 0px rgba(135,135,135,0.3);
     width: 47.5%;
@@ -776,42 +793,42 @@ h4.heading-green {
     height: 18rem;
 }
 
-@media only screen and (min-width: 1300px) {
-    .landing-resources-grid-y .objective-choice.card {
-        max-width: 20%;
-    }
-
-    .landing-resources-grid-y .objective-choice.card .card-text p {
-        font-size: 18pt;
-    }
-
-    .landing-resources-grid-y .objective-choice.card .grid-y {
-        height: 20rem;
-    }
-}
-
-@media only screen and (min-width: 1500px) {
-    .landing-resources-grid-y .objective-choice.card {
-        max-width: 22%;
-    }
-
-    .landing-resources-grid-y .objective-choice.card .card-text p {
-        font-size: 18pt;
-    }
-
-    .landing-resources-grid-y .objective-choice.card .grid-y {
-        height: 22rem;
-    }
-}
-
 .objectives__cards > div {
     display: flex;
     justify-content: space-evenly;
 }
 
+#objectives-sec .objective-choice .card-img {
+    height: 13rem;
+    width: 19rem;
+}
+
+#objectives-sec .objective-choice.resource-choice {
+    max-width: 100%; /* override CSS from LP */
+}
+
+@media only screen and (min-width: 1024px) {
+    #objectives-sec.landing-resources-grid-y .objective-choice.card {
+        width: 100%; /* override CSS from LP */
+    }
+}
+
+#objectives-sec.landing-resources-grid-y .card {
+    margin-bottom: 2rem !important;
+}
+
+#objectives-sec .selected--objective-card__content {
+    width: 19rem;
+    padding: 1rem .5rem 0 1rem;
+    background-color: #fff;
+    border-radius: .75rem;
+    box-shadow: 0px 20px 19px 0px rgba(135,135,135,0.3);
+}
+
 #objectives-sec {
     background-color: #EEEFF1;
     padding-bottom: 3rem;
+    min-height: 55rem;
 }
 
 .landing-resources-grid-y .card-offset {
@@ -826,7 +843,7 @@ h4.heading-green {
 
 @media only screen and (min-width: 1040px) {
     .landing-resources-grid-y .card-text p {
-        font-size: 16pt;
+        font-size: 18pt;
     }
 }
 
@@ -850,7 +867,7 @@ h4.heading-green {
 
 .landing-resources-grid-y .card-text {
     background-color: #fff;
-    padding: .5rem 1rem 0;
+    padding: .5rem 1rem;
 }
 
 .landing-resources-grid-y .card-text-header {
@@ -867,8 +884,38 @@ h4.heading-green {
     flex-direction: column;
     justify-content: center;
     align-item: center;
+    width: 19rem;
 }
 
+.selected--objective-card__content li {
+    animation: fade 1s linear;
+    opacity: 0;
+    animation-fill-mode: forwards;
+}
+.selected--objective-card__content li:nth-of-type(2) {
+    animation-delay: .5s;
+}
+.selected--objective-card__content li:nth-of-type(3) {
+    animation-delay: 1s;
+}
+.selected--objective-card__content li:nth-of-type(4) {
+    animation-delay: 1.5s;
+}
+.selected--objective-card__content li:nth-of-type(5) {
+    animation-delay: 2s;
+}
+.selected--objective-card__content li:nth-of-type(6) {
+    animation-delay: 2.5s;
+}
+
+@keyframes fade {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+}
 
 .about-card__content p {
     padding-right: 2rem;
