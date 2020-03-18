@@ -30,6 +30,7 @@ Here is a template for new release sections
 - index.py file (#101)
 - objectives route and blueprint (#128)
 - links from logo (#129)
+- about-map page (#153)
 
 ### Changed
 - allow use of variable via URL (#76)
