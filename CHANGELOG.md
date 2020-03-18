@@ -41,6 +41,7 @@ Here is a template for new release sections
 - the webmap uses its own base template (without header and footer) (#101)
 - ratio of giz logos (#129)
 - objective cards design (#145)
+- images size (#148)
 
 ### Removed
 - app/index.py file (#101)
