@@ -1,4 +1,4 @@
-{% macro input(idx=1, title='', link='', image="static/img/img-placeholder.png", text=6*"Lorem ipsum dolor sit amet, ") -%}
+{% macro input(idx=1, title='', link='', image="static/img/img-placeholder.png", image_height=100, text=6*"Lorem ipsum dolor sit amet, ") -%}
 <div class="grid-x">
   <div id="about-stakeholder{{idx}}-info" class="cell medium-5 about-stakeholder__item">
     <h3>{{title}}</h3>
@@ -6,7 +6,7 @@
     <a href="{{link}}" rel="noreferrer" target="_blank">Link <img src="static/img/icons/i_arrow_right_green.svg" alt="Arrow right"></a>
   </div>
   <div id="about-stakeholder{{idx}}-img" class="cell medium-offset-2 medium-5 about-stakeholder__img">
-    <a href="{{link}}" rel="noreferrer" target="_blank"><img src="{{ url_for('static', filename=image) }}" alt="Logo"></a>
+    <a href="{{link}}" rel="noreferrer" target="_blank"><img style="height: {{ image_height }}px;" src="{{ url_for('static', filename=image) }}" alt="Logo"></a>
   </div>
 </div>
 {%- endmacro %}
