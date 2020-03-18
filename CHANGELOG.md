@@ -40,6 +40,7 @@ Here is a template for new release sections
 - adapt setup_maps.py for windows users (#101)
 - the webmap uses its own base template (without header and footer) (#101)
 - ratio of giz logos (#129)
+- objective cards design (#145)
 
 ### Removed
 - app/index.py file (#101)
