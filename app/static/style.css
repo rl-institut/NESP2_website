@@ -762,18 +762,6 @@ h4.heading-green {
     background-repeat: no-repeat;
 }
 
-/*
-.landing-resources-grid-y .card-img1 .card-img-question-mark{
-    background-image: url(img/icons/icon_question_green.svg);
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-position: center;
-    background-size: 10rem 10rem;
-    height: 100%;
-    width: 100%;
-}
-*/
-
 .card-img-question-mark {
     width: 100%;
     height: 100%;
