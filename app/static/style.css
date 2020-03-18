@@ -887,6 +887,35 @@ h4.heading-green {
     width: 19rem;
 }
 
+.selected--objective-card__content li {
+    animation: fade 1s linear;
+    opacity: 0;
+    animation-fill-mode: forwards;
+}
+.selected--objective-card__content li:nth-of-type(2) {
+    animation-delay: .5s;
+}
+.selected--objective-card__content li:nth-of-type(3) {
+    animation-delay: 1s;
+}
+.selected--objective-card__content li:nth-of-type(4) {
+    animation-delay: 1.5s;
+}
+.selected--objective-card__content li:nth-of-type(5) {
+    animation-delay: 2s;
+}
+.selected--objective-card__content li:nth-of-type(6) {
+    animation-delay: 2.5s;
+}
+
+@keyframes fade {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+}
 
 .about-card__content p {
     padding-right: 2rem;
