@@ -423,19 +423,37 @@ header a:focus{
     background-repeat: no-repeat;
     background-size: cover;
     padding-top: 3rem;
-    padding-bottom: 3rem;
 }
 
 .landing-maps__header {
     color: #ffffff;
 }
 
+.landing-maps__header h3 {
+    padding-bottom: 6rem;
+}
+
 .landing-maps__header h3 span {
     font-weight: 700;
 }
 
-.landing-maps__carousel .cta {
+.landing-maps__image .cta {
     margin: 0 auto;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+}
+
+.landing-maps__image div {
+    height: 37rem;
+    width: 62rem;
+    margin: 0 auto;
+    padding-top: 4rem;
+    background-image: url(../static/img/Explore_map-min.png);
+    background-repeat: no-repeat;
+    background-position: center top;
+    background-size: cover;
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
 }
 
 .landing-resources {
