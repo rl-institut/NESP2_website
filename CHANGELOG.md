@@ -35,7 +35,7 @@ Here is a template for new release sections
 ### Changed
 - allow use of variable via URL (#76)
 - make table in about responsive and centered (#88)
-    - dockerfile setup to use postgres (#91)
+- dockerfile setup to use postgres (#91)
 - OG grid mapping image (#95)
 - gauge line is thicker (#96)
 - adapt setup_maps.py for windows users (#101)
@@ -43,6 +43,7 @@ Here is a template for new release sections
 - ratio of giz logos (#129)
 - objective cards design (#145)
 - images size (#148)
+- nigeria se4all section in about page centered with images inline (#154) 
 
 ### Removed
 - app/index.py file (#101)
