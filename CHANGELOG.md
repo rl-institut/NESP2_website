@@ -31,6 +31,7 @@ Here is a template for new release sections
 - objectives route and blueprint (#128)
 - links from logo (#129)
 - about-map page (#153)
+- fadein for features (#155)
 
 ### Changed
 - allow use of variable via URL (#76)
