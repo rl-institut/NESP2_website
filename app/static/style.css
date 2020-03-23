@@ -1120,3 +1120,14 @@ Added this trick to fix it */
    margin-top:-5.5rem; /* this is again negative value of the height of your header */
 
 }
+
+/* test */
+
+.selected--opt--content {
+    animation: features_transition 1s ease-in; 
+}
+
+@keyframes features_transition {
+    from {opacity: 0}
+    to {opacity: 1;}
+}
