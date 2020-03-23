@@ -337,6 +337,7 @@ header a:focus{
     background-size: cover;
     padding-top: 10rem;
     padding-bottom: 6rem;
+    height:650px;
 }
 
 .landing-feature h2,
