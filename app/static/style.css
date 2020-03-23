@@ -811,6 +811,12 @@ h4.heading-green {
     height: 18rem;
 }
 
+@media only screen and (min-width: 1024px) and (max-width: 1300px) {
+    .landing-resources-grid-y .card .grid-y {
+        height: 23rem;
+    }
+}
+
 .objectives__cards > div {
     display: flex;
     justify-content: space-evenly;
@@ -861,7 +867,7 @@ h4.heading-green {
 
 @media only screen and (min-width: 1040px) {
     .landing-resources-grid-y .card-text p {
-        font-size: 18pt;
+        font-size: 16pt;
     }
 }
 
@@ -888,6 +894,12 @@ h4.heading-green {
     padding: .5rem 1rem;
 }
 
+@media only screen and (min-width: 1024px) {
+    .landing-resources-grid-y .card-text {
+        padding: .5rem .5rem;
+    }
+}
+
 .landing-resources-grid-y .card-text-header {
     font-weight: 700;
     margin-bottom: 0;
@@ -909,6 +921,7 @@ h4.heading-green {
     animation: fade 1s linear;
     opacity: 0;
     animation-fill-mode: forwards;
+    font-size: 16pt;
 }
 .selected--objective-card__content li:nth-of-type(2) {
     animation-delay: .5s;
