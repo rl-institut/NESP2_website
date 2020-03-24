@@ -10,8 +10,8 @@ var bkgs = {
 // Set the preselected background
 featureDiv.css('background-image', "url('static/img/img-3-feature-developer.png')");
 
-var fade1 = 0.3;
-var fade2 = 1;
+var fade1 = 0.2;
+var fade2 = 1.5;
 
 
 function apply_select(feature_type){
@@ -42,7 +42,6 @@ function hover_features() {
   featureDiv.fadeTo('slow', fade1, function(){
     $(this).css('background-image', "url('static/img/" + bkgs[ftId] + "')");
   }).fadeTo('slow', fade2);
-
   // Find the previously selected tab
   var prevSelectedTab = $('.selected--opt--content')[0];
   var prevFtId = prevSelectedTab.id

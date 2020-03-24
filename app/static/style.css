@@ -330,11 +330,14 @@ header a:focus{
 
 .landing-feature {
     background-image: url("img/img-3-feature-developer.png");
+    animation: animation: features_transition 2s ease-in;
+    -webkit-animation: features_transition 2s ease-in; /* Chrome, Safari, Opera */
     background-position: center center;
     background-repeat: no-repeat;
     background-size: cover;
     padding-top: 10rem;
     padding-bottom: 6rem;
+    height:650px;
 }
 
 .landing-feature h2,
@@ -1126,4 +1129,15 @@ Added this trick to fix it */
  {
    margin-top:-5.5rem; /* this is again negative value of the height of your header */
 
+}
+
+/* test */
+
+.selected--opt--content {
+    animation: features_transition 1.5s ease-in;
+}
+
+@keyframes features_transition {
+    from {opacity: 0}
+    to {opacity: 1;}
 }
