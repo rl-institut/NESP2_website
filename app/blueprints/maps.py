@@ -9,7 +9,8 @@ if os.environ.get("POSTGRES_URL", None) is not None:
         query_random_og_cluster,
         query_filtered_clusters,
         query_filtered_og_clusters,
-        query_available_og_clusters
+        query_available_og_clusters,
+        convert_web_mat_view_to_light_json
     )
     STATE_CODES_DICT = get_state_codes()
     CODES_STATE_DICT = {v: k for k, v in STATE_CODES_DICT.items()}
@@ -96,41 +97,103 @@ def available_clusters():
 
     # query state codes for states with og clusters data
     resp = query_available_og_clusters()
-    resp = jsonify({"states_with_og_clusters": [CODES_STATE_DICT[r.lower()] for r in resp]})
+    resp = jsonify({"states_with_og_clusters": [CODES_STATE_DICT[r] for r in resp]})
     resp.status_code = 200
     return resp
 
 
 @bp.route('/centroids', methods=["get"])
 def fetch_centroids():
-
     state = request.args.get("state")
     cluster_type = request.args.get("cluster_type")
     if "og" in cluster_type:
-        fname = "nesp2_state_offgrid_clusters_centroids_{}.geojson".format(state)
+        keys = (
+            'adm1_pcode',
+            'cluster_offgrid_id',
+            'grid_dist_km',
+            'area_km2',
+            'building_count',
+            'percentage_building_area',
+            'ST_AsGeoJSON(bounding_box) as geom',
+            'ST_AsGeoJSON(centroid) as lnglat'
+        )
+        COLS = (
+            'cluster_offgrid_id',
+            'area_km2',
+            'grid_dist_km',
+            'building_count',
+            'percentage_building_area',
+            'bEast',
+            'bNorth',
+            'bSouth',
+            'bWest',
+            'lat',
+            'lng'
+        )
+        records = query_filtered_og_clusters(
+            state,
+            STATE_CODES_DICT,
+            keys=keys,
+        )
     else:
-        fname = "nesp2_state_all_clusters_centroids_{}.geojson".format(state)
-    try:
-        with open(safe_join("app/static/data/centroids/", fname), "r") as ifs:
-            resp = json.load(ifs)
-        resp = jsonify(resp)
-        resp.status_code = 200
-    except FileNotFoundError:
-        resp = jsonify("")
-        resp.status_code = 404
+        keys = (
+            'adm1_pcode',
+            'cluster_all_id',
+            'fid',
+            'area_km2',
+            'grid_dist_km',
+            'ST_AsGeoJSON(bounding_box) as geom',
+            'ST_AsGeoJSON(centroid) as lnglat'
+        )
+        COLS = (
+            'cluster_all_id',
+            'area_km2',
+            'grid_dist_km',
+            'fid',
+            'bEast',
+            'bNorth',
+            'bSouth',
+            'bWest',
+            'lat',
+            'lng'
+        )
+        records = query_filtered_clusters(
+            state,
+            STATE_CODES_DICT,
+            keys=keys,
+        )
+
+    if records:
+        answer = convert_web_mat_view_to_light_json(records, COLS)
+    else:
+        answer = {
+            "adm1_pcode": STATE_CODES_DICT[state],
+            "length": 0,
+            "columns": COLS,
+            "values": []
+        }
+    resp = jsonify(answer)
+    resp.status_code = 200
     return resp
 
 
 @bp.route('/random-cluster', methods=["POST"])
 def random_clusters():
-
     state_name = request.form.get("state_name")
     # query centroid with geometry as geojson
     resp = query_random_og_cluster(state_name, STATE_CODES_DICT)
     geom = json.loads(resp.pop("geom"))
+    lnglat = json.loads(resp.pop("lnglat"))
+    resp.update({
+        'bNorth': geom["coordinates"][0][2][1],
+        'bSouth': geom["coordinates"][0][0][1],
+        'bEast': geom["coordinates"][0][2][0],
+        'bWest': geom["coordinates"][0][0][0]
+    })
+
     feature = dict(
-        lat=geom["coordinates"][1],
-        lng=geom["coordinates"][0],
+        lng=lnglat["coordinates"][0],
+        lat=lnglat["coordinates"][1],
         properties=resp
     )
     resp = jsonify(feature)
@@ -166,7 +229,6 @@ def filtered_clusters():
                 distance_grid=[request.form.get("mindtg"), request.form.get("maxdtg")],
                 keys=keys
             )
-
     resp = jsonify(records[0].count)
     resp.status_code = 200
     return resp
