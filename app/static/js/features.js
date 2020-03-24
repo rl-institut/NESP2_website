@@ -123,3 +123,45 @@ $('.feature-previous').on("click", function() {
   selectedTab.className = 'opt--content';
   prevTab.className = 'selected--opt--content';
 });
+
+// triggers a carousel of the features
+var refreshInterval = 8000 //in ms
+var featureInView = false;
+var intervalID = null;
+$(window).scroll(function() {
+   var hT = featureDiv.offset().top,
+       hH = featureDiv.outerHeight(),
+       wS = $(this).scrollTop();
+   if (wS < (hT + hH) && wS > hT - hH){
+       if(featureInView == false) {
+             intervalID = setInterval(function(){ $('.feature-next').click(); }, refreshInterval);
+       }
+       featureInView = true;
+   }
+   else{
+        if(featureInView == true) {
+            if(intervalID != undefined){
+                clearInterval(intervalID);
+            }
+        }
+        featureInView = false;
+   }
+});
+
+// triggers a redraw of the gauges when scrolling over the Our progress in number div
+var inView = false;
+var progressDiv = $("#landing-progress");
+$(window).scroll(function() {
+   var hT = progressDiv.offset().top,
+       hH = progressDiv.outerHeight(),
+       wS = $(this).scrollTop();
+   if (wS < (hT + hH/2) && wS > hT - hH/2){
+       if(inView == false) {
+        $(".GaugeMeter").gaugeMeter()
+       }
+       inView = true;
+   }
+   else{
+        inView = false;
+   }
+});
