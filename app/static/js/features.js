@@ -122,4 +122,21 @@ $('.feature-previous').on("click", function() {
   // Select the new tab and deselect the previously selected
   selectedTab.className = 'opt--content';
   prevTab.className = 'selected--opt--content';
+
+// triggers a redraw of the gauges when scrolling over the Our progress in number div
+var inView = false;
+var progressDiv = $("#landing-progress");
+$(window).scroll(function() {
+   var hT = progressDiv.offset().top,
+       hH = progressDiv.outerHeight(),
+       wS = $(this).scrollTop();
+   if (wS < (hT + hH/2) && wS > hT - hH/2){
+       if(inView == false) {
+        $(".GaugeMeter").gaugeMeter()
+       }
+       inView = true;
+   }
+   else{
+        inView = false;
+   }
 });
