@@ -32,7 +32,9 @@ Here is a template for new release sections
 - links from logo (#129)
 - about-map page (#153)
 - fadein for features (#155)
-
+- automatic redraw of gauges when scrolling over (#157)
+- automatic interval change of feature when section is in viewport (#157)
+- link to web development credit page (#157)
 ### Changed
 - allow use of variable via URL (#76)
 - make table in about responsive and centered (#88)
