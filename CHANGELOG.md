@@ -30,11 +30,13 @@ Here is a template for new release sections
 - index.py file (#101)
 - objectives route and blueprint (#128)
 - links from logo (#129)
-- about-map page (#153)
+- about-map page (#153, #162)
 - fadein for features (#155)
 - automatic redraw of gauges when scrolling over (#157)
 - automatic interval change of feature when section is in viewport (#157)
 - link to web development credit page (#157)
+- developed-by page (#162)
+
 ### Changed
 - allow use of variable via URL (#76)
 - make table in about responsive and centered (#88)
@@ -47,10 +49,12 @@ Here is a template for new release sections
 - objective cards design (#145)
 - images size (#148)
 - nigeria se4all section in about page centered with images inline (#154) 
+- rename about-map.html credits.html (#162)
 
 ### Removed
 - app/index.py file (#101)
 - outline around the clicked links (#129)
+- about-map blueprint (#162)
 
 ### Fixed
 - chrome display bug #64 for small screens (#86)

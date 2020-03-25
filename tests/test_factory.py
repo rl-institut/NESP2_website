@@ -15,9 +15,21 @@ def test_about(client):
     response = client.get('/about')
     assert response.status_code == 200
 
+
+def test_about_map(client):
+    response = client.get('/about-map')
+    assert response.status_code == 200
+
+
+def test_develop_by(client):
+    response = client.get('/developed-by')
+    assert response.status_code == 200
+
+
 def test_objectives(client):
     response = client.get('/objectives')
     assert response.status_code == 200
+
 
 def test_resources(client):
     response = client.get('/resources')

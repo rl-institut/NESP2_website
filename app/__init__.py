@@ -3,7 +3,7 @@ import datetime
 from flask import Flask, render_template, request
 from flask_wtf.csrf import CSRFProtect
 
-from .blueprints import resources, about, maps, about_map, objectives
+from .blueprints import resources, about, maps, objectives
 if os.environ.get("POSTGRES_URL", None) is not None:
     from .database import (
         db_session,
@@ -54,7 +54,6 @@ def create_app(test_config=None):
     app.register_blueprint(objectives.bp)
     app.register_blueprint(maps.bp)
     app.register_blueprint(about.bp)
-    app.register_blueprint(about_map.bp)
 
     @app.route('/')
     def landing():
@@ -88,6 +87,14 @@ def create_app(test_config=None):
     @app.route('/privacypolicy')
     def privacypolicy():
         return render_template('privacypolicy.html')
+
+    @app.route('/about-map')
+    def about_map():
+        return render_template('credits.html', about_map=True)
+
+    @app.route('/developed-by')
+    def developed_by():
+        return render_template('credits.html', about_map=False)
 
     @app.teardown_appcontext
     def shutdown_session(exception=None):
