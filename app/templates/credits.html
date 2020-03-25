@@ -8,6 +8,7 @@
 {% block content %}
 <div id="about-map-content" class="grid-container full">
     <section id="about-intro" class="grid-x align-center light-grey">
+    {% if about_map == True %}
     <h3 class="cell medium-8">ABOUT THIS MAP</h3>
     <div class="cell medium-8 l-width-60">
       <div class="grid-x">
@@ -39,6 +40,7 @@
         </div>
       </div>
     </div>
+    {% endif %}
     <h3 class="cell medium-8">AUTHORS</h3>
     <div class="cell medium-8 l-width-60">
       <div class="grid-x">
