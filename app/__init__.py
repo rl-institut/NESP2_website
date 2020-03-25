@@ -88,6 +88,14 @@ def create_app(test_config=None):
     def privacypolicy():
         return render_template('privacypolicy.html')
 
+    @app.route('/about-map')
+    def about_map():
+        return render_template('credits.html', about_map=True)
+
+    @app.route('/developed-by')
+    def developed_by():
+        return render_template('credits.html', about_map=False)
+
     @app.teardown_appcontext
     def shutdown_session(exception=None):
         if db_session is not None:
