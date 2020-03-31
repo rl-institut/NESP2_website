@@ -1,10 +1,25 @@
 import os
+import datetime
+from flask import Flask, render_template, request
+from flask_wtf.csrf import CSRFProtect
 
-from flask import Flask, render_template
-try:
-    from blueprints import resources, about, maps
-except ModuleNotFoundError:
-    from .blueprints import resources, about, maps
+from .blueprints import resources, about, maps, objectives
+if os.environ.get("POSTGRES_URL", None) is not None:
+    from .database import (
+        db_session,
+        query_electrified_km,
+        query_mapped_villages,
+        query_mapped_buildings,
+        PROGRESS_NUMBER_MAX,
+        query_gauge_maximum
+    )
+else:
+    db_session = None
+
+    def query_se4all_numbers():
+        return 1
+
+templates_dir = os.path.join(os.path.abspath(os.curdir), "app", "templates")
 
 
 def create_app(test_config=None):
@@ -31,14 +46,39 @@ def create_app(test_config=None):
     except OSError:
         pass
 
+    # add CSRF token
+    csrf = CSRFProtect(app)
+
     # register blueprints (like views in django)
     app.register_blueprint(resources.bp)
+    app.register_blueprint(objectives.bp)
     app.register_blueprint(maps.bp)
     app.register_blueprint(about.bp)
 
     @app.route('/')
     def landing():
-        return render_template('landing/index.html')
+
+        kwargs = {}
+        if os.environ.get("POSTGRES_URL", None) is not None:
+            for k, desc in PROGRESS_NUMBER_MAX.items():
+                kwargs[k] = query_gauge_maximum(desc)
+
+            kwargs['km_electricity'] = query_electrified_km()
+            kwargs['mapped_villages'] = query_mapped_villages()
+            kwargs['mapped_buildings'] = query_mapped_buildings()
+
+        if os.path.exists(os.path.join(templates_dir, "maps", "sidebar_checkbox.html")):
+            kwargs['website_app'] = True
+        else:
+            kwargs['website_app'] = False
+            print("\n\n*** warning ***\n")
+            print(
+                "The webmap will not be able to work correctly because it is missing a file, "
+                "please run 'python app/setup_maps.py'"
+            )
+            print("\n***************\n\n")
+
+        return render_template('landing/index.html', **kwargs)
 
     @app.route('/termsofservice')
     def termsofservice():
@@ -47,5 +87,41 @@ def create_app(test_config=None):
     @app.route('/privacypolicy')
     def privacypolicy():
         return render_template('privacypolicy.html')
+
+    @app.route('/about-map')
+    def about_map():
+        return render_template('credits.html', about_map=True)
+
+    @app.route('/developed-by')
+    def developed_by():
+        return render_template('credits.html', about_map=False)
+
+    @app.teardown_appcontext
+    def shutdown_session(exception=None):
+        if db_session is not None:
+            db_session.remove()
+
+    # set a global variable to indicate it is the website
+    app.jinja_env.globals.update(nesp2_website=True)
+    app.jinja_env.globals.update(current_year=datetime.datetime.today().year)
+
+    try:
+        from .maps_utils import define_function_jinja
+        define_function_jinja(app)
+    except ModuleNotFoundError:
+        print("\n\n*** warning ***\n")
+        print(
+            "The webmap will not be able to work correctly, please run 'python "
+            "app/setup_maps.py'"
+        )
+        print("\n***************\n\n")
+    except ImportError:
+        print("\n\n*** warning ***\n")
+        print(
+            "The webmap will not be able to work correctly, you are missing the function "
+            "'define_function_jinja' into the app/maps_utils.py file, please run 'python "
+            "app/setup_maps.py'"
+        )
+        print("\n***************\n\n")
 
     return app

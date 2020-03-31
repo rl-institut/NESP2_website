@@ -1,0 +1,90 @@
+{% extends 'base.html' %}
+
+{% block head %}
+<link rel="stylesheet" href="{{ url_for('static', filename='about.css') }}">
+<link rel="stylesheet" href="{{ url_for('static', filename='responsive-tables.css') }}">
+{% endblock head%}
+
+{% block content %}
+<div id="about-map-content" class="grid-container full">
+    <section id="about-intro" class="grid-x align-center light-grey">
+    {% if about_map == True %}
+    <h3 class="cell medium-8">ABOUT THIS MAP</h3>
+    <div class="cell medium-8 l-width-60">
+      <div class="grid-x">
+        <div class="cell">
+            <p>
+            <a target="_blank" href="https://www.giz.de/en/worldwide/26374.html">Nigerian Energy Support Programme (NESP)</a> is co-funded by the European Union and the German Government and is jointly implemented by Deutsche Gesellschaft für internationale Zusammenarbeit (GIZ) GmbH and the Federal Ministry of Power. It aims to foster private investments in the Nigerian Renewable Energy and Energy Efficiency Sector and to improve access to electricity for disadvantaged, rural communities.
+            The programme implements a multi-level approach by combining advisory on energy policy, economy and technical knowledge for a wide range of stakeholders. It is divided into three components:
+                <ul>
+                      <li>Electrification Planning and Data Management</li>
+                      <li>Sustainable Energy Access (On-Grid & Off-Grid)</li>
+                      <li>Enabling Environment for Renewable Energy and Energy Efficiency Investments</li>
+                </ul>
+           </p>
+        </div>
+      </div>
+    </div>
+
+    <h3 class="cell medium-8">DISCLAIMERS</h3>
+    <div class="cell medium-8 l-width-60">
+      <div class="grid-x">
+        <div class="cell">
+            <p>
+                <i>
+            This tool was created and is maintained with the financial support of the European Union, and has been implemented by the Deutsche Gesellschaft für internationale Zusammenarbeit (GIZ). However, its contents do not reflect the views of the European Union or the GIZ.
+            GIZ, including its commissioning and implementing parties, shall NOT be responsible for the accuracy of the information included in this website. Any use of such aforementioned information shall be at the risk and cost of the user. It is strongly recommended that users validate the information obtained from the visualization tool with field assessments.
+            The geographical maps are for informational purposes only and do not constitute recognition of international boundaries or regions; European Union, and/or GIZ make no claims concerning the validity, accuracy or completeness of the maps nor assume any liability resulting from the use of the information therein.
+                </i>
+            </p>
+        </div>
+      </div>
+    </div>
+    {% endif %}
+    <h3 class="cell medium-8">AUTHORS</h3>
+    <div class="cell medium-8 l-width-60">
+      <div class="grid-x">
+        <div class="cell">
+            <div class="org">
+                <div>INTEGRATION Environment & Energy GmbH</div>
+                <div>Contact: <a href="mailto:ohaas@integration.org"> Mr Oliver Haas</a></div>
+                <div><a target="_blank" href="http://www.integration.org">www.integration.org</a></div>
+            </div>
+            <div class="org">
+                <div>Reiner Lemoine Institut gGmbH</div>
+                <div>Contact: <a href="mailto:philipp.blechinger@rl-institut.de">Dr Philipp Blechinger</a></div>
+                <div><a target="_blank" href="http://www.reiner-lemoine-institut.de">www.reiner-lemoine-institut.de</a></div>
+           </div>
+        </div>
+      </div>
+    </div>
+    <h3 class="cell medium-8">DESIGN</h3>
+    <div class="cell medium-8 l-width-60">
+      <div class="grid-x">
+        <div class="cell">
+            <div class="org">
+                <div>Alsino Skowronnek</div>
+                <div><a href="www.alsino.io" target="_blank">www.alsino.io</a></div>
+           </div>
+        </div>
+      </div>
+    </div>
+    <h3 class="cell medium-8">WEB DEVELOPMENT</h3>
+    <div class="cell medium-8 l-width-60">
+      <div class="grid-x">
+        <div class="cell">
+            <div class="org">
+                <div>Reiner Lemoine Institut gGmbH</div>
+                <div><a target="_blank" href="http://www.reiner-lemoine-institut.de">www.reiner-lemoine-institut.de</a></div>
+           </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</div>
+{% endblock content%}
+
+{% block footer %}
+<script src="{{ url_for('static', filename='js/responsive-tables.js') }}"></script>
+{% endblock footer %}

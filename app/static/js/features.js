@@ -1,5 +1,5 @@
 // Div which contains the features
-var featureDiv = document.getElementById('landing-feature');
+var featureDiv = $("#landing-feature");
 // Path to background images
 var bkgs = {
     'landing-feature-txt-dev': 'img-3-feature-developer.png',
@@ -8,10 +8,13 @@ var bkgs = {
 };
 
 // Set the preselected background
-featureDiv.style.backgroundImage = "url('static/img/img-3-feature-developer.png')";
+featureDiv.css('background-image', "url('static/img/img-3-feature-developer.png')");
+
+var fade1 = 0.2;
+var fade2 = 1.5;
+
 
 function apply_select(feature_type){
-    console.log(feature_type);
     //change class to selected
     var ftId = 'landing-feature-' + feature_type + '-btn';
     var ft = document.getElementById(ftId).getElementsByClassName('landing-feature__img')[0];
@@ -31,13 +34,14 @@ function apply_deselect(feature_type){
 
 function hover_features() {
   // Find the associated feature id
-  var ftId = $(this).find("a").attr("href").substring(1);
+  var ftId = $(this).find("a").attr("name").replace("link-", "");
   var ftType = ftId.split('-').pop();
   var selectedTab = document.getElementById(ftId);
 
   // Change the background image
-  featureDiv.style.backgroundImage = "url('static/img/" + bkgs[ftId] + "')";
-
+  featureDiv.fadeTo('slow', fade1, function(){
+    $(this).css('background-image', "url('static/img/" + bkgs[ftId] + "')");
+  }).fadeTo('slow', fade2);
   // Find the previously selected tab
   var prevSelectedTab = $('.selected--opt--content')[0];
   var prevFtId = prevSelectedTab.id
@@ -52,8 +56,8 @@ function hover_features() {
   }
 }
 
-$('.landing-feature__img').on("mouseover", hover_features);
-$('.landing-feature__description').on("mouseover", hover_features);
+$('.landing-feature__img').on("click", hover_features);
+$('.landing-feature__description').on("click", hover_features);
 
 $('.feature-next').on("click", function() {
   // Find the currently selected tab
@@ -78,7 +82,9 @@ $('.feature-next').on("click", function() {
   var nextTab = document.getElementById(nextId);
 
   // Change the background image
-  featureDiv.style.backgroundImage = "url('static/img/" + bkgs[nextId] + "')";
+  featureDiv.fadeTo('slow', fade1, function(){
+    $(this).css('background-image', "url('static/img/" + bkgs[nextId] + "')");
+  }).fadeTo('slow', fade2);
 
   // Select the new tab and deselect the previously selected
   selectedTab.className = 'opt--content';
@@ -110,9 +116,52 @@ $('.feature-previous').on("click", function() {
   var prevTab = document.getElementById(prevId);
 
   // Change the background image
-  featureDiv.style.backgroundImage = "url('static/img/" + bkgs[prevId] + "')";
-
+  featureDiv.fadeTo('slow', fade1, function(){
+    $(this).css('background-image', "url('static/img/" + bkgs[prevId] + "')");
+  }).fadeTo('slow', fade2);
   // Select the new tab and deselect the previously selected
   selectedTab.className = 'opt--content';
   prevTab.className = 'selected--opt--content';
+});
+
+// triggers a carousel of the features
+var refreshInterval = 8000 //in ms
+var featureInView = false;
+var intervalID = null;
+$(window).scroll(function() {
+   var hT = featureDiv.offset().top,
+       hH = featureDiv.outerHeight(),
+       wS = $(this).scrollTop();
+   if (wS < (hT + hH) && wS > hT - hH){
+       if(featureInView == false) {
+             intervalID = setInterval(function(){ $('.feature-next').click(); }, refreshInterval);
+       }
+       featureInView = true;
+   }
+   else{
+        if(featureInView == true) {
+            if(intervalID != undefined){
+                clearInterval(intervalID);
+            }
+        }
+        featureInView = false;
+   }
+});
+
+// triggers a redraw of the gauges when scrolling over the Our progress in number div
+var inView = false;
+var progressDiv = $("#landing-progress");
+$(window).scroll(function() {
+   var hT = progressDiv.offset().top,
+       hH = progressDiv.outerHeight(),
+       wS = $(this).scrollTop();
+   if (wS < (hT + hH/2) && wS > hT - hH/2){
+       if(inView == false) {
+        $(".GaugeMeter").gaugeMeter()
+       }
+       inView = true;
+   }
+   else{
+        inView = false;
+   }
 });

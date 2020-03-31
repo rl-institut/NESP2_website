@@ -12,24 +12,19 @@ python:
 
 # command to install dependencies
 install:
+  - pip install -r app/requirements.txt
   - pip install -r tests/test_requirements.txt
+  - python app/setup_maps.py
 
-# commands to run tests 
-script:
-  - flake8
-  - pylint */*.py
-#jobs:
-#  include:
-#    - stage: "Tests"                # naming the Tests stage
-#      name: "Linting Tests"            # names the first Tests stage job
+# commands to run tests
+jobs:
+  include:
+    - stage: "Tests"                # naming the Tests stage
+      name: "Access tests"            # names the first Tests stage job
 #      script: flake8
-#      script: pylint
+#      script: pylint */*
 # for later stages
-#    - script: ./integration-tests
-#      name: "Integration Tests"     # names the second Tests stage job
-#    - stage: deploy
-#      name: "Deploy to GCP"
-#      script: ./deploy
+      script: pytest
 
 # blocklist
 #branches:

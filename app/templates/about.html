@@ -1,19 +1,23 @@
 {% extends 'base.html' %}
 
-{% block header %}
-
-{% endblock header%}
+{% block head %}
+<link rel="stylesheet" href="{{ url_for('static', filename='about.css') }}">
+<link rel="stylesheet" href="{{ url_for('static', filename='responsive-tables.css') }}">
+{% endblock head%}
 
 {% block content %}
 <div id="about-content" class="grid-container full">
 
   <section id="about-intro" class="grid-x align-center light-grey">
     <h2 class="cell medium-10">About this platform</h2>
-    <div class="cell medium-8">
+    <div class="cell medium-8 l-width-60">
       <div id="about-intro-content" class="grid-x">
         <div id="about-intro-text" class="cell">
-        <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus.</p>
-        <p>Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus. Phasellus viverra nulla ut metus varius laoreet. Quisque rutrum. Aenean imperdiet. Etiam ultricies nisi vel augue. Curabitur ullamcorper ultricies nisi. Nam eget dui.</p>
+          <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque
+            eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium.
+            Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus.</p>
+          <p>Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus. Phasellus viverra nulla ut metus varius laoreet. Quisque rutrum. Aenean imperdiet. Etiam ultricies nisi
+            vel augue. Curabitur ullamcorper ultricies nisi. Nam eget dui.</p>
         </div>
         {% import "about/card.html" as card %}
         <div class="cell about-intro__cards">
@@ -29,37 +33,134 @@
 
   </section>
 
-  <section id="about-se4all" class="grid-x align-right semi-grey section-about">
+  <section id="about-se4all" class="grid-x align-center semi-grey section-about">
     <h2 class="cell medium-11">Nigeria SE4All</h2>
-    <div id="about-se4all-content" class="cell medium-10">
+    <div id="about-se4all-content" class="cell medium-10 l-width-60">
       <div class="grid-x">
-        <div id="about-se4all-agenda" class="cell medium-6 section-about__text">
+        <div id="about-se4all-agenda" class="cell section-about__text">
           <h3>The SE4All Agenda</h3>
-          <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus. Phasellus viverra nulla ut metus varius laoreet. Quisque rutrum. Aenean imperdiet. Etiam ultricies nisi vel augue. Curabitur ullamcorper ultricies nisi. Nam eget dui.</p>
+          <p>The key objectives of the <a href="https://www.seforall.org" rel="noreferrer" target="_blank">SE4ALL initiative</a> globally are to ensure universal access to modern energy services; doubling the global rate of improvement in energy efficiency; and doubling the share of renewable energy in global energy mix
+            by 2030 compared to 2010. </p>
+           <p>  These objectives are premised around the proposition that national governments must design and implement a set of integrated country actions to drive transformative change of the world's energy systems; create
+            the right investment environment for the private sector's participation; and the interplay of civil society organizations in identifying, advocating, and monitoring public policy and business action; mobilising social innovation and
+            grassroots action; leading behavioural change; and helping to spread best practices and building capacity at all levels in partnership with governments and businesses</p>
+            <div class="grid-x">
+              <div class="cell small-2">
+                <img src="{{ url_for('static', filename='logos/logo-5-blitz.png') }}" alt="blitz-logo">
+                </div>
+              <p class="cell small-10">The SE4All Action Agenda for Nigeria has been developed in line with the guiding principles contained in the Guidelines for Developing National Sustainable Energy for All Action Agendas in Africa that were developed by African
+              stakeholders, notably: </p>
+            </div>
+          <div class="grid-x">
+              <div class="cell small-1 list-item-green">i.</div>
+              <div class="cell small-11">Building on existing plans/programmes/strategies</div>
+
+              <div class="cell small-1 list-item-green">ii.</div>
+              <div class="cell small-11">Political commitment and leadership</div>
+
+              <div class="cell small-1 list-item-green">iii.</div>
+              <div class="cell small-11">A balanced and integrated approach</div>
+
+              <div class="cell small-1 list-item-green">iv.</div>
+              <div class="cell small-11">An inter-ministerial and cross-sectoral approach</div>
+
+              <div class="cell small-1 list-item-green">v.</div>
+              <div class="cell small-11">Adherence to sustainable development principles</div>
+
+              <div class="cell small-1 list-item-green">vi.</div>
+              <div class="cell small-11">Participation and meaningful involvement of all stakeholders</div>
+
+              <div class="cell small-1 list-item-green">vii.</div>
+              <div class="cell small-11">Gender equality and inclusiveness</div>
+
+              <div class="cell small-1 list-item-green">viii.</div>
+              <div class="cell small-11">Transparency and accountability</div>
+      </div>
         </div>
-        <div id="about-se4all-agenda-img" class="cell medium-6 section-about__img">
-          <img src="static/img/Image_gray.svg" alt="Image Placeholder">
-        </div>
-        <div id="about-se4all-30-30-30" class="cell medium-6 section-about__text section-about__text--nomargin">
+        <div id="about-se4all-30-30-30" class="cell section-about__text">
           <h3>About 30:30:30</h3>
-          <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus. Phasellus viverra nulla ut metus varius laoreet. Quisque rutrum. Aenean imperdiet. Etiam ultricies nisi vel augue. Curabitur ullamcorper ultricies nisi. Nam eget dui.</p>
+
+          <div class="grid-x">
+              <div class="cell small-2" id="sdg7-logo">
+                <img src="{{ url_for('static', filename='img/img-14-SDG7.png') }}" alt="SDG7-logo">
+                </div>
+              <p class="cell small-10 l-padding-left">The Sustainable Energy for All (SE4ALL) Action Agenda of Nigeria is a national implementation tool for the emerging Sustainable Development Goal (SDG) on energy (<a href="https://www.un.org/sustainabledevelopment/energy/" rel="noreferrer" target="_blank">SDG No. 7</a>). </p>
+            </div>
+          <p> SDG7 on energy underpins progress on other sectors, ranging
+            from health, water and education to gender equality, economic growth and climate action. Its targets are
+            consistent with global and regional SE4All objectives on energy access, energy efficiency and renewable energy. With its huge network of partners across governments, business, international organisations, finance and civil society,
+            Nigeria's SE4All Action Agenda takes a leading role in supporting the implementation of SDG goals in particular SDG7 in the country, and to monitor and report on progress towards the Goal.
+          </p>
+             <p class="center--align">
+                <img width="50%" src="{{ url_for('static', filename='img/img-15-SDGs.png') }}" alt="SDG7-logo">
+                </p>
+              <p>
+              Through this tool the Nigerian government has
+            demonstrated its commitment in achieving the 3 objectives of the global SE4ALL initiative. The Nigerian power sector has just gone through a transition phase from being publicly owned and controlled to a decentralised private sector
+            driven one. The process was adjudged as one of the most ambitious and transparent processes in the continent. Prior to this, the Nigerian Government had demonstrated the commitment to the Initiative by launching the SE4ALL Nigeria in the
+              year 2012. <b>This singular act placed Nigeria as one of the first Nations in the world to embrace this initiative.</b> Thus, objectives of the SE4ALL initiative is in tandem with the goals of the national energy agenda, which gives high
+            priority to providing access to safe, reliable and affordable energy to citizens in both urban and rural areas. The SE4All initiative requires countries to set quantitative objectives for each of the three goals described in SE4ALL Global
+            Action Agenda 2012. Nigeria's SE4All objectives are therefore defined as follows:</p>
         </div>
-        <div id="about-se4all-30-30-30-img" class="cell medium-6 section-about__img">
-          <img src="static/img/Image_gray.svg" alt="Image Placeholder">
+      </div>
+      <div class="grid-x align-center">
+        <div id="about-se4all-table" class="cell section-about__text section-about__text--nomargin">
+          <h3 class="heading-center">Targets until 2030</h3>
+          <div class="grid-x">
+            <h4 class="heading-green">(i) Energy Access</h4>
+            <p>
+              <ul>
+                <li>To increase electricity access from the current aggregate level of 40% (urban=65%, and rural=28%) in 2015 to 75% (urban= 90%, and rural= 60%) by 2020</li>
+  
+                <li>By 2030, the population share living without electricity supplies will drop from the current 60% in 2015 of the total population down to about 10%</li>
+  
+                <li>To replace 50% of traditional firewood consumption for cooking by improved cookstove technology by 2020 and 80% by 2030;
+                  Working together with the private sector to roll-out LPG at affordable cost for Nigerians by 2020 and subsequently up to 2030</li>
+  
+                <li>By 2025 and 2030, nuclear energy is expected to contribute about 2.5% and 4% to available electricity mix
+                  The electricity generation will increase from the present grid supply of 5,000 MW in 2015 to at least 32,000 MW by 2030</li>
+              </ul>
+            </p>
+  
+            <h4 class="heading-green">(ii) Energy Efficiency</h4>
+            <dp>
+              <ul>
+                <li>By the end of 2015, efficient lighting (at least 5 times more efficient than incandescent lamps) will be used by 20% of the households, 40% by 2020 and almost 100% by 2030</li>
+                <li>For high-energy consuming sectors (transport, power and industrial sectors), efficient energy technologies will be progressively introduced as well as other demand side management measures such as peak load management when
+                  possible. Compared with the current 2015 level, energy efficiency will increase by at least 20% by 2020 and 50% by 2030</li>
+                <li>By 2016, energy audits will be compulsory for all high-energy consuming sectors and public buildings</li>
+              </ul>
+            </dp>
+  
+            <h4 class="heading-green">(iii) Renewable Energy</h4>
+            <p>
+              Nigeria's electricity vision 30:30:30 is to achieve a technology-driven renewable energy sector that harnesses the nation's resources to complement its fossil fuel consumption and guarantees energy security. Specifically, Nigeria's
+              target for renewable energy is:
+              <ul>
+                <li>By 2030, renewable energy is expected to contribute about 30% share in the available electricity mix</li>
+                <li>To achieve a 28% and 19% contribution of hydroelectricity (both large and small hydro) to the nation's electricity generation mix by 2020 and 2030, respectively</li>
+                <li>To achieve maintain a 2% contribution of wind energy to the nation's electricity generation mix by 2020 and 2030 respectively</li>
+                <li>To achieve a 20% and 19% contribution of solar energy (PV and Solar thermal) to the nation's electricity generation mix by 2020 and 2030 respectively</li>
+                <li>To achieve and maintain a 3% power generation capacity using biomass resource by 2020 and 2030, respectively</li>
+                <li>To achieve 10% biofuel blends by 2020 using locally produced renewable biofuel from secondary biomass</li>
+              </ul>
+            </p>
+          </div>
         </div>
       </div>
     </div>
+
   </section>
 
   <section id="about-fmp" class="grid-x align-center light-grey section-about">
     <h2 class="cell medium-10">Federal Ministry of Power (FMP)</h2>
-    <div id="about-fmp-content" class="cell small-10 small-offset-2 grid-x about-fmp">
+    <div id="about-fmp-content" class="cell small-10 small-offset-2 l-width-80 grid-x about-fmp">
       <div class="grid-x about-fmp__item">
         <div class="cell medium-6 section-about__text section-about__text--nomargin">
           <h3>Our Vision</h3>
           <p>To be a key enabler of community and economic growth by facilitating delivery of functional, affordable and reliable power infrastructure assets and associated services.</p>
         </div>
-        <div class="cell medium-6 section-about__img">
+        <div class="cell medium-6 section-about__img l-img-max-width">
           <img src="static/img/img-12-about-fmp.png" alt="Image Placeholder">
         </div>
       </div>
@@ -68,7 +169,7 @@
           <h3>Our Mission</h3>
           <p>Expedite National Development by providing policies, systems and structures which ensure the delivery of reliable, functional and cost effective power infrastructure assets and services that meet the needs of all.</p>
         </div>
-        <div class="cell medium-6 section-about__img">
+        <div class="cell medium-6 section-about__img l-img-max-width">
           <img src="static/img/img-13-about-fmp.png" alt="Image Placeholder">
         </div>
       </div>
@@ -77,7 +178,7 @@
           <h3>Our Mandate</h3>
           <p>Initiate and coordinate policies and strategies for the sustainable development of reliable, robust and affordable power supply.</p>
         </div>
-        <div class="cell medium-6 section-about__img">
+        <div class="cell medium-6 section-about__img l-img-max-width">
           <img src="static/img/Image_gray.svg" alt="Image Placeholder">
         </div>
       </div>
@@ -86,16 +187,18 @@
 
   <section id="about-nesp" class="grid-x align-center semi-grey section-about">
     <h2 class="cell medium-10">Nigerian Energy Support Programme (NESP)</h2>
-    <div id="about-nesp-content" class="cell small-10 small-offset-2 grid-x">
+    <div id="about-nesp-content" class="cell small-10 small-offset-2 l-width-80 grid-x">
       <div id="about-nesp-text" class="cell medium-6 section-about__text section-about__text--nomargin">
-        <p>The Nigerian Energy Support Programme (NESP) is co-funded by the European Union and the German Government and is jointly implemented by Deutsche Gesellschaft für internationale Zusammenarbeit (GIZ) GmbH and the Federal Ministry of Power. It aims to foster private investments in the Nigerian Renewable Energy and Energy Efficiency Sector and to improve access to electricity for disadvantaged, rural communities. The programme implements a multi-level approach by combining advisory on energy policy, economy and technical knowledge for a wide range of stakeholders. It is divided into three components:</p>
+        <p>The Nigerian Energy Support Programme (NESP) is co-funded by the European Union and the German Government and is jointly implemented by Deutsche Gesellschaft für internationale Zusammenarbeit (GIZ) GmbH and the Federal Ministry of Power.
+          It aims to foster private investments in the Nigerian Renewable Energy and Energy Efficiency Sector and to improve access to electricity for disadvantaged, rural communities. The programme implements a multi-level approach by combining
+          advisory on energy policy, economy and technical knowledge for a wide range of stakeholders. It is divided into three components:</p>
         <ul>
           <li>Electrification Planning and Data Management</li>
           <li>Sustainable Energy Access (On-Grid & Off-Grid)</li>
           <li>Enabling Environment for Renewable Energy and Energy Efficiency Investments</li>
         </ul>
       </div>
-      <div id="about-nesp-img" class="cell medium-6 section-about__img">
+      <div id="about-nesp-img" class="cell medium-6 section-about__img l-img-max-width">
         <img src="static/img/img-11-about-nesp.png" alt="Image Placeholder">
       </div>
     </div>
@@ -103,13 +206,17 @@
 
   <section id="about-stakeholder" class="grid-x align-center light-grey">
     <h2 class="cell medium-10">Stakeholders</h2>
-      {% import "about/stakeholder.html" as stakeholder %}
-    <div id="about-stakeholder-content" class="cell small-10 small-offset-2 grid-x">
-      {{stakeholder.input('1', 'Rural Electrification Agency (REA)', 'https://rea.gov.ng/', 'logos/logo-6-rea.png')}}
-      {{stakeholder.input('2', 'Nigeria Electricity Regulatory Commission (NERC)', 'https://nerc.gov.ng/', 'logos/logo-7-nerc.png')}}
-      {{stakeholder.input('3', 'Transmission Company of Nigeria (TCN)', 'https://tcn.org.ng/', 'logos/logo-8-tcn.png')}}
+    {% import "about/stakeholder.html" as stakeholder %}
+    <div id="about-stakeholder-content" class="cell small-10 small-offset-2 l-width-80 grid-x">
+      {{stakeholder.input('1', 'Rural Electrification Agency (REA)', 'https://rea.gov.ng/', 'logos/logo-6-rea.png', image_height=rea_height, text='The Rural Electrification Agency is mandated by the Federal Government to facilitate its goals and targets to increase access to electricity to 75% and 90% by 2020 and 2030 respectively and at least 10% of renewable energy mix by 2025. REA is mandated to promote rapid, safe, clean energy and cost-effective expansion of electricity access in unelectrified rural areas across Nigeria with economic development objectives. The electrification of the rural areas would also help improve the livelihood and socio-economic conditions of rural dwellers.')}}
+      {{stakeholder.input('2', 'Nigeria Electricity Regulatory Commission (NERC)', 'https://nerc.gov.ng/', 'logos/logo-7-nerc.png', image_height=nerc_height, text='The Nigerian Electricity Regulatory Commission, established by the Electric Power Sector Reform Act of 2005 is an independent body with a mandate to shoulder technical and economic regulations of the Nigerian Electricity Supply Industry. NERC has been charged with ensuring uninterrupted electricity, private sector participation, fair regulations as well as consumer protection. To this effect, its sole mission is to foster an investor-friendly industry and efficient market structure to meet the needs of Nigeria for safe, adequate, reliable and affordable electricity.')}}
+      {{stakeholder.input('3', 'Transmission Company of Nigeria (TCN)', 'https://tcn.org.ng/', 'logos/logo-8-tcn.png', image_height=tcn_height, text='The Transmission Company of Nigeria is a principal body licensed with the responsibility of wheeling power at high voltage, operate the National Grid and Market Operation Service. The TCN was issued a transmission license by Federal Government of Nigeria in response to the increase in Nigeria\'s demographic figures over the decades and the lack of corresponding increase in energy supply to meet the country\'s growing economic and infrastructural development objective. Major activities of the TCN include operation, expansion and upgrade of transmission facilities, create adequate network redundancies to ensure at least 99.9% reliability and reduce transmission losses to less than 5%.')}}
     </div>
   </section>
 
 </div>
 {% endblock content%}
+
+{% block footer %}
+<script src="{{ url_for('static', filename='js/responsive-tables.js') }}"></script>
+{% endblock footer %}
