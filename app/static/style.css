@@ -476,9 +476,13 @@ header a:focus{
     font-weight: 700;
 }
 
+#landing-resources-sec .landing-resources__text{
+    padding-bottom: 5.5rem;
+}
+
 .landing-resources__text p {
     padding-top: 1rem;
-    padding-bottom: 5rem;
+    padding-bottom: 0.5rem;
     font-size: 1.75rem;
 }
 
