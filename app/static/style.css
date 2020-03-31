@@ -447,7 +447,7 @@ header a:focus{
 }
 
 .landing-maps__image div {
-    height: 37rem;
+    height: 27rem;
     width: 62rem;
     margin: 0 auto;
     padding-top: 4rem;
@@ -476,9 +476,13 @@ header a:focus{
     font-weight: 700;
 }
 
+#landing-resources-sec .landing-resources__text{
+    padding-bottom: 5.5rem;
+}
+
 .landing-resources__text p {
     padding-top: 1rem;
-    padding-bottom: 5rem;
+    padding-bottom: 0.5rem;
     font-size: 1.75rem;
 }
 
@@ -521,6 +525,10 @@ header a:focus{
     transform: translateY(-6px);
     box-shadow: 0 10px 20px rgba(0, 0, 0, .2);
     cursor: pointer;
+}
+
+#resources-selected a {
+    margin-top: 1rem;
 }
 
 

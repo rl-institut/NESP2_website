@@ -12,7 +12,8 @@
     <h2>{{title}}</h2>
     <p>{{subtitle}}</p>
     <div>{{description}}</div>
-    <a class="cta" href="">Go to resource</a>
+    <!-- hidden button to link to the resource-->
+    <a class="cta" style="display: none;" href="">Go to resource</a>
   </div>
   <div class="cell large-5 large-offset-1">
     <img src="{{ url_for('static', filename=image) }}">
