@@ -19,5 +19,15 @@ p {
     color: #347224;
 }
 .org {
-    padding-bottom: 1rem;
+    padding-bottom: 2rem;
+}
+
+.org-logo {
+    display: flex;
+    justify-content: center;
+    align-item: center;
+}
+
+.org img{
+    height: 110px;
 }

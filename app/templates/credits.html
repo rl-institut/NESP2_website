@@ -42,19 +42,33 @@
     </div>
     {% endif %}
     <h3 class="cell medium-8">AUTHORS</h3>
-    <div class="cell medium-8 l-width-60">
+    <div class="cell medium-10 l-width-60">
       <div class="grid-x">
         <div class="cell">
-            <div class="org">
-                <div>INTEGRATION Environment & Energy GmbH</div>
-                <div>Contact: <a href="mailto:ohaas@integration.org"> Mr Oliver Haas</a></div>
-                <div><a target="_blank" href="http://www.integration.org">www.integration.org</a></div>
+            <div class="org grid-x">
+                <div class="cell medium-12 large-7">
+                    <div>INTEGRATION Environment & Energy GmbH</div>
+                    <div>Contact: <a href="mailto:ohaas@integration.org"> Mr Oliver Haas</a></div>
+                    <div><a target="_blank" href="http://www.integration.org">www.integration.org</a></div>
+                </div>
+                <div class="cell medium-12 large-5 org-logo">
+                    <a target="_blank" href="http://www.integration.org">
+                        <img src="{{ url_for('static', filename='logos/logo-9-integration.png') }}">
+                    </a>
+                </div>
             </div>
-            <div class="org">
-                <div>Reiner Lemoine Institut gGmbH</div>
-                <div>Contact: <a href="mailto:philipp.blechinger@rl-institut.de">Dr Philipp Blechinger</a></div>
-                <div><a target="_blank" href="http://www.reiner-lemoine-institut.de">www.reiner-lemoine-institut.de</a></div>
-           </div>
+            <div class="org grid-x">
+                <div class="cell medium-12 large-7">
+                    <div>Reiner Lemoine Institut gGmbH</div>
+                    <div>Contact: <a href="mailto:philipp.blechinger@rl-institut.de">Dr Philipp Blechinger</a></div>
+                    <div><a target="_blank" href="http://www.reiner-lemoine-institut.de">www.reiner-lemoine-institut.de</a></div>
+                </div>
+                <div class="cell medium-12 large-5 org-logo">
+                    <a target="_blank" href="http://www.reiner-lemoine-institut.de">
+                        <img src="{{ url_for('static', filename='logos/logo-10-rli.png') }}">
+                    </a>
+                </div>
+            </div>
         </div>
       </div>
     </div>
