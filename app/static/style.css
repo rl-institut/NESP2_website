@@ -1048,6 +1048,7 @@ h4.heading-green {
 }
 
 .section-about .section-about__text {
+    padding-right: 2rem;
     margin-bottom: 5rem;
 }
 
