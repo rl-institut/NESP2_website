@@ -1025,6 +1025,10 @@ h4.heading-green {
     color: #fff;
 }
 
+#about-fmp-content .about-fmp__item{
+    width: calc(100vw);
+}
+
 #about-fmp-content .about-fmp__item:not(:last-child)  {
     padding-bottom: 4rem;
 }
@@ -1120,7 +1124,8 @@ h4.heading-green {
     font-style: normal;
 }
 
-@media only screen and (min-width: 1040px) { 
+@media only screen and (min-width: 1040px) {
+
     .cell.l-width-80 {
         width: 80%;
         margin-left: 20%;
@@ -1134,7 +1139,13 @@ h4.heading-green {
         margin-right: 40%;
     }
     .l-img-max-width img {
-        max-width: 40rem;
+        max-height: 425px;
+    }
+    .about-fmp__text{
+        display: flex;
+        height: 100%;
+        align-items: center;
+        padding-bottom: 6rem;
     }
 }
 
