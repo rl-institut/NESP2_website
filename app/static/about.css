@@ -12,12 +12,9 @@ p {
 }
 
 #about-map-content a {
-    color: #5dcb42;
+    color: #1DD069;
 }
 
-#about-map-content a:hover {
-    color: #347224;
-}
 .org {
     padding-bottom: 2rem;
 }
@@ -31,4 +28,28 @@ p {
 
 .org img{
     width: 150px;
+}
+
+.citation-entry {
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.license-entry {
+    margin-top: 1rem;
+}
+.attribution-entry {
+    margin-bottom: 1rem;
+}
+
+.citation-entry span {
+    font-weight: 700;
+}
+.citation-entry img {
+    vertical-align: middle;
+    width: 21px;
+}
+
+.license-div {
+    margin-bottom: 2rem;
 }

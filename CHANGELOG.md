@@ -45,6 +45,7 @@ Pre-release version of the NESP website
 - automatic interval change of feature when section is in viewport (#157)
 - link to web development credit page (#157)
 - developed-by page (#162)
+- licenses (#167)
 
 ### Changed
 - allow use of variable via URL (#76)

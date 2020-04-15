@@ -1,0 +1,15 @@
+{% macro license(text='') -%}
+<div class="license-entry citation-entry">
+    <img src="{{ url_for('static', filename='img/icons/i_licence_grey.svg') }}">
+    <span>Licensed under:</span>
+    {{ text|safe }}
+</div>
+{%- endmacro %}
+
+{% macro attribution(text='') -%}
+<div class="attribution-entry citation-entry">
+    <img src="{{ url_for('static', filename='img/icons/i_attribution_grey.svg') }}">
+    <span>Attribution:</span>
+    {{ text|safe }}
+</div>
+{%- endmacro %}

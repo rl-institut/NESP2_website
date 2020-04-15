@@ -753,6 +753,25 @@ h4.heading-green {
     text-decoration: underline;
 }
 
+
+#about-map-content section {
+    padding-top: 2rem;
+    padding-bottom: 8rem;
+}
+
+#about-map-content h2 {
+    padding-bottom: 6rem;
+    padding-top: 3rem;
+}
+
+#about-map-content h3 {
+    font-size: 20pt;
+    font-weight: 700;
+    margin-top: 0;
+    padding-bottom: 1rem;
+}
+
+
 .light-grey{
     background-color: #EEEFF1;
 }
@@ -1054,6 +1073,10 @@ h4.heading-green {
 
 .section-about .section-about__text--nomargin {
     margin-bottom: 0;
+}
+
+#about-se4all-content .section-about__text {
+    margin-bottom: 2rem;
 }
 
 .section-about .section-about__img {
