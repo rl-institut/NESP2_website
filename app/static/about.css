@@ -26,8 +26,9 @@ p {
     display: flex;
     justify-content: center;
     align-item: center;
+    height: 130px;
 }
 
 .org img{
-    height: 110px;
+    width: 150px;
 }
