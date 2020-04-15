@@ -753,6 +753,25 @@ h4.heading-green {
     text-decoration: underline;
 }
 
+
+#about-map-content section {
+    padding-top: 2rem;
+    padding-bottom: 8rem;
+}
+
+#about-map-content h2 {
+    padding-bottom: 6rem;
+    padding-top: 3rem;
+}
+
+#about-map-content h3 {
+    font-size: 20pt;
+    font-weight: 700;
+    margin-top: 0;
+    padding-bottom: 1rem;
+}
+
+
 .light-grey{
     background-color: #EEEFF1;
 }
