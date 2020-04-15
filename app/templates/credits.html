@@ -38,6 +38,73 @@
         </div>
       </div>
     </div>
+
+    {% import "about/citation.html" as citation %}
+    <h2 class="cell medium-10">Data licences</h2>
+    <div class="cell medium-8 l-width-60">
+      <div class="grid-x">
+        <div class="cell">
+            <p>
+                The data within the map is available to download under the following licensing terms:
+            </p>
+            <h3>Medium voltage grid</h3>
+            <div class="license-div">
+                <p>
+                    The medium voltage grid is made up of 3 data sources.
+                </p>
+                <p>
+                    Data for <i>Katsina</i>, <i>Kano</i> and <i>Jigawa</i> is available from energydata.info. The license the dataset is published under and attribution is given below.
+                </p>
+                    {{ citation.license('a <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank">Creative Commons Attribution 4.0 International License</a>') }}
+                    {{ citation.attribution('© Columbia University Earth Institute. Accessed from <a href="https://energydata.info/dataset/kano-electricity-distribution-plc-kedco-mv-lines-2016" target="_blank">energydata.info</a>') }}
+                <p>
+                    Data for <i>Sokoto</i>, <i>Kebbi</i>, <i>Zamfara</i> and <i>Kaduna</i> was gathered from Kaduna electric DISCO.
+                </p>
+                    {{ citation.license("") }}
+                    {{ citation.attribution("") }}
+                <p>
+                    All other grid data was collected in the field by the Nigeria SE4ALL project.
+                </p>
+                    {{ citation.license('an <a href="https://opendatacommons.org/licenses/odbl/1-0/index.html" target="_blank">Open Database License (ODbL) v1.0 License</a>') }}
+                    {{ citation.attribution("© Deutsche Gesellschaft für Internationale Zusammenarbeit (GIZ) GmbH and the Federal Ministry of Power (FMP)") }}
+                <p>
+                    For more information on how the SE4ALL grid dataset has been generated, read the “on grid mapping” tools section by following the link below:
+                </p>
+
+                <a style="color: #fff" class="cta" href="{{ url_for('resources.selection', resc_name='clusteridentification') }}" target="_blank">Tools for on grid mapping</a>
+            </div>
+            <h3>Identified settlements by satellite imagery</h3>
+            <div class="license-div">
+                <p>
+                    Identified settlements by satellite imagery are generated from a High Resolution Settlement Layer and processed by Nigeria SE4ALL.
+                </p>
+                    {{ citation.license('an <a href="https://opendatacommons.org/licenses/odbl/1-0/index.html" target="_blank">Open Database License (ODbL) v1.0 License</a>') }}
+                    {{ citation.attribution("Facebook Connectivity Lab and Center for International Earth Science Information Network - CIESIN - Columbia University. 2016. High Resolution Settlement Layer (HRSL). Source imagery for HRSL © 2016 DigitalGlobe. Accessed DAY MONTH YEAR. Modified by © Deutsche Gesellschaft für Internationale Zusammenarbeit (GIZ) GmbH and the Federal Ministry of Power (FMP).") }}
+                <p>
+                    For more information on how settlements are identified automatically with satellite imagery, read the “cluster identification” tools section by following the link below:
+                </p>
+
+                <a style="color: #fff" class="cta" href="{{ url_for('resources.selection', resc_name='ongridmapping') }}" target="_blank">Tools for cluster identification</a>
+
+            </div>
+            <h3>Remotely mapped settlements</h3>
+                <div class="license-div">
+                <p>
+                    Identified settlements by satellite imagery are generated from OpenStreetMap data and processed by Nigeria SE4ALL.
+                </p>
+                    {{ citation.license('an <a href="https://opendatacommons.org/licenses/odbl/1-0/index.html" target="_blank">Open Database License (ODbL) v1.0 License</a>') }}
+                    {{ citation.attribution("OpenStreetMap contributors (https://www.openstreetmap.org/copyright), © Deutsche Gesellschaft für Internationale Zusammenarbeit (GIZ) GmbH and the Federal Ministry of Power (FMP)") }}
+                <p>
+                    For more information on how settlements are remotely mapped and these clusters have been generated, read the “mapping with OSM” tools section by following the link below:
+                </p>
+
+                <a style="color: #fff" class="cta" href="{{ url_for('resources.selection', resc_name='osm') }}" target="_blank">Tools for mapping with OSM</a>
+            </div>
+
+        </div>
+      </div>
+    </div>
+
     {% endif %}
     <div class="cell show-for-small-only" style="height:60px;"></div>
     <h2 class="cell medium-10">Authors and web development</h2>
