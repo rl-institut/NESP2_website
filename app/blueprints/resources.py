@@ -33,9 +33,10 @@ RESOURCES_ATTRIBUTES = {
         Do you have an area of interest for an electrification project that you want to do further assessment on? Or do you want to contribute to data to assist electrification efforts in Nigeria? Check out the OSM tools below to help you get started:
         </br></br>
         <ul>
-        <li>Create an OSM account on <a href="openstreetmap.org" rel="noreferrer"
+        <li>Create an OSM account on <a href="https://openstreetmap.org" rel="noreferrer"
         target="_blank">openstreetmap.org</a>.</li>
-        <li>Read the beginner’s guide on <a href="learnosm.org" rel="noreferrer" target="_blank">
+        <li>Read the beginner’s guide on <a href="https://learnosm.org/en/" rel="noreferrer" 
+        target="_blank">
         learnosm.org</a> for an introduction.</li>
         <li><a href="https://josm.openstreetmap.de/" rel="noreferrer" target="_blank">JOSM</a> is a
          desktop application in which you can map areas of interest.</li>
