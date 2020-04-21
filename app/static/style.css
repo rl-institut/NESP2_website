@@ -528,6 +528,8 @@ header a:focus{
 }
 
 #resources-selected a {
+    color: #1DD069;
+    text-decoration: underline;
     margin-top: 1rem;
 }
 
