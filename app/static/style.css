@@ -460,10 +460,11 @@ header a:focus{
 }
 
 .landing-resources {
-    background-image: url("background/bg-3-resources-div.png");
-    background-position: center center;
-    background-repeat: no-repeat;
-    background-size: cover;
+    background-image: url("background/bg-3-resources-div-tile.png");
+    //background-position: center center;
+    //background-repeat: no-repeat;
+    background-repeat: repeat-y;
+    //background-size: cover;
     padding-top: 3rem;
     padding-bottom: 5rem;
     padding-left: .75rem;
@@ -528,6 +529,8 @@ header a:focus{
 }
 
 #resources-selected a {
+    color: #1DD069;
+    text-decoration: underline;
     margin-top: 1rem;
 }
 
