@@ -329,7 +329,7 @@ header a:focus{
 }
 
 .landing-feature {
-    background-image: url("img/img-3-feature-developer.png");
+    background-image: url("img/img-3-feature-developers.png");
     animation: animation: features_transition 2s ease-in;
     -webkit-animation: features_transition 2s ease-in; /* Chrome, Safari, Opera */
     background-position: center center;
