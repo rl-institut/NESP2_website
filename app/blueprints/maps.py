@@ -39,7 +39,7 @@ def download_csv():
     args = request.args
     state = args.get("state")
     cluster_type = args.get("cluster_type")
-    fname = args.get("state")
+    fname = state
 
     if os.environ.get("POSTGRES_URL", None) is not None:
         if "og" in cluster_type:
@@ -50,7 +50,8 @@ def download_csv():
                 'area_km2',
                 'building_count',
                 'percentage_building_area',
-                'grid_dist_km'
+                'grid_dist_km',
+                'ST_AsGeoJSON(centroid) as lnglat'
             )
             records = query_filtered_og_clusters(
                 state,
@@ -68,7 +69,8 @@ def download_csv():
                 'cluster_all_id',
                 'fid',
                 'area_km2',
-                'grid_dist_km'
+                'grid_dist_km',
+                'ST_AsGeoJSON(centroid) as lnglat'
             )
             records = query_filtered_clusters(
                 state,
@@ -78,10 +80,23 @@ def download_csv():
                 keys=keys
             )
 
+        columns = list(keys)
+        columns[-1] = "lnglat"
+        column_names = list(keys)
+        column_names[-1] = "longitude on WGS 84"
+        column_names.append("latitude on WGS 84")
         csv = list()
-        csv.append(", ".join(keys))
+        csv.append(", ".join(column_names))
         for line in records:
-            csv.append(", ".join([str(line[k]) for k in keys]))
+            csv_line = list()
+            for k in columns:
+                if k == "lnglat":
+                    lnglat = json.loads(line[k])["coordinates"]
+                    csv_line.append(str(lnglat[0]))
+                    csv_line.append(str(lnglat[1]))
+                else:
+                    csv_line.append(str(line[k]))
+            csv.append(", ".join(csv_line))
         csv = "\n".join(csv) + "\n"
     else:
         csv = "1,2,3\n4,5,6\n"
