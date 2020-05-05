@@ -8,6 +8,7 @@
 {% block content %}
 <div id="about-map-content" class="grid-container full">
     <section id="about-map-intro" class="grid-x align-center light-grey">
+    <!-- part which is only present for /about-map -->
     {% if about_map == True %}
     <h2 class="cell medium-10">About this map</h2>
     <div class="cell medium-8 l-width-60">
@@ -104,10 +105,13 @@
     </div>
 
     {% endif %}
+    <!-- part which is present for both /about-map and /developed-by -->
     <div class="cell show-for-small-only" style="height:60px;"></div>
-    <h2 class="cell medium-10">Authors and web development</h2>
+    <h2 class="cell medium-10">Accreditation</h2>
+
     <div class="cell medium-10 l-width-60">
       <div class="grid-x">
+        <h3 class="cell medium-10">Authors and web development</h3>
         <div class="cell">
             <div class="org grid-x">
                 <div class="cell medium-12 large-7">
@@ -136,18 +140,35 @@
         </div>
       </div>
     </div>
-    <h2 class="cell medium-10">Design</h2>
+
     <div class="cell medium-8 l-width-60">
       <div class="grid-x">
+        <h3 class="cell">Design</h3>
         <div class="cell">
             <div class="org">
                 <div>Alsino Skowronnek</div>
-                <div><a href="www.alsino.io" target="_blank">www.alsino.io</a></div>
+                <div><a href="http://www.alsino.io" target="_blank">www.alsino.io</a></div>
            </div>
         </div>
       </div>
     </div>
+    <!-- part which is only present for /developed-by -->
+    {% if about_map == False %}
+    <div class="cell medium-8 l-width-60">
+      <div class="grid-x">
+        <h3 class="cell">Images</h3>
+        <div class="cell">
+            <p>Features for Government: Johnny Greig Int / Alamy Stock Photo</p>
+            <p>Features for General public: Red Confidential / <a href="http://www.shutterstock.com" rel="noreferrer" target="_blank">Shutterstock.com</a></p>
+            <p>About, Federal Ministry of Power (FMP), our mandate: Agbebiyi Adekunle Sunday / <a href="http://www.shutterstock.com" rel="noreferrer" target="_blank">Shutterstock.com</a></p>
+        </div>
+      </div>
+    </div>
+    {% endif %}
+
   </section>
+
+
 
 </div>
 {% endblock content%}
