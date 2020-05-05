@@ -117,19 +117,30 @@
 
       <div id="footer-logos-div" class="cell">
         <div class="grid-x">
-          <div class="cell medium-3 large-2 large-offset-1">
-            <p style="padding-right: 0">With financial support of:</p>
+
+
+          <div class="cell large-offset-3 large-6 grid-x">
+            <div class="cell center--align footer-logos__title">
+                <p style="padding-right: 0">Provided with the financial support of:</p>
+            </div>
+            <div id="footer-logos-eu-ger" class="cell footer-logos__img">
+                <a href="https://europa.eu/european-union/index_en" target="_blank" rel="noreferrer">
+                  <img class="footer-maps-logos__eu" src="{{ url_for('static', filename='logos/logo-1-eu.png') }}">
+                </a>
+                <a href="http://www.bmz.de/en/index.html" target="_blank" rel="noreferrer">
+                  <img class="footer-maps-logos__coop" src="{{ url_for('static', filename='logos/logo-4-ger-coop.png') }}">
+                </a>
+            </div>
           </div>
-          <div id="footer-logos-eu-ger" class="cell medium-6 footer-logos__img">
-            <a href="https://europa.eu/european-union/index_en" target="_blank" rel="noreferrer">
-              <img class="footer-maps-logos__eu" src="{{ url_for('static', filename='logos/logo-1-eu.png') }}">
-            </a>
-            <a href="http://www.bmz.de/en/index.html" target="_blank" rel="noreferrer">
-              <img class="footer-maps-logos__coop" src="{{ url_for('static', filename='logos/logo-4-ger-coop.png') }}">
-            </a>
-          </div>
-          <div id="footer-logos-giz" class="cell medium-3 large-2 footer-logos__img footer-logos__img--giz">
-            <div>
+
+
+
+          <div class="cell large-offset-1 large-2 grid-x ">
+             <div class="cell center--align footer-logos__title">
+              <p>Implemented by:</p>
+            </div>
+
+            <div id="footer-logos-giz" class="cell footer-logos__img footer-logos__img--giz">
               <a href="https://www.giz.de/en/html/index.html" target="_blank" rel="noreferrer">
                 <img src="{{ url_for('static', filename='logos/logo-3-giz.png') }}">
               </a>

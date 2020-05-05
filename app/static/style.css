@@ -637,7 +637,9 @@ header a:focus{
 }
 
 .footer-logos__img--giz {
-    text-align: left;
+    justify-content: center;
+    display: flex;
+    align-items: center;
 }
 
 @media only screen and (min-width: 640px) {
@@ -653,12 +655,12 @@ header a:focus{
 }
 
 
-#footer-logos-div img{
+#footer-logos-giz, #footer-logos-div img{
     height: 10rem;
 }
 
 #footer-logos-giz img{
-    height: 5.83rem;
+    height: 4.3953rem;
 }
 
 #footer-license-div{
