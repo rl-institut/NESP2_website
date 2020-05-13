@@ -572,6 +572,11 @@ header a:focus{
     padding-left: .5rem;
 }
 
+.footer-contact__text a{
+    font-size: 14pt;
+    color: #464646;
+}
+
 .footer-contact__header {
     font-weight: 700;
     text-transform: uppercase;
