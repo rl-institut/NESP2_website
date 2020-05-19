@@ -52,6 +52,10 @@ p, div{
     flex-direction: column;
 }
 
+#landing-welcome-sec a {
+    color: #1DD069;
+}
+
 .center--align{
     display: flex;
     justify-content: center;
