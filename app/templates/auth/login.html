@@ -25,6 +25,7 @@
 
 <section class="center--align">
   <form method="post">
+    <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
     <label for="username">Username</label>
     <input name="username" id="username" required>
     <label for="password">Password</label>

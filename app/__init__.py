@@ -5,6 +5,7 @@ from flask_sqlalchemy import SQLAlchemy
 from flask_login import LoginManager, login_required
 from flask_wtf.csrf import CSRFProtect
 
+
 from .blueprints import resources, about, maps, objectives
 if os.environ.get("POSTGRES_URL", None) is not None:
     from .database import (
@@ -28,6 +29,8 @@ db = SQLAlchemy()
 
 basedir = os.path.abspath(os.path.dirname(__file__))
 
+from . import auth
+
 def create_app(test_config=None):
     # create and configure the app
     app = Flask(
@@ -40,6 +43,9 @@ def create_app(test_config=None):
         SQLALCHEMY_DATABASE_URI='sqlite:///' + os.path.join(basedir, 'app.db'),
         SQLALCHEMY_TRACK_MODIFICATIONS=False
     )
+
+    # add CSRF token
+    csrf = CSRFProtect(app)
 
     db.init_app(app)
 
@@ -67,15 +73,13 @@ def create_app(test_config=None):
     except OSError:
         pass
 
-    # add CSRF token
-    csrf = CSRFProtect(app)
+
 
     # register blueprints (like views in django)
     app.register_blueprint(resources.bp)
     app.register_blueprint(objectives.bp)
     app.register_blueprint(maps.bp)
     app.register_blueprint(about.bp)
-    from . import auth
     app.register_blueprint(auth.bp)
 
     @app.route('/')
