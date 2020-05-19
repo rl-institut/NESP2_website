@@ -6,8 +6,8 @@ from flask import (
 from flask_login import login_user, logout_user, login_required
 from werkzeug.security import check_password_hash, generate_password_hash
 
-from models import User
-from __init__ import db
+from .models import User
+from . import db
 
 bp = Blueprint('auth', __name__, url_prefix='/auth')
 

@@ -47,7 +47,7 @@ def create_app(test_config=None):
     login_manager.login_view = 'auth.login'
     login_manager.init_app(app)
 
-    from models import User
+    from .models import User
 
     @login_manager.user_loader
     def load_user(user_id):
@@ -75,7 +75,7 @@ def create_app(test_config=None):
     app.register_blueprint(objectives.bp)
     app.register_blueprint(maps.bp)
     app.register_blueprint(about.bp)
-    import auth
+    from . import auth
     app.register_blueprint(auth.bp)
 
     @app.route('/')
