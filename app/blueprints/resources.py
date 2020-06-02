@@ -25,13 +25,13 @@ RESOURCES_ATTRIBUTES = {
                imagery to detect buildings in a high spatial resolution.</p>
                <p>More information on the detailed methodology behind the dataset is available at the <a href="https://www.ciesin.columbia.edu/data/hrsl/" target="_blank" rel="noreferrer">Center for International Earth Science Information Network</a> and at the <a href="https://dataforgood.fb.com/docs/methodology-high-resolution-population-density-maps-demographic-estimates/" target="_blank" rel="noreferrer">Facebook Connectivity Lab</a>.</p>
                 <p>The lastest data download for Nigeria is available <a href="https://data.humdata.org/dataset/highresolutionpopulationdensitymaps-nga" target="_blank" rel="noreferrer">here</a>.</p>
-                <p>The population clusters have been created by applying a <a href="https://CRAN.R-project.org/package=dbscan" target="_blank" rel="noreferrer">density-based clustering algorithm </a>, available in the open-source software environment <a href="https://www.r-project.org/" target="_blank" rel="noreferrer">R</a>.</p>
+                <p>The population clusters have been created by applying a <a href="https://CRAN.R-project.org/package=dbscan" target="_blank" rel="noreferrer">density-based clustering algorithm</a>, available in the open-source software environment <a href="https://www.r-project.org/" target="_blank" rel="noreferrer">R</a>.</p>
                 <p>The population clusters have been derived in order to have discrete units with can be supplemented by additional attributes such as their area and their distance to power grid. In the webmap, these criteria can be filtered on, to provide you with a custom filter of clusters.</p>
-                <p>Furthermore, these attributed population clusters form the basis for 
-               further assessments, by filtering them according to their size and 
-               distance to the grid a first selection has been derived for further 
-               analysis, such as <a href="{}" target="_blank" rel="noreferrer">remote 
-               mapping of building footprints</a>.</p>'''.format("/resources/osm")),
+                <p>Finally, these attributed population clusters form the basis for further assessments.
+                 By filtering them according to their size and distance to the grid a first selection 
+                 is derived for further analysis. This further analysis includes 
+                 <a href="{}" rel="noreferrer">mapping with OSM</a>.</p>'''.format(
+                "/resources/osm")),
         'image': 'img/img-5-resource-cluster.png'
     },
     OSM_ID: {
