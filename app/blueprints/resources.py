@@ -26,11 +26,11 @@ RESOURCES_ATTRIBUTES = {
                 <p>The lastest data download for Nigeria is available <a href="https://data.humdata.org/dataset/highresolutionpopulationdensitymaps-nga" target="_blank" rel="noreferrer">here</a>.</p>
                 <p>The population clusters have been created by applying a <a href="https://CRAN.R-project.org/package=dbscan" target="_blank" rel="noreferrer">density-based clustering algorithm</a>, available in the open-source software environment <a href="https://www.r-project.org/" target="_blank" rel="noreferrer">R</a>.</p>
                 <p>The population clusters have been derived in order to have discrete units with can be supplemented by additional attributes such as their area and their distance to power grid. In the webmap, these criteria can be filtered on, to provide you with a custom filter of clusters.</p>
-                <p>Furthermore, these attributed population clusters form the basis for 
-               further assessments, by filtering them according to their size and 
-               distance to the grid a first selection has been derived for further 
-               analysis, such as <a href="{}" target="_blank" rel="noreferrer">remote 
-               mapping of building footprints</a>.</p>'''.format("/resources/osm")),
+                <p>Finally, these attributed population clusters form the basis for further assessments.
+                 By filtering them according to their size and distance to the grid a first selection 
+                 is derived for further analysis. This further analysis includes 
+                 <a href="{}" rel="noreferrer">mapping with OSM</a>.</p>'''.format(
+                "/resources/osm")),
         'image': 'img/img-5-resource-cluster.png'
     },
     OSM_ID: {
