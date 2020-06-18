@@ -78,6 +78,13 @@ def create_app(test_config=None):
             )
             print("\n***************\n\n")
 
+        user_agent = request.headers.get('User-Agent')
+        not_supported = False
+        for ua in maps.UNSUPPORTED_USER_AGENT_STRINGS:
+            if ua in user_agent:
+                not_supported = True
+        kwargs['not_supported'] = not_supported
+        print(kwargs)
         return render_template('landing/index.html', **kwargs)
 
     @app.route('/termsofservice')
