@@ -16,6 +16,12 @@ if os.environ.get("POSTGRES_URL", None) is not None:
     STATE_CODES_DICT = get_state_codes()
     CODES_STATE_DICT = {v: k for k, v in STATE_CODES_DICT.items()}
 
+UNSUPPORTED_USER_AGENT_STRINGS = (
+    "Edge",
+    "MSIE",  # Internet Explorer
+    "Trident"  # Internet Explorer (newer versions)
+)
+
 bp = Blueprint('maps', __name__)
 
 
@@ -23,9 +29,16 @@ bp = Blueprint('maps', __name__)
 @bp.route('/maps')
 @login_required
 def index():
+    user_agent = request.headers.get('User-Agent')
+    not_supported = False
+    for ua in UNSUPPORTED_USER_AGENT_STRINGS:
+        if ua in user_agent:
+            not_supported = True
+
     defaultArgs = {
         "states_content": 1,
-        "grid_content": 1
+        "grid_content": 1,
+        "not_supported": not_supported
     }
     if request.args == {}:
         request.args = defaultArgs

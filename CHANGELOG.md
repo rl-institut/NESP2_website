@@ -18,7 +18,7 @@ Here is a template for new release sections
 ```
 ## [Unreleased]
 ### Added
-
+- Popup to warn against unsupported browsers (#183)
 ### Changed
 
 ### Removed
