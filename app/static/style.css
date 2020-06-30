@@ -723,6 +723,28 @@ footer:not(.footer-hp) {
     color: #1DD069;
 }
 
+.list-number>div {
+    margin-bottom: 0.5rem;
+}
+
+.list-letter>div {
+    margin-bottom: 0.5rem;
+}
+
+.list-roman>div {
+    margin-bottom: 0.5rem;
+}
+
+.list-item-number {
+    font-weight: 700;
+}
+
+.list-item-letter {
+}
+
+.list-item-roman {
+}
+
 h4.heading-green {
     color: #1DD069;
     font-weight: 700;
@@ -784,7 +806,22 @@ h4.heading-green {
     margin-top: 0;
     padding-bottom: 1rem;
 }
+#privacy-policy section {
+    padding-top: 2rem;
+    padding-bottom: 8rem;
+}
 
+#privacy-policy-content h2 {
+    padding-bottom: 6rem;
+    padding-top: 3rem;
+}
+
+#privacy-policy-content  h3 {
+    font-size: 20pt;
+    font-weight: 700;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
 
 .light-grey{
     background-color: #EEEFF1;
