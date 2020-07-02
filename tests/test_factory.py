@@ -22,7 +22,7 @@ def test_about_map(client):
 
 
 def test_develop_by(client):
-    response = client.get('/developed-by')
+    response = client.get('/accreditation')
     assert response.status_code == 200
 
 

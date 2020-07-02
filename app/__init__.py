@@ -99,8 +99,8 @@ def create_app(test_config=None):
     def about_map():
         return render_template('credits.html', about_map=True)
 
-    @app.route('/developed-by')
-    def developed_by():
+    @app.route('/accreditation')
+    def accreditation():
         return render_template('credits.html', about_map=False)
 
     @app.teardown_appcontext
