@@ -52,7 +52,7 @@ def download_csv():
     args = request.args
     state = args.get("state")
     cluster_type = args.get("cluster_type")
-    fname = state
+    fname = state.replace(" ", "_")
 
     if os.environ.get("POSTGRES_URL", None) is not None:
         if "og" in cluster_type:
