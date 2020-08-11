@@ -24,8 +24,8 @@ UNSUPPORTED_USER_AGENT_STRINGS = (
 bp = Blueprint('maps', __name__)
 
 
-@bp.route('/maps/')
-@bp.route('/maps')
+@bp.route('/map/')
+@bp.route('/map')
 def index():
     user_agent = request.headers.get('User-Agent')
     not_supported = False
