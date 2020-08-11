@@ -19,6 +19,7 @@ Here is a template for new release sections
 ## [Unreleased]
 ### Added
 - Popup to warn against unsupported browsers (#183)
+- Video popup for `/map` and `/about-map` endpoints (#186)
 ### Changed
 - Change map url endpoint from `/maps` to `/map` (#185)
 

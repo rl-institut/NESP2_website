@@ -2,7 +2,6 @@
 
 {% block head %}
 <link rel="stylesheet" href="{{ url_for('static', filename='about.css') }}">
-<link rel="stylesheet" href="{{ url_for('static', filename='responsive-tables.css') }}">
 {% endblock head%}
 
 {% block content %}
@@ -217,7 +216,3 @@
 
 </div>
 {% endblock content%}
-
-{% block footer %}
-<script src="{{ url_for('static', filename='js/responsive-tables.js') }}"></script>
-{% endblock footer %}

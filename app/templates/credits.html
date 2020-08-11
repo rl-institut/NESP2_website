@@ -2,7 +2,6 @@
 
 {% block head %}
 <link rel="stylesheet" href="{{ url_for('static', filename='about.css') }}">
-<link rel="stylesheet" href="{{ url_for('static', filename='responsive-tables.css') }}">
 {% endblock head%}
 
 {% block content %}
@@ -171,8 +170,23 @@
 
 
 </div>
+
+{% if about_map == True %}
+    <script>
+         $(document).ready(function(){
+            //display a popup with the video the first time a user land on this page
+            var showVideo = sessionStorage.getItem('popupdisplayed');
+            if(showVideo === null) {
+                //save in local storage
+                sessionStorage.setItem('popupdisplayed', true);
+                $('#video-popup').foundation('toggle');
+            }
+
+        });
+    </script>
+{% endif %}
+
 {% endblock content%}
 
-{% block footer %}
-<script src="{{ url_for('static', filename='js/responsive-tables.js') }}"></script>
-{% endblock footer %}
+
+
