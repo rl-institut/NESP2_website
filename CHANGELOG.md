@@ -20,6 +20,7 @@ Here is a template for new release sections
 ### Added
 - Popup to warn against unsupported browsers (#183)
 ### Changed
+- Change map url endpoint from `/maps` to `/map` (#185)
 
 ### Removed
 
