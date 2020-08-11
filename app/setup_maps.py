@@ -35,6 +35,11 @@ if args.docker is False:
                 branch
             )
         )
+        # save the commit number in a separate file
+        os.system(
+            "git ls-remote https://github.com/rl-institut/NESP2.git | grep refs/heads/{} | cut -f "
+            "1 > maps_latest_commit.info".format(branch)
+        )
     else:
         print("\n\n*** warning ***\n")
         print("There is already a NESP2 folder in your path, please delete it")
