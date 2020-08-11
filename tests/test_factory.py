@@ -7,7 +7,7 @@ def test_config():
 
 
 def test_maps(client):
-    response = client.get('/maps')
+    response = client.get('/map')
     assert response.status_code == 200
 
 
