@@ -12,6 +12,9 @@
     <h2 class="cell medium-10">About this map</h2>
     <div class="cell medium-8 l-width-60">
       <div class="grid-x">
+        <div class="cell iframe-container">
+        <iframe id="nigeria-se4all-video" class="nigeria-se4all-video responsive-iframe" src="https://www.youtube-nocookie.com/embed/{{ video_id }}?autoplay=1" }} frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
         <div class="cell">
             <p>
                 The SE4ALL webmap allows users to analyze highly accurate electrification data. The platform was created through the <a target="_blank" href="https://www.giz.de/en/worldwide/26374.html">Nigerian Energy Support Programme (NESP)</a>, a technical assistance programme co-funded by the European Union and the German Federal Ministry for Economic Cooperation and Development (BMZ) and implemented by Deutsche Gesellschaft für Internationale Zusammenarbeit (GIZ) GmbH in collaboration with the Federal Ministry of Power (FMP). The programme aims to foster investments in the Nigerian Renewable Energy and Energy Efficiency Sector and to improve access to electricity for disadvantaged, rural communities.
@@ -170,21 +173,6 @@
 
 
 </div>
-
-{% if about_map == True %}
-    <script>
-         $(document).ready(function(){
-            //display a popup with the video the first time a user land on this page
-            var showVideo = sessionStorage.getItem('popupdisplayed');
-            if(showVideo === null) {
-                //save in local storage
-                sessionStorage.setItem('popupdisplayed', true);
-                $('#video-popup').foundation('toggle');
-            }
-
-        });
-    </script>
-{% endif %}
 
 {% endblock content%}
 
