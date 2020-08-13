@@ -125,7 +125,7 @@ def create_app(test_config=None):
 
     @app.route('/about-map')
     def about_map():
-        return render_template('credits.html', about_map=True)
+        return render_template('credits.html', about_map=True, video_id=maps.VIDEO_ID)
 
     @app.route('/accreditation')
     def accreditation():

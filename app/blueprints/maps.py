@@ -22,7 +22,11 @@ UNSUPPORTED_USER_AGENT_STRINGS = (
     "Trident"  # Internet Explorer (newer versions)
 )
 
+# youtube id of the introductory video about the webmap
+VIDEO_ID = "r2Yb_zt2x9w"
+
 bp = Blueprint('maps', __name__)
+
 
 
 @bp.route('/map/')
@@ -38,7 +42,8 @@ def index():
     defaultArgs = {
         "states_content": 1,
         "grid_content": 1,
-        "not_supported": not_supported
+        "not_supported": not_supported,
+        "video_id": VIDEO_ID
     }
     if request.args == {}:
         request.args = defaultArgs
