@@ -19,8 +19,10 @@ Here is a template for new release sections
 ## [Unreleased]
 ### Added
 - Popup to warn against unsupported browsers (#183)
-- Video popup for `/map` and `/about-map` endpoints (#186)
+- Video popup for `/map` endpoints (#186, #187)
 ### Changed
+- The introductory webmap youtube video's id is provided to the jinja templates from the
+ `app/blueprints/maps.py` module (#187)
 - Change map url endpoint from `/maps` to `/map` (#185)
 
 ### Removed
