@@ -1,4 +1,4 @@
-FROM python:3.6.10-alpine3.10
+FROM python:slim 
 MAINTAINER Pierre-Francois Duc <pierre-francois.duc@rl-institut.de>
 
 ARG branch=dev
@@ -16,11 +16,14 @@ COPY docker_postgres_login_help.py /
 COPY app /app
 COPY index.py /
 
-# options for gunicorn
-ENV GUNICORN_CMD_ARGS=--bind=0.0.0.0:5000 --workers=2
+#make python and pip working for numpy
+ADD repositories /etc/apk/repositories
+RUN apt update
+RUN apt-get -y  install git  
 
-RUN apk update
-RUN apk add --virtual build-deps gcc musl-dev postgresql-dev git
+# options for gunicorn
+ENV GUNICORN_CMD_ARGS=--bind=0.0.0.0:8000 --workers=2
+
 
 # this helps using the cache of docker
 COPY app/requirements.txt /
@@ -36,9 +39,12 @@ RUN python /app/setup_maps.py -docker
 
 #WORKDIR /app
 
-EXPOSE 5000
+#EXPOSE 5000 
 
 RUN python /docker_postgres_login_help.py
 
+
 # Start gunicorn
-CMD ["gunicorn", "index:app"]
+#RUN gunicorn index:app -b 127.0.0.1:8000 -D
+
+#CMD ["gunicorn", "index:app"]
