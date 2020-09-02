@@ -1264,4 +1264,10 @@ Added this trick to fix it */
 #tos-sec{
     padding-top: 3rem;
 }
+#tos-sec a{
+    color: #1DD069;
+}
+
+#privacy-policy-sec a{
+    color: #1DD069;
 }
