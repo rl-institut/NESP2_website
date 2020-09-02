@@ -723,6 +723,11 @@ footer:not(.footer-hp) {
     color: #1DD069;
 }
 
+.list-item-grey {
+    color: #464646;
+    font-weight: bold;
+}
+
 .list-number>div {
     margin-bottom: 0.5rem;
 }
