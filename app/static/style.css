@@ -1260,3 +1260,8 @@ Added this trick to fix it */
     from {opacity: 0}
     to {opacity: 1;}
 }
+
+#tos-sec{
+    padding-top: 3rem;
+}
+}
