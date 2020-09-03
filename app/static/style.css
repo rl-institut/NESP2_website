@@ -723,6 +723,11 @@ footer:not(.footer-hp) {
     color: #1DD069;
 }
 
+.list-item-grey {
+    color: #464646;
+    font-weight: bold;
+}
+
 .list-number>div {
     margin-bottom: 0.5rem;
 }
@@ -1254,4 +1259,15 @@ Added this trick to fix it */
 @keyframes features_transition {
     from {opacity: 0}
     to {opacity: 1;}
+}
+
+#tos-sec{
+    padding-top: 3rem;
+}
+#tos-sec a{
+    color: #1DD069;
+}
+
+#privacy-policy-sec a{
+    color: #1DD069;
 }
