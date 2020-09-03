@@ -17,7 +17,7 @@ COPY app /app
 COPY index.py /
 
 #make python and pip working for numpy
-ADD repositories /etc/apk/repositories
+#ADD repositories /etc/apk/repositories
 RUN apt update
 RUN apt-get -y  install git  
 
