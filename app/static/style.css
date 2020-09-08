@@ -463,6 +463,46 @@ header a:focus{
     border-top-right-radius: 12px;
 }
 
+.landing-minigridmonitor {
+    background-image: url("background/bg-6-minigridmonitor.png");
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding-top: 3rem;
+}
+
+.landing-minigridmonitor__header {
+    color: #ffffff;
+}
+
+.landing-minigridmonitor__header h3 {
+    padding-bottom: 6rem;
+}
+
+.landing-minigridmonitor__header h3 span {
+    font-weight: 700;
+}
+
+.landing-minigridmonitor__image .cta {
+    margin: 0 auto;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+}
+
+.landing-minigridmonitor__image div {
+    height: 27rem;
+    width: 62rem;
+    margin: 0 auto;
+    padding-top: 4rem;
+    background-image: url(../static/img/img-16-minigridmonitor.png);
+    background-repeat: no-repeat;
+    background-position: center top;
+    background-size: cover;
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
+    box-shadow: 4px 6px 16px 0px rgba(0,0,0,0.75);
+}
+
 .landing-resources {
     background-image: url("background/bg-3-resources-div-tile.png");
     //background-position: center center;
