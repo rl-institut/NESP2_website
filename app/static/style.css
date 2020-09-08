@@ -278,7 +278,155 @@ header a:focus{
         padding-left: .5rem;
         padding-right: .5rem;
     }
-}
+    html, body {
+        overflow-x: hidden;
+      }
+      body {
+        position: relative
+      }
+      header img {
+        margin-right: 0.5rem;
+        height: 1.5rem;
+        transform: translateY(-3px);
+    }
+    .landing-hero {
+        background-image: url(img/img-1-landing.png);
+        height: auto;
+        width: auto;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        padding-left: 1rem;
+        padding-bottom: 20px;
+        padding-right: 1rem;
+    }
+    .landing-feature__img{
+        display: none;
+    }
+
+    .landing-welcome__img img {
+        padding-left: 0rem!important;
+    }
+    .landing-feature__description{
+        display: none;
+    }
+    .landing-maps__image div {
+        height: auto!important; 
+        width: auto!important; 
+        margin: 0 auto;
+        padding-top: 4rem;
+        background-image: url(../static/img/Explore_map-min.png);
+        background-repeat: no-repeat;
+        background-position: center top;
+        background-size: cover;
+        border-top-left-radius: 12px;
+        border-top-right-radius: 12px;
+        padding-bottom: 1rem;
+    }
+    .landing-maps__header h3 {
+        padding-bottom: 1rem!important;
+    }
+    .cta, .cta:hover, .cta:focus, .cta:active {
+        display: block;
+        width: fit-content;
+        width: -moz-fit-content;
+        background-color: #1DD069;
+        color: #ffffff;
+        font-size: 13pt;
+        font-weight: bold;
+        padding: 10px 30px 10px 30px;
+        border-radius: 4px;
+    }   
+
+    .cell.large-5.large-offset-1.landing-resources__cards.cell{
+        width: fit-content;
+        padding-right: 2rem;
+    }
+
+    .landing-minigridmonitor__image div {
+        height: auto!important; 
+        width: auto!important; 
+       
+    }
+    .landing-minigridmonitor__header h3 {
+        padding-bottom: 1rem;
+    }
+    .landing-minigridmonitor__image div {
+        height: auto;
+        width: auto;
+        margin: 0 auto;
+        padding-top: 4rem;
+        background-image: url(../static/img/Explore_map-min.png);
+        background-repeat: no-repeat;
+        background-position: center top;
+        background-size: cover;
+        border-top-left-radius: 12px;
+        border-top-right-radius: 12px;
+        padding-bottom: 1rem;
+    }
+    .landing-minigridmonitor__header h3 {
+        padding-bottom: 1rem!important;
+    }
+    .footer-stay-in-touch__img a{
+        padding-left: 4rem!important;
+        float: left!important;
+    }
+    .cell.medium-offset-1.medium-9.center--align{
+        display: flex;
+        justify-content: end;
+        align-items: center;
+        margin-top: 2rem;
+    }
+    .cell.landing-resources__text h2{
+        font-size: 18pt;
+    }
+    .cell.landing-resources__text p{
+        font-size: 14pt;
+    }
+    #header-logo-nigeria{
+        display: none;
+    }
+
+    .header-right__item {
+        margin-left: 1.5rem;
+        margin-right: 0;
+        margin-top: 1rem;
+    }
+    #header-blitz-div{
+        margin-left: 1rem;
+    }
+    #about-content h2 {
+        padding-bottom: 0rem!important;
+        padding-top: 3rem;
+    }
+    #about-fmp-content{
+        margin-left: 0%;
+    }
+    #about-nesp-content{
+        margin-left: 0%;
+    }
+    #about-content h2 {
+        text-align: center;
+    }
+    #about-stakeholder-content{
+        margin-left: 0%;
+    }
+    .about-stakeholder__img {
+        padding-bottom: 3rem;
+    }
+    .about-intro__cards .about-card:nth-child(odd) {
+        padding-right: 0rem!important;
+    }
+    .about-intro__cards .about-card:nth-child(even) {
+        padding-left: 0rem!important;
+    }
+    .about-intro__cards .about-card:nth-child(odd){
+        padding-right: 0rem!important;
+    }
+    .about-intro__cards .about-card:nth-child(even){
+        padding-left: 0rem!important;
+    }
+} 
 
 /* medium and larger screens */
 @media only screen and (min-width: 640px) {
@@ -295,7 +443,7 @@ header a:focus{
     .landing-hero h2 {
         font-size: 18pt;
         margin-bottom: 6rem;
-    }
+    }   
 }
 
 /* larger screens */
