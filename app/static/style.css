@@ -415,16 +415,13 @@ header a:focus{
         padding-bottom: 3rem;
     }
     .about-intro__cards .about-card:nth-child(odd) {
-        padding-right: 0rem!important;
+        padding-right: 0rem;
     }
     .about-intro__cards .about-card:nth-child(even) {
-        padding-left: 0rem!important;
+        padding-left: 0rem;
     }
     .about-intro__cards .about-card:nth-child(odd){
-        padding-right: 0rem!important;
-    }
-    .about-intro__cards .about-card:nth-child(even){
-        padding-left: 0rem!important;
+        padding-right: 0rem;
     }
 } 
 
@@ -1458,4 +1455,23 @@ Added this trick to fix it */
 
 #privacy-policy-sec a{
     color: #1DD069;
+}
+.grid-x>.medium-8 {
+        width: 95%;
+    }
+
+@media only screen and (min-width: 700px) and (max-width: 900px) {    
+    .small-offset-2 {
+        margin-left: 0%; 
+    }
+    .landing-welcome__img img {
+        padding-left: 0rem!important;
+        padding-right: 5rem;
+    }   
+    .landing-maps__image div{
+        width: 90%;
+    }
+    .landing-minigridmonitor__image div{
+        width: 90%;
+    }
 }
