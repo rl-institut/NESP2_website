@@ -151,14 +151,14 @@ header div{
 
 header h2{
     color: #ffbb00;
-    font-size: 16pt;
+    font-size: 20pt;
     font-weight: bold;
     text-transform: uppercase;
     padding-top: .4rem;
 }
 
 #header-blitz-div img{
-    height: 3.25rem;
+    height: 4rem;
     transform: translateY(0px);
 }
 
@@ -195,7 +195,7 @@ header img{
 
 header a{
     color: #464646;
-    font-size: 15pt;
+    font-size: 20pt;
     font-weight: normal;
 }
 
@@ -206,7 +206,7 @@ header a:focus{
 }
 
 #header-logo-nigeria img {
-    height: 3.25rem;
+    height: 5rem;
 }
 
 /* Main content */
