@@ -415,13 +415,10 @@ header a:focus{
         padding-bottom: 3rem;
     }
     .about-intro__cards .about-card:nth-child(odd) {
-        padding-right: 0rem;
+        padding-right: 0rem!important;
     }
     .about-intro__cards .about-card:nth-child(even) {
-        padding-left: 0rem;
-    }
-    .about-intro__cards .about-card:nth-child(odd){
-        padding-right: 0rem;
+        padding-left: 0rem!important;
     }
 } 
 
@@ -1456,9 +1453,9 @@ Added this trick to fix it */
 #privacy-policy-sec a{
     color: #1DD069;
 }
-.grid-x>.medium-8 {
+/* .grid-x>.medium-8 {
         width: 95%;
-    }
+    } */
 
 @media only screen and (min-width: 700px) and (max-width: 900px) {    
     .small-offset-2 {
