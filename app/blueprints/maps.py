@@ -63,8 +63,6 @@ def download_csv():
         if "og" in cluster_type:
             fname = fname + "_remotely_mapped_settlements"
             keys = (
-                'adm1_pcode',
-                'cluster_offgrid_id',
                 'area_km2',
                 'building_count',
                 'percentage_building_area',
@@ -83,9 +81,6 @@ def download_csv():
         else:
             fname = fname + "_identified_settlements_by_satellite"
             keys = (
-                'adm1_pcode',
-                'cluster_all_id',
-                'fid',
                 'area_km2',
                 'grid_dist_km',
                 'ST_AsGeoJSON(centroid) as lnglat'
