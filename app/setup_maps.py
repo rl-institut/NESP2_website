@@ -29,7 +29,18 @@ if args.docker is False:
     # clone the NESP2 repository locally
     branch = args.branch
     print("\nPull branch: {} of NESP2 repository\n".format(branch))
+    git_clone = False
     if os.path.exists('NESP2') is False:
+        git_clone = True
+    else:
+        if len(os.listdir('NESP2')) == 0:
+            git_clone = True
+        else:
+            print("\n\n*** warning ***\n")
+            print("There is already a non-empty NESP2 folder in your path, please delete it")
+            print("\n***************\n\n")
+
+if git_clone is True:
         os.system(
             "git clone --single-branch --branch {} https://github.com/rl-institut/NESP2.git".format(
                 branch
@@ -40,10 +51,6 @@ if args.docker is False:
             "git ls-remote https://github.com/rl-institut/NESP2.git | grep refs/heads/{} | cut -f "
             "1 > maps_latest_commit.info".format(branch)
         )
-    else:
-        print("\n\n*** warning ***\n")
-        print("There is already a NESP2 folder in your path, please delete it")
-        print("\n***************\n\n")
 
 # copy templates
 template_path = os.path.join('NESP2', 'app', 'templates')

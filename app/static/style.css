@@ -173,21 +173,6 @@ header img{
     transform: translateY(-3px);
 }
 
-
-@media only screen and (min-width: 1040px) {
-    .cell.header-right {
-        padding-right: 3rem;
-        width: 46%;
-    }
-}
-
-@media only screen and (min-width: 1500px) {
-    .cell.header-right {
-        padding-right: 6rem;
-        width: 35%;
-    }
-}
-
 .header-right__item {
     margin-left: auto; 
     margin-right: 0;
