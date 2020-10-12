@@ -19,8 +19,8 @@
           $(".GaugeMeter").gaugeMeter();
       });
   </script>
-  <header class="grid-x align-justify header">
-    <div id="header-blitz-div" class="cell medium-4 medium-offset-1">
+  <header class="grid-x header">
+    <div id="header-blitz-div" class="cell medium-3 medium-offset-1 large-offset-1 large-5">
       <a href="{{ url_for('landing')}}">
         <img src="{{ url_for('static', filename='logos/logo-5-blitz.png') }}">
         <h2>Nigeria Se4All</h2>
@@ -38,7 +38,9 @@
       </div>
       <div class="header-right__item nav__logo-nigeria" id="header-logo-nigeria">
         <div>
-          <img src="{{ url_for('static', filename='logos/logo-2-crest.png') }}">
+          <a href="https://www.power.gov.ng/" target="_blank" rel="noreferrer">
+            <img src="{{ url_for('static', filename='logos/logo-2-crest.png') }}">
+          </a>
         </div>
       </div>
     </div>
