@@ -2,13 +2,13 @@
 var featureDiv = $("#landing-feature");
 // Path to background images
 var bkgs = {
-    'landing-feature-txt-dev': 'img-3-feature-developers.png',
-    'landing-feature-txt-pla': 'img-4-feature-government.png',
-    'landing-feature-txt-cit': 'img-10-feature-general-public.png'
+    'landing-feature-txt-dev': 'img-3-feature-developers.jpg',
+    'landing-feature-txt-pla': 'img-4-feature-government.jpg',
+    'landing-feature-txt-cit': 'img-10-feature-general-public.jpg'
 };
 
 // Set the preselected background
-featureDiv.css('background-image', "url('static/img/img-3-feature-developers.png')");
+featureDiv.css('background-image', "url('static/img/img-3-feature-developers.jpg')");
 
 var fade1 = 0.2;
 var fade2 = 1.5;

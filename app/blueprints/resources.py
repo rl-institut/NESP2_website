@@ -31,7 +31,7 @@ RESOURCES_ATTRIBUTES = {
                  is derived for further analysis. This further analysis includes 
                  <a href="{}" rel="noreferrer">mapping with OSM</a>.</p>'''.format(
                 "/resources/osm")),
-        'image': 'img/img-5-resource-cluster.png'
+        'image': 'img/img-5-resource-cluster.jpg'
     },
     OSM_ID: {
         'title': 'Mapping with OSM',
@@ -53,7 +53,7 @@ RESOURCES_ATTRIBUTES = {
         us your OSM username if you want to be involved.</li>
         </ul>
         '''),
-        'image': 'img/img-6-resources-osm.png'
+        'image': 'img/img-6-resources-osm.jpg'
     },
     SURVEY_ID: {
         'title': 'Survey Tools',
@@ -79,13 +79,13 @@ RESOURCES_ATTRIBUTES = {
         you would like to collect the data, as well as sharing your KoBoToolbox username.
         You can then receive access to the questionnaires.</li>
         '''),
-        'image': 'img/img-7-resources-survey.png'
+        'image': 'img/img-7-resources-survey.jpg'
     },
     GRID_MAPPING_ID: {
         'title': 'On Grid Mapping',
         'subtitle': 'How can I track the grid?',
         'description': 'The Medium Voltage (MV) grid data used by Nigeria SE4ALL is either primary data which is gathered first hand by the SE4ALL field team, or secondary data whose quality has been validated by the SE4ALL field team. Our aim is to maintain the most comprehensive grid data-set for Nigeria. To achieve this, we encourage anyone who may have more up-to date grid data, or additions to the grid data-set generated to get in touch and share their updates.',
-        'image': 'img/img-8-resources-og-mapping.png'
+        'image': 'img/img-8-resources-og-mapping.jpg'
     },
 }
 
