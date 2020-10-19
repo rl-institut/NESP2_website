@@ -26,6 +26,7 @@ Here is a template for new release sections
  `app/blueprints/maps.py` module (#187)
 - Change map url endpoint from `/maps` to `/map` (#185)
 - Manage header bar only with foundation (#194)
+- Replace images in .png format with the same images in .jpg format, also in lower resolution (#198)
 
 ### Removed
 - Css class header-right (#194)

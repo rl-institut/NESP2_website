@@ -112,6 +112,7 @@ def create_app(test_config=None):
             if ua in user_agent:
                 not_supported = True
         kwargs['not_supported'] = not_supported
+        kwargs['website_welcome_video_id'] = "dk_V48FTXHM"
         print(kwargs)
         return render_template('landing/index.html', **kwargs)
 
