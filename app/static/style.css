@@ -288,9 +288,6 @@ header a:focus{
         display: none;
     }
 
-    .landing-welcome__img img {
-        padding-left: 0rem!important;
-    }
     .landing-feature__description{
         display: none;
     }
@@ -457,14 +454,17 @@ header a:focus{
     padding-bottom: 5rem;
 }
 
-
+.landing-welcome__img {
+    display: flex;
+    align-items: center;
+}
 .landing-welcome__img img {
     padding-left: 5rem;
 }
 
 
-/* smaller screens */
-@media only screen and (max-width: 640px) {
+/* smaller and medium screens */
+@media only screen and (max-width: 1024px) {
 
     .landing-welcome {
         padding-left: 1rem;
@@ -474,7 +474,7 @@ header a:focus{
     .landing-welcome__img img {
         padding-top: 2rem;
         padding-bottom: 2rem;
-        padding-left: 0rem;
+        padding-left: 0rem!important;
     }
 
 }
