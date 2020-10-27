@@ -318,11 +318,6 @@ header a:focus{
         font-weight: bold;
         padding: 10px 30px 10px 30px;
         border-radius: 4px;
-    }   
-
-    .cell.large-5.large-offset-1.landing-resources__cards.cell{
-        width: fit-content;
-        padding-right: 2rem;
     }
 
     .landing-minigridmonitor__image div {
@@ -671,8 +666,25 @@ header a:focus{
     font-weight: 700;
 }
 
-#landing-resources-sec .landing-resources__text{
-    padding-bottom: 5.5rem;
+@media only screen and (min-width: 640px) {
+    #landing-resources-sec .landing-resources__text{
+         padding-bottom: 3.5rem;
+    }
+}
+/* smaller and medium screens */
+@media only screen and (max-width: 1024px) {
+
+    .landing-resources__text{
+        padding-bottom: 3.5rem;
+    }
+
+    .cell.large-5.large-offset-1.landing-resources__cards.cell{
+        width: -moz-fit-content;
+        width: fit-content;
+        padding-right: 1.5rem;
+        padding-left: 0.5rem;
+    }
+
 }
 
 .landing-resources__text p {
@@ -1168,6 +1180,13 @@ h4.heading-green {
     }
 }
 
+@media only screen and (max-width: 640px) {
+    .landing-resources-grid-y .card-offset {
+        margin-left: 0.5rem;
+    }
+}
+
+
 @media only screen and (min-width: 1300px) {
     .landing-resources-grid-y .card {
         width: 45%;
@@ -1470,10 +1489,6 @@ Added this trick to fix it */
     .small-offset-2 {
         margin-left: 0%; 
     }
-    .landing-welcome__img img {
-        padding-left: 0rem!important;
-        padding-right: 5rem;
-    }   
     .landing-maps__image div{
         width: 90%;
     }
