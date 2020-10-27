@@ -274,7 +274,7 @@ header a:focus{
         transform: translateY(-3px);
     }
     .landing-hero {
-        background-image: url(img/img-1-landing.jpg);
+        background-image: url("img/img-1-landing.jpg");
         height: auto;
         width: auto;
         background-position: center;
@@ -457,9 +457,28 @@ header a:focus{
     padding-bottom: 5rem;
 }
 
+
 .landing-welcome__img img {
     padding-left: 5rem;
 }
+
+
+/* smaller screens */
+@media only screen and (max-width: 640px) {
+
+    .landing-welcome {
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+
+    .landing-welcome__img img {
+        padding-top: 2rem;
+        padding-bottom: 2rem;
+        padding-left: 0rem;
+    }
+
+}
+
 
 .landing-feature {
     background-color: #a2a2a2;
