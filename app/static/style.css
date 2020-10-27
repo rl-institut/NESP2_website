@@ -230,7 +230,7 @@ header a:focus{
 }
 
 .landing-hero {
-    background-image: url("img/img-1-landing.png");
+    background-image: url("img/img-1-landing.jpg");
     height: auto;
     /* Center and scale the image nicely */
     background-position: center;
@@ -273,7 +273,7 @@ header a:focus{
         transform: translateY(-3px);
     }
     .landing-hero {
-        background-image: url(img/img-1-landing.png);
+        background-image: url(img/img-1-landing.jpg);
         height: auto;
         width: auto;
         background-position: center;
@@ -298,7 +298,7 @@ header a:focus{
         width: auto!important; 
         margin: 0 auto;
         padding-top: 4rem;
-        background-image: url(../static/img/Explore_map-min.png);
+        background-image: url(../static/img/img-17-explore-map-min.jpg);
         background-repeat: no-repeat;
         background-position: center top;
         background-size: cover;
@@ -339,7 +339,7 @@ header a:focus{
         width: auto;
         margin: 0 auto;
         padding-top: 4rem;
-        background-image: url(../static/img/Explore_map-min.png);
+        background-image: url(../static/img/img-17-explore-map-min.jpg);
         background-repeat: no-repeat;
         background-position: center top;
         background-size: cover;
@@ -460,7 +460,7 @@ header a:focus{
 }
 
 .landing-feature {
-    background-image: url("img/img-3-feature-developers.png");
+    background-image: url("img/img-3-feature-developers.jpg");
     animation: animation: features_transition 2s ease-in;
     -webkit-animation: features_transition 2s ease-in; /* Chrome, Safari, Opera */
     background-position: center center;
@@ -582,7 +582,7 @@ header a:focus{
     width: 62rem;
     margin: 0 auto;
     padding-top: 4rem;
-    background-image: url(../static/img/Explore_map-min.png);
+    background-image: url(../static/img/img-17-explore-map-min.jpg);
     background-repeat: no-repeat;
     background-position: center top;
     background-size: cover;
@@ -1013,19 +1013,19 @@ h4.heading-green {
 }
 
 .landing-resources-grid-y .card-img1 {
-    background-image: url(img/img-5-resource-cluster.png);
+    background-image: url(img/img-5-resource-cluster.jpg);
 }
 
 .landing-resources-grid-y .card-img2 {
-    background-image: url(img/img-8-resources-og-mapping.png);
+    background-image: url(img/img-8-resources-og-mapping.jpg);
 }
 
 .landing-resources-grid-y .card-img3 {
-    background-image: url(img/img-7-resources-survey.png);
+    background-image: url(img/img-7-resources-survey.jpg);
 }
 
 .landing-resources-grid-y .card-img4 {
-    background-image: url(img/img-6-resources-osm.png);
+    background-image: url(img/img-6-resources-osm.jpg);
 }
 
 .landing-resources-grid-y .card-img {
