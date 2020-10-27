@@ -559,6 +559,32 @@ header a:focus{
 }
 
 
+/* smaller and medium screens */
+@media only screen and (max-width: 1024px) {
+    .landing-feature {
+        padding-top: 8rem;
+        padding-bottom: 4rem;
+    }
+}
+
+/* smaller and medium screens */
+@media only screen and (max-width: 640px) {
+    .landing-feature {
+        padding-top: 10rem;
+        padding-bottom: 4rem;
+        display: flex;
+        align-items: center;
+    }
+
+    .landing-feature__text {
+        padding-bottom: 0rem;
+        height: 6rem;
+    }
+}
+
+
+
+
 .landing-progress {
     background-image: url("background/bg-4-progress-div.png");
     background-position: center center;
