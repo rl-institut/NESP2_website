@@ -1,7 +1,7 @@
-FROM python:slim 
+FROM python:3.7.6-buster
 MAINTAINER Pierre-Francois Duc <pierre-francois.duc@rl-institut.de>
 
-ARG branch=dev
+ARG branch=master
 ARG POSTGRES_url
 ARG POSTGRES_user
 ARG POSTGRES_pw
@@ -17,7 +17,7 @@ COPY app /app
 COPY index.py /
 
 #make python and pip working for numpy
-ADD repositories /etc/apk/repositories
+#ADD repositories /etc/apk/repositories
 RUN apt update
 RUN apt-get -y  install git  
 
@@ -26,6 +26,7 @@ ENV GUNICORN_CMD_ARGS=--bind=0.0.0.0:8000 --workers=2
 
 
 # this helps using the cache of docker
+RUN /usr/local/bin/python -m pip install --upgrade pip
 COPY app/requirements.txt /
 RUN pip install -r /requirements.txt
 RUN pip install gunicorn
@@ -35,7 +36,7 @@ RUN git clone --single-branch --branch $branch https://github.com/rl-institut/NE
 RUN mkdir -p /src
 
 
-RUN python /app/setup_maps.py -docker
+#RUN python /app/setup_maps.py -docker
 
 #WORKDIR /app
 
