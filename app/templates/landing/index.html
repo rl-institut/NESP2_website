@@ -3,14 +3,27 @@
 {% block header %}
 {% endblock header%}
 
+{% block title %}Nigeria SE4ALL{% endblock %}
+
 {% block content %}
 <div id="landing-content" class="grid-container full">
 
   <section id="landing-title" class="grid-x landing-hero landing-title">
     <div class="cell medium-11 medium-offset-1">
-      <h1>Delivering data-driven electrification insights</h1>
-      <h2>Nigeria SE4ALL offers the most accurate data and latest tools that empower better electrification planning in Nigeria</h2>
-      <a class="cta" href="#landing-welcome">Learn more</a>
+      <div class="grid-x">
+          <div class="cell large-6">
+            <h1>Delivering data-driven electrification insights</h1>
+            <h2>Nigeria SE4ALL offers the most accurate data and latest tools that empower better electrification planning in Nigeria</h2>
+            <a class="cta" href="#landing-welcome">Learn more</a>
+          </div>
+          <div class="cell large-5">
+            <div class="landing-video-container">
+              <iframe class="landing-video" src="https://www.youtube-nocookie.com/embed/{{ website_welcome_video_id }}?autoplay=1&mute=1&controls=0&loop=1" frameborder="0">
+              </iframe>
+            </div>
+          </div>
+      </div>
+
     </div>
   </section>
 
@@ -25,12 +38,12 @@
           <h2 class="brand--color">Welcome to Nigeria SE4ALL</h2>
         </div>
         <div class="cell large-6">
-          <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd
-            gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.</p>
-          <p>At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>
-        </div>
+          <p>We are glad to welcome you to the Nigeria Sustainable Energy for All (SE4ALL) website. The Federal Ministry for Power (FMP), and its partners, have commenced a nationwide effort under the umbrella of the SE4ALL initiative to gather data sufficiently accurate and recent for electrification and make it available here.</p>
+          <p>The electrification sector has undergone fundamental changes, both in terms of technologies (e.g. decentralized renewables), planning actors (e.g. public-private partnerships) and is today increasingly digital. Ground-truth data for electrification enables the sector to achieve our ambitious goals.</p>
+          <p>SE4ALL Nigeria provides data to all stakeholders and shares its experiences and tools. The data provided will be continuously enriched – please follow by searching for the hashtag <a href="https://twitter.com/search?q=%23nigeriase4all&src=typed_query" rel="noreferrer" target="_blank">#nigeriase4all</a> or on the social media platforms listed at the bottom of this page.</p>
+          </div>
         <div class="cell large-5 landing-welcome__img">
-          <img src="static/img/img-2-welcome.png">
+          <img src="static/img/img-2-welcome.jpg">
         </div>
       </div>
     </div>
@@ -168,28 +181,57 @@
   <section id="landing-resources-sec" class="grid-x landing-resources landing-resources-grid-y">
     <div class="cell large-4 large-offset-1 grid-x">
       <div class="cell landing-resources__text">
-        <h2>Understand our objectives</h2>
-        <p>Read through the idea and key questions we would like to solve with our data gathering activities</p>
-        <a class="cta" href="{{ url_for('objectives.index') }}">Explore Objectives</a>
-      </div>
-      <div class="cell landing-resources__text">
         <h2>Use our tools</h2>
         <p>Explore our <span>suite of open source tools</span> for data mining and analysis for electrification and planning</p>
         <a class="cta" style="display:none" href="{{ url_for('resources.index') }}">Explore tools</a>
       </div>
+       <div class="cell landing-resources__text">
+        <h2>Understand our objectives</h2>
+        <p>Read through the idea and key questions we would like to solve with our data gathering activities</p>
+        <a class="cta" href="{{ url_for('objectives.index') }}">Explore Objectives</a>
+      </div>
+
     </div>
     {% import "resources/card.html" as resource_card %}
     <div class="cell large-5 large-offset-1 landing-resources__cards">
       <div class="grid-x">
-        {{ resource_card.input("1: Cluster Identification", "1", "How can I identify locations of settlements?", "clusteridentification", card_offset=False) }}
-        {{ resource_card.input("2: On Grid Mapping", "2", "How can I track the grid?", "ongridmapping", card_offset=True) }}
+        {{ resource_card.input("1: Cluster identification", "1", "How can I identify locations of settlements?", "clusteridentification", card_offset=False) }}
+        {{ resource_card.input("2: On grid mapping", "2", "How can I track the grid?", "ongridmapping", card_offset=True) }}
         {{ resource_card.input("3: Mapping with OSM", "4", "How can I map a settlement in detail remotely?", "osm", card_offset=False) }}
-        {{ resource_card.input("4: Survey Tools", "3", "How can I visit a settlement and collect relevant data?", "surveytools", card_offset=True) }}
+        {{ resource_card.input("4: Survey tools", "3", "How can I visit a settlement and collect relevant data?", "surveytools", card_offset=True) }}
 
       </div>
     </div>
   </section>
 
+  <section id="landing-minigridmonitor-sec" class="grid-x landing-minigridmonitor align-center text-center">
+    <div class="cell landing-minigridmonitor__header">
+      <h2>Minigrid Monitoring Dashboard</h2>
+      <h3>View the latest data on select operational mini-grids in Nigeria <br> with this new digital monitoring tool.</h3>
+    </div>
+    <div class="cell landing-minigridmonitor__image">
+      <a href="https://minigridmonitor-stage.azurewebsites.net" rel="noreferrer" target="_blank">
+        <div class="landing-minigridmonitor__image-div">
+          <button class="cta">Explore Dashboard</button>
+        </div>
+      </a>
+    </div>
+  </section>
+
 </div>
 <script src="{{ url_for('static', filename='js/features.js') }}"></script>
+<script type=text/javascript>
+  $(document).ready(function(){
+        //display a warning for not supported browser (the list is in __init__.py in the variable
+        // UNSUPPORTED_USER_AGENT_STRINGS)
+        {% if not_supported == True %}
+            var not_supported = true;
+        {% else %}
+            var not_supported=false;
+        {% endif %}
+        if (not_supported == true){
+            $('#warning-browser-not-supported').foundation('toggle');
+        }
+  });
+</script>
 {% endblock content%}

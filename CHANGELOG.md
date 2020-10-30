@@ -18,10 +18,20 @@ Here is a template for new release sections
 ```
 ## [Unreleased]
 ### Added
+- Popup to warn against unsupported browsers (#183)
+- Video popup for `/map` endpoints (#186, #187)
+- Video embedded in iframe in the `/about-map` endpoint (#188)
+- Update license and attribution for data (#199)
 
 ### Changed
+- The introductory webmap youtube video's id is provided to the jinja templates from the
+ `app/blueprints/maps.py` module (#187)
+- Change map url endpoint from `/maps` to `/map` (#185)
+- Manage header bar only with foundation (#194)
+- Replace images in .png format with the same images in .jpg format, also in lower resolution (#198)
 
 ### Removed
+- Css class header-right (#194)
 
 ## [0.2.0] - 2020-03-21
 
@@ -45,6 +55,7 @@ Pre-release version of the NESP website
 - automatic interval change of feature when section is in viewport (#157)
 - link to web development credit page (#157)
 - developed-by page (#162)
+- licenses (#167)
 
 ### Changed
 - allow use of variable via URL (#76)

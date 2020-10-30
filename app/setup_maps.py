@@ -29,16 +29,28 @@ if args.docker is False:
     # clone the NESP2 repository locally
     branch = args.branch
     print("\nPull branch: {} of NESP2 repository\n".format(branch))
+    git_clone = False
     if os.path.exists('NESP2') is False:
+        git_clone = True
+    else:
+        if len(os.listdir('NESP2')) == 0:
+            git_clone = True
+        else:
+            print("\n\n*** warning ***\n")
+            print("There is already a non-empty NESP2 folder in your path, please delete it")
+            print("\n***************\n\n")
+
+if git_clone is True:
         os.system(
             "git clone --single-branch --branch {} https://github.com/rl-institut/NESP2.git".format(
                 branch
             )
         )
-    else:
-        print("\n\n*** warning ***\n")
-        print("There is already a NESP2 folder in your path, please delete it")
-        print("\n***************\n\n")
+        # save the commit number in a separate file
+        os.system(
+            "git ls-remote https://github.com/rl-institut/NESP2.git | grep refs/heads/{} | cut -f "
+            "1 > maps_latest_commit.info".format(branch)
+        )
 
 # copy templates
 template_path = os.path.join('NESP2', 'app', 'templates')
@@ -49,7 +61,7 @@ if os.path.exists(new_template_path) is False:
     os.mkdir(new_template_path)
 
 for fname in os.listdir(template_path):
-    if fname not in ('base.html'):
+    if fname not in ('base.html', 'popups.html'):
         copyfile(os.path.join(template_path, fname), os.path.join(new_template_path, fname))
     if fname == 'base.html':
         copyfile(os.path.join(template_path, fname), os.path.join(new_template_path, 'maps_{}'.format(fname)))

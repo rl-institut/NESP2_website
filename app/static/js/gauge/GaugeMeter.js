@@ -83,7 +83,7 @@
                 }
                 var child = t.children("span");
                 if(child.length !== 0){
-                    child.html(r).css({color: fgcolor});
+                    child.html(formatNumber(r)).css({color: fgcolor});
                     return;
                 }
                 if(option.text_size <= 0.0 || Number.isNaN(option.text_size)){

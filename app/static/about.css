@@ -12,12 +12,63 @@ p {
 }
 
 #about-map-content a {
-    color: #5dcb42;
+    color: #1DD069;
 }
 
-#about-map-content a:hover {
-    color: #347224;
-}
 .org {
-    padding-bottom: 1rem;
+    padding-bottom: 2rem;
+}
+
+.org-logo {
+    display: flex;
+    justify-content: center;
+    align-item: center;
+    height: 130px;
+}
+
+.org img{
+    width: 150px;
+}
+
+.citation-entry {
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.license-entry {
+    margin-top: 1rem;
+}
+.attribution-entry {
+    margin-bottom: 1rem;
+}
+
+.citation-entry span {
+    font-weight: 700;
+}
+.citation-entry img {
+    vertical-align: middle;
+    width: 21px;
+}
+
+.license-div {
+    margin-bottom: 2rem;
+}
+
+ .iframe-container {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  padding-top: 56.25%; /* 16:9 Aspect Ratio (divide 9 by 16 = 0.5625) */
+  margin-bottom: 2rem;
+}
+
+/* Then style the iframe to fit in the container div with full height and width */
+.responsive-iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
 }

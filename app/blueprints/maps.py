@@ -15,15 +15,33 @@ if os.environ.get("POSTGRES_URL", None) is not None:
     STATE_CODES_DICT = get_state_codes()
     CODES_STATE_DICT = {v: k for k, v in STATE_CODES_DICT.items()}
 
+UNSUPPORTED_USER_AGENT_STRINGS = (
+    "Edge",
+    "MSIE",  # Internet Explorer
+    "Trident"  # Internet Explorer (newer versions)
+)
+
+# youtube id of the introductory video about the webmap
+VIDEO_ID = "4wSaoO36k24"
+
 bp = Blueprint('maps', __name__)
 
 
-@bp.route('/maps/')
-@bp.route('/maps')
+
+@bp.route('/map/')
+@bp.route('/map')
 def index():
+    user_agent = request.headers.get('User-Agent')
+    not_supported = False
+    for ua in UNSUPPORTED_USER_AGENT_STRINGS:
+        if ua in user_agent:
+            not_supported = True
+
     defaultArgs = {
         "states_content": 1,
-        "grid_content": 1
+        "grid_content": 1,
+        "not_supported": not_supported,
+        "video_id": VIDEO_ID
     }
     if request.args == {}:
         request.args = defaultArgs
@@ -39,18 +57,17 @@ def download_csv():
     args = request.args
     state = args.get("state")
     cluster_type = args.get("cluster_type")
-    fname = args.get("state")
+    fname = state.replace(" ", "_")
 
     if os.environ.get("POSTGRES_URL", None) is not None:
         if "og" in cluster_type:
             fname = fname + "_remotely_mapped_settlements"
             keys = (
-                'adm1_pcode',
-                'cluster_offgrid_id',
                 'area_km2',
                 'building_count',
                 'percentage_building_area',
-                'grid_dist_km'
+                'grid_dist_km',
+                'ST_AsGeoJSON(centroid) as lnglat'
             )
             records = query_filtered_og_clusters(
                 state,
@@ -64,11 +81,9 @@ def download_csv():
         else:
             fname = fname + "_identified_settlements_by_satellite"
             keys = (
-                'adm1_pcode',
-                'cluster_all_id',
-                'fid',
                 'area_km2',
-                'grid_dist_km'
+                'grid_dist_km',
+                'ST_AsGeoJSON(centroid) as lnglat'
             )
             records = query_filtered_clusters(
                 state,
@@ -78,10 +93,23 @@ def download_csv():
                 keys=keys
             )
 
+        columns = list(keys)
+        columns[-1] = "lnglat"
+        column_names = list(keys)
+        column_names[-1] = "longitude on WGS 84"
+        column_names.append("latitude on WGS 84")
         csv = list()
-        csv.append(", ".join(keys))
+        csv.append(", ".join(column_names))
         for line in records:
-            csv.append(", ".join([str(line[k]) for k in keys]))
+            csv_line = list()
+            for k in columns:
+                if k == "lnglat":
+                    lnglat = json.loads(line[k])["coordinates"]
+                    csv_line.append(str(lnglat[0]))
+                    csv_line.append(str(lnglat[1]))
+                else:
+                    csv_line.append(str(line[k]))
+            csv.append(", ".join(csv_line))
         csv = "\n".join(csv) + "\n"
     else:
         csv = "1,2,3\n4,5,6\n"

@@ -23,16 +23,16 @@
      guidetolerance="10"
      inkscape:pageopacity="0"
      inkscape:pageshadow="2"
-     inkscape:window-width="1853"
-     inkscape:window-height="1025"
+     inkscape:window-width="756"
+     inkscape:window-height="417"
      id="namedview13"
      showgrid="false"
      inkscape:zoom="10.727273"
-     inkscape:cx="11"
+     inkscape:cx="-5.2669488"
      inkscape:cy="11"
-     inkscape:window-x="67"
-     inkscape:window-y="27"
-     inkscape:window-maximized="1"
+     inkscape:window-x="487"
+     inkscape:window-y="131"
+     inkscape:window-maximized="0"
      inkscape:current-layer="svg1631" />
   <defs
      id="defs1625">
@@ -76,20 +76,20 @@
   <g
      transform="translate(-77.946807,-204.74695)"
      id="layer1"
-     style="stroke:#03ff76;stroke-opacity:0.71325302">
+     style="stroke:#1dd069;stroke-opacity:0.43921569;opacity:0.99999999">
     <path
        id="path551"
        d="m 80.063475,206.86445 c 0.13218,-0.36483 0.51611,-0.5839 0.90871,-0.51852 0.3926,0.0654 0.67938,0.39615 0.67879,0.78289 0,0.52875 -0.81689,0.79312 -0.81689,0.79312"
-       style="fill:none;fill-opacity:0.66334993;stroke:#03ff76;stroke-width:0.52916664;stroke-linecap:round;stroke-linejoin:round;stroke-opacity:0.71325302" />
+       style="fill:none;fill-opacity:0.66334993;stroke:#1dd069;stroke-width:0.52916664;stroke-linecap:round;stroke-linejoin:round;stroke-opacity:0.43921569" />
     <circle
        r="2.6458333"
        cy="207.65736"
        cx="80.857224"
        id="circle553"
-       style="fill:none;fill-opacity:0.66334993;stroke:#03ff76;stroke-width:0.52916664;stroke-linecap:round;stroke-linejoin:round;stroke-opacity:0.71325302" />
+       style="fill:none;fill-opacity:0.66334993;stroke:#1dd069;stroke-width:0.52916664;stroke-linecap:round;stroke-linejoin:round;stroke-opacity:0.43921569" />
     <path
        id="path555"
        d="m 80.989515,209.11257 v 0"
-       style="fill:none;fill-opacity:0.66334993;stroke:#03ff76;stroke-width:0.52916664;stroke-linecap:round;stroke-linejoin:round;stroke-opacity:0.71325302" />
+       style="fill:none;fill-opacity:0.66334993;stroke:#1dd069;stroke-width:0.52916664;stroke-linecap:round;stroke-linejoin:round;stroke-opacity:0.43921569" />
   </g>
 </svg>

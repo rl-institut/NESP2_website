@@ -2,19 +2,22 @@
 
 {% block head %}
 <link rel="stylesheet" href="{{ url_for('static', filename='about.css') }}">
-<link rel="stylesheet" href="{{ url_for('static', filename='responsive-tables.css') }}">
 {% endblock head%}
 
 {% block content %}
 <div id="about-map-content" class="grid-container full">
-    <section id="about-intro" class="grid-x align-center light-grey">
+    <section id="about-map-intro" class="grid-x align-center light-grey">
+    <!-- part which is only present for /about-map -->
     {% if about_map == True %}
-    <h3 class="cell medium-8">ABOUT THIS MAP</h3>
+    <h2 class="cell medium-10">About this map</h2>
     <div class="cell medium-8 l-width-60">
       <div class="grid-x">
+        <div class="cell iframe-container">
+        <iframe id="nigeria-se4all-video" class="nigeria-se4all-video responsive-iframe" src="https://www.youtube-nocookie.com/embed/{{ video_id }}?autoplay=1" }} frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
         <div class="cell">
             <p>
-            <a target="_blank" href="https://www.giz.de/en/worldwide/26374.html">Nigerian Energy Support Programme (NESP)</a> is co-funded by the European Union and the German Government and is jointly implemented by Deutsche Gesellschaft für internationale Zusammenarbeit (GIZ) GmbH and the Federal Ministry of Power. It aims to foster private investments in the Nigerian Renewable Energy and Energy Efficiency Sector and to improve access to electricity for disadvantaged, rural communities.
+                The SE4ALL webmap allows users to analyze highly accurate electrification data. The platform was created through the <a target="_blank" href="https://www.giz.de/en/worldwide/26374.html">Nigerian Energy Support Programme (NESP)</a>, a technical assistance programme co-funded by the European Union and the German Federal Ministry for Economic Cooperation and Development (BMZ) and implemented by Deutsche Gesellschaft für Internationale Zusammenarbeit (GIZ) GmbH in collaboration with the Federal Ministry of Power (FMP). The programme aims to foster investments in the Nigerian Renewable Energy and Energy Efficiency Sector and to improve access to electricity for disadvantaged, rural communities.
             The programme implements a multi-level approach by combining advisory on energy policy, economy and technical knowledge for a wide range of stakeholders. It is divided into three components:
                 <ul>
                       <li>Electrification Planning and Data Management</li>
@@ -26,65 +29,152 @@
       </div>
     </div>
 
-    <h3 class="cell medium-8">DISCLAIMERS</h3>
+    <h2 class="cell medium-10">Disclaimers</h2>
     <div class="cell medium-8 l-width-60">
       <div class="grid-x">
         <div class="cell">
             <p>
-                <i>
-            This tool was created and is maintained with the financial support of the European Union, and has been implemented by the Deutsche Gesellschaft für internationale Zusammenarbeit (GIZ). However, its contents do not reflect the views of the European Union or the GIZ.
-            GIZ, including its commissioning and implementing parties, shall NOT be responsible for the accuracy of the information included in this website. Any use of such aforementioned information shall be at the risk and cost of the user. It is strongly recommended that users validate the information obtained from the visualization tool with field assessments.
-            The geographical maps are for informational purposes only and do not constitute recognition of international boundaries or regions; European Union, and/or GIZ make no claims concerning the validity, accuracy or completeness of the maps nor assume any liability resulting from the use of the information therein.
-                </i>
+            This tool was created and is maintained with the financial support of the European Union and the German Federal Ministry for Economic Cooperation and Development (BMZ), and has been implemented by the Deutsche Gesellschaft für Internationale Zusammenarbeit (GIZ). However, its contents do not reflect the views of the European Union, the German Government or the GIZ. GIZ, including its commissioning and implementing parties, shall NOT be responsible for the accuracy of the information included in this website. Any use of such aforementioned information shall be at the risk and cost of the user. The geographical maps are for informational purposes only and do not constitute recognition of international boundaries or regions; European Union, the German Government and/or GIZ make no claims concerning the validity, accuracy or completeness of the maps nor assume any liability resulting from the use of the information therein.
             </p>
         </div>
       </div>
     </div>
-    {% endif %}
-    <h3 class="cell medium-8">AUTHORS</h3>
+
+    {% import "about/citation.html" as citation %}
+    <h2 class="cell medium-10">Data licences</h2>
     <div class="cell medium-8 l-width-60">
       <div class="grid-x">
         <div class="cell">
-            <div class="org">
-                <div>INTEGRATION Environment & Energy GmbH</div>
-                <div>Contact: <a href="mailto:ohaas@integration.org"> Mr Oliver Haas</a></div>
-                <div><a target="_blank" href="http://www.integration.org">www.integration.org</a></div>
+            <p>
+                The data within the map is available to download under the following licensing terms:
+            </p>
+            <h3>Medium voltage grid</h3>
+            <div class="license-div">
+                <p>
+                    The medium voltage grid is made up of 3 data sources.
+                </p>
+                <p>
+                    Data for <i>Katsina</i>, <i>Kano</i> and <i>Jigawa</i> is available from energydata.info. The license the dataset is published under and attribution is given below.
+                </p>
+                    {{ citation.license('a <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank">Creative Commons Attribution 4.0 International License</a>') }}
+                    {{ citation.attribution('© Columbia University Earth Institute. Accessed from <a href="https://energydata.info/dataset/kano-electricity-distribution-plc-kedco-mv-lines-2016" target="_blank">energydata.info</a>') }}
+                <p>
+                    Data for <i>Sokoto</i>, <i>Kebbi</i>, <i>Zamfara</i> and <i>Kaduna</i> was gathered from Kaduna electric DISCO.
+                </p>
+                    {{ citation.license("a Creative Commons Attribution 4.0 International License") }}
+                    {{ citation.attribution("Kaduna Electricity Distribution Plc (Kaduna Electric), © Columbia University Earth Institute. Modified by fixing errors in North East Sokoto by © Deutsche Gesellschaft für Internationale Zusammenarbeit (GIZ) GmbH and the Federal Ministry of Power (FMP).") }}
+                <p>
+                    All other grid data was collected in the field by the Nigeria SE4ALL project.
+                </p>
+                    {{ citation.license('an <a href="https://opendatacommons.org/licenses/odbl/1-0/index.html" target="_blank">Open Database License (ODbL) v1.0 License</a>') }}
+                    {{ citation.attribution("© Deutsche Gesellschaft für Internationale Zusammenarbeit (GIZ) GmbH and the Federal Ministry of Power (FMP)") }}
+                <p>
+                    For more information on how the SE4ALL grid dataset has been generated, read the “on grid mapping” tools section by following the link below:
+                </p>
+
+                <a style="color: #fff" class="cta" href="{{ url_for('resources.selection', resc_name='ongridmapping') }}" target="_blank">Tools for on grid mapping</a>
             </div>
-            <div class="org">
-                <div>Reiner Lemoine Institut gGmbH</div>
-                <div>Contact: <a href="mailto:philipp.blechinger@rl-institut.de">Dr Philipp Blechinger</a></div>
-                <div><a target="_blank" href="http://www.reiner-lemoine-institut.de">www.reiner-lemoine-institut.de</a></div>
-           </div>
+            <h3>Identified settlements by satellite imagery</h3>
+            <div class="license-div">
+                <p>
+                    Identified settlements by satellite imagery are generated from a High Resolution Settlement Layer and processed by Nigeria SE4ALL.
+                </p>
+                    {{ citation.license('an <a href="https://opendatacommons.org/licenses/odbl/1-0/index.html" target="_blank">Open Database License (ODbL) v1.0 License</a>') }}
+                    {{ citation.attribution("Facebook Connectivity Lab and Center for International Earth Science Information Network - CIESIN - Columbia University. 2016. High Resolution Settlement Layer (HRSL). Source imagery for HRSL © 2016 DigitalGlobe. Accessed DAY MONTH YEAR. Modified by © Deutsche Gesellschaft für Internationale Zusammenarbeit (GIZ) GmbH and the Federal Ministry of Power (FMP).") }}
+                <p>
+                    For more information on how settlements are identified automatically with satellite imagery, read the “cluster identification” tools section by following the link below:
+                </p>
+
+                <a style="color: #fff" class="cta" href="{{ url_for('resources.selection', resc_name='clusteridentification') }}" target="_blank">Tools for cluster identification</a>
+
+            </div>
+            <h3>Remotely mapped settlements</h3>
+                <div class="license-div">
+                <p>
+                    Identified settlements by satellite imagery are generated from OpenStreetMap data and processed by Nigeria SE4ALL.
+                </p>
+                    {{ citation.license('an <a href="https://opendatacommons.org/licenses/odbl/1-0/index.html" target="_blank">Open Database License (ODbL) v1.0 License</a>') }}
+                    {{ citation.attribution("OpenStreetMap contributors (https://www.openstreetmap.org/copyright), © Deutsche Gesellschaft für Internationale Zusammenarbeit (GIZ) GmbH and the Federal Ministry of Power (FMP)") }}
+                <p>
+                    For more information on how settlements are remotely mapped and these clusters have been generated, read the “mapping with OSM” tools section by following the link below:
+                </p>
+
+                <a style="color: #fff" class="cta" href="{{ url_for('resources.selection', resc_name='osm') }}" target="_blank">Tools for mapping with OSM</a>
+            </div>
+
         </div>
       </div>
     </div>
-    <h3 class="cell medium-8">DESIGN</h3>
+
+    {% endif %}
+    <!-- part which is present for both /about-map and /accreditation -->
+    <div class="cell show-for-small-only" style="height:60px;"></div>
+    <h2 class="cell medium-10">Accreditation</h2>
+
+    <div class="cell medium-10 l-width-60">
+      <div class="grid-x">
+        <h3 class="cell medium-10">Authors and web development</h3>
+        <div class="cell">
+            <div class="org grid-x">
+                <div class="cell medium-12 large-7">
+                    <div>INTEGRATION environment & energy GmbH</div>
+                    <div>Contact: <a href="mailto:ohaas@integration.org"> Mr Oliver Haas</a></div>
+                    <div><a target="_blank" href="http://www.integration.org">www.integration.org</a></div>
+                </div>
+                <div class="cell medium-12 large-5 org-logo">
+                    <a target="_blank" href="http://www.integration.org">
+                        <img src="{{ url_for('static', filename='logos/logo-9-integration.svg') }}">
+                    </a>
+                </div>
+            </div>
+            <div class="org grid-x">
+                <div class="cell medium-12 large-7">
+                    <div>Reiner Lemoine Institut gGmbH</div>
+                    <div>Contact: <a href="mailto:philipp.blechinger@rl-institut.de">Dr Philipp Blechinger</a></div>
+                    <div><a target="_blank" href="http://www.reiner-lemoine-institut.de">www.reiner-lemoine-institut.de</a></div>
+                </div>
+                <div class="cell medium-12 large-5 org-logo">
+                    <a target="_blank" href="http://www.reiner-lemoine-institut.de">
+                        <img src="{{ url_for('static', filename='logos/logo-10-rli.png') }}">
+                    </a>
+                </div>
+            </div>
+        </div>
+      </div>
+    </div>
+
     <div class="cell medium-8 l-width-60">
       <div class="grid-x">
+        <h3 class="cell">Design</h3>
         <div class="cell">
             <div class="org">
                 <div>Alsino Skowronnek</div>
-                <div><a href="www.alsino.io" target="_blank">www.alsino.io</a></div>
+                <div><a href="http://www.alsino.io" target="_blank">www.alsino.io</a></div>
            </div>
         </div>
       </div>
     </div>
-    <h3 class="cell medium-8">WEB DEVELOPMENT</h3>
+    <!-- part which is only present for /accreditation -->
+    {% if about_map == False %}
     <div class="cell medium-8 l-width-60">
       <div class="grid-x">
+        <h3 class="cell">Images</h3>
         <div class="cell">
-            <div class="org">
-                <div>Reiner Lemoine Institut gGmbH</div>
-                <div><a target="_blank" href="http://www.reiner-lemoine-institut.de">www.reiner-lemoine-institut.de</a></div>
-           </div>
+            <p>Features for Government: Johnny Greig Int / Alamy Stock Photo</p>
+            <p>Features for General public: Red Confidential / <a href="http://www.shutterstock.com" rel="noreferrer" target="_blank">Shutterstock.com</a></p>
+            <p>About, Federal Ministry of Power (FMP), our mandate: Agbebiyi Adekunle Sunday / <a href="http://www.shutterstock.com" rel="noreferrer" target="_blank">Shutterstock.com</a></p>
         </div>
       </div>
     </div>
+    {% endif %}
+
   </section>
 
+
+
 </div>
+
 {% endblock content%}
 
-{% block footer %}
-<script src="{{ url_for('static', filename='js/responsive-tables.js') }}"></script>
-{% endblock footer %}
+
+

@@ -78,6 +78,14 @@ def create_app(test_config=None):
             )
             print("\n***************\n\n")
 
+        user_agent = request.headers.get('User-Agent')
+        not_supported = False
+        for ua in maps.UNSUPPORTED_USER_AGENT_STRINGS:
+            if ua in user_agent:
+                not_supported = True
+        kwargs['not_supported'] = not_supported
+        kwargs['website_welcome_video_id'] = "dk_V48FTXHM"
+        print(kwargs)
         return render_template('landing/index.html', **kwargs)
 
     @app.route('/termsofservice')
@@ -90,10 +98,10 @@ def create_app(test_config=None):
 
     @app.route('/about-map')
     def about_map():
-        return render_template('credits.html', about_map=True)
+        return render_template('credits.html', about_map=True, video_id=maps.VIDEO_ID)
 
-    @app.route('/developed-by')
-    def developed_by():
+    @app.route('/accreditation')
+    def accreditation():
         return render_template('credits.html', about_map=False)
 
     @app.teardown_appcontext
