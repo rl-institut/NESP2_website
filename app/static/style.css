@@ -563,8 +563,6 @@ header a:focus{
 }
 
 
-
-
 .landing-progress {
     background-image: url("background/bg-4-progress-div.png");
     background-position: center center;
@@ -701,6 +699,8 @@ header a:focus{
     padding-right: .75rem;
 }
 
+
+
 #objectives-sec .landing-resources__text h1 {
     padding-top: 3rem;
     font-size: 32pt;
@@ -717,6 +717,11 @@ header a:focus{
 
     .landing-resources__text{
         padding-bottom: 3.5rem;
+    }
+
+    .landing-resource__img{
+        margin-top: 1rem;
+        margin-bottom: 1rem;
     }
 
     .cell.large-5.large-offset-1.landing-resources__cards.cell{
