@@ -1053,6 +1053,19 @@ h4.heading-green {
     padding-bottom: 6rem;
     padding-top: 3rem;
 }
+@media only screen and (max-width: 1040px) {
+    #about-map-content h2 {
+        padding-bottom: 4rem;
+        padding-top: 2rem;
+    }
+}
+@media only screen and (max-width: 640px) {
+    #about-map-content h2 {
+        padding-bottom: 2rem;
+        padding-top: 1rem;
+    }
+}
+
 
 #about-map-content h3 {
     font-size: 20pt;

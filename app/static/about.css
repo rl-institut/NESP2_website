@@ -30,6 +30,13 @@ p {
     width: 150px;
 }
 
+@media only screen and (max-width: 1040px) {
+    .org img{
+        margin-top: 1rem;
+    }
+}
+
+
 .citation-entry {
     margin-top: 0.5rem;
     margin-bottom: 0.5rem;
