@@ -371,12 +371,7 @@ header a:focus{
     .about-stakeholder__img {
         padding-bottom: 3rem;
     }
-    .about-intro__cards .about-card:nth-child(odd) {
-        padding-right: 0rem!important;
-    }
-    .about-intro__cards .about-card:nth-child(even) {
-        padding-left: 0rem!important;
-    }
+
 } 
 
 /* medium and larger screens */
@@ -399,7 +394,7 @@ header a:focus{
 }
 
 /* larger screens */
-@media only screen and (min-width: 1000px) {
+@media only screen and (min-width: 1024px) {
     .landing-hero {
         height: auto;
         max-height:50rem;
@@ -449,6 +444,13 @@ header a:focus{
     .landing-welcome__img img {
         padding-top: 2rem;
         padding-bottom: 2rem;
+        padding-left: 0rem!important;
+    }
+
+    .about-intro__cards .about-card:nth-child(odd) {
+        padding-right: 0rem!important;
+    }
+    .about-intro__cards .about-card:nth-child(even) {
         padding-left: 0rem!important;
     }
 
@@ -1053,13 +1055,23 @@ h4.heading-green {
     padding-bottom: 6rem;
     padding-top: 3rem;
 }
-@media only screen and (max-width: 1040px) {
+@media only screen and (max-width: 1024px) {
+    #about-content h2 {
+        padding-bottom: 4rem;
+        padding-top: 2rem;
+    }
+
     #about-map-content h2 {
         padding-bottom: 4rem;
         padding-top: 2rem;
     }
 }
 @media only screen and (max-width: 640px) {
+    #about-content h2 {
+        padding-bottom: 2rem;
+        padding-top: 1rem;
+    }
+
     #about-map-content h2 {
         padding-bottom: 2rem;
         padding-top: 1rem;
@@ -1227,13 +1239,13 @@ h4.heading-green {
     margin-left: 5%
 }
 
-@media only screen and (max-width: 1040px) {
+@media only screen and (max-width: 1024px) {
     .landing-resources-grid-y .card-text p {
         font-size: 15pt;
     }
 }
 
-@media only screen and (min-width: 1040px) {
+@media only screen and (min-width: 1024px) {
     .landing-resources-grid-y .card-text p {
         font-size: 16pt;
     }
