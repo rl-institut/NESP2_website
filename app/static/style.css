@@ -304,6 +304,7 @@ header a:focus{
         border-radius: 4px;
     }
 
+
     .landing-minigridmonitor__header h3 {
         padding-bottom: 1rem;
     }
@@ -571,6 +572,9 @@ header a:focus{
     background-size: cover;
     padding-top: 3rem;
     padding-bottom: 5rem;
+    display: flex;
+    justify-content: space-evenly;
+
 }
 
 .landing-maps {
