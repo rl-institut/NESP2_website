@@ -1056,6 +1056,12 @@ h4.heading-green {
     padding-top: 3rem;
 }
 @media only screen and (max-width: 1024px) {
+
+    #about-content section {
+        padding-top: 2rem;
+        padding-bottom: 6rem;
+    }
+
     #about-content h2 {
         padding-bottom: 4rem;
         padding-top: 2rem;
@@ -1067,6 +1073,12 @@ h4.heading-green {
     }
 }
 @media only screen and (max-width: 640px) {
+
+    #about-content section {
+        padding-top: 2rem;
+        padding-bottom: 4rem;
+    }
+
     #about-content h2 {
         padding-bottom: 2rem;
         padding-top: 1rem;
