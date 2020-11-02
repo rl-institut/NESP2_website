@@ -324,10 +324,6 @@ header a:focus{
     .landing-minigridmonitor__header h3 {
         padding-bottom: 1rem!important;
     }
-    .footer-stay-in-touch__img a{
-        padding-left: 4rem!important;
-        float: left!important;
-    }
     .cell.landing-resources__text h2{
         font-size: 18pt;
     }
@@ -808,6 +804,31 @@ header a:focus{
     padding-left: 5rem;
 }
 
+
+@media only screen and (max-width: 1024px) {
+    .footer-stay-in-touch__img{
+        margin-top: 2rem;
+        display:flex;
+        justify-content: space-evenly;
+    }
+    .footer-stay-in-touch__img a{
+        padding-left: 0rem;
+        float: left;
+        width: 4rem;
+    }
+    .footer-stay-in-touch__img img {
+        width: 4rem;
+        min-width: 4rem;
+    }
+}
+
+@media only screen and (max-width: 400px) {
+    .footer-stay-in-touch__img{
+
+        justify-content: space-between;
+    }
+}
+
 #footer-contact-div{
     padding-top: 7rem;
     padding-bottom: 7rem;
@@ -896,6 +917,7 @@ header a:focus{
     display: flex;
     align-items: center;
 }
+
 
 @media only screen and (min-width: 640px) {
     .footer-logos__img--giz {
