@@ -28,6 +28,7 @@ ENV GUNICORN_CMD_ARGS=--bind=0.0.0.0:8000 --workers=2
 # this helps using the cache of docker
 RUN /usr/local/bin/python -m pip install --upgrade pip
 COPY app/requirements.txt /
+COPY app/setup_maps.py /
 RUN pip install -r /requirements.txt
 RUN pip install gunicorn
 RUN git clone --single-branch --branch $branch https://github.com/rl-institut/NESP2.git
@@ -36,16 +37,4 @@ RUN git clone --single-branch --branch $branch https://github.com/rl-institut/NE
 RUN mkdir -p /src
 
 
-#RUN python /app/setup_maps.py -docker
-
-#WORKDIR /app
-
-#EXPOSE 5000 
-
-RUN python /docker_postgres_login_help.py
-
-
-# Start gunicorn
-#RUN gunicorn index:app -b 127.0.0.1:8000 -D
-
-#CMD ["gunicorn", "index:app"]
+RUN python /setup_maps.py  
