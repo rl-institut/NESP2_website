@@ -328,12 +328,6 @@ header a:focus{
         padding-left: 4rem!important;
         float: left!important;
     }
-    .cell.medium-offset-1.medium-9.center--align{
-        display: flex;
-        justify-content: end;
-        align-items: center;
-        margin-top: 2rem;
-    }
     .cell.landing-resources__text h2{
         font-size: 18pt;
     }
@@ -966,6 +960,8 @@ header a:focus{
 
 #footer-license-div div{
     color: #ffffff;
+    display:flex;
+    align-items: baseline;
 }
 
 #footer-license-div img{
@@ -974,7 +970,30 @@ header a:focus{
 
 .footer-license__img {
     text-align: right;
+    display: inline!important;
 }
+
+/* smaller and medium screens */
+@media only screen and (max-width: 640px){
+    #footer-license-div div{
+        justify-content: center;
+    }
+
+    .footer-license-item{
+        margin-top: 2rem;
+        text-align: center;
+    }
+
+    #footer-license-div{
+        padding-top: 0rem;
+    }
+
+    .footer-license__img{
+        text-align: center;
+    }
+}
+
+
 
 /* overwrite existing css rule (wam_fotter.scss?) */
 footer:not(.footer-hp) {
