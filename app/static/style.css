@@ -230,6 +230,7 @@ header a:focus{
 }
 
 .landing-hero {
+    background-color: #3b5446;
     background-image: url("img/img-1-landing.jpg");
     height: auto;
     /* Center and scale the image nicely */
@@ -298,6 +299,7 @@ header a:focus{
         width: auto!important; 
         margin: 0 auto;
         padding-top: 4rem;
+        background-color: #8ee7b4;
         background-image: url(../static/img/img-17-explore-map-min.jpg);
         background-repeat: no-repeat;
         background-position: center top;
@@ -460,6 +462,7 @@ header a:focus{
 }
 
 .landing-feature {
+    background-color: #a2a2a2;
     background-image: url("img/img-3-feature-developers.jpg");
     animation: animation: features_transition 2s ease-in;
     -webkit-animation: features_transition 2s ease-in; /* Chrome, Safari, Opera */
@@ -621,6 +624,7 @@ header a:focus{
     width: 62rem;
     margin: 0 auto;
     padding-top: 4rem;
+    background-color: #085064;
     background-image: url(../static/img/img-16-minigridmonitor.png);
     background-repeat: no-repeat;
     background-position: center top;
@@ -708,6 +712,7 @@ header a:focus{
 
 /* Footer */
 #footer-stay-in-touch-div{
+    background-color: #8ee7b4;
     background-image: url("background/bg-5-stay-in-touch-div.png");
     color: #ffffff;
     padding-top: 3.5rem;
