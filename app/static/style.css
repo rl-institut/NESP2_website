@@ -979,6 +979,7 @@ footer:not(.footer-hp) {
     font-weight: bold;
 }
 
+
 .list-number>div {
     margin-bottom: 0.5rem;
 }
@@ -993,6 +994,18 @@ footer:not(.footer-hp) {
 
 .list-item-number {
     font-weight: 700;
+}
+
+/* for very small screens  */
+@media only screen and (max-width: 500px) {
+    .cell.list-item-number {
+        width: 100%;
+        margin-top:0.5rem;
+    }
+    .list-item-content {
+        padding-left: 1rem;
+    }
+
 }
 
 .list-item-letter {
