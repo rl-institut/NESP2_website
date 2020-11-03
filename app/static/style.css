@@ -291,23 +291,7 @@ header a:focus{
     .landing-feature__description{
         display: none;
     }
-    .landing-maps__image div {
-        height: auto!important; 
-        width: auto!important; 
-        margin: 0 auto;
-        padding-top: 4rem;
-        background-color: #8ee7b4;
-        background-image: url(../static/img/img-17-explore-map-min.jpg);
-        background-repeat: no-repeat;
-        background-position: center top;
-        background-size: cover;
-        border-top-left-radius: 12px;
-        border-top-right-radius: 12px;
-        padding-bottom: 1rem;
-    }
-    .landing-maps__header h3 {
-        padding-bottom: 1rem!important;
-    }
+
     .cta, .cta:hover, .cta:focus, .cta:active {
         display: block;
         width: fit-content;
@@ -320,11 +304,6 @@ header a:focus{
         border-radius: 4px;
     }
 
-    .landing-minigridmonitor__image div {
-        height: auto!important; 
-        width: auto!important; 
-       
-    }
     .landing-minigridmonitor__header h3 {
         padding-bottom: 1rem;
     }
@@ -567,7 +546,7 @@ header a:focus{
     }
 }
 
-/* smaller and medium screens */
+/* smaller screens */
 @media only screen and (max-width: 640px) {
     .landing-feature {
         padding-top: 10rem;
@@ -633,6 +612,14 @@ header a:focus{
     border-top-right-radius: 12px;
 }
 
+/* smaller screens */
+@media only screen and (max-width: 640px) {
+
+    .landing-maps__header h3 {
+        padding-bottom: 1rem!important;
+    }
+}
+
 .landing-minigridmonitor {
     background-image: url("background/bg-6-minigridmonitor.jpg");
     background-position: center center;
@@ -674,10 +661,34 @@ header a:focus{
     box-shadow: 4px 6px 16px 0px rgba(0,0,0,0.75);
 }
 
+@media only screen and (min-width: 700px) and (max-width: 900px) {
+    .small-offset-2 {
+        margin-left: 0%;
+    }
+    .landing-maps__image div{
+        width: 90%;
+    }
+    .landing-minigridmonitor__image div{
+        width: 90%;
+    }
+}
+
+/* smaller screens */
+@media only screen and (max-width: 640px) {
+    .landing-maps__image div {
+        height: auto!important;
+        width: 80%;
+    }
+    .landing-minigridmonitor__image div{
+        height: auto!important;
+        width: 90%;
+    }
+}
+
+
+
 .landing-resources {
     background-image: url("background/bg-3-resources-div-tile.png");
-    //background-position: center center;
-    //background-repeat: no-repeat;
     background-repeat: repeat-y;
     background-size: 100% auto;
     padding-top: 3rem;
@@ -1511,17 +1522,7 @@ Added this trick to fix it */
         width: 95%;
     } */
 
-@media only screen and (min-width: 700px) and (max-width: 900px) {    
-    .small-offset-2 {
-        margin-left: 0%; 
-    }
-    .landing-maps__image div{
-        width: 90%;
-    }
-    .landing-minigridmonitor__image div{
-        width: 90%;
-    }
-}
+
 .landing-video-container{
     position: relative;
     overflow: hidden;
