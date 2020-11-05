@@ -29,6 +29,7 @@ Here is a template for new release sections
 - Change map url endpoint from `/maps` to `/map` (#185)
 - Manage header bar only with foundation (#194)
 - Replace images in .png format with the same images in .jpg format, also in lower resolution (#198)
+- Convert query parameters to float or int before sending sql request (#204)
 
 ### Removed
 - Css class header-right (#194)
