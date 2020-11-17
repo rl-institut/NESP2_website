@@ -266,8 +266,38 @@ header a:focus{
     margin-bottom: 5rem;
 }
 
+
+/* mobile phone toggle menu */
+
+.mobile-menu-bar {
+    /* make sure height of .below-header for small screens is set to same value */
+    height: 45px;
+	justify-content: space-between;
+	display: flex;
+	padding-left: 0.5rem;
+	padding-right: 0.5rem;
+}
+
+.mobile-menu-bar img{
+    width: 1.5rem;
+    margin: 0;
+    transform: translateY(0px);
+}
+
+.mobile-menu-bar a {
+    width: 35px;
+    height: 35px;
+	align-items: center;
+	justify-content: center;
+	display: flex;
+}
 /* smaller screens */
 @media only screen and (max-width: 639px) {
+
+    header{
+        padding-top: 0;
+        padding-bottom: 0;
+    }
     section {
         padding-left: .5rem;
         padding-right: .5rem;
