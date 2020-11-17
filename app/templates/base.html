@@ -19,15 +19,34 @@
           $(".GaugeMeter").gaugeMeter();
       });
   </script>
-  <header class="grid-x header">
-    <div id="header-blitz-div" class="cell medium-3 medium-offset-1 large-offset-1 large-5">
-      <a href="{{ url_for('landing')}}">
-        <img src="{{ url_for('static', filename='logos/logo-5-blitz.png') }}">
-        <h2>Nigeria Se4All</h2>
-      </a>
+  <header class="header">
+    <!-- navigation bar for medium and large screens-->
+    <div class="computer-menu grid-x hide-for-small-only">
+      <div id="header-blitz-div" class="cell small-12 medium-4 large-offset-1 large-5">
+        <a href="{{ url_for('landing')}}">
+          <img src="{{ url_for('static', filename='logos/logo-5-blitz.png') }}">
+          <h2>Nigeria Se4All</h2>
+        </a>
+      </div>
+      <div class="cell small-12 medium-8 large-5 large grid-x header-right">
+        <div class="cell medium-3 header-right__item">
+          <a href="{{ url_for('maps.index')}}"><img src="{{ url_for('static', filename='img/icons/i_map.svg') }}">MAP</a>
+        </div>
+        <div class="cell medium-3 header-right__item">
+          <a href="{{ url_for('landing')}}#landing-resources"><img src="{{ url_for('static', filename='img/icons/i_layers.svg') }}">TOOLS</a>
+        </div>
+        <div class="cell medium-3 header-right__item">
+          <a href="{{ url_for('about.about') }}"><img src="{{ url_for('static', filename='img/icons/i_info.svg') }}">ABOUT</a>
+        </div>
+        <div class="cell medium-shrink header-right__item nav__logo-nigeria" id="header-logo-nigeria">
+          <div>
+            <a href="https://www.power.gov.ng/" target="_blank" rel="noreferrer">
+              <img src="{{ url_for('static', filename='logos/logo-2-crest.png') }}">
+            </a>
+          </div>
+        </div>
+      </div>
     </div>
-    <div class="cell medium-7 large-5 large header-right">
-      <div class="header-right__item">
         <a href="{{ url_for('maps.index')}}"><img src="{{ url_for('static', filename='img/icons/i_map.svg') }}">MAP</a>
       </div>
       <div class="header-right__item">

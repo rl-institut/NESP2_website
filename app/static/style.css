@@ -192,6 +192,7 @@ header a:focus{
 
 #header-logo-nigeria img {
     height: 5rem;
+    margin: 0;
 }
 
 /* Main content */
@@ -225,6 +226,15 @@ header a:focus{
 
 /* empty div behind top nav */
 /* should have =< height of nav */
+.computer-menu{
+    height: 6.75rem;
+}
+@media only screen and (max-width:1023px) {
+    .computer-menu {
+        margin-right: 0.5rem;
+        margin-left: 0.5rem;
+    }
+}
 .below-header {
     height: 5rem;
 }
@@ -257,7 +267,7 @@ header a:focus{
 }
 
 /* smaller screens */
-@media only screen and (max-width: 640px) {
+@media only screen and (max-width: 639px) {
     section {
         padding-left: .5rem;
         padding-right: .5rem;
@@ -330,17 +340,11 @@ header a:focus{
     .cell.landing-resources__text p{
         font-size: 14pt;
     }
-    #header-logo-nigeria{
-        display: none;
-    }
 
     .header-right__item {
         margin-left: 1.5rem;
         margin-right: 0;
         margin-top: 1rem;
-    }
-    #header-blitz-div{
-        margin-left: 1rem;
     }
     #about-content h2 {
         padding-bottom: 0rem!important;
