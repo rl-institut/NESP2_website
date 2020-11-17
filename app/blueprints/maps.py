@@ -23,7 +23,7 @@ UNSUPPORTED_USER_AGENT_STRINGS = (
 )
 
 # youtube id of the introductory video about the webmap
-VIDEO_ID = "4wSaoO36k24"
+VIDEO_ID = "aS8nSXy4d7Q"
 
 bp = Blueprint('maps', __name__)
 
@@ -35,9 +35,13 @@ bp = Blueprint('maps', __name__)
 def index():
     user_agent = request.headers.get('User-Agent')
     not_supported = False
-    for ua in UNSUPPORTED_USER_AGENT_STRINGS:
-        if ua in user_agent:
-            not_supported = True
+
+    if user_agent is None or not isinstance(user_agent, str):
+        not_supported = True
+    else:
+        for ua in UNSUPPORTED_USER_AGENT_STRINGS:
+            if ua in user_agent:
+                not_supported = True
 
     defaultArgs = {
         "states_content": 1,
