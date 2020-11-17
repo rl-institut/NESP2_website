@@ -1,9 +1,10 @@
 from flask import Blueprint, render_template
-
+from flask_login import login_required
 bp = Blueprint('about', __name__)
 
 
 @bp.route('/about')
+@login_required
 def about():
     # change height of the stakeholder logos such that the circles in the logos all have same
     # diameter

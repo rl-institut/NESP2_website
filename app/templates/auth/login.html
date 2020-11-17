@@ -1,0 +1,36 @@
+<!doctype html>
+
+<head>
+  <title>{% block title %}{% endblock %}</title>
+    <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='foundation.min.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='login.css') }}">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+
+<body>
+  <header class="grid-x header">
+    <div id="header-blitz-div" class="cell medium-9 medium-offset-1">
+      <a href="{{ url_for('landing')}}">
+        <img src="{{ url_for('static', filename='logos/logo-5-blitz.png') }}">
+        <h2>Nigeria Se4All</h2>
+      </a>
+    </div>
+    <div class="cell medium-1">
+      <img id="login-logo-nigeria" src="{{ url_for('static', filename='logos/logo-2-crest.png') }}">
+    </div>
+    {% block header %}{% endblock %}
+  </header>
+
+
+<section class="center--align">
+  <form method="post">
+    <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+    <label for="username">Username</label>
+    <input name="username" id="username" required>
+    <label for="password">Password</label>
+    <input type="password" name="password" id="password" required>
+    <input type="submit" value="Log In">
+  </form>
+</section>
+</body>

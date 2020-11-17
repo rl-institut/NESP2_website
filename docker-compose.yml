@@ -1,4 +1,4 @@
-version: '2'
+version: '2' 
 services:
   nesp2_website:
     restart: unless-stopped
@@ -10,14 +10,13 @@ services:
         POSTGRES_db: ${POSTGRES_DB}
       context: .
     image: nesp2_website
-    container_name: nesp2_website 
-    command: gunicorn --bind :80 index:app --workers=2 
+    container_name: nesp2_website
+    ports:
+      - "5000:5000"
+    command: gunicorn --bind 0.0.0.0:5000 index:app --workers=5
+ 
+  nginx:
+    restart: unless-stopped
+    build: ./nginx
     ports:
       - 80:80
-  
- # nginx:
-  #  build: ./nginx
-   # ports:
-   #   - 1337:80
-   # depends_on:
-   #   - nesp2_website 

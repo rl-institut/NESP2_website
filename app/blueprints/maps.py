@@ -1,6 +1,7 @@
 import os
 import json
 from flask import Blueprint, render_template, abort, request, Response, jsonify, safe_join
+from flask_login import login_required
 from jinja2 import TemplateNotFound
 
 if os.environ.get("POSTGRES_URL", None) is not None:
@@ -30,6 +31,7 @@ bp = Blueprint('maps', __name__)
 
 @bp.route('/map/')
 @bp.route('/map')
+@login_required
 def index():
     user_agent = request.headers.get('User-Agent')
     not_supported = False

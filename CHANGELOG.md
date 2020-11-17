@@ -107,6 +107,7 @@ First version of the NESP website
 - cross-linking protection for all external links (#69)
 - js folder for javascript code (#71)
 - objective page (#132)
+- possibility to have auth login (#28)
 
 ### Changed
 - structure of the folders --> flask files in `app` folder (#12)
