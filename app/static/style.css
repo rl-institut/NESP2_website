@@ -236,7 +236,7 @@ header a:focus{
     }
 }
 .below-header {
-    height: 5rem;
+    height: 6.75rem;
 }
 
 .landing-hero {
@@ -298,6 +298,12 @@ header a:focus{
         padding-top: 0;
         padding-bottom: 0;
     }
+
+    .below-header {
+        /* this need to be the same height as .mobile-menu-bar */
+        height: 45px;
+    }
+
     section {
         padding-left: .5rem;
         padding-right: .5rem;
@@ -1647,15 +1653,22 @@ Added this trick to fix it */
 #landing-maps,
 #landing-resources {
     display:block;
-   height:4.5rem; /* this is the height of your header */
-   margin-top:-4.5rem; /* this is again negative value of the height of your header */
+   height: 6.75rem; /* this is the height of your header */
+   margin-top: -6.75rem; /* this is again negative value of the height of your header */
    visibility:hidden;
 }
 
-#landing-welcome,
- {
-   margin-top:-5.5rem; /* this is again negative value of the height of your header */
-
+@media only screen and (max-width: 639px) {
+    /* for some reason, the anchor is nor working as it should, i.e. scroll down to the top of the map section
+    Added this trick to fix it */
+    #landing-welcome,
+    #landing-maps,
+    #landing-resources {
+        display:block;
+       height: 45px; /* this is the height of your header */
+       margin-top:-45px; /* this is again negative value of the height of your header */
+       visibility:hidden;
+    }
 }
 
 /* test */
