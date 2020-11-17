@@ -291,6 +291,31 @@ header a:focus{
 	justify-content: center;
 	display: flex;
 }
+
+.mobile-menu a {
+	align-items: center;
+	justify-content: center;
+	display: flex;
+}
+
+.mobile-menu-logo{
+	align-items: center;
+	justify-content: center;
+	display: flex;
+	margin-top: 1rem;
+	margin-bottom: 0.5rem
+}
+
+.mobile-menu-logo img {
+    height: 1.5rem;
+    margin-right: 0.5rem;
+    transform: translateY(0px);
+}
+
+.mobile-logo-fmp img{
+    height: 4.5rem;
+}
+
 /* smaller screens */
 @media only screen and (max-width: 639px) {
 
