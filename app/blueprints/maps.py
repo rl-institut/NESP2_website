@@ -33,9 +33,13 @@ bp = Blueprint('maps', __name__)
 def index():
     user_agent = request.headers.get('User-Agent')
     not_supported = False
-    for ua in UNSUPPORTED_USER_AGENT_STRINGS:
-        if ua in user_agent:
-            not_supported = True
+
+    if user_agent is None or not isinstance(user_agent, str):
+        not_supported = True
+    else:
+        for ua in UNSUPPORTED_USER_AGENT_STRINGS:
+            if ua in user_agent:
+                not_supported = True
 
     defaultArgs = {
         "states_content": 1,
