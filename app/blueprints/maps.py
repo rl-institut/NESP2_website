@@ -22,7 +22,7 @@ UNSUPPORTED_USER_AGENT_STRINGS = (
 )
 
 # youtube id of the introductory video about the webmap
-VIDEO_ID = "4wSaoO36k24"
+VIDEO_ID = "aS8nSXy4d7Q"
 
 bp = Blueprint('maps', __name__)
 
