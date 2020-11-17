@@ -47,21 +47,28 @@
         </div>
       </div>
     </div>
+
+    <div class="mobile-menu grid-x show-for-small-only" id="mobile-menu-div">
+      <div  class="cell mobile-menu-logo">
+        <a href="{{ url_for('landing')}}">
+          <img src="{{ url_for('static', filename='logos/logo-5-blitz.png') }}">
+          <h2>Nigeria Se4All</h2>
+        </a>
+      </div>
+      <div class="cell header-right__item">
         <a href="{{ url_for('maps.index')}}"><img src="{{ url_for('static', filename='img/icons/i_map.svg') }}">MAP</a>
       </div>
-      <div class="header-right__item">
-        <a href="{{ url_for('landing')}}#landing-resources"><img src="{{ url_for('static', filename='img/icons/i_layers.svg') }}">TOOLS</a>
+      <div class="cell header-right__item" data-responsive-toggle="mobile-menu-div">
+        <a href="{{ url_for('landing')}}#landing-resources" type="button" data-toggle="mobile-menu-div"><img src="{{ url_for('static', filename='img/icons/i_layers.svg') }}">TOOLS</a>
       </div>
-      <div class="header-right__item">
+      <div class="cell header-right__item">
         <a href="{{ url_for('about.about') }}"><img src="{{ url_for('static', filename='img/icons/i_info.svg') }}">ABOUT</a>
       </div>
-      <div class="header-right__item nav__logo-nigeria" id="header-logo-nigeria">
-        <div>
+      <div class="cell mobile-menu-logo mobile-logo-fmp">
           <a href="https://www.power.gov.ng/" target="_blank" rel="noreferrer">
             <img src="{{ url_for('static', filename='logos/logo-2-crest.png') }}">
           </a>
         </div>
-      </div>
     </div>
 
     <div class="mobile-menu-bar" data-responsive-toggle="mobile-menu-div" data-hide-for="medium">
