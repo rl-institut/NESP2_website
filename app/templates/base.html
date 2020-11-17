@@ -77,6 +77,14 @@
         </div>
       </div>
     </div>
+
+    <div class="mobile-menu-bar" data-responsive-toggle="mobile-menu-div" data-hide-for="medium">
+      <a href="{{ url_for('landing')}}">
+          <img src="{{ url_for('static', filename='logos/logo-5-blitz.png') }}">
+        </a>
+      <a type="button" data-toggle="mobile-menu-div"> <img src="{{ url_for('static', filename='img/icons/i_hamburger.svg') }}"> </a>
+    </div>
+
     {% block header %}{% endblock %}
   </header>
   <!-- empty div behind top nav -->
