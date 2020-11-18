@@ -8,16 +8,28 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='foundation.min.css') }}">
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- <script type="text/javascript" id="cookiebanner"
+  src="https://cdn.jsdelivr.net/gh/dobarkod/cookie-banner@1.2.2/dist/cookiebanner.min.js"
+  data-message="<b>We use essential cookies for the functionality of our website and to track key indicators about the frequency of users visiting the site.</b>
+   <br>Please check our <a href="https://nigeriase4all.gov.ng/termsofservice" style="color:#cfe7fe";> terms and conditions of service</a>
+     and <a href="https://nigeriase4all.gov.ng/termsofservice" style="color:#cfe7fe";> privacy policy </a> pages to find out more"
+  ></script> -->
+
   {% block head %}{% endblock %}
 </head>
 
 <body>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" integrity="sha512-bnIvzh6FU75ZKxp0GXLH9bewza/OIw6dLVh9ICg0gogclmYGguQJWl8U30WpbsGTqbIiAwxTsbe76DErLq5EDQ==" crossorigin="anonymous"></script>
   <script src="{{ url_for('static', filename='js/gauge/GaugeMeter.js') }}"></script>
+  <script src="{{ url_for('static', filename='js/cookiebanner.min.js') }}"></script>
   <script>
       $(document).ready(function(){
           $(".GaugeMeter").gaugeMeter();
       });
+  </script>
+   <script type="text/javascript">
+    var options = { message: "<b>We use essential cookies for the functionality of our website and to track key indicators about the frequency of users visiting the site.</b> <br> Please check our <a href='https://nigeriase4all.gov.ng/termsofservice' target='_blank';> terms and conditions of service</a> and <a href='https://nigeriase4all.gov.ng/termsofservice' target='_blank';> privacy policy</a> pages to find out more", linkmsg: '', moreinfo : 'https://nigeriase4all.gov.ng/termsofservice' };
+    var cb = new Cookiebanner(options); cb.run();
   </script>
   <header class="grid-x header">
     <div id="header-blitz-div" class="cell medium-3 medium-offset-1 large-offset-1 large-5">
