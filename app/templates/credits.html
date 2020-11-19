@@ -4,6 +4,15 @@
 <link rel="stylesheet" href="{{ url_for('static', filename='about.css') }}">
 {% endblock head%}
 
+{% block title %}
+{% if about_map == True %}
+ About Map | Nigeria SE4ALL
+{% else %}
+    Accreditation | Nigeria SE4ALL
+{% endif %}
+{% endblock title%}
+
+
 {% block content %}
 <div id="about-map-content" class="grid-container full">
     <section id="about-map-intro" class="grid-x align-center light-grey">
