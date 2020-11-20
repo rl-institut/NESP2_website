@@ -73,13 +73,20 @@ def create_app(test_config=None):
     def landing():
 
         kwargs = {}
-        if os.environ.get("DB_ACCESS") == DB_UP:
-            for k, desc in PROGRESS_NUMBER_MAX.items():
-                kwargs[k] = query_gauge_maximum(desc)
+        if os.environ.get("DB_STATUS") == DB_UP:
+            try:
+                kwargs["DB_STATUS"] = "up"
+                for k, desc in PROGRESS_NUMBER_MAX.items():
+                    kwargs[k] = query_gauge_maximum(desc)
 
-            kwargs['km_electricity'] = query_electrified_km()
-            kwargs['mapped_villages'] = query_mapped_villages()
-            kwargs['mapped_buildings'] = query_mapped_buildings()
+                kwargs['km_electricity'] = query_electrified_km()
+                kwargs['mapped_villages'] = query_mapped_villages()
+                kwargs['mapped_buildings'] = query_mapped_buildings()
+            except DBAPIError as e:
+                kwargs["DB_STATUS"] = "down"
+
+        else:
+            kwargs["DB_STATUS"] = "down"
 
         if os.path.exists(os.path.join(templates_dir, "maps", "sidebar_checkbox.html")):
             kwargs['website_app'] = True
@@ -91,6 +98,7 @@ def create_app(test_config=None):
                 "please run 'python app/setup_maps.py'"
             )
             print("\n***************\n\n")
+
 
         user_agent = request.headers.get('User-Agent')
         not_supported = False
