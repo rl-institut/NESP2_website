@@ -1,23 +1,37 @@
 import os
 import datetime
+import warnings
 from flask import Flask, render_template, request
 from flask_wtf.csrf import CSRFProtect
+from sqlalchemy.exc import DBAPIError
 
 from .blueprints import resources, about, maps, objectives
-if os.environ.get("POSTGRES_URL", None) is not None:
-    from .database import (
-        db_session,
-        query_electrified_km,
-        query_mapped_villages,
-        query_mapped_buildings,
-        PROGRESS_NUMBER_MAX,
-        query_gauge_maximum
-    )
-else:
-    db_session = None
 
-    def query_se4all_numbers():
-        return 1
+# By default we assume pessimistically that the database is down
+DB_UP = "1"
+DB_DOWN = "0"
+os.environ["DB_STATUS"] = DB_DOWN
+db_session = None
+
+if os.environ.get("POSTGRES_URL", None) is not None:
+
+    try:
+        from .database import (
+            db_session,
+            query_electrified_km,
+            query_mapped_villages,
+            query_mapped_buildings,
+            PROGRESS_NUMBER_MAX,
+            query_gauge_maximum
+        )
+
+        os.environ["DB_STATUS"] = DB_UP
+    except DBAPIError as e:
+        warnings.warn(repr(e))
+
+
+
+
 
 templates_dir = os.path.join(os.path.abspath(os.curdir), "app", "templates")
 
@@ -59,7 +73,7 @@ def create_app(test_config=None):
     def landing():
 
         kwargs = {}
-        if os.environ.get("POSTGRES_URL", None) is not None:
+        if os.environ.get("DB_ACCESS") == DB_UP:
             for k, desc in PROGRESS_NUMBER_MAX.items():
                 kwargs[k] = query_gauge_maximum(desc)
 

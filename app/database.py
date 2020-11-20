@@ -159,6 +159,10 @@ def get_random_og_cluster(engine, view_code, schema="web", limit=5):
 
 
 def query_random_og_cluster(state_name, state_codes_dict):
+    """Protects from SQL injection by matching state_name in the state_codes_dict
+
+    It is linked to /random-cluster endpoint via a post method
+    """
     return get_random_og_cluster(engine=engine, view_code=state_codes_dict[state_name])
 
 
