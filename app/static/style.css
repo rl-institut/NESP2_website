@@ -888,8 +888,8 @@ header a:focus{
         width: 4rem;
     }
     .footer-stay-in-touch__img img {
-        width: 4rem;
-        min-width: 4rem;
+        width: 2rem;
+        min-width: 2rem;
     }
 }
 
