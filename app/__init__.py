@@ -84,7 +84,7 @@ def create_app(test_config=None):
                 kwargs['mapped_buildings'] = query_mapped_buildings()
             except DBAPIError as e:
                 kwargs["DB_STATUS"] = "down"
-
+                warnings.warn(repr(e))
         else:
             kwargs["DB_STATUS"] = "down"
 
@@ -110,7 +110,6 @@ def create_app(test_config=None):
                     not_supported = True
         kwargs['not_supported'] = not_supported
         kwargs['website_welcome_video_id'] = "D37icUKT3LQ"
-        print(kwargs)
         return render_template('landing/index.html', **kwargs)
 
     @app.route('/termsofservice')
