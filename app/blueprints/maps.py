@@ -2,18 +2,27 @@ import os
 import json
 from flask import Blueprint, render_template, abort, request, Response, jsonify, safe_join
 from jinja2 import TemplateNotFound
+from sqlalchemy.exc import DBAPIError
+import warnings
+
+
 
 if os.environ.get("POSTGRES_URL", None) is not None:
-    from ..database import (
-        get_state_codes,
-        query_random_og_cluster,
-        query_filtered_clusters,
-        query_filtered_og_clusters,
-        query_available_og_clusters,
-        convert_web_mat_view_to_light_json
-    )
-    STATE_CODES_DICT = get_state_codes()
-    CODES_STATE_DICT = {v: k for k, v in STATE_CODES_DICT.items()}
+    try:
+        from ..database import (
+            get_state_codes,
+            query_random_og_cluster,
+            query_filtered_clusters,
+            query_filtered_og_clusters,
+            query_available_og_clusters,
+            convert_web_mat_view_to_light_json
+        )
+
+        STATE_CODES_DICT = get_state_codes()
+        CODES_STATE_DICT = {v: k for k, v in STATE_CODES_DICT.items()}
+    except DBAPIError as e:
+        warnings.warn(repr(e))
+
 
 UNSUPPORTED_USER_AGENT_STRINGS = (
     "Edge",

@@ -1,23 +1,37 @@
 import os
 import datetime
+import warnings
 from flask import Flask, render_template, request
 from flask_wtf.csrf import CSRFProtect
+from sqlalchemy.exc import DBAPIError
 
 from .blueprints import resources, about, maps, objectives
-if os.environ.get("POSTGRES_URL", None) is not None:
-    from .database import (
-        db_session,
-        query_electrified_km,
-        query_mapped_villages,
-        query_mapped_buildings,
-        PROGRESS_NUMBER_MAX,
-        query_gauge_maximum
-    )
-else:
-    db_session = None
 
-    def query_se4all_numbers():
-        return 1
+# By default we assume pessimistically that the database is down
+DB_UP = "1"
+DB_DOWN = "0"
+os.environ["DB_STATUS"] = DB_DOWN
+db_session = None
+
+if os.environ.get("POSTGRES_URL", None) is not None:
+
+    try:
+        from .database import (
+            db_session,
+            query_electrified_km,
+            query_mapped_villages,
+            query_mapped_buildings,
+            PROGRESS_NUMBER_MAX,
+            query_gauge_maximum
+        )
+
+        os.environ["DB_STATUS"] = DB_UP
+    except DBAPIError as e:
+        warnings.warn(repr(e))
+
+
+
+
 
 templates_dir = os.path.join(os.path.abspath(os.curdir), "app", "templates")
 
@@ -59,13 +73,20 @@ def create_app(test_config=None):
     def landing():
 
         kwargs = {}
-        if os.environ.get("POSTGRES_URL", None) is not None:
-            for k, desc in PROGRESS_NUMBER_MAX.items():
-                kwargs[k] = query_gauge_maximum(desc)
+        if os.environ.get("DB_STATUS") == DB_UP:
+            try:
+                kwargs["DB_STATUS"] = "up"
+                for k, desc in PROGRESS_NUMBER_MAX.items():
+                    kwargs[k] = query_gauge_maximum(desc)
 
-            kwargs['km_electricity'] = query_electrified_km()
-            kwargs['mapped_villages'] = query_mapped_villages()
-            kwargs['mapped_buildings'] = query_mapped_buildings()
+                kwargs['km_electricity'] = query_electrified_km()
+                kwargs['mapped_villages'] = query_mapped_villages()
+                kwargs['mapped_buildings'] = query_mapped_buildings()
+            except DBAPIError as e:
+                kwargs["DB_STATUS"] = "down"
+                warnings.warn(repr(e))
+        else:
+            kwargs["DB_STATUS"] = "down"
 
         if os.path.exists(os.path.join(templates_dir, "maps", "sidebar_checkbox.html")):
             kwargs['website_app'] = True
@@ -78,6 +99,7 @@ def create_app(test_config=None):
             )
             print("\n***************\n\n")
 
+
         user_agent = request.headers.get('User-Agent')
         not_supported = False
         if user_agent is None or not isinstance(user_agent, str):
@@ -88,7 +110,6 @@ def create_app(test_config=None):
                     not_supported = True
         kwargs['not_supported'] = not_supported
         kwargs['website_welcome_video_id'] = "D37icUKT3LQ"
-        print(kwargs)
         return render_template('landing/index.html', **kwargs)
 
     @app.route('/termsofservice')

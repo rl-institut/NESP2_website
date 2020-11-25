@@ -139,6 +139,7 @@
 
   </section>
 
+  {% if DB_STATUS == "up" %}
   <section id="landing-progress" class="grid-x landing-progress">
     <div class="cell medium-11 medium-offset-1 landing-progress__header left-align">
       <h2>Our progress in numbers</h2>
@@ -154,7 +155,7 @@
       <div class="GaugeMeter" data-color="#1DD069" data-back="#E0E2E9" data-min="0" data-total="{{ max_buildings }}" data-used="{{ mapped_buildings }}" data-label="buildings </br> mapped" data-showvalue="true" data-size="350" data-width="8" data-text_size="0.12"></div>
     </div>
   </section>
-
+  {% endif %}
   <section id="landing-maps">
     <!-- anchor, hidden -->
   </section>
