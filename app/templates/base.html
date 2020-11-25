@@ -62,6 +62,15 @@
       </div>
     </div>
 
+
+    <!-- shrinked navigation bar for small screens-->
+    <div class="mobile-menu-bar" data-responsive-toggle="mobile-menu-div" data-hide-for="medium">
+      <a type="button" data-toggle="mobile-menu-div" id="mobile-menu-toggle"> <img src="{{ url_for('static', filename='img/icons/i_hamburger.svg') }}"> </a>
+      <a id="mobile-fmp-logo" href="https://www.power.gov.ng/" target="_blank" rel="noreferrer"><img src="{{ url_for('static', filename='logos/logo-2-crest.png') }}"></a>
+      <a id="mobile-se4all-logo" data-toggler href="{{ url_for('landing')}}"><img src="{{ url_for('static', filename='logos/logo-5-blitz.png') }}"></a>
+    </div>
+
+    <!-- expanded navigation bar for small screens-->
     <div class="mobile-menu grid-x show-for-small-only" id="mobile-menu-div">
       <div  class="cell mobile-menu-logo">
         <a href="{{ url_for('landing')}}">
@@ -85,12 +94,7 @@
         </div>
     </div>
 
-    <div class="mobile-menu-bar" data-responsive-toggle="mobile-menu-div" data-hide-for="medium">
-      <a href="{{ url_for('landing')}}">
-          <img src="{{ url_for('static', filename='logos/logo-5-blitz.png') }}">
-        </a>
-      <a type="button" data-toggle="mobile-menu-div"> <img src="{{ url_for('static', filename='img/icons/i_hamburger.svg') }}"> </a>
-    </div>
+
 
     {% block header %}{% endblock %}
   </header>
