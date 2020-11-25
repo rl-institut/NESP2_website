@@ -243,7 +243,15 @@
     {% block footer %}
     {% endblock footer %}
   </footer>
+    <script>
 
+      /* Toggle the display of mobile menu bar logos when menu is expanded/hidden */
+      $("#mobile-menu-toggle").on( "click", function() {
+        $("#mobile-fmp-logo").toggle();
+        $("#mobile-se4all-logo").toggle();
+      });
+
+    </script>
     <script src="{{ url_for('static', filename='js/foundation/foundation.min.js') }}"></script>
     <script src="{{ url_for('static', filename='js/foundation/app.js') }}"></script>
 </body>
