@@ -280,6 +280,7 @@ header a:focus{
     height: 45px;
 	justify-content: space-between;
 	display: flex;
+	flex-direction: row-reverse;
 	padding-left: 0.5rem;
 	padding-right: 0.5rem;
 }
@@ -298,6 +299,10 @@ header a:focus{
 	display: flex;
 }
 
+.mobile-menu {
+    padding-bottom: 0.5rem;
+}
+
 .mobile-menu a {
 	align-items: center;
 	justify-content: center;
@@ -308,8 +313,15 @@ header a:focus{
 	align-items: center;
 	justify-content: center;
 	display: flex;
-	margin-top: 1rem;
 	margin-bottom: 0.5rem
+}
+
+.mobile-menu__item {
+	align-items: center;
+	justify-content: center;
+	display: flex;
+    margin-bottom: 1rem;
+    margin-top: 1rem;
 }
 
 .mobile-menu-logo img {
@@ -318,8 +330,9 @@ header a:focus{
     transform: translateY(0px);
 }
 
-.mobile-logo-fmp img{
-    height: 4.5rem;
+#mobile-fmp-logo img{
+    height: 2rem;
+    width: 2rem;
 }
 
 /* smaller screens */
