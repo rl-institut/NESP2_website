@@ -28,7 +28,7 @@
       });
   </script>
    <script type="text/javascript">
-    var options = { message: "<b>We use essential cookies for the functionality of our website and to track key indicators about the frequency of users visiting the site.</b> <br> Please check our <a href='https://nigeriase4all.gov.ng/termsofservice' target='_blank';> terms and conditions of service</a> and <a href='https://nigeriase4all.gov.ng/privacypolicy' target='_blank';> privacy policy</a> pages to find out more", linkmsg: '', moreinfo : 'https://nigeriase4all.gov.ng/termsofservice' };
+    var options = { message: "<b>We use essential cookies for the functionality of our website and to track key indicators about the frequency of users visiting the site.</b> <br> Please check our <a href='{{ url_for("termsofservice") }}' target='_blank';> terms and conditions of service</a> and <a href='{{ url_for("privacypolicy") }}' target='_blank';> privacy policy</a> pages to find out more", linkmsg: '', moreinfo : '{{ url_for("termsofservice") }}' };
     var cb = new Cookiebanner(options); cb.run();
   </script>
   <header class="grid-x header">
