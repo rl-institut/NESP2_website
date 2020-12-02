@@ -1497,3 +1497,21 @@ Added this trick to fix it */
         padding-right:5rem!important;
     }
 }
+
+.cookiebanner {
+  background: rgba(255, 255, 255, 0.9) !important;
+
+  font-family: Source Sans Pro !important;
+  font-size: 18px !important;
+  line-height: 23px !important;
+
+  /* Brand/Dark Grey */
+  color: #464646 !important;
+}
+.cookiebanner a{
+    color: #1DD069 !important;
+    text-decoration: underline !important;
+    font-size: 18px !important;
+    line-height: 23px !important;
+    font-family: Source Sans Pro !important;
+}

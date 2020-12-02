@@ -87,6 +87,16 @@ Pre-release version of the NESP website
 First version of the NESP website
 
 ### Added
+
+### Changed
+
+### Removed
+
+## [0.1.0] - 2019-12-05
+
+First version of the NESP website
+
+### Added
 - flask structure (#1)
 - docker deployment files (#12, #26)
 - structure of the header (#13)
