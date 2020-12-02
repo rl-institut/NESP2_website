@@ -8,19 +8,19 @@
 {% block content %}
 
 <section id="resources-selected" class="grid-x landing-resources">
-  <div class="cell large-5 large-offset-1">
+  <div class="cell small-10 small-offset-1 large-5 large-offset-1">
     <h2>{{title}}</h2>
     <p>{{subtitle}}</p>
     <div>{{description}}</div>
     <!-- hidden button to link to the resource-->
     <a class="cta" style="display: none;" href="">Go to resource</a>
   </div>
-  <div class="cell large-5 large-offset-1">
+  <div class="cell small-10 small-offset-1 large-5 large-offset-1 landing-resource__img">
     <img src="{{ url_for('static', filename=image) }}">
 
   </div>
   {% if title == "Mapping with OSM" %}
-  <div class="cell large-5 large-offset-1">
+  <div class="cell small-10 small-offset-1 large-5 large-offset-1">
     <div>
       <h3>Generating off-grid clusters</h3>
       Using the OSM data as a primary datasource, off-grid clusters are then calculated for areas greater than 5 km from the medium voltage grid. These are displayed on the <a href="{{ url_for('maps.index') }}" target="_blank">SE4ALL webmap</a> as “remotely mapped settlements”. The building data from OSM is buffered outwards, merged and buffered inwards again. Key statistics are calculated on each of the remotely mapped settlements including:
@@ -35,7 +35,7 @@
 
     </div>
   </div>
-  <div class="cell large-5 large-offset-1">
+  <div class="cell small-10 small-offset-1 large-5 large-offset-1 landing-resource__img">
     <img src="{{ url_for('static', filename='img/img-6-resources-osm-2.jpg') }}">
   </div>
   {% endif %}

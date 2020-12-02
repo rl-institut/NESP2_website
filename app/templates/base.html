@@ -2,7 +2,7 @@
 
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no" />
+  <meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no,width=device-width" />
   <title>{% block title %}Nigeria SE4ALL{% endblock %}</title>
     <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
     <link rel="stylesheet" href="{{ url_for('static', filename='foundation.min.css') }}">
@@ -27,35 +27,70 @@
           $(".GaugeMeter").gaugeMeter();
       });
   </script>
+
    <script type="text/javascript">
     var options = { message: "<b>We use essential cookies for the functionality of our website and to track key indicators about the frequency of users visiting the site.</b> <br> Please check our <a href='{{ url_for("termsofservice") }}' target='_blank';> terms and conditions of service</a> and <a href='{{ url_for("privacypolicy") }}' target='_blank';> privacy policy</a> pages to find out more", linkmsg: '', moreinfo : '{{ url_for("termsofservice") }}' };
     var cb = new Cookiebanner(options); cb.run();
   </script>
-  <header class="grid-x header">
-    <div id="header-blitz-div" class="cell medium-3 medium-offset-1 large-offset-1 large-5">
-      <a href="{{ url_for('landing')}}">
-        <img src="{{ url_for('static', filename='logos/logo-5-blitz.png') }}">
-        <h2>Nigeria Se4All</h2>
-      </a>
-    </div>
-    <div class="cell medium-7 large-5 large header-right">
-      <div class="header-right__item">
-        <a href="{{ url_for('maps.index')}}"><img src="{{ url_for('static', filename='img/icons/i_map.svg') }}">MAP</a>
+
+  <header class="header">
+    <!-- navigation bar for medium and large screens-->
+    <div class="computer-menu grid-x hide-for-small-only">
+      <div id="header-blitz-div" class="cell small-12 medium-4 large-offset-1 large-5">
+        <a href="{{ url_for('landing')}}">
+          <img src="{{ url_for('static', filename='logos/logo-5-blitz.png') }}">
+          <h2>Nigeria Se4All</h2>
+        </a>
       </div>
-      <div class="header-right__item">
-        <a href="{{ url_for('landing')}}#landing-resources"><img src="{{ url_for('static', filename='img/icons/i_layers.svg') }}">TOOLS</a>
-      </div>
-      <div class="header-right__item">
-        <a href="{{ url_for('about.about') }}"><img src="{{ url_for('static', filename='img/icons/i_info.svg') }}">ABOUT</a>
-      </div>
-      <div class="header-right__item nav__logo-nigeria" id="header-logo-nigeria">
-        <div>
-          <a href="https://www.power.gov.ng/" target="_blank" rel="noreferrer">
-            <img src="{{ url_for('static', filename='logos/logo-2-crest.png') }}">
-          </a>
+      <div class="cell small-12 medium-8 large-5 large grid-x header-right">
+        <div class="cell medium-3 header-right__item">
+          <a href="{{ url_for('maps.index')}}"><img src="{{ url_for('static', filename='img/icons/i_map.svg') }}">MAP</a>
+        </div>
+        <div class="cell medium-3 header-right__item">
+          <a href="{{ url_for('landing')}}#landing-resources"><img src="{{ url_for('static', filename='img/icons/i_layers.svg') }}">TOOLS</a>
+        </div>
+        <div class="cell medium-3 header-right__item">
+          <a href="{{ url_for('about.about') }}"><img src="{{ url_for('static', filename='img/icons/i_info.svg') }}">ABOUT</a>
+        </div>
+        <div class="cell medium-shrink header-right__item nav__logo-nigeria" id="header-logo-nigeria">
+          <div>
+            <a href="https://www.power.gov.ng/" target="_blank" rel="noreferrer">
+              <img src="{{ url_for('static', filename='logos/logo-2-crest.png') }}">
+            </a>
+          </div>
         </div>
       </div>
     </div>
+
+
+    <!-- shrinked navigation bar for small screens-->
+    <div class="mobile-menu-bar" data-responsive-toggle="mobile-menu-div" data-hide-for="medium">
+      <a type="button" data-toggle="mobile-menu-div" id="mobile-menu-toggle"> <img src="{{ url_for('static', filename='img/icons/i_hamburger.svg') }}"> </a>
+      <a id="mobile-fmp-logo" href="https://www.power.gov.ng/" target="_blank" rel="noreferrer"><img src="{{ url_for('static', filename='logos/logo-2-crest.png') }}"></a>
+      <a id="mobile-se4all-logo" data-toggler href="{{ url_for('landing')}}"><img src="{{ url_for('static', filename='logos/logo-5-blitz.png') }}"></a>
+    </div>
+
+    <!-- expanded navigation bar for small screens-->
+    <div class="mobile-menu grid-x show-for-small-only" id="mobile-menu-div">
+      <div  class="cell mobile-menu-logo">
+        <a href="{{ url_for('landing')}}">
+          <img src="{{ url_for('static', filename='logos/logo-5-blitz.png') }}">
+          <h2>Nigeria Se4All</h2>
+        </a>
+      </div>
+      <div class="cell mobile-menu__item">
+        <a href="{{ url_for('maps.index')}}"><img src="{{ url_for('static', filename='img/icons/i_map.svg') }}">MAP</a>
+      </div>
+      <div class="cell mobile-menu__item" data-responsive-toggle="mobile-menu-div">
+        <a href="{{ url_for('landing')}}#landing-resources" type="button" data-toggle="mobile-menu-div"><img src="{{ url_for('static', filename='img/icons/i_layers.svg') }}">TOOLS</a>
+      </div>
+      <div class="cell mobile-menu__item">
+        <a href="{{ url_for('about.about') }}"><img src="{{ url_for('static', filename='img/icons/i_info.svg') }}">ABOUT</a>
+      </div>
+    </div>
+
+
+
     {% block header %}{% endblock %}
   </header>
   <!-- empty div behind top nav -->
@@ -83,10 +118,10 @@
                 <p><b>Follow us on social media</b> to stay up-to date on the latest developments</p>
                 <p>#nigeriase4all</p>
               </div>
-              <div id="footer-stay-in-touch-icons" class="cell medium-6 large-5 footer-stay-in-touch__img">
-                <a href="https://www.youtube.com/channel/UCB41M4aRTr6A28AxAb7ehrA" rel="noreferrer" target="_blank"><img src="{{ url_for('static', filename='img/icons/i_youtube_w.svg') }}"></a>
-                <a href="https://www.instagram.com/fmopnigeria/" rel="noreferrer" target="_blank"><img src="{{ url_for('static', filename='img/icons/i_instagram_w.svg') }}"></a>
-                <a href="https://twitter.com/search?q=%23nigeriase4all&src=typed_query" rel="noreferrer" target="_blank"><img src="{{ url_for('static', filename='img/icons/i_twitter_w.svg') }}"></a>
+              <div id="footer-stay-in-touch-icons" class="cell large-5 footer-stay-in-touch__img">
+                <a href="https://www.youtube.com/channel/UCB41M4aRTr6A28AxAb7ehrA" rel="noreferrer" target="_blank"><img src="{{ url_for('static', filename='img/icons/i_youtube_w.svg') }}" alt="Youtube link"></a>
+                <a href="https://www.instagram.com/fmopnigeria/" rel="noreferrer" target="_blank"><img src="{{ url_for('static', filename='img/icons/i_instagram_w.svg') }}"  alt="Instagram link"></a>
+                <a href="https://twitter.com/search?q=%23nigeriase4all&src=typed_query" rel="noreferrer" target="_blank"><img src="{{ url_for('static', filename='img/icons/i_twitter_w.svg') }}" alt="Twitter link"></a>
               </div>
             </div>
           </div>
@@ -97,10 +132,10 @@
         <div class="grid-x">
           <div class="cell medium-4 large-3 large-offset-1">
             <div class="grid-x">
-              <div class="cell small-1">
+              <div class="cell small-offset-1 small-1 medium-offset-0">
                 <img src="{{ url_for('static', filename='img/icons/i_info.svg') }}">
               </div>
-              <div class="cell small-11 footer-contact__text">
+              <div class="cell small-10 medium-11 footer-contact__text">
                 <span class="footer-contact__header">office</span>
                 <p>
                   Federal Ministry of Power</br>
@@ -111,34 +146,34 @@
               </div>
             </div>
           </div>
-          <div class="cell medium-3">
+          <div class="cell medium-4 large-3">
             <div class="grid-x">
-              <div class="cell small-1">
+              <div class="cell small-offset-1 small-1 medium-offset-0">
                 <img src="{{ url_for('static', filename='img/icons/i_mail.svg') }}">
               </div>
-              <div class="cell small-11 footer-contact__text">
+              <div class="cell small-10 medium-11 footer-contact__text">
                 <span class="footer-contact__header">email</span>
                 <p>info@power.gov.ng</p>
               </div>
             </div>
           </div>
 
-          <div class="cell medium-3">
+          <div class="cell medium-4 large-3">
             <div class="grid-x">
-              <div class="cell small-1">
+              <div class="cell small-offset-1 small-1 medium-offset-0">
                 <img src="{{ url_for('static', filename='img/icons/i_internet.svg') }}">
               </div>
-              <div class="cell small-11 footer-contact__text">
+              <div class="cell small-10 medium-11 footer-contact__text">
                 <span class="footer-contact__header">website</span>
                 <p><a href="http://www.power.gov.ng" target="_blank" rel="noreferrer">www.power.gov.ng</a></p>
               </div>
             </div>
           </div>
 
-          <div class="cell medium-2 large-1 footer-contact__arrow">
+          <div class="cell large-1 footer-contact__arrow">
             <a href="#page-top">
-              <div>
-                <img src="{{ url_for('static', filename='img/icons/i_arrow_up_w.svg') }}">
+              <div title="back to the top">
+                <img src="{{ url_for('static', filename='img/icons/i_arrow_up_w.svg') }}" alt="Back to the top arrow">
               </div>
             </a>
           </div>
@@ -155,10 +190,10 @@
             </div>
             <div id="footer-logos-eu-ger" class="cell footer-logos__img">
                 <a href="https://europa.eu/european-union/index_en" target="_blank" rel="noreferrer">
-                  <img class="footer-maps-logos__eu" src="{{ url_for('static', filename='logos/logo-1-eu.png') }}">
+                  <img class="footer-maps-logos__eu" src="{{ url_for('static', filename='logos/logo-1-eu.png') }}" alt="EU logo">
                 </a>
                 <a href="http://www.bmz.de/en/index.html" target="_blank" rel="noreferrer">
-                  <img class="footer-maps-logos__coop" src="{{ url_for('static', filename='logos/logo-4-ger-coop.png') }}">
+                  <img class="footer-maps-logos__coop" src="{{ url_for('static', filename='logos/logo-4-ger-coop.png') }}" alt="GIZ Nigeria cooperation logo">
                 </a>
             </div>
           </div>
@@ -172,7 +207,7 @@
 
             <div id="footer-logos-giz" class="cell footer-logos__img footer-logos__img--giz">
               <a href="https://www.giz.de/en/html/index.html" target="_blank" rel="noreferrer">
-                <img src="{{ url_for('static', filename='logos/logo-3-giz.png') }}">
+                <img src="{{ url_for('static', filename='logos/logo-3-giz.png') }}" alt="GIZ logo">
               </a>
             </div>
           </div>
@@ -181,17 +216,17 @@
 
       <div id="footer-license-div" class="cell">
         <div class="grid-x">
-          <div class="cell medium-4 large-3 large-offset-1 left--align">
+          <div class="cell medium-4 large-3 large-offset-1 left--align footer-license-item">
             <a href="{{ url_for('termsofservice')}}" target="_blank">Terms and conditions of service</a>
           </div>
-          <div class="cell medium-4 center--align">
+          <div class="cell medium-4 center--align footer-license-item">
             <p>&copy; {{ current_year }} All Rights Reserved by <b> nigeriase4all.gov.ng</b></p>
           </div>
           <div class="cell medium-4 large-3 grid-x">
-            <div class="cell medium-offset-1 medium-9 center--align">
+            <div class="cell medium-offset-1 medium-9 center--align footer-license-item">
               <a href="{{ url_for('accreditation')}}" target="_blank">Accreditation</a>
             </div>
-            <div class="cell medium-2 footer-license__img">
+            <div class="cell medium-2 footer-license__img footer-license-item">
               <img src="{{ url_for('static', filename='logos/logo-5-blitz.png') }}">
             </div>
             </div>
@@ -203,7 +238,15 @@
     {% block footer %}
     {% endblock footer %}
   </footer>
+    <script>
 
+      /* Toggle the display of mobile menu bar logos when menu is expanded/hidden */
+      $("#mobile-menu-toggle").on( "click", function() {
+        $("#mobile-fmp-logo").toggle();
+        $("#mobile-se4all-logo").toggle();
+      });
+
+    </script>
     <script src="{{ url_for('static', filename='js/foundation/foundation.min.js') }}"></script>
     <script src="{{ url_for('static', filename='js/foundation/app.js') }}"></script>
 </body>

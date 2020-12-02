@@ -8,8 +8,8 @@
 <div id="about-content" class="grid-container full">
 
   <section id="about-intro" class="grid-x align-center light-grey">
-    <h2 class="cell medium-10">About this platform</h2>
-    <div class="cell medium-8 l-width-60">
+    <h2 class="cell small-10">About this platform</h2>
+    <div class="cell small-10 l-width-60">
       <div id="about-intro-content" class="grid-x">
         <div id="about-intro-text" class="cell">
         </div>
@@ -28,8 +28,8 @@
   </section>
 
   <section id="about-se4all" class="grid-x align-center semi-grey section-about">
-    <h2 class="cell medium-11">Nigeria SE4All</h2>
-    <div id="about-se4all-content" class="cell medium-10 l-width-60">
+    <h2 class="cell small-11">Nigeria SE4All</h2>
+    <div id="about-se4all-content" class="cell small-10 l-width-60">
       <div class="grid-x">
         <div id="about-se4all-agenda" class="cell section-about__text">
           <h3>The SE4All Agenda</h3>
@@ -39,7 +39,7 @@
             the right investment environment for the private sector's participation; and the interplay of civil society organizations in identifying, advocating, and monitoring public policy and business action; mobilising social innovation and
             grassroots action; leading behavioural change; and helping to spread best practices and building capacity at all levels in partnership with governments and businesses</p>
             <div class="grid-x">
-              <div class="cell small-2">
+              <div class="cell small-2 about-inline-logo">
                 <img src="{{ url_for('static', filename='logos/logo-5-blitz.png') }}" alt="blitz-logo">
                 </div>
               <p class="cell small-10">The SE4All Action Agenda for Nigeria has been developed in line with the guiding principles contained in the Guidelines for Developing National Sustainable Energy for All Action Agendas in Africa that were developed by African
@@ -75,7 +75,7 @@
           <h3>About 30:30:30</h3>
 
           <div class="grid-x">
-              <div class="cell small-2" id="sdg7-logo">
+              <div class="cell small-2 about-inline-logo" id="sdg7-logo">
                 <img src="{{ url_for('static', filename='img/img-14-SDG7.png') }}" alt="SDG7-logo">
                 </div>
               <p class="cell small-10 l-padding-left">The Sustainable Energy for All (SE4ALL) Action Agenda of Nigeria is a national implementation tool for the emerging Sustainable Development Goal (SDG) on energy (<a href="https://www.un.org/sustainabledevelopment/energy/" rel="noreferrer" target="_blank">SDG No. 7</a>). </p>
@@ -147,7 +147,7 @@
   </section>
 
   <section id="about-fmp" class="grid-x align-center light-grey section-about">
-    <h2 class="cell medium-10">Federal Ministry of Power (FMP)</h2>
+    <h2 class="cell small-10">Federal Ministry of Power (FMP)</h2>
     <div id="about-fmp-content" class="cell small-10 small-offset-2 l-width-80 grid-x about-fmp">
       <div class="grid-x about-fmp__item">
         <div class="cell medium-6 large-6 section-about__text section-about__text--nomargin">
@@ -186,7 +186,7 @@
   </section>
 
   <section id="about-nesp" class="grid-x align-center semi-grey section-about">
-    <h2 class="cell medium-10">Nigerian Energy Support Programme (NESP)</h2>
+    <h2 class="cell small-10">Nigerian Energy Support Programme (NESP)</h2>
     <div id="about-nesp-content" class="cell small-10 small-offset-2 l-width-80 grid-x">
       <div id="about-nesp-text" class="cell medium-6 section-about__text section-about__text--nomargin">
         <p>The Nigerian Energy Support Programme (NESP) is co-funded by the European Union and the German Federal Ministry for Economic Development and Cooperation (BMZ) and is jointly implemented by Deutsche Gesellschaft für Internationale Zusammenarbeit (GIZ) GmbH in collaboration with Federal Ministry of Power.
@@ -205,7 +205,7 @@
   </section>
 
   <section id="about-stakeholder" class="grid-x align-center light-grey">
-    <h2 class="cell medium-10">Stakeholders</h2>
+    <h2 class="cell small-10">Stakeholders</h2>
     {% import "about/stakeholder.html" as stakeholder %}
     <div id="about-stakeholder-content" class="cell small-10 small-offset-2 l-width-80 grid-x">
       {{stakeholder.input('1', 'Rural Electrification Agency (REA)', 'https://rea.gov.ng/', 'logos/logo-6-rea.png', image_height=rea_height, text='The Rural Electrification Agency is mandated by the Federal Government to facilitate its goals and targets to increase access to electricity to 75% and 90% by 2020 and 2030 respectively and at least 10% of renewable energy mix by 2025. REA is mandated to promote rapid, safe, clean energy and cost-effective expansion of electricity access in unelectrified rural areas across Nigeria with economic development objectives. The electrification of the rural areas would also help improve the livelihood and socio-economic conditions of rural dwellers.')}}
