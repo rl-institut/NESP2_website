@@ -15,6 +15,7 @@ if os.environ.get("POSTGRES_URL", None) is not None:
             query_filtered_clusters,
             query_filtered_og_clusters,
             query_available_og_clusters,
+            query_generation_assets,
             convert_web_mat_view_to_light_json
         )
 
@@ -63,6 +64,14 @@ def index():
         return render_template('maps/index.html', **request.args)
     except TemplateNotFound:
         abort(404)
+
+@bp.route('/generation_assets', methods=["GET"])
+def fetch_generation_assets():
+    assets = query_generation_assets()
+
+    resp = jsonify(assets)
+    resp.status_code = 200
+    return resp
 
 
 @bp.route('/csv-export', methods=["GET"])

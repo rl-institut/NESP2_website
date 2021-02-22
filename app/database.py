@@ -8,6 +8,8 @@ from sqlalchemy.sql import text
 import geoalchemy2
 from sqlalchemy import Table, MetaData
 from sqlalchemy.ext.declarative import declarative_base
+from geojson import Point, Feature, FeatureCollection
+from shapely.wkt import loads as loadswkt
 
 
 def get_env_variable(name):
@@ -70,6 +72,11 @@ class MappedBuildings(BaseWeb):
     __table__ = Table('ourprogress_buildingsmapped', BaseWeb.metadata, autoload=True,
                       autoload_with=engine)
 
+class GenerationAssets(Base):
+    __table__ = Table(
+        "generation_assets", Base.metadata, autoload=True, autoload_with=engine
+)
+
 
 def select_materialized_view(engine, view_name, schema=None, limit=None):
     if schema is not None:
@@ -124,6 +131,35 @@ def query_available_og_clusters():
         AdmStatus.adm1_pcode
     ).filter(AdmStatus.cluster_all & AdmStatus.cluster_offgrid).all()
     return [r.adm1_pcode for r in res]
+
+
+def query_generation_assets():
+    """Look for on and off grid generation assets"""
+    res = db_session.query(
+        GenerationAssets.name,
+        geoalchemy2.functions.ST_AsText(
+            geoalchemy2.functions.ST_GeomFromWKB(GenerationAssets.geom, srid=3857)
+        ).label("geom"),
+        GenerationAssets.capacity_kw,
+        GenerationAssets.asset_type,
+        GenerationAssets.technology_type,
+    )
+
+    features = []
+    for r in res:
+        if r.geom is not None:
+            gjson = Feature(
+                geometry=Point(loadswkt(r.geom).coords[0]),
+                properties={
+                    "name": r.name,
+                    "capacity_kw": r.capacity_kw,
+                    "technology_type": r.technology_type,
+                    "asset_type": r.asset_type
+                },
+            )
+            features.append(gjson)
+
+    return FeatureCollection(features)
 
 
 OG_CLUSTERS_COLUMNS = ('adm1_pcode', 'cluster_offgrid_id', 'area_km2',
