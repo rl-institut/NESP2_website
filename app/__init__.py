@@ -111,6 +111,10 @@ def create_app(test_config=None):
     def shutdown_session(exception=None):
         if db_session is not None:
             db_session.remove()
+    
+    @app.errorhandler(404)
+    def not_found(e):
+        return render_template("404.html")
 
     # set a global variable to indicate it is the website
     app.jinja_env.globals.update(nesp2_website=True)
