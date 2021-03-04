@@ -1,0 +1,134 @@
+generation_detail_id,name,technology,capacity_mw,generation_source_type,capacity_fossil_mw,capacity_regenerative_mw,capacity_hydro_mw,capacity_pv_mw,capacity_wind_mw,lat,long,area_province,state,commercial_operation_date,start_year_of_operation,number_units_installed,peak_generation_mw,off_peak_generation_mw,ownership,data_ressource,last_update_date
+185,Okpai Power Plant ,Gas,470,fossil,470,,,,,5.7103,6.57561,Okpai,Delta,2005,2005,3,173,154,Private Company,"2,3,5",2021-02-26
+186,Afam IV-V Power Plant ,Gas,260,fossil,260,,,,,4.8513889,7.2547222,Afam,Rivers State,1982/2002,2002,2,30,269,FGN ,"2,3,5",2021-02-26
+187,Afam VI Power Plant ,Gas+Steam,725,fossil,725,,,,,4.8494444,7.2566667,Afam ,Rivers State,2005/2009,2009,4,271,214,Private Company,"2,3,5",2021-02-26
+188,Alaoiji Power Plant - NIPP,Gas,480,fossil,480,,,,,5.0666667,7.3233333,Aba,Abia ,2013-14,2014,4,88.1,0,NIPP,"2,3,5",2021-02-26
+189,Ibom Power Station (IPP),Gas,174,fossil,174,,,,,4.5647222,7.5683333,Ikot,Akwa/Ibom,2009/2010/2016,2016,3,82.3,0,State Govt.,"2,3,5",2021-02-26
+190,Odukpani  (Calabar) Power Plant ,Gas,600,fossil,600,,,,,5.1891667,8.2736111,Calabar ,Rivers State,2015,2015,5,399,289.6,Private Company,"2,3,5",2021-02-26
+191,Omoku Power Plant - NIPP,Gas,120,fossil,120,,,,,5.39,6.663333,Omuku,Ogba/Egbema/Ndoni,2006,2006,6,107.9,34.1,State Govt.,"2,3,5",2021-02-26
+192,Trans-Amadi Power Plant (IPP),Gas,80,fossil,80,,,,,4.815994,7.031416,Port Harcourt,Rivers State,2010,2010,4,75.4,33.7,Private Company,"2,3,5",2021-02-26
+193,Rivers Power Plant (IPP),Gas,160,fossil,160,,,,,,,Port Harcourt,Rivers State,2012,2012,1,152,20,State Govt.,"2,3,5",2021-02-26
+194,ASCO (Ajaokuta Steel Company) IPP,Gas,110,fossil,110,,,,,7.5144,6.69059,Ajaokuta,Kogi,2019-2021,2021,2,0,0,Private Company,"2,3,5",2021-02-26
+195,Azura Thermal Power Station (IPP),Gas,460,fossil,460,,,,,6.408889,5.683611,Benin City,Edo ,2018,2018,2,400,225,Private Company,"2,3,5",2021-02-26
+196,Paras Energy & Natural Res. Dev. Ltd.,Gas,96,fossil,96,,,,,6.72014,3.5222,Ogijo,Ogun ,2016,2016,1,53.7,44,Private Company,"2,3,5",2021-02-26
+197,Gbarain Power Plant - NIPP,Gas,250,fossil,250,,,,,5.03223,6.30156,Yenagoa,Bayelsa ,2016,2016,2,0,0,NIPP,"2,3,5",2021-02-26
+198,Gurara ,Hydro,30,regenerative,,30,30,,,,,,,2017,2017,2,,,Private Company,"1,3",2021-02-26
+199,Egbema I - NIPP,Gas,118,fossil,118,,,,,,,,,2018,2018,1,,,NIPP,"1,3",2021-02-26
+200,Mabon - Dadin Kowa,Hydro,39,regenerative,,39,39,100,,,,,,2018,2018,1,,,Private Company,"1,3",2021-02-26
+201,Nova Solar ,PV,100,regenerative,,100,,80,,,,,Katsina,2018,2018,,,,Private Company,"1,3",2021-02-26
+202,Nova Scotia Power,PV,80,regenerative,,80,,,,,,,Jigawa,2018,2018,,,,Private Company,"1,3",2021-02-26
+203,Egbema I - NIPP,Gas,113,fossil,113,,,,,,,,,2019,2019,,,,NIPP,"1,3",2021-02-26
+204,Egbema I - NIPP,Gas,113,fossil,113,,,,,,,,,2019,2019,,,,NIPP,"1,3",2021-02-26
+205,Kaduna IPP,Gas,215,fossil,215,,,,,,,,,2019,2019,,,,Private Company,"1,3",2021-02-26
+206,Kashimbilla,Hydro,40,regenerative,,40,40,,,,,,,2019,2019,,,,Private Company,"1,3",2021-02-26
+207,Zungeru,Hydro,700,regenerative,,700,700,75,,,,,,2019,2019,4,,,Private Company,"1,3",2021-02-26
+208,Pan Africa Solar ,PV,75,regenerative,,75,,100,,,,,Katsina ,2019,2019,,,,Private Company,"1,3",2021-02-26
+209,LR Aaron Solar Power Plant ,PV,100,regenerative,,100,,50,,,,Abuja ,FCT,2019,2019,,,,Private Company,"1,3",2021-02-26
+210,Quaint Energy Solutions,PV,50,regenerative,,50,,100,,,,,Kaduna ,2019,2019,,,,Private Company,"1,3",2021-02-26
+211,Nigeria Solar Capital Partners,PV,100,regenerative,,100,,100,,,,,Bauchi ,2019,2019,,,,Private Company,"1,3",2021-02-26
+212,Motir Dusable ,PV,100,regenerative,,100,,100,,,,,Enugu,2020,2020,,,,Private Company,"1,3",2021-02-26
+213,Middle Band Solar,PV,100,regenerative,,100,,50,,,,,Kogi ,2020,2020,,,,Private Company,"1,3",2021-02-26
+214,Afrinergia Solar ,PV,50,regenerative,,50,,55,,,,,Nasarawa,2020,2020,,,,Private Company,"1,3",2021-02-26
+215,KVK Power Nigeria Limited ,PV,55,regenerative,,55,,100,,,,,Sokoto ,2020,2020,,,,Private Company,"1,3",2021-02-26
+216,Anjeed Kafachan Solar IPP,PV,100,regenerative,,100,,70,,,,,Kaduna ,2020,2020,,,,Private Company,"1,3",2021-02-26
+217,CT Cosmos,PV,70,regenerative,,70,,50,,,,,Plateau,2020,2020,,,,Private Company,"1,3",2021-02-26
+218,Orientel ,PV,50,regenerative,,50,,100,,,,Dutse ,Jigawa,2020,2020,,,,Private Company,"1,3",2021-02-26
+219,EN Consulting & Projects - Kaduna,PV,100,regenerative,,100,,100,,,,Igabi,Kaduna ,2020,2020,,,,Private Company,"1,3",2021-02-26
+220,Sinosun Investment,PV,100,regenerative,,100,,50,,,,,Katsina,2020-2023,2023,,,,Private Company,"1,3",2021-02-26
+221,Synergent Powershare Nig. Ltd,PV,50,regenerative,,50,,350,,,,,Mando,2020-2023,2023,,,,Private Company,"1,3",2021-02-26
+222,Hydrostream solar,PV,350,regenerative,,350,,150,,,,,Kainji,2020-2023,2023,,,,Private Company,"1,3",2021-02-26
+223,Hydrostream solar,PV,150,regenerative,,150,,100,,,,,Jebba,2020-2023,2023,,,,Private Company,"1,3",2021-02-26
+224,Yutaili Nigeria,PV,100,regenerative,,100,,50,,,,,Kaduna ,2020-2023,2023,,,,Private Company,"1,3",2021-02-26
+225,Diginet Engineering Ltd,PV,50,regenerative,,50,,100,,,,,Gagarawa,2020-2023,2023,,,,Private Company,"1,3",2021-02-26
+226,Axone Nigeria Ltd,PV,100,regenerative,,100,,60,,,,,Daura,2020-2023,2023,,,,Private Company,"1,3",2021-02-26
+227,Renewable Energy Power Company Limited,PV,60,regenerative,,60,,100,,,,,Mando,2020-2023,2023,,,,Private Company,"1,3",2021-02-26
+228,Avensol Solar Ltd,PV,100,regenerative,,100,,100,,,,,Kwoi,2020-2023,2023,,,,Private Company,"1,3",2021-02-26
+229,Cikasoro Solar,PV,100,regenerative,,100,,300,,,,,Gusau,2020-2023,2023,,,,Private Company,"1,3",2021-02-26
+230,Shiroro Solar,PV,300,regenerative,,300,,200,,,,,Shiroro,2020-2023,2023,,,,Private Company,"1,3",2021-02-26
+231,99 Effects Energy ltd,PV,200,regenerative,,200,,100,,,,,Katampe,2020-2023,2023,,,,Private Company,"1,3",2021-02-26
+232,Apled Power Ltd,PV,100,regenerative,,100,,50,,,,,Keffi,2020-2023,2023,,,,Private Company,"1,3",2021-02-26
+233,Energo Nigeria Ltd,PV,50,regenerative,,50,,100,,,,,Karu ,2020-2023,2023,,,,Private Company,"1,3",2021-02-26
+234,ABG plaza (Hasken Rana),PV,100,regenerative,,100,,40,,,,,Kebbi,2020-2023,2023,,,,Private Company,"1,3",2021-02-26
+235,Bosso Solar Ltd,PV,40,regenerative,,40,,30,,,,,Minna ,2020-2023,2023,,,,Private Company,"1,3",2021-02-26
+236,Beacon Oak Nigeria Ltd,PV,30,regenerative,,30,,1000,,,,,Haven ,2020-2023,2023,,,,Private Company,"1,3",2021-02-26
+237,Giga North East Ltd,PV,1000,regenerative,,1000,,100,,,,,Damaturu,2020-2030,2030,,,,Private Company,"1,3",2021-02-26
+238,Nigus International Ltd,PV,100,regenerative,,100,,100,,,,,Yola ,2020-2023,2023,,,,Private Company,"1,3",2021-02-26
+239,Yutaili Nig Ltd,PV,100,regenerative,,100,,50,,,,,Asaba,2020-2023,2023,,,,Private Company,"1,3",2021-02-26
+240,Spurmore International Ltd,PV,50,regenerative,,50,,,,,,,Ughelli,2020-2023,2023,,,,Private Company,"1,3",2021-02-26
+170,AES Nigeria BARGE IPP Limited ,Gas,270,fossil,270,,,,,6.5591667,3.615,EGBIN,Lagos ,2002,2002,9,0,0,Private Company,"2,3,5",2021-02-26
+171,Egbin Thermal Power Station ,Steam,1320,fossil,1320,,,,,6.5630556,3.6152778,EGBIN,Lagos ,1985-1987,1987,6,476,0,Private Company,"2,3,5",2021-02-26
+172,Olorunsogo II Power Plant - NIPP ,Gas+Steam,720,fossil,720,,,,,6.8855556,3.3155556,Olorunsogo,Lagos ,2011-2012,2012,6,81.3,0,NIPP,"2,3,5",2021-02-26
+173,Olorunsogo Power Plant ,Gas,320,fossil,320,,,,,6.8819444,3.314444,Olorunsogo,Lagos ,2007/2011/2012,2012,8,136.4,66.5,Private Company,"2,3,5",2021-02-26
+174,Omotosho Power Plant - NIPP,Gas,480,fossil,480,,,,,6.7358333,4.7108333,Omotosho ,Osogbo ,2012,2012,4,103.9,47.6,NIPP,"2,3,5",2021-02-26
+175,Omotosho I & II Power Station ,Gas,304,fossil,304,,,,,6.7358333,4.7108333,Omotosho ,Osogbo ,2007/2012,2012,8,156.8,136,Private Company,"2,3,5",2021-02-26
+176,Jebba Hydroelectric Power Plant ,Hydro,570,regenerative,,570,570,,,9.1355556,4.7877778,Jebba ,Niger ,1983-1988,1988,6,352,150,FGN,"2,3,5",2021-02-26
+177,Kainji Hydroelectric Power Station ,Hydro,760,regenerative,,760,760,,,9.8625,4.6133333,Kainji,Niger ,1968/1976/1978,1978,8,212,57,FGN,"2,3,5",2021-02-26
+178,Shiroro Hydroelectric Power Station ,Hydro,600,regenerative,,600,600,,,9.975,6.8344444,Shiroro ,Niger ,1990,1990,4,188,100,FGN,"2,3,5",2021-02-26
+179,Delta Power Station (Transcorp Ughelli Power Station),Gas,860,fossil,860,,,,,5.5411111,5.9155556,Ughelli,Delta,1990/2002/2005,2005,18,371,63.9,Private Company,"2,3,5",2021-02-26
+180,Gerugu II Power Plant - NIPP,Gas,435,fossil,435,,,,,7.5630556,6.6927778,Gerugu,Kogi,2013,2013,3,129,112.3,NIPP,"2,3,5",2021-02-26
+181,Gerugu I Power Station ,Gas,405,fossil,405,,,,,7.41611111,6.9197333,Gerugu,Kogi,2007,2007,3,212,20,Private Company,"2,3,5",2021-02-26
+182,Ihovbor Power Plant - NIPP,Gas,480,fossil,480,,,,,6.4055556,5.6833333,Benin City,Edo ,2013-14,2014,4,110.4,0,NIPP,"2,3,5",2021-02-26
+183,Sapele Power Plant - NIPP,Gas,480,fossil,480,,,,,5.9277778,5.6447222,Sapele,Delta,2011,2011,4,0,0,NIPP,"2,3,5",2021-02-26
+184,Sapele Power Station ,Steam,420,fossil,420,,,,,5.9252778,5.6455556,Sapele,Delta,2011,2011,6,63.9,442,Private Company,"2,3,5",2021-02-26
+241,Okpai IPP II (AGIP),Steam + Gas,450,fossil,450,,,,,,,,,2020,2020,,,,Private Company,"1,3",2021-02-26
+242,IBOM II ,Gas,552,fossil,552,,,,,,,,,2020,2020,4,,,Private Company,"1,3",2021-02-26
+243,ASCO,Gas,110,fossil,110,,,,,,,,,2021,2021,2,,,Private Company,"1,3",2021-02-26
+244,Eleme,Gas,75,fossil,75,,,,,,,,,2021,2021,1,,,Private Company,"1,3",2021-02-26
+245,QUA IBOE Power Plant ,Gas,520,fossil,520,,,,,,,,,2021,2021,4,,,Private Company,"1,3",2021-02-26
+246,Cummins Power Gen. LTD.,Gas,150,fossil,150,,,,,,,,,2021,2021,1,,,Private Company,"1,3",2021-02-26
+247,ONDO IPP - King Line,Gas,200,fossil,200,,,,,,,,,2021,2021,1,,,Private Company,"1,3",2021-02-26
+248,Turbine Drive,Gas,500,fossil,500,,,,,,,,,2021,2021,3,,,Private Company,"1,3",2021-02-26
+249,EGBIN 2+,Gas,1200,fossil,1200,,,,,,,,,2021,2021,4,,,Private Company,"1,3",2021-02-26
+250,EGBIN 2+,Steam,700,fossil,700,,,,,,,,,2021,2021,2,,,Private Company,"1,3",2021-02-26
+251,Sapele Power Plc,Gas,600,fossil,600,,,,,,,,,2021,2021,30,,,Private Company,"1,3",2021-02-26
+252,ZUMA (Egbema),Gas,374,fossil,374,,,,,,,,,2021,2021,,,,Private Company,"1,3",2021-02-26
+253,Paras Energy & Natural Res. Dev. Ltd.,Gas,300,fossil,300,,,,,,,,,2022,2022,2,,,Private Company,"1,3",2021-02-26
+254,OMA POWER Generation Company Limited ,Gas,500,fossil,500,,,,,,,,,2022,2022,,,,Private Company,"1,3",2021-02-26
+255,Century IPP limited ,Gas,496,fossil,496,,,,,,,,,2022,2022,4,,,Private Company,"1,3",2021-02-26
+256,Bresson Nigeria Ltd,Gas,90,fossil,90,,,,,,,,,2022,2022,2,,,Private Company,"1,3",2021-02-26
+257,Sapele Power Plc,Gas,100,fossil,100,,,,,,,,,2022,2022,1,,,Private Company,"1,3",2021-02-26
+258,Ethiope,Gas,344,fossil,344,,,,,,,,,2022,2022,2,,,Private Company,"1,3",2021-02-26
+259,ONDO IPP - King Line,Gas,150,fossil,150,,,,,,,,,2022,2022,1,,,Private Company,"1,3",2021-02-26
+260,ONDO IPP - King Line,Gas,200,fossil,200,,,,,,,,,2022,2022,2,,,Private Company,"1,3",2021-02-26
+261,Ethiope,Steam,156,fossil,156,,,,,,,,,2023,2023,1,,,Private Company,"1,3",2021-02-26
+262,Proton,Gas,150,fossil,150,,,,,,,,,2023,2023,1,,,Private Company,"1,3",2021-02-26
+263,ZUMA (Itobe),Coal,1200,fossil,1200,,,,,,,,,2023,2023,4,,,Private Company,"1,3",2021-02-26
+264,DELTA III 2+,Gas,143,fossil,143,,,,,,,,,2023,2023,1,,,Private Company,"1,3",2021-02-26
+265,DELTA IV 2+,Gas,594,fossil,594,,,,,,,,,2023,2023,4,,,Private Company,"1,3",2021-02-26
+266,Lafarage Phase I,Gas,50,fossil,50,,,,,,,,,2023,2023,1,,,Private Company,"1,3",2021-02-26
+267,Caleb Inland,Gas + Steam,50,fossil,50,,,,,,,,,2023,2023,2,,,Private Company,"1,3",2021-02-26
+268,JBS Wind Power Plant,Wind,100,regenerative,,100,,,100,,,,,2024,2024,1,,,Private Company,"1,3",2021-02-26
+269,Mambilla Hydro Power Plant ,Hydro,3050,regenerative,,3050,3050,,,,,,,2024,2024,10,,,Private Company,"1,3",2021-02-26
+270,ALSCON (Phase 1),Gas,100,fossil,100,,,,,,,,,2024,2024,1,,,Private Company,"1,3",2021-02-26
+271,Yellow Stone ,Gas,360,fossil,360,,,,,,,,,2024,2024,2,,,Private Company,"1,3",2021-02-26
+272,Ethiope,Gas,344,fossil,344,,,,,,,,,2024,2024,2,,,Private Company,"1,3",2021-02-26
+273,Ethiope,Steam,156,fossil,156,,,,,,,,,2024,2024,1,,,Private Company,"1,3",2021-02-26
+274,Alaoji 2+ NIPP,Steam,285,fossil,285,,,,,,,,,2025,2025,1,,,Private Company,"1,3",2021-02-26
+275,IKOT Abasi,Gas,250,fossil,250,,,,,,,,,2025,2025,2,,,Private Company,"1,3",2021-02-26
+276,Lafarage Phase II,Gas,220,fossil,220,,,,,,,,,2025,2025,2,,,Private Company,"1,3",2021-02-26
+277,Caleb Inland,Gas+Steam,500,fossil,500,,,1000,,,,,,2025,2025,2,,,Private Company,"1,3",2021-02-26
+278,Kazaure (Kano Disco) *),PV,1000,regenerative,,1000,,,,,,,,2025,2025,,,,Private Company,"1,3",2021-02-26
+279,ALSCON (Phase 2),Gas,260,fossil,260,,,,,,,,,2026,2026,2,,,Private Company,"1,3",2021-02-26
+280,ESSAR,Gas,660,fossil,660,,,,,,,,,2026,2026,6,,,Private Company,"1,3",2021-02-26
+281,Geregu NIPP 2,Steam,285,fossil,285,,,,,,,,,2027,2027,1,,,Private Company,"1,3",2021-02-26
+282,Omotosho II 2+,Steam,254,fossil,254,,,,,,,,,2027,2027,2,,,Private Company,"1,3",2021-02-26
+283,Caleb Inland,Gas+Steam,500,fossil,500,,,,,,,,,2027,2027,2,,,Private Company,"1,3",2021-02-26
+284,Sapele 2 - NIPP,Gas,453,fossil,453,,,,,,,,,2028,2028,3,,,Private Company,"1,3",2021-02-26
+285,Oats,Gas,700,fossil,700,,,,,,,,,2028,2028,7,,,Private Company,"1,3",2021-02-26
+286,Geregu FGN1-2,Gas,414,fossil,414,,,,,,,,,2029,2029,3,,,Private Company,"1,3",2021-02-26
+287,Calabar/Odukpani- NIPP,Steam,254,fossil,254,,,,,,,,,2029,2029,2,,,Private Company,"1,3",2021-02-26
+288,Gbarain /Ubie 2,Steam,115,fossil,115,,,,,,,,,2029,2029,1,,,Private Company,"1,3",2021-02-26
+289,Geregu NIPP 2,Gas,444,fossil,444,,,,,,,,,2030,2030,3,,,Private Company,"1,3",2021-02-26
+290,Calabar/Odukpani- NIPP,Gas,564,fossil,564,,,,,,,,,2030,2030,4,,,Private Company,"1,3",2021-02-26
+291,Egbema II,Steam,127,fossil,127,,,,,,,,,2030,2030,1,,,Private Company,"1,3",2021-02-26
+292,Ihovbor (Eyaen) 2 - NIPP,Steam,254,fossil,254,,,,,,,,,2030,2030,2,,,Private Company,"1,3",2021-02-26
+293,Gbarain / Ubie 2,Gas,904,fossil,904,,,,,,,,,2030,2030,8,,,Private Company,"1,3",2021-02-26
+294,Chevron Agura ,Gas,780,fossil,780,,,,,,,,,2030,2030,,,,Private Company,"1,3",2021-02-26
+295,Supertek,Gas,500,fossil,500,,,,,,,,,2030,2030,5,,,Private Company,"1,3",2021-02-26
+296,MBH,Gas,300,fossil,300,,,,,,,,,2030,2030,2,,,Private Company,"1,3",2021-02-26
+297,Westcom,Gas,500,fossil,500,,,,,,,,,2030,2030,2,,,Private Company,"1,3",2021-02-26
+298,Hudson Power,Gas,150,fossil,150,,,,,,,,,2030,2030,1,,,Private Company,"1,3",2021-02-26
+299,Bresson AS Nigeria,Gas,450,fossil,450,,,,,,,,,2030,2030,3,,,Private Company,"1,3",2021-02-26
+300,Azikel IPP,Gas,76,fossil,76,,,,,,,,,2030,2030,1,,,Private Company,"1,3",2021-02-26
+301,Azikel IPP,Gas,250,fossil,250,,,,,,,,,2030,2030,1,,,Private Company,"1,3",2021-02-26
+302,Azikel IPP,Gas,163,fossil,163,,,,,,,,,2030,2030,1,,,Private Company,"1,3",2021-02-26

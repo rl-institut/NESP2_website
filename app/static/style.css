@@ -863,6 +863,23 @@ header a:focus{
 }
 
 
+
+#dashboard-intro{
+    padding-top: 3rem;
+}
+
+#dashboard-analytics{
+    padding-bottom: 5rem;
+}
+
+.dashboard-plot-area{
+   padding-bottom: 2rem;
+}
+
+.dashboard-plot{
+   height: 400px;
+}
+
 /* Footer */
 #footer-stay-in-touch-div{
     background-color: #8ee7b4;

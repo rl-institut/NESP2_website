@@ -1,0 +1,111 @@
+{% extends 'base.html' %}
+
+{% block head %}
+
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script
+    <!--Replace by CDN when done developping
+    <script src="{{ url_for('static', filename='js/plotly.js') }}"></script>-->
+{% endblock head%}
+
+{% block content %}
+
+{% import "dashboard/plotly.html" as plotly %}
+
+<div id="dashboard-content" class="grid-container full">
+
+  <section id="dashboard-intro" class="grid-x align-center light-grey">
+    <h2 class="cell small-10">30:30:30 tracker</h2>
+
+
+  </section>
+
+  <section id="dashboard-analytics" class="grid-x grid-margin-x align-center light-grey">
+    <h2 class="cell small-10">Analytics</h2>
+    {% for graph_id, data in graphs.items()%}
+      {{ plotly.graph(id=graph_id) }}
+    {% endfor %}
+  </section>
+
+  <script type=text/javascript>
+
+     var graphs = {{ graphs|tojson }};
+     console.log(graphs);
+
+
+
+
+    /*
+
+     const keys = Object.keys(graphs);
+
+    // print all keys
+    console.log(keys);
+
+    // iterate over object
+    keys.forEach((key, index) => {
+        console.log(`${key}: ${graphs[key]}`);
+    });
+
+
+    var data = [{
+            type: 'choropleth',
+            locations: unpack(rows, 'CODE'),
+            z: unpack(rows, 'GDP (BILLIONS)'),
+            text: unpack(rows, 'COUNTRY'),
+            colorscale: [
+                [0,'rgb(5, 10, 172)'],[0.35,'rgb(40, 60, 190)'],
+                [0.5,'rgb(70, 100, 245)'], [0.6,'rgb(90, 120, 245)'],
+                [0.7,'rgb(106, 137, 247)'],[1,'rgb(220, 220, 220)']],
+            autocolorscale: false,
+            reversescale: true,
+            marker: {
+                line: {
+                    color: 'rgb(180,180,180)',
+                    width: 0.5
+                }
+            },
+            tick0: 0,
+            zmin: 0,
+            dtick: 1000,
+            colorbar: {
+                autotic: false,
+                tickprefix: '$',
+                title: 'GDP<br>Billions US$'
+            }
+      }];
+
+      var layout = {
+          title: '2014 Global GDP<br>Source: <a href="https://www.cia.gov/library/publications/the-world-factbook/fields/2195.html"> CIA World Factbook</a>',
+          geo:{
+              showframe: false,
+              showcoastlines: false,
+              projection:{
+                  type: 'mercator'
+              }
+          }
+      };
+      */
+      var config = {showLink: false, responsive: true};
+      var layout = {title: 'Total generation capacity installed and planned', barmode: 'stack'};
+      var data = graphs["generation_cap"];
+      Plotly.newPlot("generation_cap_graph", data, layout, config);
+
+      layout.title = 'Percentage renewables installed and planned';
+      data = [graphs["renewables_percentage"]];
+      Plotly.newPlot("renewables_percentage_graph", data, layout, config);
+
+      layout.title = 'Renewables installed by technology type';
+      data = graphs["renewable_types"];
+      Plotly.newPlot("renewable_types_graph", data, layout, config);
+
+      layout.title = 'Map of power plant location';
+      data = [graphs["location_plants"]];
+      Plotly.newPlot("location_plants_graph", data, layout, config);
+
+  </script>
+
+
+{% endblock content%}
+
+
+

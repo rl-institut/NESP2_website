@@ -173,6 +173,40 @@ def query_generation_assets():
     return FeatureCollection(features)
 
 
+def query_dashboard_data():
+    df = pd.read_csv('generation_details.csv')
+
+    cum_cap = [12409]
+    sum_cap = 12409
+
+    cum_cap_re = [1930]
+    sum_cap_re = 1930
+
+    percent_renewable = [round(100 * 1930 / 12409, 0)]
+
+    years = [y for y in range(2020, 2031, 1)]
+
+    for y in years[1:]:
+        cap, cap_re = df.loc[
+            df.start_year_of_operation == y, ["capacity_mw", "capacity_regenerative_mw"]].sum()
+        sum_cap = sum_cap + cap
+        cum_cap.append(sum_cap)
+
+        sum_cap_re = sum_cap_re + cap_re
+        cum_cap_re.append(sum_cap_re)
+
+        percent_renewable.append(round(100 * (sum_cap_re / sum_cap), 0))
+
+    res = ['Hydro', 'PV', 'Wind']
+    re_type = {}
+    for re in res:
+        re_type[re] = []
+        for y in (2020, 2030):
+            re_type[re].append(int(df.loc[(df.technology == re) & (df.start_year_of_operation <= y), "capacity_mw"].sum()))
+
+    return years, cum_cap, percent_renewable, re_type
+
+
 def query_osm_power_lines():
     lines = db_session.query(
         func.ST_Transform(PowerLines.geom, 4326).label("geom")
