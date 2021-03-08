@@ -395,10 +395,10 @@ header a:focus{
     }
 
 
-    .landing-minigridmonitor__header h3 {
+    .landing-dashboards__header h3 {
         padding-bottom: 1rem;
     }
-    .landing-minigridmonitor__image div {
+    .landing-dashboards__image div {
         height: auto;
         width: auto;
         margin: 0 auto;
@@ -411,7 +411,7 @@ header a:focus{
         border-top-right-radius: 12px;
         padding-bottom: 1rem;
     }
-    .landing-minigridmonitor__header h3 {
+    .landing-dashboards__header h3 {
         padding-bottom: 1rem!important;
     }
     .cell.landing-resources__text h2{
@@ -698,7 +698,7 @@ header a:focus{
     }
 }
 
-.landing-minigridmonitor {
+.landing-dashboards {
     background-image: url("background/bg-6-minigridmonitor.jpg");
     background-position: center center;
     background-repeat: no-repeat;
@@ -706,27 +706,31 @@ header a:focus{
     padding-top: 3rem;
 }
 
-.landing-minigridmonitor__header {
+.landing-dashboards__header {
     color: #ffffff;
 }
 
-.landing-minigridmonitor__header h3 {
+.landing-dashboards__header p {
     padding-bottom: 6rem;
+    color: #ffffff;
 }
 
-.landing-minigridmonitor__header h3 span {
+.landing-dashboards__header p span {
     font-weight: 700;
 }
 
-.landing-minigridmonitor__image .cta {
+.landing-dashboards__image .cta {
     margin: 0 auto;
     padding-top: 1rem;
     padding-bottom: 1rem;
 }
 
-.landing-minigridmonitor__image div {
-    height: 27rem;
-    width: 62rem;
+
+
+
+.landing-dashboards__image div {
+    height: 14rem;
+    width: 100%;
     margin: 0 auto;
     padding-top: 4rem;
     background-color: #085064;
@@ -739,27 +743,69 @@ header a:focus{
     box-shadow: 4px 6px 16px 0px rgba(0,0,0,0.75);
 }
 
-@media only screen and (min-width: 700px) and (max-width: 900px) {
+
+@media only screen and (min-width: 1024px) {
+
+    .puffer-left{
+        padding-left: 5%;
+    }
+
+    .puffer-right{
+        padding-right: 5%;
+    }
+}
+
+@media only screen and (min-width: 1024px) and (max-width: 1300px) {
+
+    .landing-dashboards__image div{
+       height: 12rem;
+    }
+
+}
+
+
+@media only screen and (max-width: 1023px) {
+
+.landing-dashboards__image.puffer-right{
+
+}
+
+}
+
+.landing-dashboard-separator {
+
+    height: 0.5rem;
+    background-color: #8ee7b4;
+    margin-bottom: 4rem;
+    margin-left: 2.5%;
+    width: 95%;
+
+}
+
+
+@media only screen and (min-width: 641px) and (max-width: 1023px) {
     .small-offset-2 {
         margin-left: 0%;
     }
-    .landing-maps__image div{
+    .landing-maps__image div, .landing-dashboards__image div{
         width: 90%;
     }
-    .landing-minigridmonitor__image div{
-        width: 90%;
+
+    .landing-dashboards__header p {
+        padding-bottom: 3.5rem;
     }
+
 }
 
 /* smaller screens */
 @media only screen and (max-width: 640px) {
-    .landing-maps__image div {
+    .landing-maps__image div, .landing-dashboards__image div{
         height: auto!important;
         width: 80%;
     }
-    .landing-minigridmonitor__image div{
-        height: auto!important;
-        width: 90%;
+
+    .landing-dashboards__header p {
+        padding-bottom: 2rem;
     }
 }
 
