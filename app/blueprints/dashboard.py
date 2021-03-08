@@ -1,12 +1,24 @@
 from flask import Blueprint, render_template
-from ..database import query_dashboard_data
+from ..database import query_dashboard_data, query_generation_assets
 
-bp = Blueprint('dashboard', __name__)
+bp = Blueprint("dashboard", __name__)
 
 
-@bp.route('/dashboard/')
-@bp.route('/dashboard')
+@bp.route("/dashboard/")
+@bp.route("/dashboard")
 def index():
+    assets = query_generation_assets()
+
+    print(assets)
+    gen_lat =[]
+    gen_lon = []
+    gen_txt = []
+    for ft in assets["features"]:
+        lon, lat = ft["geometry"]["coordinates"]
+        gen_txt.append(str(ft["properties"]["capacity_kw"]))
+        gen_lat.append(lat)
+        gen_lon.append(lon)
+
     years, cum_cap, percent_renewable, re_type = query_dashboard_data()
 
     cum_cap_initial = []
@@ -22,18 +34,69 @@ def index():
 
     a = [1, 2, 3]
     graphs = dict(
-        generation_cap=[
-                           dict(x=years, y=cum_cap_initial, type="bar", marker=dict(color="#1DD069"), name="Installed"),
-                           dict(x=years, y=cum_cap_planned, type="bar", marker=dict(color="#ffbb00"), name="Planned"),
-                           dict(x=[years[0], years[-1]], y=[target, target], type="scatter", mode="lines", line=dict(color="red"), name="Target"),
-                       ],
-        renewables_percentage=dict(x=years, y=percent_renewable, type="bar", marker=dict(color="#1DD069"), name="% renewable"),
-        renewable_types=[
-            dict(x=(2020, 2030), y=re_type["Hydro"], type="bar", marker=dict(color="#0088A0"), name="Hydro"),
-            dict(x=(2020, 2030), y=re_type["PV"], type="bar", marker=dict(color="#FFCC15"), name="PV"),
-            dict(x=(2020, 2030), y=re_type["Wind"], type="bar", marker=dict(color="#B91109"), name="Wind"),
-        ],
-        location_plants=dict(x=a, y=a),
-
+        generation_cap=dict(
+            title="Total generation capacity installed and planned",
+            data=[
+                dict(
+                    x=years,
+                    y=cum_cap_initial,
+                    type="bar",
+                    marker=dict(color="#1DD069"),
+                    name="Installed",
+                ),
+                dict(
+                    x=years,
+                    y=cum_cap_planned,
+                    type="bar",
+                    marker=dict(color="#ffbb00"),
+                    name="Planned",
+                ),
+                dict(
+                    x=[years[0], years[-1]],
+                    y=[target, target],
+                    type="scatter",
+                    mode="lines",
+                    line=dict(color="red"),
+                    name="Target",
+                ),
+            ],
+        ),
+        renewables_percentage=dict(
+            title="Percentage renewables installed and planned",
+            data=dict(
+                x=years,
+                y=percent_renewable,
+                type="bar",
+                marker=dict(color="#1DD069"),
+                name="% renewable",
+            ),
+        ),
+        renewable_types=dict(
+            title="Renewables installed by technology type",
+            data=[
+                dict(
+                    x=(2020, 2030),
+                    y=re_type["Hydro"],
+                    type="bar",
+                    marker=dict(color="#0088A0"),
+                    name="Hydro",
+                ),
+                dict(
+                    x=(2020, 2030),
+                    y=re_type["PV"],
+                    type="bar",
+                    marker=dict(color="#FFCC15"),
+                    name="PV",
+                ),
+                dict(
+                    x=(2020, 2030),
+                    y=re_type["Wind"],
+                    type="bar",
+                    marker=dict(color="#B91109"),
+                    name="Wind",
+                ),
+            ],
+        ),
+        location_plants=dict(title="Map of power plant location", data=dict(lat=gen_lat, lon=gen_lon, text=gen_txt, type="scattergeo", mode="markers+text")),
     )
-    return render_template('dashboard/index.html', **{"graphs": graphs})
+    return render_template("dashboard/index.html", **{"graphs": graphs, "generation_assets": assets})

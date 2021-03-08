@@ -809,7 +809,24 @@ header a:focus{
     }
 }
 
+h3.dashboard-plot-title {
 
+    font-weight: bold;
+    margin-bottom: 1rem;
+
+}
+
+.dashboard-plot-area {
+    padding-left: 2rem;
+    padding-right: 2rem;
+}
+
+
+.dashboard-plot {
+    box-shadow: 5px 3px 5px 0px rgba(0,0,0,0.41);
+    -webkit-box-shadow: 5px 3px 5px 0px rgba(0,0,0,0.41);
+    -moz-box-shadow: 5px 3px 5px 0px rgba(0,0,0,0.41);
+}
 
 .landing-resources {
     background-image: url("background/bg-3-resources-div-tile.png");

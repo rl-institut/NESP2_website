@@ -1,5 +1,6 @@
-{% macro graph(id) -%}
+{% macro graph(id, title) -%}
 <div class="cell small-10 medium-5 dashboard-plot-area">
+    <h3 class="dashboard-plot-title">{# title #}</h3>
     <div id="{{ id }}_graph" class="dashboard-plot"></div>
 </div>
 {%- endmacro %}

@@ -3,8 +3,7 @@
 {% block head %}
 
     <script src="https://cdn.plot.ly/plotly-latest.min.js"></script
-    <!--Replace by CDN when done developping
-    <script src="{{ url_for('static', filename='js/plotly.js') }}"></script>-->
+    {# Replace by CDN when done developping <script src="{{ url_for('static', filename='js/plotly.js') }}"></script> #}
 {% endblock head%}
 
 {% block content %}
@@ -21,15 +20,17 @@
 
   <section id="dashboard-analytics" class="grid-x grid-margin-x align-center light-grey">
     <h2 class="cell small-10">Analytics</h2>
-    {% for graph_id, data in graphs.items()%}
-      {{ plotly.graph(id=graph_id) }}
+    {% for graph_id, graph_params in graphs.items()%}
+      {{ plotly.graph(id=graph_id, title=graph_params["title"]) }}
     {% endfor %}
   </section>
 
+  <script src="{{ url_for('static', filename='js/nigeria_states.js') }}"></script>
   <script type=text/javascript>
 
      var graphs = {{ graphs|tojson }};
-     console.log(graphs);
+     var generation_assets = {{ generation_assets|tojson }};
+     console.log(generation_assets);
 
 
 
@@ -86,20 +87,84 @@
       };
       */
       var config = {showLink: false, responsive: true};
-      var layout = {title: 'Total generation capacity installed and planned', barmode: 'stack'};
-      var data = graphs["generation_cap"];
+      var layout = {
+        title: {
+          text: '<b>Total generation capacity installed and planned</b>',
+          x: 0.1,
+          yanchor: 'left',
+          font: {
+              family: 'Source Sans Pro',
+              size: 20,
+          },
+        },
+        barmode: 'stack',
+        xaxis: {
+          color: '#C5C4CF',
+          tickfont: {
+              family: 'Source Sans Pro',
+              size: 14,
+
+          },
+          tickformat: "d",
+        },
+        yaxis: {
+          showgrid: false,
+          color: '#C5C4CF',
+          tickfont: {
+              family: 'Source Sans Pro',
+              size: 14,
+          },
+          tickformat: ",d",
+        },
+      };
+      var data = graphs["generation_cap"]["data"];
       Plotly.newPlot("generation_cap_graph", data, layout, config);
 
-      layout.title = 'Percentage renewables installed and planned';
-      data = [graphs["renewables_percentage"]];
+      layout.title.text = '<b>Percentage renewables installed and planned</b>';
+      data = [graphs["renewables_percentage"]["data"]];
       Plotly.newPlot("renewables_percentage_graph", data, layout, config);
 
-      layout.title = 'Renewables installed by technology type';
-      data = graphs["renewable_types"];
+      layout.title.text = '<b>Renewables installed by technology type</b>';
+      data = graphs["renewable_types"]["data"];
       Plotly.newPlot("renewable_types_graph", data, layout, config);
 
-      layout.title = 'Map of power plant location';
-      data = [graphs["location_plants"]];
+      layout.title.text = '<b>Map of power plant location</b>';
+
+      var state_names = [];
+      var L = nigeria_states_simplified.features.length
+      for(var i=0;i<L;++i){
+        state_names.push(
+            nigeria_states_simplified.features[i].properties.name
+        )
+      };
+
+      data = [{
+          type: 'choropleth',
+          geojson: nigeria_states_simplified,
+          zmin:0,
+          zmax:1,
+          z: Array(L).fill(0.5),
+          featureidkey: "properties.name",
+          locations: state_names,
+          locationmode: 'geojson-id',
+          hoverinfo:'skip',
+          showscale: false,
+          showborders: false,
+      },
+      graphs["location_plants"]["data"]
+      ];
+      console.log(graphs["location_plants"]["data"])
+      var layout = {
+        title: {
+          text: '<b>Total generation capacity installed and planned</b>',
+        },
+        margin: {"r": 0, "l": 0, "b": 0},
+        geo: {
+            fitbounds: 'locations',
+            visible: false,
+            projection: 'mercator',
+        }
+      }
       Plotly.newPlot("location_plants_graph", data, layout, config);
 
   </script>
