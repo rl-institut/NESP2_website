@@ -11,6 +11,8 @@ def about():
     args = dict(
         rea_height=logo_diameter*(119./103),
         nerc_height=logo_diameter*(516./500),
-        tcn_height=logo_diameter*(176./144)
+        tcn_height=logo_diameter*(176./144),
+        # height for green energy investment logo static 
+        gei_height=120,
     )
     return render_template('about.html', **args)

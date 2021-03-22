@@ -5,10 +5,12 @@ import pandas as pd
 from sqlalchemy import create_engine
 from sqlalchemy.orm import scoped_session, sessionmaker
 from sqlalchemy.sql import text
-import geoalchemy2
+import geoalchemy2.functions as func
 from sqlalchemy import Table, MetaData
 from sqlalchemy.ext.declarative import declarative_base
-
+from geojson import Point, Feature, FeatureCollection, LineString
+from shapely.wkt import loads as loadswkt
+from shapely.wkb import loads as loadswkb
 
 def get_env_variable(name):
     try:
@@ -71,6 +73,21 @@ class MappedBuildings(BaseWeb):
                       autoload_with=engine)
 
 
+class GenerationAssets(Base):
+    __table__ = Table(
+        "generation_assets", Base.metadata, autoload=True, autoload_with=engine
+)
+
+
+class PowerLines(Base):
+    __table__ = Table('osm_power_line', Base.metadata, autoload=True, autoload_with=engine)
+
+
+class PowerStations(Base):
+    __table__ = Table('osm_power_substation', Base.metadata, autoload=True, autoload_with=engine)
+
+
+
 def select_materialized_view(engine, view_name, schema=None, limit=None):
     if schema is not None:
         view_name = "{}.{}".format(schema, view_name)
@@ -126,6 +143,70 @@ def query_available_og_clusters():
     return [r.adm1_pcode for r in res]
 
 
+def query_generation_assets():
+    """Look for on and off grid generation assets"""
+
+    res = db_session.query(
+        GenerationAssets.name,
+        func.ST_AsText(
+            func.ST_Transform(func.ST_GeomFromWKB(GenerationAssets.geom, srid=3857), 4326)
+        ).label("geom"),
+        GenerationAssets.capacity_kw,
+        GenerationAssets.asset_type,
+        GenerationAssets.technology_type,
+    )
+
+    features = []
+    for r in res:
+        if r.geom is not None:
+            gjson = Feature(
+                geometry=Point(loadswkt(r.geom).coords[0]),
+                properties={
+                    "name": r.name,
+                    "capacity_kw": r.capacity_kw,
+                    "technology_type": r.technology_type,
+                    "asset_type": r.asset_type
+                },
+            )
+            features.append(gjson)
+
+    return FeatureCollection(features)
+
+
+def query_osm_power_lines():
+    lines = db_session.query(
+        func.ST_Transform(PowerLines.geom, 4326).label("geom")
+    )
+
+    features = []
+
+    for r in lines:
+        if r.geom is not None:
+            features.append(Feature(
+                geometry=LineString(loadswkb(bytes(r.geom.data)).coords),
+            ))
+
+    return FeatureCollection(features)
+
+
+def query_osm_power_stations():
+    res = db_session.query(
+        func.ST_AsText(func.ST_Transform(func.ST_AsEWKB(PowerStations.geom), 4326)).label("geom"),
+        PowerStations.tags
+    )
+
+    features = []
+
+    for r in res:
+        if r.geom is not None:
+            features.append(Feature(
+                geometry=Point(loadswkt(r.geom).coords[0]),
+                properties=r.tags
+            ))
+
+    return FeatureCollection(features)
+
+
 OG_CLUSTERS_COLUMNS = ('adm1_pcode', 'cluster_offgrid_id', 'area_km2',
     'building_count', 'percentage_building_area', 'grid_dist_km', 'geom')
 
@@ -159,6 +240,10 @@ def get_random_og_cluster(engine, view_code, schema="web", limit=5):
 
 
 def query_random_og_cluster(state_name, state_codes_dict):
+    """Protects from SQL injection by matching state_name in the state_codes_dict
+
+    It is linked to /random-cluster endpoint via a post method
+    """
     return get_random_og_cluster(engine=engine, view_code=state_codes_dict[state_name])
 
 

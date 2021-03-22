@@ -20,8 +20,8 @@
     <section id="about-map-intro" class="grid-x align-center light-grey">
     <!-- part which is only present for /about-map -->
     {% if about_map == True %}
-    <h2 class="cell medium-10">About this map</h2>
-    <div class="cell medium-8 l-width-60">
+    <h2 class="cell small-10">About this map</h2>
+    <div class="cell small-10 l-width-60">
       <div class="grid-x">
         <div class="cell iframe-container">
         <iframe id="nigeria-se4all-video" class="nigeria-se4all-video responsive-iframe" src="https://www.youtube-nocookie.com/embed/{{ video_id }}?autoplay=1" }} frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
@@ -40,8 +40,8 @@
       </div>
     </div>
 
-    <h2 class="cell medium-10">Disclaimers</h2>
-    <div class="cell medium-8 l-width-60">
+    <h2 class="cell small-10">Disclaimers</h2>
+    <div class="cell small-10 l-width-60">
       <div class="grid-x">
         <div class="cell">
             <p>
@@ -52,8 +52,8 @@
     </div>
 
     {% import "about/citation.html" as citation %}
-    <h2 class="cell medium-10">Data licences</h2>
-    <div class="cell medium-8 l-width-60">
+    <h2 class="cell small-10">Data licences</h2>
+    <div class="cell small-10 l-width-60">
       <div class="grid-x">
         <div class="cell">
             <p>
@@ -91,7 +91,7 @@
                     Identified settlements by satellite imagery are generated from a High Resolution Settlement Layer and processed by Nigeria SE4ALL.
                 </p>
                     {{ citation.license('an <a href="https://opendatacommons.org/licenses/odbl/1-0/index.html" target="_blank">Open Database License (ODbL) v1.0 License</a>') }}
-                    {{ citation.attribution("Facebook Connectivity Lab and Center for International Earth Science Information Network - CIESIN - Columbia University. 2016. High Resolution Settlement Layer (HRSL). Source imagery for HRSL © 2016 DigitalGlobe. Accessed DAY MONTH YEAR. Modified by © Deutsche Gesellschaft für Internationale Zusammenarbeit (GIZ) GmbH and the Federal Ministry of Power (FMP).") }}
+                    {{ citation.attribution("Facebook Connectivity Lab and Center for International Earth Science Information Network - CIESIN - Columbia University. 2016. High Resolution Settlement Layer (HRSL). Source imagery for HRSL © 2016 DigitalGlobe. Accessed DAY MONTH YEAR. Modified by © Deutsche Gesellschaft für Internationale Zusammenarbeit (GIZ) GmbH and the Federal Ministry of Power (FMP),  update with residential landuse data from: OpenStreetMap contributors (https://www.openstreetmap.org/copyright).") }}
                 <p>
                     For more information on how settlements are identified automatically with satellite imagery, read the “cluster identification” tools section by following the link below:
                 </p>
@@ -120,9 +120,9 @@
     {% endif %}
     <!-- part which is present for both /about-map and /accreditation -->
     <div class="cell show-for-small-only" style="height:60px;"></div>
-    <h2 class="cell medium-10">Accreditation</h2>
+    <h2 class="cell small-10">Accreditation</h2>
 
-    <div class="cell medium-10 l-width-60">
+    <div class="cell small-10 l-width-60">
       <div class="grid-x">
         <h3 class="cell medium-10">Authors and web development</h3>
         <div class="cell">
@@ -154,7 +154,7 @@
       </div>
     </div>
 
-    <div class="cell medium-8 l-width-60">
+    <div class="cell small-10 l-width-60">
       <div class="grid-x">
         <h3 class="cell">Design</h3>
         <div class="cell">
@@ -167,7 +167,7 @@
     </div>
     <!-- part which is only present for /accreditation -->
     {% if about_map == False %}
-    <div class="cell medium-8 l-width-60">
+    <div class="cell small-10 l-width-60">
       <div class="grid-x">
         <h3 class="cell">Images</h3>
         <div class="cell">

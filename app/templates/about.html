@@ -11,8 +11,8 @@
 <div id="about-content" class="grid-container full">
 
   <section id="about-intro" class="grid-x align-center light-grey">
-    <h2 class="cell medium-10">About this platform</h2>
-    <div class="cell medium-8 l-width-60">
+    <h2 class="cell small-10">About this platform</h2>
+    <div class="cell small-10 l-width-60">
       <div id="about-intro-content" class="grid-x">
         <div id="about-intro-text" class="cell">
         </div>
@@ -31,8 +31,8 @@
   </section>
 
   <section id="about-se4all" class="grid-x align-center semi-grey section-about">
-    <h2 class="cell medium-11">Nigeria SE4All</h2>
-    <div id="about-se4all-content" class="cell medium-10 l-width-60">
+    <h2 class="cell small-11">Nigeria SE4All</h2>
+    <div id="about-se4all-content" class="cell small-10 l-width-60">
       <div class="grid-x">
         <div id="about-se4all-agenda" class="cell section-about__text">
           <h3>The SE4All Agenda</h3>
@@ -42,7 +42,7 @@
             the right investment environment for the private sector's participation; and the interplay of civil society organizations in identifying, advocating, and monitoring public policy and business action; mobilising social innovation and
             grassroots action; leading behavioural change; and helping to spread best practices and building capacity at all levels in partnership with governments and businesses</p>
             <div class="grid-x">
-              <div class="cell small-2">
+              <div class="cell small-2 about-inline-logo">
                 <img src="{{ url_for('static', filename='logos/logo-5-blitz.png') }}" alt="blitz-logo">
                 </div>
               <p class="cell small-10">The SE4All Action Agenda for Nigeria has been developed in line with the guiding principles contained in the Guidelines for Developing National Sustainable Energy for All Action Agendas in Africa that were developed by African
@@ -78,7 +78,7 @@
           <h3>About 30:30:30</h3>
 
           <div class="grid-x">
-              <div class="cell small-2" id="sdg7-logo">
+              <div class="cell small-2 about-inline-logo" id="sdg7-logo">
                 <img src="{{ url_for('static', filename='img/img-14-SDG7.png') }}" alt="SDG7-logo">
                 </div>
               <p class="cell small-10 l-padding-left">The Sustainable Energy for All (SE4ALL) Action Agenda of Nigeria is a national implementation tool for the emerging Sustainable Development Goal (SDG) on energy (<a href="https://www.un.org/sustainabledevelopment/energy/" rel="noreferrer" target="_blank">SDG No. 7</a>). </p>
@@ -150,7 +150,7 @@
   </section>
 
   <section id="about-fmp" class="grid-x align-center light-grey section-about">
-    <h2 class="cell medium-10">Federal Ministry of Power (FMP)</h2>
+    <h2 class="cell small-10">Federal Ministry of Power (FMP)</h2>
     <div id="about-fmp-content" class="cell small-10 small-offset-2 l-width-80 grid-x about-fmp">
       <div class="grid-x about-fmp__item">
         <div class="cell medium-6 large-6 section-about__text section-about__text--nomargin">
@@ -189,7 +189,7 @@
   </section>
 
   <section id="about-nesp" class="grid-x align-center semi-grey section-about">
-    <h2 class="cell medium-10">Nigerian Energy Support Programme (NESP)</h2>
+    <h2 class="cell small-10">Nigerian Energy Support Programme (NESP)</h2>
     <div id="about-nesp-content" class="cell small-10 small-offset-2 l-width-80 grid-x">
       <div id="about-nesp-text" class="cell medium-6 section-about__text section-about__text--nomargin">
         <p>The Nigerian Energy Support Programme (NESP) is co-funded by the European Union and the German Federal Ministry for Economic Development and Cooperation (BMZ) and is jointly implemented by Deutsche Gesellschaft für Internationale Zusammenarbeit (GIZ) GmbH in collaboration with Federal Ministry of Power.
@@ -208,12 +208,13 @@
   </section>
 
   <section id="about-stakeholder" class="grid-x align-center light-grey">
-    <h2 class="cell medium-10">Stakeholders</h2>
+    <h2 class="cell small-10">Stakeholders</h2>
     {% import "about/stakeholder.html" as stakeholder %}
     <div id="about-stakeholder-content" class="cell small-10 small-offset-2 l-width-80 grid-x">
       {{stakeholder.input('1', 'Rural Electrification Agency (REA)', 'https://rea.gov.ng/', 'logos/logo-6-rea.png', image_height=rea_height, text='The Rural Electrification Agency is mandated by the Federal Government to facilitate its goals and targets to increase access to electricity to 75% and 90% by 2020 and 2030 respectively and at least 10% of renewable energy mix by 2025. REA is mandated to promote rapid, safe, clean energy and cost-effective expansion of electricity access in unelectrified rural areas across Nigeria with economic development objectives. The electrification of the rural areas would also help improve the livelihood and socio-economic conditions of rural dwellers.')}}
       {{stakeholder.input('2', 'Nigeria Electricity Regulatory Commission (NERC)', 'https://nerc.gov.ng/', 'logos/logo-7-nerc.png', image_height=nerc_height, text='The Nigerian Electricity Regulatory Commission, established by the Electric Power Sector Reform Act of 2005 is an independent body with a mandate to shoulder technical and economic regulations of the Nigerian Electricity Supply Industry. NERC has been charged with ensuring uninterrupted electricity, private sector participation, fair regulations as well as consumer protection. To this effect, its sole mission is to foster an investor-friendly industry and efficient market structure to meet the needs of Nigeria for safe, adequate, reliable and affordable electricity.')}}
       {{stakeholder.input('3', 'Transmission Company of Nigeria (TCN)', 'https://tcn.org.ng/', 'logos/logo-8-tcn.png', image_height=tcn_height, text='The Transmission Company of Nigeria is a principal body licensed with the responsibility of wheeling power at high voltage, operate the National Grid and Market Operation Service. The TCN was issued a transmission license by Federal Government of Nigeria in response to the increase in Nigeria\'s demographic figures over the decades and the lack of corresponding increase in energy supply to meet the country\'s growing economic and infrastructural development objective. Major activities of the TCN include operation, expansion and upgrade of transmission facilities, create adequate network redundancies to ensure at least 99.9% reliability and reduce transmission losses to less than 5%.')}}
+      {{stakeholder.input('4', 'Green Energy Investment', 'https://greenenergyinvestment.com.ng', 'logos/logo-11-green-energy-investment.png', image_height=gei_height, text='The Green Energy Investment Platform is a One Stop Investment Platform for Renewable Energy and Energy Efficiency investments in Nigeria. The platform is co-operated by the Federal Ministry of Power (FMP), the Nigerian Investment Promotion Commission (NIPC) and the Rural Electrification Agency of Nigeria (REA) and developed with the support of the Nigerian Energy Support Programme (NESP), a technical assistance programme co-funded by the European Union and the German Government and implemented by Deutsche Gesellschaft für Internationale Zusammenarbeit (GIZ) in collaboration with FMP. For more information about investment opportunities, case studies and market intelligence in Nigeria, visit www.greenenergyinvestment.com.ng')}}
     </div>
   </section>
 

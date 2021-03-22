@@ -173,6 +173,12 @@ header img{
     transform: translateY(-3px);
 }
 
+@media only screen and (min-width: 1600px) {
+    .header-right {
+        padding-left: 5%;
+    }
+}
+
 .header-right__item {
     margin-left: auto; 
     margin-right: 0;
@@ -192,6 +198,7 @@ header a:focus{
 
 #header-logo-nigeria img {
     height: 5rem;
+    margin: 0;
 }
 
 /* Main content */
@@ -225,6 +232,15 @@ header a:focus{
 
 /* empty div behind top nav */
 /* should have =< height of nav */
+.computer-menu{
+    height: auto;
+}
+@media only screen and (max-width:1023px) {
+    .computer-menu {
+        margin-right: 0.5rem;
+        margin-left: 0.5rem;
+    }
+}
 .below-header {
     height: 5rem;
 }
@@ -256,8 +272,82 @@ header a:focus{
     margin-bottom: 5rem;
 }
 
+
+/* mobile phone toggle menu */
+
+.mobile-menu-bar {
+    /* make sure height of .below-header for small screens is set to same value */
+    height: 45px;
+	justify-content: space-between;
+	display: flex;
+	flex-direction: row-reverse;
+	padding-left: 0.5rem;
+	padding-right: 0.5rem;
+}
+
+.mobile-menu-bar img{
+    width: 1.5rem;
+    margin: 0;
+    transform: translateY(0px);
+}
+
+.mobile-menu-bar a {
+    width: 35px;
+    height: 35px;
+	align-items: center;
+	justify-content: center;
+	display: flex;
+}
+
+.mobile-menu {
+    padding-bottom: 0.5rem;
+}
+
+.mobile-menu a {
+	align-items: center;
+	justify-content: center;
+	display: flex;
+}
+
+.mobile-menu-logo{
+	align-items: center;
+	justify-content: center;
+	display: flex;
+	margin-bottom: 0.5rem
+}
+
+.mobile-menu__item {
+	align-items: center;
+	justify-content: center;
+	display: flex;
+    margin-bottom: 1rem;
+    margin-top: 1rem;
+}
+
+.mobile-menu-logo img {
+    height: 1.5rem;
+    margin-right: 0.5rem;
+    transform: translateY(0px);
+}
+
+#mobile-fmp-logo img{
+    height: 2rem;
+    width: 2rem;
+}
+
 /* smaller screens */
-@media only screen and (max-width: 640px) {
+@media only screen and (max-width: 639px) {
+
+    header{
+        padding-top: 0;
+        padding-bottom: 0;
+    }
+
+    .below-header {
+        /* this need to be the same height as .mobile-menu-bar */
+        height: 45px;
+    }
+
     section {
         padding-left: .5rem;
         padding-right: .5rem;
@@ -274,7 +364,7 @@ header a:focus{
         transform: translateY(-3px);
     }
     .landing-hero {
-        background-image: url(img/img-1-landing.jpg);
+        background-image: url("img/img-1-landing.jpg");
         height: auto;
         width: auto;
         background-position: center;
@@ -288,29 +378,10 @@ header a:focus{
         display: none;
     }
 
-    .landing-welcome__img img {
-        padding-left: 0rem!important;
-    }
     .landing-feature__description{
         display: none;
     }
-    .landing-maps__image div {
-        height: auto!important; 
-        width: auto!important; 
-        margin: 0 auto;
-        padding-top: 4rem;
-        background-color: #8ee7b4;
-        background-image: url(../static/img/img-17-explore-map-min.jpg);
-        background-repeat: no-repeat;
-        background-position: center top;
-        background-size: cover;
-        border-top-left-radius: 12px;
-        border-top-right-radius: 12px;
-        padding-bottom: 1rem;
-    }
-    .landing-maps__header h3 {
-        padding-bottom: 1rem!important;
-    }
+
     .cta, .cta:hover, .cta:focus, .cta:active {
         display: block;
         width: fit-content;
@@ -321,18 +392,9 @@ header a:focus{
         font-weight: bold;
         padding: 10px 30px 10px 30px;
         border-radius: 4px;
-    }   
-
-    .cell.large-5.large-offset-1.landing-resources__cards.cell{
-        width: fit-content;
-        padding-right: 2rem;
     }
 
-    .landing-minigridmonitor__image div {
-        height: auto!important; 
-        width: auto!important; 
-       
-    }
+
     .landing-minigridmonitor__header h3 {
         padding-bottom: 1rem;
     }
@@ -352,33 +414,17 @@ header a:focus{
     .landing-minigridmonitor__header h3 {
         padding-bottom: 1rem!important;
     }
-    .footer-stay-in-touch__img a{
-        padding-left: 4rem!important;
-        float: left!important;
-    }
-    .cell.medium-offset-1.medium-9.center--align{
-        display: flex;
-        justify-content: end;
-        align-items: center;
-        margin-top: 2rem;
-    }
     .cell.landing-resources__text h2{
         font-size: 18pt;
     }
     .cell.landing-resources__text p{
         font-size: 14pt;
     }
-    #header-logo-nigeria{
-        display: none;
-    }
 
     .header-right__item {
         margin-left: 1.5rem;
         margin-right: 0;
         margin-top: 1rem;
-    }
-    #header-blitz-div{
-        margin-left: 1rem;
     }
     #about-content h2 {
         padding-bottom: 0rem!important;
@@ -399,12 +445,7 @@ header a:focus{
     .about-stakeholder__img {
         padding-bottom: 3rem;
     }
-    .about-intro__cards .about-card:nth-child(odd) {
-        padding-right: 0rem!important;
-    }
-    .about-intro__cards .about-card:nth-child(even) {
-        padding-left: 0rem!important;
-    }
+
 } 
 
 /* medium and larger screens */
@@ -427,7 +468,7 @@ header a:focus{
 }
 
 /* larger screens */
-@media only screen and (min-width: 1000px) {
+@media only screen and (min-width: 1024px) {
     .landing-hero {
         height: auto;
         max-height:50rem;
@@ -457,9 +498,38 @@ header a:focus{
     padding-bottom: 5rem;
 }
 
+.landing-welcome__img {
+    display: flex;
+    align-items: center;
+}
 .landing-welcome__img img {
     padding-left: 5rem;
 }
+
+
+/* smaller and medium screens */
+@media only screen and (max-width: 1024px) {
+
+    .landing-welcome {
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+
+    .landing-welcome__img img {
+        padding-top: 2rem;
+        padding-bottom: 2rem;
+        padding-left: 0rem!important;
+    }
+
+    .about-intro__cards .about-card:nth-child(odd) {
+        padding-right: 0rem!important;
+    }
+    .about-intro__cards .about-card:nth-child(even) {
+        padding-left: 0rem!important;
+    }
+
+}
+
 
 .landing-feature {
     background-color: #a2a2a2;
@@ -545,6 +615,30 @@ header a:focus{
 }
 
 
+/* smaller and medium screens */
+@media only screen and (max-width: 1024px) {
+    .landing-feature {
+        padding-top: 8rem;
+        padding-bottom: 4rem;
+    }
+}
+
+/* smaller screens */
+@media only screen and (max-width: 640px) {
+    .landing-feature {
+        padding-top: 10rem;
+        padding-bottom: 4rem;
+        display: flex;
+        align-items: center;
+    }
+
+    .landing-feature__text {
+        padding-bottom: 0rem;
+        height: 6rem;
+    }
+}
+
+
 .landing-progress {
     background-image: url("background/bg-4-progress-div.png");
     background-position: center center;
@@ -552,6 +646,9 @@ header a:focus{
     background-size: cover;
     padding-top: 3rem;
     padding-bottom: 5rem;
+    display: flex;
+    justify-content: space-evenly;
+
 }
 
 .landing-maps {
@@ -591,6 +688,14 @@ header a:focus{
     background-size: cover;
     border-top-left-radius: 12px;
     border-top-right-radius: 12px;
+}
+
+/* smaller screens */
+@media only screen and (max-width: 640px) {
+
+    .landing-maps__header h3 {
+        padding-bottom: 1rem!important;
+    }
 }
 
 .landing-minigridmonitor {
@@ -634,10 +739,34 @@ header a:focus{
     box-shadow: 4px 6px 16px 0px rgba(0,0,0,0.75);
 }
 
+@media only screen and (min-width: 700px) and (max-width: 900px) {
+    .small-offset-2 {
+        margin-left: 0%;
+    }
+    .landing-maps__image div{
+        width: 90%;
+    }
+    .landing-minigridmonitor__image div{
+        width: 90%;
+    }
+}
+
+/* smaller screens */
+@media only screen and (max-width: 640px) {
+    .landing-maps__image div {
+        height: auto!important;
+        width: 80%;
+    }
+    .landing-minigridmonitor__image div{
+        height: auto!important;
+        width: 90%;
+    }
+}
+
+
+
 .landing-resources {
     background-image: url("background/bg-3-resources-div-tile.png");
-    //background-position: center center;
-    //background-repeat: no-repeat;
     background-repeat: repeat-y;
     background-size: 100% auto;
     padding-top: 3rem;
@@ -646,14 +775,38 @@ header a:focus{
     padding-right: .75rem;
 }
 
+
+
 #objectives-sec .landing-resources__text h1 {
     padding-top: 3rem;
     font-size: 32pt;
     font-weight: 700;
 }
 
-#landing-resources-sec .landing-resources__text{
-    padding-bottom: 5.5rem;
+@media only screen and (min-width: 640px) {
+    #landing-resources-sec .landing-resources__text{
+         padding-bottom: 3.5rem;
+    }
+}
+/* smaller and medium screens */
+@media only screen and (max-width: 1024px) {
+
+    .landing-resources__text{
+        padding-bottom: 3.5rem;
+    }
+
+    .landing-resource__img{
+        margin-top: 1rem;
+        margin-bottom: 1rem;
+    }
+
+    .cell.large-5.large-offset-1.landing-resources__cards.cell{
+        width: -moz-fit-content;
+        width: fit-content;
+        padding-right: 1.5rem;
+        padding-left: 0.5rem;
+    }
+
 }
 
 .landing-resources__text p {
@@ -735,6 +888,31 @@ header a:focus{
     padding-left: 5rem;
 }
 
+
+@media only screen and (max-width: 1024px) {
+    .footer-stay-in-touch__img{
+        margin-top: 2rem;
+        display:flex;
+        justify-content: space-evenly;
+    }
+    .footer-stay-in-touch__img a{
+        padding-left: 0rem;
+        float: left;
+        width: 4rem;
+    }
+    .footer-stay-in-touch__img img {
+        width: 2rem;
+        min-width: 2rem;
+    }
+}
+
+@media only screen and (max-width: 400px) {
+    .footer-stay-in-touch__img{
+
+        justify-content: space-between;
+    }
+}
+
 #footer-contact-div{
     padding-top: 7rem;
     padding-bottom: 7rem;
@@ -804,6 +982,7 @@ header a:focus{
     padding-right: .75rem;
 }
 
+
 #footer-logos-div a {
     outline: 0;
 }
@@ -823,6 +1002,7 @@ header a:focus{
     align-items: center;
 }
 
+
 @media only screen and (min-width: 640px) {
     .footer-logos__img--giz {
         position: relative;
@@ -840,9 +1020,25 @@ header a:focus{
     height: 10rem;
 }
 
+/* smaller and medium screens */
+@media only screen and (max-width: 1023px){
+    #footer-logos-giz{
+        height: auto;
+    }
+
+    #footer-logos-div{
+        padding-top: 2rem;
+        padding-bottom: 2rem;
+    }
+
+
+}
+
 #footer-logos-giz img{
     height: 4.3953rem;
 }
+
+
 
 #footer-license-div{
     background-color: #93939f;
@@ -870,6 +1066,8 @@ header a:focus{
 
 #footer-license-div div{
     color: #ffffff;
+    display:flex;
+    align-items: baseline;
 }
 
 #footer-license-div img{
@@ -878,7 +1076,30 @@ header a:focus{
 
 .footer-license__img {
     text-align: right;
+    display: inline!important;
 }
+
+/* smaller and medium screens */
+@media only screen and (max-width: 640px){
+    #footer-license-div div{
+        justify-content: center;
+    }
+
+    .footer-license-item{
+        margin-top: 2rem;
+        text-align: center;
+    }
+
+    #footer-license-div{
+        padding-top: 0rem;
+    }
+
+    .footer-license__img{
+        text-align: center;
+    }
+}
+
+
 
 /* overwrite existing css rule (wam_fotter.scss?) */
 footer:not(.footer-hp) {
@@ -900,6 +1121,7 @@ footer:not(.footer-hp) {
     font-weight: bold;
 }
 
+
 .list-number>div {
     margin-bottom: 0.5rem;
 }
@@ -915,6 +1137,28 @@ footer:not(.footer-hp) {
 .list-item-number {
     font-weight: 700;
 }
+
+/* for very small screens  */
+@media only screen and (max-width: 500px) {
+    .cell.list-item-number {
+        width: 100%;
+        margin-top:0.5rem;
+    }
+    .cell.list-item-roman {
+        width: 100%;
+    }
+    .list-item-content {
+        padding-left: 0.75rem;
+    }
+}
+
+/* for intermediate size screens (so that the bullet points are not too squeezed  */
+@media only screen and (min-width: 640px) and (max-width: 750px) {
+    .list-item-content {
+        padding-left: 0.2rem;
+    }
+}
+
 
 .list-item-letter {
 }
@@ -976,6 +1220,41 @@ h4.heading-green {
     padding-bottom: 6rem;
     padding-top: 3rem;
 }
+@media only screen and (max-width: 1024px) {
+
+    #about-content section {
+        padding-top: 2rem;
+        padding-bottom: 6rem;
+    }
+
+    #about-content h2 {
+        padding-bottom: 4rem;
+        padding-top: 2rem;
+    }
+
+    #about-map-content h2 {
+        padding-bottom: 4rem;
+        padding-top: 2rem;
+    }
+}
+@media only screen and (max-width: 640px) {
+
+    #about-content section {
+        padding-top: 2rem;
+        padding-bottom: 4rem;
+    }
+
+    #about-content h2 {
+        padding-bottom: 2rem;
+        padding-top: 1rem;
+    }
+
+    #about-map-content h2 {
+        padding-bottom: 2rem;
+        padding-top: 1rem;
+    }
+}
+
 
 #about-map-content h3 {
     font-size: 20pt;
@@ -1137,17 +1416,24 @@ h4.heading-green {
     margin-left: 5%
 }
 
-@media only screen and (max-width: 1040px) {
+@media only screen and (max-width: 1024px) {
     .landing-resources-grid-y .card-text p {
         font-size: 15pt;
     }
 }
 
-@media only screen and (min-width: 1040px) {
+@media only screen and (min-width: 1024px) {
     .landing-resources-grid-y .card-text p {
         font-size: 16pt;
     }
 }
+
+@media only screen and (max-width: 640px) {
+    .landing-resources-grid-y .card-offset {
+        margin-left: 0.5rem;
+    }
+}
+
 
 @media only screen and (min-width: 1300px) {
     .landing-resources-grid-y .card {
@@ -1411,15 +1697,22 @@ Added this trick to fix it */
 #landing-maps,
 #landing-resources {
     display:block;
-   height:4.5rem; /* this is the height of your header */
-   margin-top:-4.5rem; /* this is again negative value of the height of your header */
+   height: 6.75rem; /* this is the height of your header */
+   margin-top: -6.75rem; /* this is again negative value of the height of your header */
    visibility:hidden;
 }
 
-#landing-welcome,
- {
-   margin-top:-5.5rem; /* this is again negative value of the height of your header */
-
+@media only screen and (max-width: 639px) {
+    /* for some reason, the anchor is nor working as it should, i.e. scroll down to the top of the map section
+    Added this trick to fix it */
+    #landing-welcome,
+    #landing-maps,
+    #landing-resources {
+        display:block;
+       height: 45px; /* this is the height of your header */
+       margin-top:-45px; /* this is again negative value of the height of your header */
+       visibility:hidden;
+    }
 }
 
 /* test */
@@ -1447,21 +1740,7 @@ Added this trick to fix it */
         width: 95%;
     } */
 
-@media only screen and (min-width: 700px) and (max-width: 900px) {    
-    .small-offset-2 {
-        margin-left: 0%; 
-    }
-    .landing-welcome__img img {
-        padding-left: 0rem!important;
-        padding-right: 5rem;
-    }   
-    .landing-maps__image div{
-        width: 90%;
-    }
-    .landing-minigridmonitor__image div{
-        width: 90%;
-    }
-}
+
 .landing-video-container{
     position: relative;
     overflow: hidden;
@@ -1496,4 +1775,22 @@ Added this trick to fix it */
     .landing-video{
         padding-right:5rem!important;
     }
+}
+
+.cookiebanner {
+  background: rgba(255, 255, 255, 0.9) !important;
+
+  font-family: Source Sans Pro !important;
+  font-size: 18px !important;
+  line-height: 23px !important;
+
+  /* Brand/Dark Grey */
+  color: #464646 !important;
+}
+.cookiebanner a{
+    color: #1DD069 !important;
+    text-decoration: underline !important;
+    font-size: 18px !important;
+    line-height: 23px !important;
+    font-family: Source Sans Pro !important;
 }
