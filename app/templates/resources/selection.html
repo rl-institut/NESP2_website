@@ -1,6 +1,10 @@
 {% extends 'base.html' %}
 
+{% block title %} {{ title }} | Nigeria SE4ALL{% endblock title%}
 
+{% block head %}
+<meta name="description=" content="Descriptions of the tools used to help rural electrification within Nigeria Sustainable Energy for All (SE4ALL) project">
+{% endblock head%}
 
 {% block header %}
 {% endblock %}
@@ -16,7 +20,7 @@
     <a class="cta" style="display: none;" href="">Go to resource</a>
   </div>
   <div class="cell small-10 small-offset-1 large-5 large-offset-1 landing-resource__img">
-    <img src="{{ url_for('static', filename=image) }}">
+    <img src="{{ url_for('static', filename=image) }}"  alt="{{ title }} image">
 
   </div>
   {% if title == "Mapping with OSM" %}
@@ -36,7 +40,7 @@
     </div>
   </div>
   <div class="cell small-10 small-offset-1 large-5 large-offset-1 landing-resource__img">
-    <img src="{{ url_for('static', filename='img/img-6-resources-osm-2.jpg') }}">
+    <img src="{{ url_for('static', filename='img/img-6-resources-osm-2.jpg') }} alt="Zoom on remotly mapped settlements"">
   </div>
   {% endif %}
 </section>

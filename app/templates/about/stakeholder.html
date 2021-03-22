@@ -6,7 +6,7 @@
     <a href="{{link}}" rel="noreferrer" target="_blank">Link <img src="static/img/icons/i_arrow_right_green.svg" alt="Arrow right"></a>
   </div>
   <div id="about-stakeholder{{idx}}-img" class="cell medium-offset-2 medium-5 about-stakeholder__img">
-    <a href="{{link}}" rel="noreferrer" target="_blank"><img style="height: {{ image_height }}px;" src="{{ url_for('static', filename=image) }}" alt="Logo"></a>
+    <a href="{{link}}" rel="noreferrer" target="_blank"><img style="height: {{ image_height }}px;" src="{{ url_for('static', filename=image) }}" alt="{{ title }} logo"></a>
   </div>
 </div>
 {%- endmacro %}
