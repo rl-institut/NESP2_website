@@ -2,7 +2,18 @@
 
 {% block head %}
 <link rel="stylesheet" href="{{ url_for('static', filename='about.css') }}">
+<meta name="description=" content="Terms and Conditions of service of the website">
 {% endblock head%}
+
+
+{% block title %}
+{% if about_map == True %}
+ About Map | Nigeria SE4ALL
+{% else %}
+    Accreditation | Nigeria SE4ALL
+{% endif %}
+{% endblock title%}
+
 
 {% block content %}
 <div id="about-map-content" class="grid-container full">
@@ -123,7 +134,7 @@
                 </div>
                 <div class="cell medium-12 large-5 org-logo">
                     <a target="_blank" href="http://www.integration.org">
-                        <img src="{{ url_for('static', filename='logos/logo-9-integration.svg') }}">
+                        <img src="{{ url_for('static', filename='logos/logo-9-integration.svg') }}" alt="Integration logo">
                     </a>
                 </div>
             </div>
@@ -135,7 +146,7 @@
                 </div>
                 <div class="cell medium-12 large-5 org-logo">
                     <a target="_blank" href="http://www.reiner-lemoine-institut.de">
-                        <img src="{{ url_for('static', filename='logos/logo-10-rli.png') }}">
+                        <img src="{{ url_for('static', filename='logos/logo-10-rli.png') }}" alt="Reiner Lemoine Institut logo">
                     </a>
                 </div>
             </div>

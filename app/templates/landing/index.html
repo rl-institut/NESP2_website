@@ -1,10 +1,4 @@
 {% extends 'base.html' %}
-
-{% block header %}
-{% endblock header%}
-
-{% block title %}Nigeria SE4ALL{% endblock %}
-
 {% block content %}
 <div id="landing-content" class="grid-container full">
 
@@ -43,7 +37,7 @@
           <p>SE4ALL Nigeria provides data to all stakeholders and shares its experiences and tools. The data provided will be continuously enriched – please follow by searching for the hashtag <a href="https://twitter.com/search?q=%23nigeriase4all&src=typed_query" rel="noreferrer" target="_blank">#nigeriase4all</a> or on the social media platforms listed at the bottom of this page.</p>
           </div>
         <div class="cell small-offset-1 small-10 small-order-2 medium-offset-0 medium-11 large-5 large-order-3 landing-welcome__img">
-          <img src="static/img/img-2-welcome.jpg">
+          <img src="static/img/img-2-welcome.jpg" alt="Handshake">
         </div>
       </div>
     </div>
@@ -53,7 +47,7 @@
     <!-- inspired from https://jsfiddle.net/yassarikhan786/aad7qy6n/ -->
     <div id="landing-feature-al" class="cell small-6 small-order-2 medium-1 medium-order-1 left--align landing-feature__arrow">
       <div>
-        <img class="feature-previous" src="static/img/icons/i_arrow_left_w.svg">
+        <img class="feature-previous" src="static/img/icons/i_arrow_left_w.svg" alt="left arrow">
       </div>
     </div>
     <div class="small-order-1 medium-10 medium-order-2 grid-x align-center">
@@ -63,7 +57,7 @@
           <div class="cell">
             <div id="landing-feature-txt-dev" class="selected--opt--content">
               <div class="landing-feature__header">
-                <h2>Features for <b>Project developer</b></h2>
+                <h2>Data for <b>Project developer</b></h2>
               </div>
               <div class="landing-feature__text">
                 <p>Identify <b>investment opportunities</b> in the electrification sector and gain an edge over your competition</p>
@@ -71,7 +65,7 @@
             </div>
             <div id="landing-feature-txt-pla" class="opt--content">
               <div class="landing-feature__header">
-                <h2>Features for <b>Government</b></h2>
+                <h2>Data for <b>Government</b></h2>
               </div>
               <div class="landing-feature__text">
                 <p>Perform <b>on-the-fly analysis</b> to track nationwide electrification progress on the village level</p>
@@ -79,7 +73,7 @@
             </div>
             <div id="landing-feature-txt-cit" class="opt--content">
               <div class="landing-feature__header">
-                <h2>Features for <b>General public</b></h2>
+                <h2>Data for <b>General public</b></h2>
               </div>
               <div class="landing-feature__text">
                 <p><b>Get informed</b> about the latest developments for electrification in Nigeria</p>
@@ -130,7 +124,7 @@
     </div>
     <div id="landing-feature-ar" class="cell small-6 small-order-3 medium-1 medium-order-3 right--align landing-feature__arrow">
       <div>
-        <img class="feature-next" src="static/img/icons/i_arrow_right_w.svg">
+        <img class="feature-next" src="static/img/icons/i_arrow_right_w.svg" alt="right arrow">
       </div>
     </div>
 
@@ -140,7 +134,7 @@
   {% if DB_STATUS == "up" %}
   <section id="landing-progress" class="grid-x landing-progress">
     <div class="cell medium-11 medium-offset-1 landing-progress__header left-align">
-      <h2>Our progress in numbers</h2>
+      <div class="h2-alternative">Our progress in numbers</div>
 
     </div>
     <div class="center--align">
@@ -160,7 +154,7 @@
 
   <section id="landing-maps-sec" class="grid-x landing-maps align-center text-center">
     <div class="cell landing-maps__header">
-      <h2>Explore the ground-truth</h2>
+      <h2>Explore the ground-truth electrification data </h2>
       <h3>Analyze highly accurate electrification data on our <span>interactive map</span></h3>
     </div>
     <div class="cell landing-maps__image">
@@ -180,12 +174,12 @@
   <section id="landing-resources-sec" class="grid-x landing-resources landing-resources-grid-y">
     <div class="cell large-4 large-offset-1 grid-x">
       <div class="cell small-order-2 landing-resources__text">
-        <h2>Use our tools</h2>
+        <div class="h2-alternative">Use our tools</div>
         <p>Explore our <span>suite of open source tools</span> for data mining and analysis for electrification and planning</p>
         <a class="cta" style="display:none" href="{{ url_for('resources.index') }}">Explore tools</a>
       </div>
        <div class="cell small-order-1 landing-resources__text">
-        <h2>Understand our objectives</h2>
+        <div class="h2-alternative">Understand our objectives</div>
         <p>Read through the idea and key questions we would like to solve with our data gathering activities</p>
         <a class="cta" href="{{ url_for('objectives.index') }}">Explore Objectives</a>
       </div>
