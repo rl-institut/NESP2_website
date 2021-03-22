@@ -2,8 +2,14 @@
 
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no,width=device-width" />
-  <title>{% block title %}Nigeria SE4ALL{% endblock %}</title>
+  <meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no,width=device-width"/>
+  <meta name = "description" content = "Nigeria SE3ALL website is Nigeria’s leading central platform delivering the most accurate data and latest tools that empower better electrification planning in Nigeria.">
+  <meta property="og:image" content="{{ url_for('static', filename='logos/logo-5-blitz.png') }}">
+  <meta property="og:title" content="Electrification data (and digital tools) in Nigeria">
+  <meta property="og:type" content="Website">
+  <meta property="og:description" content="Nigeria SE3ALL website is Nigeria’s leading central platform delivering the most accurate data and latest tools that empower better electrification planning in Nigeria.">
+  <meta property="og:url" content="https://nigeriase4all.gov.ng/">
+  <title>{% block title %}Electrification data (and digital tools) in Nigeria{% endblock %}</title>
     <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
     <link rel="stylesheet" href="{{ url_for('static', filename='foundation.min.css') }}">
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
@@ -31,7 +37,7 @@
       <div id="header-blitz-div" class="cell small-12 medium-4 large-offset-1 large-5">
         <a href="{{ url_for('landing')}}">
           <img src="{{ url_for('static', filename='logos/logo-5-blitz.png') }}" alt="SE4ALL Logo">
-          <h2>Nigeria Se4All</h2>
+          <div class="h2-alternative">Nigeria Se4All</div>
         </a>
       </div>
       <div class="cell small-12 medium-8 large-5 large grid-x header-right">
@@ -67,7 +73,7 @@
       <div  class="cell mobile-menu-logo">
         <a href="{{ url_for('landing')}}">
           <img src="{{ url_for('static', filename='logos/logo-5-blitz.png') }}" alt="SE4ALL Logo">
-          <h2>Nigeria Se4All</h2>
+          <div class="h2-alternative">Nigeria Se4All</div>
         </a>
       </div>
       <div class="cell mobile-menu__item">
@@ -102,7 +108,7 @@
       <div id="footer-stay-in-touch-div" class="cell bkg-img">
         <div class="grid-x">
           <div class="cell large-11 large-offset-1">
-            <h1>Stay in touch</h1>
+            <div class="h1-alternative">Stay in touch</div>
           </div>
           <div class="cell large-11 large-offset-1">
             <div class="grid-x">

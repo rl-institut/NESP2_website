@@ -7,10 +7,10 @@ body, p, a, li {
 html {
     scroll-behavior: smooth;
   }
-h1, h2, h3, h4, h5, h6 {
+h1, h2, h3, h4, h5, h6, .h1-alternative, .h2-alternative {
     font-family: Poppins, Arial, sans-serif;
 }
-h2{
+h2, .h2-alternative{
     font-size: 24pt;
     font-weight: bold;
 }
@@ -29,7 +29,7 @@ p, div{
     body, p, a, li {
         font-size: 18pt;
     }
-    h2{
+    h2, .h2-alternative{
         font-size: 32pt;
         font-weight: bold;
     }
@@ -149,7 +149,7 @@ header div{
     align-items: center;
 }
 
-header h2{
+header h2, header .h2-alternative{
     color: #ffbb00;
     font-size: 16pt;
     font-weight: bold;
@@ -254,7 +254,7 @@ header a:focus{
     background-repeat: no-repeat;
     background-size: cover;
 }
-.landing-hero h1 {
+.landing-hero h1, .landing-hero .h1-alternative {
     font-size: 30pt;
     font-weight: bold;
     color: #ffffff;
@@ -264,7 +264,7 @@ header a:focus{
     margin-top: 10vh;
 }
 
-.landing-hero h2 {
+.landing-hero h2, .landing-hero .h2-alternative {
     font-size: 16pt;
     font-weight: normal;
     color: #ffffff;
@@ -414,7 +414,7 @@ header a:focus{
     .landing-minigridmonitor__header h3 {
         padding-bottom: 1rem!important;
     }
-    .cell.landing-resources__text h2{
+    .cell.landing-resources__text h2, .cell.landing-resources__text .h2-alternative{
         font-size: 18pt;
     }
     .cell.landing-resources__text p{
@@ -426,7 +426,7 @@ header a:focus{
         margin-right: 0;
         margin-top: 1rem;
     }
-    #about-content h2 {
+    #about-content h2, #about-content .h2-alternative {
         padding-bottom: 0rem!important;
         padding-top: 3rem;
     }
@@ -436,7 +436,7 @@ header a:focus{
     #about-nesp-content{
         margin-left: 0%;
     }
-    #about-content h2 {
+    #about-content h2 , #about-content .h2-alternative{
         text-align: center;
     }
     #about-stakeholder-content{
@@ -455,13 +455,13 @@ header a:focus{
         min-height: 40rem;
         padding-bottom: 4rem;
     }
-    .landing-hero h1 {
+    .landing-hero h1, .landing-hero .h1-alternative {
         font-size: 40pt;
         line-height: 52pt;
         padding-top: 4rem;
         margin-top: 0;
     }
-    .landing-hero h2 {
+    .landing-hero h2, .landing-hero .h2-alternative {
         font-size: 18pt;
         margin-bottom: 6rem;
     }   
@@ -476,15 +476,19 @@ header a:focus{
     }
 
     .landing-hero h1,
-    .landing-hero h2 {
+    .landing-hero h2,
+    .landing-hero .h1-alternative,
+    .landing-hero .h2-alternative {
         width: 100%;
     }
-    .landing-hero h1 {
+    .landing-hero h1,
+    .landing-hero .h1-alternative {
         font-size: 50pt;
         line-height: 68pt;
         padding-top: 5rem;
     }
-    .landing-hero h2 {
+    .landing-hero h2,
+    .landing-hero .h2-alternative {
         font-size: 20pt;
         margin-bottom: 8rem;
     }
@@ -545,6 +549,7 @@ header a:focus{
 }
 
 .landing-feature h2,
+.landing-feature .h2-alternative,
 .landing-feature p {
     color: #FFF;
 }
@@ -557,11 +562,13 @@ header a:focus{
     padding-bottom: 1.5rem;
 }
 
-.landing-feature h2 {
+.landing-feature h2,
+.landing-feature .h2-alternative {
     font-weight: 400;
 }
 
-.landing-feature h2 span {
+.landing-feature h2 span,
+.landing-feature .h2-alternative span {
     font-weight: 700;
 }
 
@@ -777,7 +784,8 @@ header a:focus{
 
 
 
-#objectives-sec .landing-resources__text h1 {
+#objectives-sec .landing-resources__text h1,
+#objectives-sec .landing-resources__text .h1-alternative {
     padding-top: 3rem;
     font-size: 32pt;
     font-weight: 700;
@@ -875,7 +883,8 @@ header a:focus{
 }
 
 #footer-stay-in-touch-div p,
-#footer-stay-in-touch-div h1 {
+#footer-stay-in-touch-div h1,
+#footer-stay-in-touch-div .h1-alternative {
     color: #ffffff;
 }
 
@@ -1189,7 +1198,8 @@ h4.heading-green {
     padding-bottom: 8rem;
 }
 
-#about-content h2 {
+#about-content h2,
+#about-content .h2-alternative  {
     padding-bottom: 6rem;
     padding-top: 3rem;
 }
@@ -1216,7 +1226,8 @@ h4.heading-green {
     padding-bottom: 8rem;
 }
 
-#about-map-content h2 {
+#about-map-content h2,
+#about-map-content .h2-alternative {
     padding-bottom: 6rem;
     padding-top: 3rem;
 }
@@ -1227,12 +1238,14 @@ h4.heading-green {
         padding-bottom: 6rem;
     }
 
-    #about-content h2 {
+    #about-content h2,
+    #about-content .h2-alternative {
         padding-bottom: 4rem;
         padding-top: 2rem;
     }
 
-    #about-map-content h2 {
+    #about-map-content h2,
+    #about-map-content .h2-alternative {
         padding-bottom: 4rem;
         padding-top: 2rem;
     }
@@ -1244,12 +1257,14 @@ h4.heading-green {
         padding-bottom: 4rem;
     }
 
-    #about-content h2 {
+    #about-content h2,
+    #about-content .h2-alternative {
         padding-bottom: 2rem;
         padding-top: 1rem;
     }
 
-    #about-map-content h2 {
+    #about-map-content h2,
+    #about-map-content .h2-alternative {
         padding-bottom: 2rem;
         padding-top: 1rem;
     }
@@ -1267,7 +1282,8 @@ h4.heading-green {
     padding-bottom: 8rem;
 }
 
-#privacy-policy-content h2 {
+#privacy-policy-content h2,
+#privacy-policy-content .h2-alternative {
     padding-bottom: 6rem;
     padding-top: 3rem;
 }
@@ -1793,4 +1809,17 @@ Added this trick to fix it */
     font-size: 18px !important;
     line-height: 23px !important;
     font-family: Source Sans Pro !important;
+}
+
+@media print, screen and (min-width: 40em)
+{
+.h1-alternative {
+    font-size: 3rem !important;
+}}
+
+.h1-alternative{
+    font-size: 1.5rem;
+    line-height: 1.4;
+    margin-top: 0;
+    margin-bottom: .5rem;
 }
