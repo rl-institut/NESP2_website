@@ -5,7 +5,7 @@ from flask import Flask, render_template, request
 from flask_wtf.csrf import CSRFProtect
 from sqlalchemy.exc import DBAPIError
 
-from .blueprints import resources, about, maps, objectives
+from .blueprints import resources, about, maps, objectives, dashboard
 
 # By default we assume pessimistically that the database is down
 DB_UP = "1"
@@ -22,7 +22,7 @@ if os.environ.get("POSTGRES_URL", None) is not None:
             query_mapped_villages,
             query_mapped_buildings,
             PROGRESS_NUMBER_MAX,
-            query_gauge_maximum
+            query_gauge_maximum,
         )
 
         os.environ["DB_STATUS"] = DB_UP
@@ -30,26 +30,17 @@ if os.environ.get("POSTGRES_URL", None) is not None:
         warnings.warn(repr(e))
 
 
-
-
-
 templates_dir = os.path.join(os.path.abspath(os.curdir), "app", "templates")
 
 
 def create_app(test_config=None):
     # create and configure the app
-    app = Flask(
-        __name__,
-        static_folder='static',
-        instance_relative_config=True,
-    )
-    app.config.from_mapping(
-        SECRET_KEY='dev',
-    )
+    app = Flask(__name__, static_folder="static", instance_relative_config=True,)
+    app.config.from_mapping(SECRET_KEY="dev",)
 
     if test_config is None:
         # load the instance config, if it exists, when not testing
-        app.config.from_pyfile('config.py', silent=True)
+        app.config.from_pyfile("config.py", silent=True)
     else:
         # load the test config if passed in
         app.config.from_mapping(test_config)
@@ -68,8 +59,9 @@ def create_app(test_config=None):
     app.register_blueprint(objectives.bp)
     app.register_blueprint(maps.bp)
     app.register_blueprint(about.bp)
+    app.register_blueprint(dashboard.bp)
 
-    @app.route('/')
+    @app.route("/")
     def landing():
 
         kwargs = {}
@@ -79,9 +71,9 @@ def create_app(test_config=None):
                 for k, desc in PROGRESS_NUMBER_MAX.items():
                     kwargs[k] = query_gauge_maximum(desc)
 
-                kwargs['km_electricity'] = query_electrified_km()
-                kwargs['mapped_villages'] = query_mapped_villages()
-                kwargs['mapped_buildings'] = query_mapped_buildings()
+                kwargs["km_electricity"] = query_electrified_km()
+                kwargs["mapped_villages"] = query_mapped_villages()
+                kwargs["mapped_buildings"] = query_mapped_buildings()
             except DBAPIError as e:
                 kwargs["DB_STATUS"] = "down"
                 warnings.warn(repr(e))
@@ -89,9 +81,9 @@ def create_app(test_config=None):
             kwargs["DB_STATUS"] = "down"
 
         if os.path.exists(os.path.join(templates_dir, "maps", "sidebar_checkbox.html")):
-            kwargs['website_app'] = True
+            kwargs["website_app"] = True
         else:
-            kwargs['website_app'] = False
+            kwargs["website_app"] = False
             print("\n\n*** warning ***\n")
             print(
                 "The webmap will not be able to work correctly because it is missing a file, "
@@ -99,8 +91,7 @@ def create_app(test_config=None):
             )
             print("\n***************\n\n")
 
-
-        user_agent = request.headers.get('User-Agent')
+        user_agent = request.headers.get("User-Agent")
         not_supported = False
         if user_agent is None or not isinstance(user_agent, str):
             not_supported = True
@@ -108,31 +99,31 @@ def create_app(test_config=None):
             for ua in maps.UNSUPPORTED_USER_AGENT_STRINGS:
                 if ua in user_agent:
                     not_supported = True
-        kwargs['not_supported'] = not_supported
-        kwargs['website_welcome_video_id'] = "D37icUKT3LQ"
-        return render_template('landing/index.html', **kwargs)
+        kwargs["not_supported"] = not_supported
+        kwargs["website_welcome_video_id"] = "D37icUKT3LQ"
+        return render_template("landing/index.html", **kwargs)
 
-    @app.route('/termsofservice')
+    @app.route("/termsofservice")
     def termsofservice():
-        return render_template('termsofservice.html')
+        return render_template("termsofservice.html")
 
-    @app.route('/privacypolicy')
+    @app.route("/privacypolicy")
     def privacypolicy():
-        return render_template('privacypolicy.html')
+        return render_template("privacypolicy.html")
 
-    @app.route('/about-map')
+    @app.route("/about-map")
     def about_map():
-        return render_template('credits.html', about_map=True, video_id=maps.VIDEO_ID)
+        return render_template("credits.html", about_map=True, video_id=maps.VIDEO_ID)
 
-    @app.route('/accreditation')
+    @app.route("/accreditation")
     def accreditation():
-        return render_template('credits.html', about_map=False)
+        return render_template("credits.html", about_map=False)
 
     @app.teardown_appcontext
     def shutdown_session(exception=None):
         if db_session is not None:
             db_session.remove()
-    
+
     @app.errorhandler(404)
     def not_found(e):
         return render_template("404.html")
@@ -143,6 +134,7 @@ def create_app(test_config=None):
 
     try:
         from .maps_utils import define_function_jinja
+
         define_function_jinja(app)
     except ModuleNotFoundError:
         print("\n\n*** warning ***\n")

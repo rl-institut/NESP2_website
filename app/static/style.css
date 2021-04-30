@@ -395,10 +395,10 @@ header a:focus{
     }
 
 
-    .landing-minigridmonitor__header h3 {
+    .landing-dashboards__header h3 {
         padding-bottom: 1rem;
     }
-    .landing-minigridmonitor__image div {
+    .landing-dashboards__image div {
         height: auto;
         width: auto;
         margin: 0 auto;
@@ -411,7 +411,7 @@ header a:focus{
         border-top-right-radius: 12px;
         padding-bottom: 1rem;
     }
-    .landing-minigridmonitor__header h3 {
+    .landing-dashboards__header h3 {
         padding-bottom: 1rem!important;
     }
     .cell.landing-resources__text h2, .cell.landing-resources__text .h2-alternative{
@@ -705,7 +705,7 @@ header a:focus{
     }
 }
 
-.landing-minigridmonitor {
+.landing-dashboards {
     background-image: url("background/bg-6-minigridmonitor.jpg");
     background-position: center center;
     background-repeat: no-repeat;
@@ -713,31 +713,35 @@ header a:focus{
     padding-top: 3rem;
 }
 
-.landing-minigridmonitor__header {
+.landing-dashboards__header {
     color: #ffffff;
 }
 
-.landing-minigridmonitor__header h3 {
+.landing-dashboards__header p {
     padding-bottom: 6rem;
+    color: #ffffff;
 }
 
-.landing-minigridmonitor__header h3 span {
+.landing-dashboards__header p span {
     font-weight: 700;
 }
 
-.landing-minigridmonitor__image .cta {
+.landing-dashboards__image .cta {
     margin: 0 auto;
     padding-top: 1rem;
     padding-bottom: 1rem;
 }
 
-.landing-minigridmonitor__image div {
-    height: 27rem;
-    width: 62rem;
+
+
+
+.landing-dashboards__image div {
+    height: 14rem;
+    width: 100%;
     margin: 0 auto;
     padding-top: 4rem;
     background-color: #085064;
-    background-image: url(../static/img/img-16-minigridmonitor.png);
+    background-image: url(../static/img/img-18-datadashboard.png);
     background-repeat: no-repeat;
     background-position: center top;
     background-size: cover;
@@ -746,30 +750,173 @@ header a:focus{
     box-shadow: 4px 6px 16px 0px rgba(0,0,0,0.75);
 }
 
-@media only screen and (min-width: 700px) and (max-width: 900px) {
+.landing-dashboards__image.minigrid div {
+    background-image: url(../static/img/img-16-minigridmonitor.png);
+}
+
+
+
+@media only screen and (min-width: 1024px) {
+
+    .puffer-left{
+        padding-left: 5%;
+    }
+
+    .puffer-right{
+        padding-right: 5%;
+    }
+}
+
+@media only screen and (min-width: 1024px) and (max-width: 1300px) {
+
+    .landing-dashboards__image div{
+       height: 12rem;
+    }
+
+}
+
+
+@media only screen and (max-width: 1023px) {
+
+.landing-dashboards__image.puffer-right{
+
+}
+
+}
+
+.landing-dashboard-separator {
+
+    height: 0.5rem;
+    background-color: #8ee7b4;
+    margin-bottom: 4rem;
+    margin-left: 2.5%;
+    width: 95%;
+
+}
+
+
+@media only screen and (min-width: 641px) and (max-width: 1023px) {
     .small-offset-2 {
         margin-left: 0%;
     }
-    .landing-maps__image div{
+    .landing-maps__image div, .landing-dashboards__image div{
         width: 90%;
     }
-    .landing-minigridmonitor__image div{
-        width: 90%;
+
+    .landing-dashboards__header p {
+        padding-bottom: 3.5rem;
     }
+
 }
 
 /* smaller screens */
 @media only screen and (max-width: 640px) {
-    .landing-maps__image div {
+    .landing-maps__image div, .landing-dashboards__image div{
         height: auto!important;
         width: 80%;
     }
-    .landing-minigridmonitor__image div{
-        height: auto!important;
-        width: 90%;
+
+    .landing-dashboards__header p {
+        padding-bottom: 2rem;
     }
 }
 
+h3.dashboard-plot-title {
+
+    padding-left: 2.5rem;
+    padding-right: 2.5rem;
+    font-weight: bold;
+    margin-bottom: 3rem;
+}
+.dashboard-plot-title img {
+    padding-left: 0.75rem;
+    vertical-align: initial;
+    border: none; /* disable the underlining of the tooltip*/
+}
+
+
+.dashboard-plot-area {
+    padding-top: 1.5rem;
+    margin-bottom: 2.5rem;
+        box-shadow: 5px 3px 5px 0px rgba(0,0,0,0.41);
+    -webkit-box-shadow: 5px 3px 5px 0px rgba(0,0,0,0.41);
+    -moz-box-shadow: 5px 3px 5px 0px rgba(0,0,0,0.41);
+    background-color: white;
+}
+
+
+#dashboard-intro{
+    padding-top: 3rem;
+    background-image: url("background/bg-3-resources-div-tile.png");
+}
+
+#dashboard-intro a {
+    color: #1DD069;
+}
+
+#dashboard-intro div {
+    display: flex;
+    justify-content: space-evenly;
+    margin-bottom: 1rem;
+    margin-top: 0.5rem;
+}
+
+#dashboard-analytics{
+    padding-top: 3rem;
+    padding-bottom: 5rem;
+    background-color: #e0e2e9;
+}
+
+#dashboard-analytics h2 {
+    margin-bottom: 5rem;
+
+}
+
+.dashboard-plot{
+   height: 350px;
+   margin-left: 2.5rem;
+   margin-right: 2.5rem;
+}
+
+div.dashboard-plot-area.static-img {
+    padding-left: 4.5rem;
+    padding-right: 4.5rem;
+    padding-bottom: 1rem;
+}
+
+#location_plants_graph{
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+    position: relative;
+    padding-top: 63.15%;
+    width:100%;
+}
+
+#location_plants_graph a{
+    color: #1DD069;
+    position: absolute;
+    top: -40px;
+    right: 0;
+}
+
+
+@media only screen and (max-width: 1600px) {
+
+
+    .dashboard-plot{
+       height: 300px;
+       margin-left: 1.5rem;
+       margin-right: 1.5rem;
+    }
+
+    div.dashboard-plot-area.static-img {
+        padding-left: 1.5rem;
+        padding-right: 1.5rem;
+    }
+
+}
 
 
 .landing-resources {
@@ -869,6 +1016,9 @@ header a:focus{
     text-decoration: underline;
     margin-top: 1rem;
 }
+
+
+
 
 
 /* Footer */
