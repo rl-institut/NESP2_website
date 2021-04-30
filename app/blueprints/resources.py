@@ -1,6 +1,6 @@
 from flask import Blueprint, render_template, abort, Markup, redirect, url_for
 
-bp = Blueprint('resources', __name__)
+bp = Blueprint("resources", __name__)
 
 
 CLUSTER_ID = "clusteridentification"
@@ -11,10 +11,10 @@ GRID_MAPPING_ID = "ongridmapping"
 
 RESOURCES_ATTRIBUTES = {
     CLUSTER_ID: {
-        'title': 'Cluster Identification',
-        'subtitle': 'How can I identify locations of settlements?',
-        'description': Markup(
-            '''<p>When looking at energy access and rural electrification it is crucial to 
+        "title": "Cluster Identification",
+        "subtitle": "How can I identify locations of settlements?",
+        "description": Markup(
+            """<p>When looking at energy access and rural electrification it is crucial to 
                understand where exactly the non- or undersupplied people are living and in
                 which settlement structure they live, e.g. in dispersed settlements or 
                more centralized village structures. This is required in order to identify 
@@ -29,14 +29,17 @@ RESOURCES_ATTRIBUTES = {
                 <p>Finally, these attributed population clusters form the basis for further assessments.
                  By filtering them according to their size and distance to the grid a first selection 
                  is derived for further analysis. This further analysis includes 
-                 <a href="{}" rel="noreferrer">mapping with OSM</a>.</p>'''.format(
-                "/resources/osm")),
-        'image': 'img/img-5-resource-cluster.jpg'
+                 <a href="{}" rel="noreferrer">mapping with OSM</a>.</p>""".format(
+                "/resources/osm"
+            )
+        ),
+        "image": "img/img-5-resource-cluster.jpg",
     },
     OSM_ID: {
-        'title': 'Mapping with OSM',
-        'subtitle': 'How can I map a settlement in detail remotely? ',
-        'description': Markup('''Data on the Open Street Map (OSM) platform is utilised for off-grid areas in this project. This is detailed data of building outlines and any other geospatial datasets, generated either from on-site knowledge or from high resolution satellite imagery. If an off-grid area is not currently on the OSM database, it can be easily added.
+        "title": "Mapping with OSM",
+        "subtitle": "How can I map a settlement in detail remotely? ",
+        "description": Markup(
+            """Data on the Open Street Map (OSM) platform is utilised for off-grid areas in this project. This is detailed data of building outlines and any other geospatial datasets, generated either from on-site knowledge or from high resolution satellite imagery. If an off-grid area is not currently on the OSM database, it can be easily added.
         </br></br>
         Do you have an area of interest for an electrification project that you want to do further assessment on? Or do you want to contribute to data to assist electrification efforts in Nigeria? Check out the OSM tools below to help you get started:
         </br></br>
@@ -52,13 +55,15 @@ RESOURCES_ATTRIBUTES = {
         HOT Tasking Manager</a> is used to manage tasks of areas to map. Get in touch and send
         us your OSM username if you want to be involved.</li>
         </ul>
-        '''),
-        'image': 'img/img-6-resources-osm.jpg'
+        """
+        ),
+        "image": "img/img-6-resources-osm.jpg",
     },
     SURVEY_ID: {
-        'title': 'Survey Tools',
-        'subtitle': 'How can I visit a settlement and collect relevant data?',
-        'description': Markup('''Once a remote assessment of the satellite imagery has taken place,
+        "title": "Survey Tools",
+        "subtitle": "How can I visit a settlement and collect relevant data?",
+        "description": Markup(
+            """Once a remote assessment of the satellite imagery has taken place,
         it is normally required that a potential location for electrification is visited and
         surveyed. Here more detailed information is collected to enable a more accurate demand
         assessment for the purposes of electrification. At Nigeria SE4ALL we have developed survey
@@ -78,27 +83,30 @@ RESOURCES_ATTRIBUTES = {
         questionnaire is also available. Get in touch with us and describe in a few sentences why
         you would like to collect the data, as well as sharing your KoBoToolbox username.
         You can then receive access to the questionnaires.</li>
-        '''),
-        'image': 'img/img-7-resources-survey.jpg'
+        """
+        ),
+        "image": "img/img-7-resources-survey.jpg",
     },
     GRID_MAPPING_ID: {
-        'title': 'On Grid Mapping',
-        'subtitle': 'How can I track the grid?',
-        'description': 'The Medium Voltage (MV) grid data used by Nigeria SE4ALL is either primary data which is gathered first hand by the SE4ALL field team, or secondary data whose quality has been validated by the SE4ALL field team. Our aim is to maintain the most comprehensive grid data-set for Nigeria. To achieve this, we encourage anyone who may have more up-to date grid data, or additions to the grid data-set generated to get in touch and share their updates.',
-        'image': 'img/img-8-resources-og-mapping.jpg'
+        "title": "On Grid Mapping",
+        "subtitle": "How can I track the grid?",
+        "description": "The Medium Voltage (MV) grid data used by Nigeria SE4ALL is either primary data which is gathered first hand by the SE4ALL field team, or secondary data whose quality has been validated by the SE4ALL field team. Our aim is to maintain the most comprehensive grid data-set for Nigeria. To achieve this, we encourage anyone who may have more up-to date grid data, or additions to the grid data-set generated to get in touch and share their updates.",
+        "image": "img/img-8-resources-og-mapping.jpg",
     },
 }
 
 
-@bp.route('/resources/')
-@bp.route('/resources')
+@bp.route("/resources/")
+@bp.route("/resources")
 def index():
-    return redirect(url_for('landing', _anchor='landing-resources'))
+    return redirect(url_for("landing", _anchor="landing-resources"))
 
 
-@bp.route('/resources/<resc_name>')
+@bp.route("/resources/<resc_name>")
 def selection(resc_name=None):
     if resc_name in RESOURCES_ATTRIBUTES.keys():
-        return render_template('resources/selection.html', **RESOURCES_ATTRIBUTES[resc_name])
+        return render_template(
+            "resources/selection.html", **RESOURCES_ATTRIBUTES[resc_name]
+        )
     else:
         abort(404)
