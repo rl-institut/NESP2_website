@@ -87,6 +87,11 @@ class PowerStations(Base):
     __table__ = Table('osm_power_substation', Base.metadata, autoload=True, autoload_with=engine)
 
 
+class DashboardsData(Base):
+    __table__ = Table(
+        "generation_details", Base.metadata, autoload=True, autoload_with=engine
+    )
+
 
 def select_materialized_view(engine, view_name, schema=None, limit=None):
     if schema is not None:
@@ -172,6 +177,64 @@ def query_generation_assets():
 
     return FeatureCollection(features)
 
+
+def query_dashboard_data():
+
+    res = db_session.query(
+        DashboardsData.technology,
+        DashboardsData.start_year_of_operation,
+        DashboardsData.capacity_mw,
+        DashboardsData.capacity_regenerative_mw,
+    )
+
+    df = pd.DataFrame.from_records(
+        [r for r in res],
+        coerce_float=True,
+        columns=[
+            "technology",
+            "start_year_of_operation",
+            "capacity_mw",
+            "capacity_regenerative_mw",
+        ],
+    )
+
+    cum_cap = [12409]
+    sum_cap = 12409
+
+    cum_cap_re = [1930]
+    sum_cap_re = 1930
+
+    percent_renewable = [round(100 * sum_cap_re / sum_cap, 0)]
+
+    years = [y for y in range(2020, 2031, 1)]
+
+    for y in years[1:]:
+        cap, cap_re = df.loc[
+            df.start_year_of_operation == y, ["capacity_mw", "capacity_regenerative_mw"]
+        ].sum()
+        sum_cap = sum_cap + cap
+        cum_cap.append(sum_cap)
+
+        sum_cap_re = sum_cap_re + cap_re
+        cum_cap_re.append(sum_cap_re)
+
+        percent_renewable.append(round(100 * (sum_cap_re / sum_cap), 0))
+
+    res = ["Hydro", "PV", "Wind"]
+    re_type = {}
+    for re in res:
+        re_type[re] = []
+        for y in years:
+            re_type[re].append(
+                int(
+                    df.loc[
+                        (df.technology == re) & (df.start_year_of_operation <= y),
+                        "capacity_mw",
+                    ].sum()
+                )
+            )
+
+    return years, cum_cap, percent_renewable, re_type
 
 def query_osm_power_lines():
     lines = db_session.query(
