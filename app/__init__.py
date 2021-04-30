@@ -5,7 +5,7 @@ from flask import Flask, render_template, request
 from flask_wtf.csrf import CSRFProtect
 from sqlalchemy.exc import DBAPIError
 
-from .blueprints import resources, about, maps, objectives
+from .blueprints import resources, about, maps, objectives, dashboard
 
 # By default we assume pessimistically that the database is down
 DB_UP = "1"
@@ -68,6 +68,7 @@ def create_app(test_config=None):
     app.register_blueprint(objectives.bp)
     app.register_blueprint(maps.bp)
     app.register_blueprint(about.bp)
+    app.register_blueprint(dashboard.bp)
 
     @app.route('/')
     def landing():
