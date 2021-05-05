@@ -17,11 +17,11 @@
     <h2 class="cell small-10">30:30:30 tracker</h2>
     <p class="cell small-7">The 30:30:30 tracker allows you to explore the progress towards key targets to be achieved by the year 2030. To find out more about these targets and the 30:30:30 initiative visit our <a href="{{ url_for('about.about') }}" target="_blank">about page</a></p>
 
-    <div class="cell small-7">
-      <div class="center--align">
+    <div class="cell small-12 large-8 grid-x">
+      <div class="center--align cell small-10 medium-6">
         <div class="GaugeMeter" data-color="#1DD069" data-back="#E0E2E9" data-min="0" data-total="{{ cap_installed_target }}" data-used="{{ cap_installed }}"  data-text="<img src='{{ url_for('static', filename='img/icons/i_generator.svg') }}' alt='Generator' style='height: 120px; margin-bottom: 30px; margin-left: 15px '>" data-label="<b class='gauge-number'>{{ cap_installed_txt }} MW</b> installed to date" data-showvalue="true" data-size="400" data-width="8" data-text_size="0.12"></div>
       </div>
-      <div class="center--align">
+      <div class="center--align cell small-10 medium-6">
         <div class="GaugeMeter" data-color="#1DD069" data-back="#E0E2E9" data-min="0" data-total="{{ percent_renewable_target }}" data-used="{{ percent_renewable }}" data-text="<img src='{{ url_for('static', filename='img/icons/i_pv_panel.svg') }}' alt='PV panel' style='height: 150px;margin-bottom: 40px;'>" data-label="<b class='gauge-number'>{{ percent_renewable }}%</b> from </br> renewable" data-size="400" data-width="8" data-text_size="0.12"></div>
       </div>
     </div>
@@ -29,7 +29,7 @@
 
   <section id="dashboard-analytics" class="grid-x grid-margin-x align-center light-grey">
     <h2 class="cell small-10">Analytics</h2>
-    <div class="cell small-10 medium-9 grid-x grid-margin-x">
+    <div class="cell small-12 medium-9 grid-x grid-margin-x">
       {% for graph_id, graph_params in graphs.items()%}
         {{ plotly.graph(id=graph_id, title=graph_params["title"]) }}
       {% endfor %}
