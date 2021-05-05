@@ -1,6 +1,6 @@
 {% macro graph(id, title, tooltip="Tooltip") -%}
 <div class="cell large-6 dashboard-plot-area">
-    <h3 class="dashboard-plot-title">{{ title }} <img src="{{ url_for('static', filename='img/icons/i_info.svg') }}" data-tooltip tabindex="1" title="{{ tooltip }}" data-position="right" data-alignment="bottom"></h3>
+    <h3 class="dashboard-plot-title">{{ title }} <img src="{{ url_for('static', filename='img/icons/i_info.svg') }}" data-tooltip tabindex="1" title="{{ tooltip }}" data-position="top" data-alignment="left"></h3>
     <div id="{{ id }}_graph" class="dashboard-plot"></div>
 </div>
 {%- endmacro %}
