@@ -41,7 +41,8 @@ def index():
     graphs = dict(
         generation_cap=dict(
             title="Total generation capacity installed and planned",
-            tooltip="Tooltip",
+            tooltip="Installed and planned generation capacity until 2030 based on power plants in the planning phase "
+                    "and sector projections",
             data=[
                 dict(
                     x=years,
@@ -69,7 +70,8 @@ def index():
         ),
         renewables_percentage=dict(
             title="Percentage renewables installed and planned",
-            tooltip="Tooltip",
+            tooltip="Installed and planned generation capacity as renewable share in %. Based on power plants "
+                  "in the planning phase and sector projections",
             data=[
                 dict(
                     x=years,
@@ -90,7 +92,8 @@ def index():
         ),
         renewable_types=dict(
             title="Renewables installed by technology type",
-            tooltip="Tooltip",
+            tooltip="Installed and planned generation capacities until 2030 seperated into technology types. Based "
+                    "on power plants in the planning phase and sector projections",
             data=[
                 dict(
                     x=years,  # (2020, 2030),
