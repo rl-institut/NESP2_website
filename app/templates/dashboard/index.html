@@ -15,19 +15,19 @@
 
   <section id="dashboard-intro" class="grid-x align-center light-grey">
     <h2 class="cell small-10">30:30:30 tracker</h2>
-    <p class="cell small-7">The 30:30:30 tracker allows you to explore the progress towards key targets to be achieved by the year <b> 2030</b>.</p>
-    <ul class="cell small-6">
+    <p class="cell small-8">The 30:30:30 tracker allows you to explore the progress towards key targets to be achieved by the year <b> 2030</b>.</p>
+    <ul class="cell small-7">
       <li> increase electricity generation to <b>30,000 MW </b> </li>
       <li> increase renewable energy share to <b> 30% </b> </li>
       <li> by <b> 2030 </b> </li>
     </ul>
-    <p class="cell small-7"> To find out more about these targets and the 30:30:30 initiative visit our <a href="{{ url_for('about.about') }}#about-se4all-agenda" target="_blank">about page</a></p>
-    <div class="cell small-7">
-      <div class="center--align">
-        <div class="GaugeMeter" data-color="#1DD069" data-back="#E0E2E9" data-min="0" data-total="{{ cap_installed_target }}" data-used="{{ cap_installed }}"  data-text="<img src='{{ url_for('static', filename='img/icons/i_generator.svg') }}' alt='Generator' style='height: 120px; margin-bottom: 30px; margin-left: 15px '>" data-label="<b class='gauge-number'>{{ cap_installed_txt }} MW</b> installed to date" data-showvalue="true" data-size="400" data-width="8" data-text_size="0.12"></div>
+    <p class="cell small-8"> To find out more about these targets and the 30:30:30 initiative visit our <a href="{{ url_for('about.about') }}#about-se4all-agenda" target="_blank">about page</a></p>
+    <div class="cell small-12 large-8 grid-x">
+      <div class="center--align cell small-10 medium-6">
+        <div class="GaugeMeter" data-color="#1DD069" data-back="#E0E2E9" data-min="0" data-total="{{ cap_installed_target }}" data-used="{{ cap_installed }}"  data-text="<img src='{{ url_for('static', filename='img/icons/i_generator.svg') }}' alt='Generator' style='height: 100px; margin-bottom: 30px; margin-left: 15px '>" data-label="<b class='gauge-number'>{{ cap_installed_txt }} MW</b> installed to date" data-showvalue="true" data-size="350" data-width="8" data-text_size="0.12"></div>
       </div>
       <div class="center--align cell small-10 medium-6">
-        <div class="GaugeMeter" data-color="#1DD069" data-back="#E0E2E9" data-min="0" data-total="{{ percent_renewable_target }}" data-used="{{ percent_renewable }}" data-text="<img src='{{ url_for('static', filename='img/icons/i_pv_panel.svg') }}' alt='PV panel' style='height: 150px;margin-bottom: 40px;'>" data-label="<b class='gauge-number'>{{ percent_renewable }}%</b> from </br> renewable" data-size="400" data-width="8" data-text_size="0.12"></div>
+        <div class="GaugeMeter" data-color="#1DD069" data-back="#E0E2E9" data-min="0" data-total="{{ percent_renewable_target }}" data-used="{{ percent_renewable }}" data-text="<img src='{{ url_for('static', filename='img/icons/i_pv_panel.svg') }}' alt='PV panel' style='height: 130px;margin-bottom: 40px;'>" data-label="<b class='gauge-number'>{{ percent_renewable }}%</b> from </br> renewable" data-size="350" data-width="8" data-text_size="0.12"></div>
       </div>
     </div>
   </section>
@@ -36,7 +36,7 @@
     <h2 class="cell small-10">Analytics</h2>
     <div class="cell small-12 medium-9 grid-x grid-margin-x">
       {% for graph_id, graph_params in graphs.items()%}
-        {{ plotly.graph(id=graph_id, title=graph_params["title"]) }}
+        {{ plotly.graph(id=graph_id, title=graph_params["title"], tooltip=graph_params["tooltip"]) }}
       {% endfor %}
 
       <div class="cell large-6 dashboard-plot-area static-img">
@@ -45,7 +45,7 @@
           <div class="aspect-ratio">
             <img src="{{ url_for('static', filename='img/img-17-powerplantmap.png') }}">
           </div>
-          <a href="{{ url_for('maps.index') }}">Interactive Webmap <img src="{{ url_for('static', filename='img/icons/i_arrow_right_green.svg') }}" alt="Arrow right"></a>
+          <a href="{{ url_for('maps.index') }}">Interactive Webmap</a>
         </div>
       </div>
     </div>
@@ -61,18 +61,19 @@
       var config = {showLink: false, responsive: true, modeBarButtonsToRemove: ['zoom2d', 'pan2d', 'select2d', 'lasso2d', 'zoomIn2d', 'zoomOut2d', 'autoScale2d', 'resetScale2d'], displayModeBar: false};
 
       var layout = {
+        legend: { yanchor: 'bot' ,xanchor:'left', orientation: 'h' },
         margin:{
           t:0,
           b:60,
-          l:80,
+          l:60,
           r:0,
         },
         title: {
           x: 0.1,
           yanchor: 'left',
           font: {
+              size: 16,
               family: 'Source Sans Pro',
-              size: 20,
           },
         },
         barmode: 'stack',
@@ -96,7 +97,7 @@
           color: '#93939f',
           tickfont: {
               family: 'Source Sans Pro',
-              size: 14,
+              size: 12,
           },
           tickformat: ",d",
         },
@@ -108,6 +109,7 @@
       Plotly.newPlot("generation_cap_graph", data, layout, config);
 
       var layout2 = {
+        legend: { yanchor: 'bot' ,xanchor:'left', orientation: 'h' },
         barmode: 'stack',
         yaxis: {
           showgrid: false,
@@ -118,7 +120,7 @@
           color: '#93939f',
           tickfont: {
               family: 'Source Sans Pro',
-              size: 14,
+              size: 12,
           },
           tickformat: ",d",
         },
