@@ -783,15 +783,8 @@ header a:focus{
 }
 
 }
-
-.landing-dashboard-separator {
-
-    height: 0.5rem;
-    background-color: #8ee7b4;
-    margin-bottom: 4rem;
-    margin-left: 2.5%;
-    width: 95%;
-
+.tooltip{
+    max-width: 45rem;
 }
 
 
