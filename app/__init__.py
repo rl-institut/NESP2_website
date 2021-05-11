@@ -102,12 +102,12 @@ def create_app(test_config=None):
 
         user_agent = request.headers.get('User-Agent')
         not_supported = False
-        if user_agent is None or not isinstance(user_agent, str):
-            not_supported = True
-        else:
-            for ua in maps.UNSUPPORTED_USER_AGENT_STRINGS:
-                if ua in user_agent:
-                    not_supported = True
+        # if user_agent is None or not isinstance(user_agent, str):
+        #     not_supported = True
+        # else:
+        #     for ua in maps.UNSUPPORTED_USER_AGENT_STRINGS:
+        #         if ua in user_agent:
+        #             not_supported = True
         kwargs['not_supported'] = not_supported
         kwargs['website_welcome_video_id'] = "D37icUKT3LQ"
         return render_template('landing/index.html', **kwargs)
