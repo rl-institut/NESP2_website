@@ -1,0 +1,29 @@
+.GaugeMeter SPAN {
+    display: block;
+}
+
+.GaugeMeter b {
+    font-weight: 400;
+}
+
+b.gauge-number{
+    display: contents;
+    font-weight: 700;
+    font-size: 1em;
+    padding-right: 0.2rem;
+
+}
+
+div.aspect-ratio {
+   position:  absolute;
+   top: 0;
+   left: 0;
+   bottom: 0;
+   right: 0;
+   text-align: center;
+}
+
+.aspect-ration > img {
+    width:100%;
+    height:100%;
+}

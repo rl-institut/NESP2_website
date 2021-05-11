@@ -1,0 +1,144 @@
+{% extends 'base.html' %}
+
+{% block head %}
+
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+    {# Replace by CDN when done developping <script src="{{ url_for('static', filename='js/plotly.js') }}"></script> #}
+    <link rel="stylesheet" href="{{ url_for('static', filename='dashboard.css') }}">
+{% endblock head%}
+
+{% block content %}
+
+{% import "dashboard/plotly.html" as plotly %}
+
+<div id="dashboard-content" class="grid-container full">
+
+  <section id="dashboard-intro" class="grid-x align-center light-grey">
+    <h2 class="cell small-10">30:30:30 tracker</h2>
+    <p class="cell small-8">The 30:30:30 tracker allows you to explore the progress towards key targets to be achieved by the year <b> 2030</b>.</p>
+    <ul class="cell small-7">
+      <li> increase electricity generation to <b>30,000 MW </b> </li>
+      <li> increase renewable energy share to <b> 30% </b> </li>
+      <li> by <b> 2030 </b> </li>
+    </ul>
+    <p class="cell small-8"> To find out more about these targets and the 30:30:30 initiative visit our <a href="{{ url_for('about.about') }}#about-se4all-agenda" target="_blank">about page</a></p>
+    <div class="cell small-12 large-8 grid-x">
+      <div class="center--align cell small-10 medium-6">
+        <div class="GaugeMeter" data-color="#1DD069" data-back="#E0E2E9" data-min="0" data-total="{{ cap_installed_target }}" data-used="{{ cap_installed }}"  data-text="<img src='{{ url_for('static', filename='img/icons/i_generator.svg') }}' alt='Generator' style='height: 100px; margin-bottom: 30px; margin-left: 15px '>" data-label="<b class='gauge-number'>{{ cap_installed_txt }} MW</b> installed to date" data-showvalue="true" data-size="350" data-width="8" data-text_size="0.12"></div>
+      </div>
+      <div class="center--align cell small-10 medium-6">
+        <div class="GaugeMeter" data-color="#1DD069" data-back="#E0E2E9" data-min="0" data-total="{{ percent_renewable_target }}" data-used="{{ percent_renewable }}" data-text="<img src='{{ url_for('static', filename='img/icons/i_pv_panel.svg') }}' alt='PV panel' style='height: 130px;margin-bottom: 40px;'>" data-label="<b class='gauge-number'>{{ percent_renewable }}%</b> from </br> renewable" data-size="350" data-width="8" data-text_size="0.12"></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="dashboard-analytics" class="grid-x grid-margin-x align-center light-grey">
+    <h2 class="cell small-10">Analytics</h2>
+    <div class="cell small-12 medium-9 grid-x grid-margin-x">
+      {% for graph_id, graph_params in graphs.items()%}
+        {{ plotly.graph(id=graph_id, title=graph_params["title"], tooltip=graph_params["tooltip"]) }}
+      {% endfor %}
+
+      <div class="cell large-6 dashboard-plot-area static-img">
+        <h3 class="dashboard-plot-title">Location of existing power plants in 2020 <img src="{{ url_for('static', filename='img/icons/i_info.svg') }}" data-tooltip tabindex="1" title="Tooltip" data-position="top" data-alignment="right"></h3>
+        <div id="location_plants_graph">
+          <div class="aspect-ratio">
+            <img src="{{ url_for('static', filename='img/img-17-powerplantmap.png') }}">
+          </div>
+          <a href="{{ url_for('maps.index') }}">Interactive Webmap</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <script type=text/javascript>
+
+     var graphs = {{ graphs|tojson }};
+     var generation_assets = {{ generation_assets|tojson }};
+
+
+      var config = {showLink: false, responsive: true, modeBarButtonsToRemove: ['zoom2d', 'pan2d', 'select2d', 'lasso2d', 'zoomIn2d', 'zoomOut2d', 'autoScale2d', 'resetScale2d'], displayModeBar: false};
+
+      var layout = {
+        legend: { yanchor: 'bot' ,xanchor:'left', orientation: 'h' },
+        margin:{
+          t:0,
+          b:60,
+          l:60,
+          r:0,
+        },
+        title: {
+          x: 0.1,
+          yanchor: 'left',
+          font: {
+              size: 16,
+              family: 'Source Sans Pro',
+          },
+        },
+        barmode: 'stack',
+        xaxis: {
+          color: '#93939f',
+          tickfont: {
+              family: 'Source Sans Pro',
+              size: 14,
+
+          },
+          tickformat: "d",
+          range: [2019.5, 2030.5],
+        },
+        yaxis: {
+          title: 'MW',
+          showgrid: false,
+          zeroline: true,
+          zerolinecolor: '#93939f',
+          zerolinewidth: 2,
+          ticksuffix: "  ",
+          color: '#93939f',
+          tickfont: {
+              family: 'Source Sans Pro',
+              size: 12,
+          },
+          tickformat: ",d",
+        },
+      };
+
+
+
+      var data = graphs["generation_cap"]["data"];
+      Plotly.newPlot("generation_cap_graph", data, layout, config);
+
+      var layout2 = {
+        legend: { yanchor: 'bot' ,xanchor:'left', orientation: 'h' },
+        barmode: 'stack',
+        yaxis: {
+          showgrid: false,
+          zeroline: true,
+          zerolinecolor: '#93939f',
+          zerolinewidth: 2,
+          ticksuffix: " %   ",
+          color: '#93939f',
+          tickfont: {
+              family: 'Source Sans Pro',
+              size: 12,
+          },
+          tickformat: ",d",
+        },
+      };
+      layout2.margin = layout.margin;
+      layout2.xaxis = layout.xaxis;
+      data = graphs["renewables_percentage"]["data"];
+      Plotly.newPlot("renewables_percentage_graph", data, layout2, config);
+
+
+      data = graphs["renewable_types"]["data"];
+      Plotly.newPlot("renewable_types_graph", data, layout, config);
+
+
+  </script>
+
+
+{% endblock content%}
+
+
+

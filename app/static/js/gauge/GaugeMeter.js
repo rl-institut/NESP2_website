@@ -38,7 +38,7 @@
             animate_gauge_colors: false,
             animate_text_colors: false,
             label: "",
-            label_color: "Black",
+            label_color: "#464646",
             text: "",
             text_size: 0.22,
             fill: "",
