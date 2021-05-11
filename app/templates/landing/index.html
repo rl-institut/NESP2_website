@@ -197,14 +197,29 @@
     </div>
   </section>
 
-  <section id="landing-minigridmonitor-sec" class="grid-x landing-minigridmonitor align-center text-center">
-    <div class="cell landing-minigridmonitor__header">
-      <h2>Minigrid Monitoring Dashboard</h2>
-      <h3>View the latest data on select operational mini-grids in Nigeria <br> with this new digital monitoring tool.</h3>
+  <section id="landing-dashboards-sec" class="grid-x landing-dashboards text-center">
+    <div class="cell landing-dashboards__header">
+      <h2>Dashboards</h2>
     </div>
-    <div class="cell landing-minigridmonitor__image">
+      <div class="cell large-offset-1 large-5 large-order-1 landing-dashboards__header puffer-right">
+      <h3>Minigrid Monitoring Dashboard</h3>
+      <p>View the latest data on select operational mini-grids in Nigeria <br> with this new digital monitoring tool.</p>
+    </div>
+    <div class="cell large-offset-1 large-5 large-order-3 landing-dashboards__image minigrid puffer-right">
       <a href="https://minigridmonitor.nigeriase4all.gov.ng/" rel="noreferrer" target="_blank">
-        <div class="landing-minigridmonitor__image-div">
+        <div class="landing-dashboards__image-div">
+          <button class="cta"><span>Explore Dashboard</span>
+              <img src="{{ url_for('static', filename='img/icons/i_arrow_square_w.svg') }}"></button>
+        </div>
+      </a>
+    </div>
+    <div class="cell large-5 large-order-2 landing-dashboards__header puffer-left">
+      <h3>Data Dashboard</h3>
+      <p>Analyze our targets and progresses on <span>interactive plots</p>
+    </div>
+    <div class="cell large-5 large-order-4 landing-dashboards__image puffer-left">
+      <a href="{{ url_for('dashboard.index') }}" rel="noreferrer" target="_blank">
+        <div class="landing-dashboards__image-div">
           <button class="cta">Explore Dashboard</button>
         </div>
       </a>
