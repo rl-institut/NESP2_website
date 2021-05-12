@@ -1,6 +1,7 @@
 from datetime import date
 from flask import Blueprint, render_template
 from ..database import query_dashboard_data, query_generation_assets
+from datetime import date
 
 bp = Blueprint("dashboard", __name__)
 
@@ -24,7 +25,7 @@ def index():
     year_id = years.index(date.today().year)
     current_cap_installed = int(cum_cap[year_id])
     current_percent_renewable = int(percent_renewable[year_id])
-
+    current_year = date.today().year
     print(f"{current_cap_installed:,}")
 
     cum_cap_initial = []
@@ -129,5 +130,6 @@ def index():
             "cap_installed_target": "30000",
             "percent_renewable_target": "30",
             "percent_renewable": f"{current_percent_renewable}",
+            "current_year": f"{current_year:}",
         }
     )

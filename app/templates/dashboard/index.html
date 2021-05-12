@@ -24,7 +24,7 @@
     <p class="cell small-8"> To find out more about these targets and the 30:30:30 initiative visit our <a href="{{ url_for('about.about') }}#about-se4all-agenda" target="_blank">about page</a></p>
     <div class="cell small-12 large-8 grid-x">
       <div class="center--align cell small-10 medium-6">
-        <div class="GaugeMeter" data-color="#1DD069" data-back="#E0E2E9" data-min="0" data-total="{{ cap_installed_target }}" data-used="{{ cap_installed }}"  data-text="<img src='{{ url_for('static', filename='img/icons/i_generator.svg') }}' alt='Generator' style='height: 100px; margin-bottom: 30px; margin-left: 15px '>" data-label="<b class='gauge-number'>{{ cap_installed_txt }} MW</b> installed to date" data-showvalue="true" data-size="350" data-width="8" data-text_size="0.12"></div>
+        <div class="GaugeMeter" data-color="#1DD069" data-back="#E0E2E9" data-min="0" data-total="{{ cap_installed_target }}" data-used="{{ cap_installed }}"  data-text="<img src='{{ url_for('static', filename='img/icons/i_generator.svg') }}' alt='Generator' style='height: 100px; margin-bottom: 30px; margin-left: 15px '>" data-label="<b class='gauge-number'>{{ cap_installed_txt }} MW</b> projected to {{ current_year }}" data-showvalue="true" data-size="350" data-width="8" data-text_size="0.12"></div>
       </div>
       <div class="center--align cell small-10 medium-6">
         <div class="GaugeMeter" data-color="#1DD069" data-back="#E0E2E9" data-min="0" data-total="{{ percent_renewable_target }}" data-used="{{ percent_renewable }}" data-text="<img src='{{ url_for('static', filename='img/icons/i_pv_panel.svg') }}' alt='PV panel' style='height: 130px;margin-bottom: 40px;'>" data-label="<b class='gauge-number'>{{ percent_renewable }}%</b> from </br> renewable" data-size="350" data-width="8" data-text_size="0.12"></div>
@@ -105,7 +105,7 @@
 
 
 
-      var data = graphs["generation_cap"]["data"];
+      var data = graphs["generation_capto date"]["data"];
       Plotly.newPlot("generation_cap_graph", data, layout, config);
 
       var layout2 = {
